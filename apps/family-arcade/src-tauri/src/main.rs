@@ -27,6 +27,21 @@ fn game_dir(app: &tauri::AppHandle, slug: &str) -> Option<PathBuf> {
 fn launch_game(app: tauri::AppHandle, slug: String) -> Result<(), String> {
     let dir = game_dir(&app, &slug).ok_or_else(|| format!("game not bundled: {slug}"))?;
     let exe = dir.join("game.exe");
+
+    // Self-heal older installations that did not copy the WebView2 loader next
+    // to the portable game. The hub itself always ships this DLL.
+    let loader = dir.join("WebView2Loader.dll");
+    if !loader.exists() {
+        if let Ok(current) = std::env::current_exe() {
+            if let Some(parent) = current.parent() {
+                let source = parent.join("WebView2Loader.dll");
+                if source.exists() {
+                    let _ = std::fs::copy(source, &loader);
+                }
+            }
+        }
+    }
+
     let mut command = std::process::Command::new(exe);
     command.current_dir(&dir);
     #[cfg(windows)]

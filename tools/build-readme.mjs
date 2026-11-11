@@ -222,9 +222,9 @@ browser, a 45–54-second bilingual promo, and its own lightweight Windows insta
 
 *37-second tour · every clip is real gameplay · [full videos below](#the-classics--两款经典)*
 
-[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.0/FamilyArcade_1.0.0_x64-setup.exe)
+[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.1/FamilyArcade_1.0.1_x64-setup.exe)
 
-**All-in-one Windows app:** [Family Arcade 1.0 launcher](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.0/FamilyArcade_1.0.0_x64-setup.exe) — every game and the WebView2 runtime in one installer. Per-game installers are linked under each card.
+**All-in-one Windows app:** [Family Arcade 1.0 launcher](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.1/FamilyArcade_1.0.1_x64-setup.exe) — every game and the WebView2 runtime in one installer. Per-game installers are linked under each card.
 **WebView2 runtime (only if a single-game installer asks):** [offline x64 installer](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
 
