@@ -101,6 +101,8 @@ for (const game of games) {
   mkdirSync(dest, { recursive: true });
   if (existsSync(exe)) {
     copyFileSync(exe, path.join(dest, 'game.exe'));
+    const loader = path.join(root, 'packages', 'runtime', 'WebView2Loader.dll');
+    if (existsSync(loader)) copyFileSync(loader, path.join(dest, 'WebView2Loader.dll'));
   } else {
     console.warn(`missing portable exe for ${game.slug}: ${exe}`);
   }

@@ -224,9 +224,11 @@ browser, a 45–54-second bilingual promo, and its own lightweight Windows insta
 
 [![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.0/FamilyArcade_1.0.0_x64-setup.exe)
 
-**All-in-one Windows app:** [Family Arcade 1.0 launcher](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.0/FamilyArcade_1.0.0_x64-setup.exe) — every game in one installer. Per-game installers are linked under each card.
+**All-in-one Windows app:** [Family Arcade 1.0 launcher](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.0/FamilyArcade_1.0.0_x64-setup.exe) — every game and the WebView2 runtime in one installer. Per-game installers are linked under each card.
+**WebView2 runtime (only if a single-game installer asks):** [offline x64 installer](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
-**2–6 players · ages 6+ · no account · no ads · no telemetry · per-game installers under 4 MB · all-in-one launcher 91 MB**
+
+**2–6 players · ages 6+ · no account · no ads · no telemetry · per-game installers under 4 MB · all-in-one launcher 299 MB (includes WebView2 runtime)**
 
 ## The classics · 两款经典
 
