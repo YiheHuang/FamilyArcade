@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 $cred = cmd /c "git credential fill < $env:TEMP\cred.txt" 2>&1
 $token = ($cred | Where-Object { $_ -match '^password=' }) -replace '^password=',''
 $headers = @{ Authorization = "Bearer $token"; Accept = "application/vnd.github+json" }
-$root = 'C:\Users\Yihe Huang\yihe\Table27'
+$root = Split-Path -Parent $PSScriptRoot
 $manifest = Get-Content (Join-Path $root 'releases\manifest.json') -Raw | ConvertFrom-Json
 
 foreach ($item in $manifest) {
