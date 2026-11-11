@@ -14,12 +14,12 @@ foreach ($item in $manifest) {
     "Lightweight Windows installer for **$($item.name)**.`n`nAI, hot-seat and LAN are included. See the repository README for the other games and honest limitations."
   }
   try {
-    $existing = Invoke-RestMethod -Headers $headers -Uri "https://api.github.com/repos/YiheHuang/FamilyArcade/releases/tags/$tag" -Proxy http://127.0.0.1:8888 -TimeoutSec 30
+    $existing = Invoke-RestMethod -Headers $headers -Uri "https://api.github.com/repos/YiheHuang/FamilyArcade/releases/tags/$tag" -TimeoutSec 30
     $release = $existing
     Write-Host "exists $tag"
   } catch {
     $payload = @{ tag_name = $tag; name = $name; body = $bodyText; draft = $false; prerelease = $false } | ConvertTo-Json
-    $release = Invoke-RestMethod -Method Post -Headers $headers -ContentType 'application/json' -Body $payload -Uri 'https://api.github.com/repos/YiheHuang/FamilyArcade/releases' -Proxy http://127.0.0.1:8888 -TimeoutSec 60
+    $release = Invoke-RestMethod -Method Post -Headers $headers -ContentType 'application/json' -Body $payload -Uri 'https://api.github.com/repos/YiheHuang/FamilyArcade/releases' -TimeoutSec 60
     Write-Host "created $tag"
   }
   $assetName = Split-Path $item.file -Leaf
@@ -28,7 +28,7 @@ foreach ($item in $manifest) {
   for ($attempt = 1; $attempt -le 3 -and -not $uploaded; $attempt++) {
     try {
       $uploadHeaders = @{ Authorization = "Bearer $token"; 'Content-Type' = 'application/octet-stream' }
-      Invoke-RestMethod -Method Post -Headers $uploadHeaders -InFile $assetPath -Uri "https://uploads.github.com/repos/YiheHuang/FamilyArcade/releases/$($release.id)/assets?name=$assetName" -Proxy http://127.0.0.1:8888 -TimeoutSec 600 | Out-Null
+      Invoke-RestMethod -Method Post -Headers $uploadHeaders -InFile $assetPath -Uri "https://uploads.github.com/repos/YiheHuang/FamilyArcade/releases/$($release.id)/assets?name=$assetName" -TimeoutSec 600 | Out-Null
       Write-Host "uploaded $assetName"
       $uploaded = $true
     } catch {
