@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:03,750
+Four pegs. Six colours. One hidden code.
+
+2
+00:00:05,200 --> 00:00:08,550
+Codebreak — the family code-breaking game.
+
+3
+00:00:10,000 --> 00:00:13,350
+The setter hides a code. The breaker has ten guesses.
+
+4
+00:00:16,000 --> 00:00:19,350
+Black means right colour and place. White means right colour, wrong place.
+
+5
+00:00:23,500 --> 00:00:26,850
+Four AI levels, from a gentle Companion to Knuth-style Hard.
+
+6
+00:00:31,000 --> 00:00:34,350
+Two players on one screen, or a phone joins over Wi-Fi. The code stays hidden.
+
+7
+00:00:38,000 --> 00:00:41,350
+Hints, undo, autosave and a family record.
+
+8
+00:00:42,000 --> 00:00:44,400
+Codebreak. Crack the code.

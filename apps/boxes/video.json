@@ -1,0 +1,32 @@
+{
+  "slug": "boxes",
+  "order": 6,
+  "title": "Boxes",
+  "titleZh": "点格棋",
+  "tagline": "Draw a line. Close a box. Keep the turn.",
+  "taglineZh": "画一条线，占一个格，再走一步。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "6+",
+  "accent": "#b5543d",
+  "paper": "#f6efe2",
+  "ink": "#29231d",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["6×6 dots · 25 boxes", "4 AI levels", "Hot-seat + LAN", "Undo, hint, autosave"],
+  "factsZh": ["6×6 点阵 · 25 个格", "四档 AI", "同屏 + 局域网", "悔棋、提示、自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "Sixty lines. Twenty-five boxes.", "zh": "六十条线，二十五个格。" },
+    { "at": 5.2, "en": "Boxes. The pencil game for a full table.", "zh": "点格棋。一桌人都能玩的铅笔游戏。" },
+    { "at": 10.0, "en": "Draw a line, close a box, and keep the turn.", "zh": "画一条线，围一个格，再走一步。" },
+    { "at": 16.0, "en": "Four AI levels, from a gentle companion to a chain-counting challenge.", "zh": "四档 AI，从温和陪玩到会算连锁的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或手机连同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Hints explain the chain. Undo, autosave and a family record are built in.", "zh": "提示会解释连锁，悔棋、自动保存和家庭战绩一应俱全。" },
+    { "at": 38.0, "en": "Offline, no account, no ads — just dots, lines and boxes.", "zh": "离线、无账号、无广告——只有点、线和格。" },
+    { "at": 42.0, "en": "Boxes. Draw the line.", "zh": "点格棋。画下这一笔。" }
+  ]
+}

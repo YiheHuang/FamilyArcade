@@ -1,0 +1,32 @@
+{
+  "slug": "fleet",
+  "order": 15,
+  "title": "Fleet",
+  "titleZh": "海战棋",
+  "tagline": "Ten columns. Five ships. One quiet sea.",
+  "taglineZh": "十列海图，五艘战舰，一片安静的海。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#1f6272",
+  "paper": "#f2ecdf",
+  "ink": "#1c2b30",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["10 × 10 chart", "4 AI levels", "Hot-seat + LAN", "Hints + autosave"],
+  "factsZh": ["10 × 10 海图", "四档 AI", "同屏 + 局域网", "提示 + 自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "A hundred squares. Nobody knows where the fleet is.", "zh": "一百个格子，谁也不知道舰队藏在哪里。" },
+    { "at": 5.2, "en": "Fleet. Hide five ships, then hunt.", "zh": "海战棋。藏好五艘船，再去猎杀。" },
+    { "at": 10.0, "en": "Carrier, battleship, cruiser, submarine, destroyer.", "zh": "航母、战列舰、巡洋舰、潜艇、驱逐舰。" },
+    { "at": 16.0, "en": "Fire one shot per turn. Miss, hit, sunk.", "zh": "每回合开一炮。未中、命中、击沉。" },
+    { "at": 23.5, "en": "Four AI levels, from gentle Companion to probability-counting Hard.", "zh": "四档 AI，从温和陪玩到计算所有船位的挑战。" },
+    { "at": 31.0, "en": "Two captains on one screen, or a phone across the Wi-Fi.", "zh": "两位舰长同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 38.0, "en": "Hints with reasons, undo, autosave and a family logbook.", "zh": "有理由的提示、悔棋、自动保存和家庭航海日志。" },
+    { "at": 42.0, "en": "Fleet. Ten columns. Five ships. One quiet sea.", "zh": "海战棋。十列海图，五艘战舰，一片安静的海。" }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "triple",
+  "order": 1,
+  "title": "Triple",
+  "titleZh": "三连棋",
+  "tagline": "Three in a row. One small table.",
+  "taglineZh": "三子连线，一张小桌。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#b05c43",
+  "paper": "#f7f0e2",
+  "ink": "#2a241e",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
+  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "lines": [
+    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
+    { "at": 5.2, "en": "Triple. A tiny game for a big table.", "zh": "三连棋。给一大家子的小游戏。" },
+    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
+    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
+    { "at": 42.0, "en": "Triple. Three in a row.", "zh": "三连棋。三子连线。" }
+  ]
+}

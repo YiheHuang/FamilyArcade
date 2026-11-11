@@ -1,0 +1,39 @@
+{
+  "name": "balloon-rally-promo",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "studio": "remotion studio",
+    "data": "tsx scripts/gen-data.ts",
+    "assets": "node scripts/copy-assets.mjs",
+    "audio": "node scripts/gen-audio.mjs",
+    "voice": "node scripts/gen-voice.mjs",
+    "srt": "node scripts/gen-srt.mjs",
+    "facts": "node scripts/facts.mjs",
+    "prep": "npm run data && npm run assets && npm run audio && npm run srt && npm run facts",
+    "poster:en": "remotion still src/index.ts BalloonRallyPosterEN ../docs/promo/balloon-rally-poster-en.png --frame=0",
+    "poster:zh": "remotion still src/index.ts BalloonRallyPosterZH ../docs/promo/balloon-rally-poster-zh.png --frame=0",
+    "render:en": "remotion render src/index.ts BalloonRallyPromoEN out/balloon-rally-promo-en.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=192k --concurrency=2 --bundle-cache=false",
+    "render:zh": "remotion render src/index.ts BalloonRallyPromoZH out/balloon-rally-promo-zh.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=192k --concurrency=2 --bundle-cache=false",
+    "master": "node scripts/master.mjs",
+    "release": "npm run render:en && npm run render:zh && npm run master"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/media": "4.0.537",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "19.2.7",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  }
+}

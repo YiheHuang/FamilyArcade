@@ -1,0 +1,74 @@
+name: Release every game
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - { slug: star-leap, version: 0.2.0, path: apps/star-leap, name: Star Leap }
+          - { slug: sweet-carousel, version: 0.1.0, path: apps/sweet-carousel, name: Sweet Carousel }
+          - { slug: hue-garden, version: 0.1.0, path: apps/hue-garden, name: Hue Garden }
+          - { slug: field-and-wall, version: 0.1.0, path: apps/field-and-wall, name: Field and Wall }
+          - { slug: balloon-rally, version: 0.1.0, path: apps/balloon-rally, name: Balloon Rally }
+          - { slug: blokus, version: 1.7.1, path: apps/blokus, name: Blokus }
+          - { slug: splendor, version: 2.5.0, path: apps/splendor/packages/desktop, name: Splendor }
+          - { slug: triple, version: 0.1.0, path: apps/triple, name: Triple }
+          - { slug: four, version: 0.1.0, path: apps/four, name: Four }
+          - { slug: flip, version: 0.1.0, path: apps/flip, name: Flip }
+          - { slug: draughts, version: 0.1.0, path: apps/draughts, name: Draughts }
+          - { slug: mill, version: 0.1.0, path: apps/mill, name: Mill }
+          - { slug: boxes, version: 0.1.0, path: apps/boxes, name: Boxes }
+          - { slug: sowing, version: 0.1.0, path: apps/sowing, name: Sowing }
+          - { slug: tables, version: 0.1.0, path: apps/tables, name: Tables }
+          - { slug: race-home, version: 0.1.0, path: apps/race-home, name: Race Home }
+          - { slug: ladder-run, version: 0.1.0, path: apps/ladder-run, name: Ladder Run }
+          - { slug: pair-up, version: 0.1.0, path: apps/pair-up, name: Pair Up }
+          - { slug: domino-line, version: 0.1.0, path: apps/domino-line, name: Domino Line }
+          - { slug: color-chain, version: 0.1.0, path: apps/color-chain, name: Color Chain }
+          - { slug: five-dice, version: 0.1.0, path: apps/five-dice, name: Five Dice }
+          - { slug: fleet, version: 0.1.0, path: apps/fleet, name: Fleet }
+          - { slug: codebreak, version: 0.1.0, path: apps/codebreak, name: Codebreak }
+          - { slug: triple-find, version: 0.1.0, path: apps/triple-find, name: Triple Find }
+          - { slug: little-go, version: 0.1.0, path: apps/little-go, name: Little Go }
+          - { slug: mini-chess, version: 0.1.0, path: apps/mini-chess, name: Mini Chess }
+          - { slug: hex, version: 0.1.0, path: apps/hex, name: Hex }
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install workspace dependencies (Splendor)
+        if: matrix.slug == 'splendor'
+        run: npm install
+        working-directory: apps/splendor
+      - name: Install dependencies
+        run: npm install
+        working-directory: ${{ matrix.path }}
+      - name: Build and attach installer
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: ${{ matrix.path }}
+          args: --bundles nsis
+          tagName: ${{ matrix.slug }}-v${{ matrix.version }}
+          releaseName: ${{ matrix.name }} v${{ matrix.version }}
+          releaseBody: |
+            Lightweight Windows NSIS installer for **${{ matrix.name }}**.
+
+            This release contains only this game. See the repository README for the
+            other 26 games, LAN instructions and the honest limitations.
+          releaseDraft: false
+          prerelease: false

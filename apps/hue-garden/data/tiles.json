@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "source": "Original Hue Garden design: six Mediterranean glazes x six courtyard shapes x three copies",
+  "count": 108,
+  "colors": [
+    "terracotta",
+    "saffron",
+    "olive",
+    "sea",
+    "indigo",
+    "plum"
+  ],
+  "shapes": [
+    "circle",
+    "diamond",
+    "leaf",
+    "star",
+    "drop",
+    "flower"
+  ],
+  "items": [
+    {
+      "color": "terracotta",
+      "shape": "circle",
+      "copies": 3
+    },
+    {
+      "color": "terracotta",
+      "shape": "diamond",
+      "copies": 3
+    },
+    {
+      "color": "terracotta",
+      "shape": "leaf",
+      "copies": 3
+    },
+    {
+      "color": "terracotta",
+      "shape": "star",
+      "copies": 3
+    },
+    {
+      "color": "terracotta",
+      "shape": "drop",
+      "copies": 3
+    },
+    {
+      "color": "terracotta",
+      "shape": "flower",
+      "copies": 3
+    },
+    {
+      "color": "saffron",
+      "shape": "circle",
+      "copies": 3
+    },
+    {
+      "color": "saffron",
+      "shape": "diamond",
+      "copies": 3
+    },
+    {
+      "color": "saffron",
+      "shape": "leaf",
+      "copies": 3
+    },
+    {
+      "color": "saffron",
+      "shape": "star",
+      "copies": 3
+    },
+    {
+      "color": "saffron",
+      "shape": "drop",
+      "copies": 3
+    },
+    {
+      "color": "saffron",
+      "shape": "flower",
+      "copies": 3
+    },
+    {
+      "color": "olive",
+      "shape": "circle",
+      "copies": 3
+    },
+    {
+      "color": "olive",
+      "shape": "diamond",
+      "copies": 3
+    },
+    {
+      "color": "olive",
+      "shape": "leaf",
+      "copies": 3
+    },
+    {
+      "color": "olive",
+      "shape": "star",
+      "copies": 3
+    },
+    {
+      "color": "olive",
+      "shape": "drop",
+      "copies": 3
+    },
+    {
+      "color": "olive",
+      "shape": "flower",
+      "copies": 3
+    },
+    {
+      "color": "sea",
+      "shape": "circle",
+      "copies": 3
+    },
+    {
+      "color": "sea",
+      "shape": "diamond",
+      "copies": 3
+    },
+    {
+      "color": "sea",
+      "shape": "leaf",
+      "copies": 3
+    },
+    {
+      "color": "sea",
+      "shape": "star",
+      "copies": 3
+    },
+    {
+      "color": "sea",
+      "shape": "drop",
+      "copies": 3
+    },
+    {
+      "color": "sea",
+      "shape": "flower",
+      "copies": 3
+    },
+    {
+      "color": "indigo",
+      "shape": "circle",
+      "copies": 3
+    },
+    {
+      "color": "indigo",
+      "shape": "diamond",
+      "copies": 3
+    },
+    {
+      "color": "indigo",
+      "shape": "leaf",
+      "copies": 3
+    },
+    {
+      "color": "indigo",
+      "shape": "star",
+      "copies": 3
+    },
+    {
+      "color": "indigo",
+      "shape": "drop",
+      "copies": 3
+    },
+    {
+      "color": "indigo",
+      "shape": "flower",
+      "copies": 3
+    },
+    {
+      "color": "plum",
+      "shape": "circle",
+      "copies": 3
+    },
+    {
+      "color": "plum",
+      "shape": "diamond",
+      "copies": 3
+    },
+    {
+      "color": "plum",
+      "shape": "leaf",
+      "copies": 3
+    },
+    {
+      "color": "plum",
+      "shape": "star",
+      "copies": 3
+    },
+    {
+      "color": "plum",
+      "shape": "drop",
+      "copies": 3
+    },
+    {
+      "color": "plum",
+      "shape": "flower",
+      "copies": 3
+    }
+  ]
+}

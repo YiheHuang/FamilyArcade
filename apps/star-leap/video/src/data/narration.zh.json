@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "at": 0.8,
+      "text": "周末晚上，来一局跳棋。",
+      "file": "audio/voice/zh/line-1.mp3",
+      "duration": 3.38
+    },
+    {
+      "at": 5,
+      "text": "走一步，或者跳过一颗珠子。",
+      "file": "audio/voice/zh/line-2.mp3",
+      "duration": 3.17
+    },
+    {
+      "at": 9.4,
+      "text": "可以连着跳；十颗珠子先进对面三角就赢。",
+      "file": "audio/voice/zh/line-3.mp3",
+      "duration": 5.28
+    },
+    {
+      "at": 18,
+      "text": "一颗，又一颗——整条路都通了。",
+      "file": "audio/voice/zh/line-4.mp3",
+      "duration": 4.3
+    },
+    {
+      "at": 28.6,
+      "text": "一个人练，一家人同屏。",
+      "file": "audio/voice/zh/line-5.mp3",
+      "duration": 3.46
+    },
+    {
+      "at": 34,
+      "text": "悔棋、提示，也都替你想好了。",
+      "file": "audio/voice/zh/line-6.mp3",
+      "duration": 4.18
+    },
+    {
+      "at": 39,
+      "text": "星跃，十颗玻璃珠，跨过一片星空。离线，无广告。",
+      "file": "audio/voice/zh/line-7.mp3",
+      "duration": 6.79
+    }
+  ]
+}

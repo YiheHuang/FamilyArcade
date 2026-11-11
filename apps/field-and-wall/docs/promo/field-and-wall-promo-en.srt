@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:03,720
+One field. One wall. One town.
+
+2
+00:00:04,300 --> 00:00:08,150
+Field and Wall. Lay tiles. Place meeples.
+
+3
+00:00:08,200 --> 00:00:12,310
+Turn the tile until every edge meets the map.
+
+4
+00:00:15,000 --> 00:00:20,000
+Claim a city, a road, or a monastery with one meeple.
+
+5
+00:00:22,000 --> 00:00:25,920
+Close it, bring the meeple home, and score.
+
+6
+00:00:30,000 --> 00:00:34,780
+Four AI levels, or two to four players on one screen.
+
+7
+00:00:36,000 --> 00:00:40,830
+Autosave, hints, undo. It all works with sound off.
+
+8
+00:00:42,000 --> 00:00:44,640
+Build a little world together.

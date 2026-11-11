@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "source": "Original design for Field & Wall v0.1 (edges: N,E,S,W; center: city/road/monastery/field)",
+  "count": 54,
+  "tileSize": 100,
+  "startTile": { "type": "city-gate", "rot": 0 },
+  "types": [
+    {
+      "id": "city-cap",
+      "name": { "zh": "城墙一角", "en": "City cap" },
+      "edges": ["city", "field", "field", "field"],
+      "center": "city",
+      "copies": 5
+    },
+    {
+      "id": "city-corner",
+      "name": { "zh": "城墙转角", "en": "City corner" },
+      "edges": ["city", "city", "field", "field"],
+      "center": "city",
+      "copies": 4
+    },
+    {
+      "id": "city-gate",
+      "name": { "zh": "城门", "en": "City gate" },
+      "edges": ["city", "road", "field", "field"],
+      "center": "city",
+      "copies": 4
+    },
+    {
+      "id": "city-opposite",
+      "name": { "zh": "双城", "en": "Twin caps" },
+      "edges": ["city", "field", "city", "field"],
+      "center": "field",
+      "copies": 3
+    },
+    {
+      "id": "city-three",
+      "name": { "zh": "三重城", "en": "Three-sided city" },
+      "edges": ["city", "city", "city", "field"],
+      "center": "city",
+      "copies": 2
+    },
+    {
+      "id": "city-lane",
+      "name": { "zh": "城墙小路", "en": "City lane" },
+      "edges": ["city", "field", "road", "field"],
+      "center": "field",
+      "copies": 3
+    },
+    {
+      "id": "road-straight",
+      "name": { "zh": "直路", "en": "Straight road" },
+      "edges": ["field", "road", "field", "road"],
+      "center": "road",
+      "copies": 5
+    },
+    {
+      "id": "road-curve",
+      "name": { "zh": "弯路", "en": "Bend" },
+      "edges": ["road", "road", "field", "field"],
+      "center": "road",
+      "copies": 6
+    },
+    {
+      "id": "road-cross",
+      "name": { "zh": "十字路口", "en": "Crossroads" },
+      "edges": ["road", "road", "road", "road"],
+      "center": "road",
+      "copies": 2
+    },
+    {
+      "id": "road-t",
+      "name": { "zh": "三岔路", "en": "Fork" },
+      "edges": ["road", "road", "road", "field"],
+      "center": "road",
+      "copies": 3
+    },
+    {
+      "id": "road-end",
+      "name": { "zh": "路尽头", "en": "Road's end" },
+      "edges": ["road", "field", "field", "field"],
+      "center": "road",
+      "copies": 3
+    },
+    {
+      "id": "monastery",
+      "name": { "zh": "小修道院", "en": "Chapel" },
+      "edges": ["field", "field", "field", "field"],
+      "center": "monastery",
+      "copies": 4
+    },
+    {
+      "id": "monastery-road",
+      "name": { "zh": "修道院小径", "en": "Chapel lane" },
+      "edges": ["field", "field", "field", "road"],
+      "center": "monastery",
+      "copies": 3
+    },
+    {
+      "id": "field",
+      "name": { "zh": "麦田", "en": "Open field" },
+      "edges": ["field", "field", "field", "field"],
+      "center": "field",
+      "copies": 5
+    },
+    {
+      "id": "city-road",
+      "name": { "zh": "城边路", "en": "City road" },
+      "edges": ["city", "road", "road", "field"],
+      "center": "road",
+      "copies": 2
+    }
+  ]
+}

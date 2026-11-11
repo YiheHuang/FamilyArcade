@@ -1,0 +1,32 @@
+{
+  "slug": "field-and-wall",
+  "order": 4,
+  "title": "Field & Wall",
+  "titleZh": "筑野",
+  "tagline": "One field. One wall. One town.",
+  "taglineZh": "一块地，一座城。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "30–35 minutes",
+  "timeZh": "30–35 分钟",
+  "age": "8+",
+  "accent": "#b98f46",
+  "paper": "#f4efe2",
+  "ink": "#2b332b",
+  "screens": {
+    "en": ["home.png", "lan-host.png", "game.png"],
+    "zh": ["home.png", "lan-host.png", "game.png"]
+  },
+  "facts": ["54 tiles", "4 AI levels", "Hot-seat + LAN", "No farms in v0.1"],
+  "factsZh": ["54 张瓷砖", "四档 AI", "同屏 + 局域网", "v0.1 不做农田"],
+  "lines": [
+    { "at": 0.4, "en": "One field. One wall. One town.", "zh": "一块地，一座城。" },
+    { "at": 5.2, "en": "Field and Wall. Lay tiles, place meeples, raise walls.", "zh": "筑野。铺瓷砖、放木人、修城墙。" },
+    { "at": 10.0, "en": "Match the edges. Turn the tile until the city meets the city.", "zh": "边对边，转到城接城、路接路。" },
+    { "at": 16.0, "en": "Claim a city, road or monastery with one wooden meeple.", "zh": "放一个木人，占住城市、道路或修道院。" },
+    { "at": 23.5, "en": "Close it, bring the meeples home, and score.", "zh": "合拢，木人回家，马上计分。" },
+    { "at": 31.0, "en": "Four AI levels, hot-seat, or a phone joins over Wi-Fi.", "zh": "四档 AI、同屏热座，或手机连同一 Wi-Fi 加入。" },
+    { "at": 38.0, "en": "Undo, hints, autosave, and a family record.", "zh": "悔棋、提示、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Field and Wall. Offline, no account, no ads.", "zh": "筑野。离线、无账号、无广告。" }
+  ]
+}

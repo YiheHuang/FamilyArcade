@@ -1,0 +1,26 @@
+{
+  "target": {
+    "integratedLufs": -14,
+    "truePeakDbtp": -1
+  },
+  "files": [
+    {
+      "lang": "zh",
+      "file": "hue-garden-promo-zh.mp4",
+      "rawIntegratedLufs": -20.81,
+      "rawTruePeakDbtp": -3.64,
+      "gainDb": 7.83,
+      "integratedLufs": -14.37,
+      "truePeakDbtp": -1.8
+    },
+    {
+      "lang": "en",
+      "file": "hue-garden-promo-en.mp4",
+      "rawIntegratedLufs": -16.9,
+      "rawTruePeakDbtp": -3.01,
+      "gainDb": 2.9,
+      "integratedLufs": -14.11,
+      "truePeakDbtp": -1.9
+    }
+  ]
+}

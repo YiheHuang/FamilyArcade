@@ -1,0 +1,18 @@
+{
+  "measuredWith": "ffmpeg loudnorm",
+  "target": "-14 LUFS / -1.5 dBTP",
+  "files": [
+    {
+      "lang": "en",
+      "file": "docs/promo/balloon-rally-promo-en.mp4",
+      "lufs": -14.05,
+      "peakDb": -1.42
+    },
+    {
+      "lang": "zh",
+      "file": "docs/promo/balloon-rally-promo-zh.mp4",
+      "lufs": -14.08,
+      "peakDb": -1.49
+    }
+  ]
+}

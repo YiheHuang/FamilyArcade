@@ -1,0 +1,32 @@
+{
+  "slug": "color-chain",
+  "order": 13,
+  "title": "Color Chain",
+  "titleZh": "颜色接龙",
+  "tagline": "Match, shed, and keep the chain going.",
+  "taglineZh": "接颜色，接数字，先出完手牌。",
+  "players": "2–6 players",
+  "playersZh": "2–6 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "6+",
+  "accent": "#c2543f",
+  "paper": "#f6efe3",
+  "ink": "#241f1a",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["108 cards", "2–6 players", "4 AI levels", "Hot-seat + LAN"],
+  "factsZh": ["108 张牌", "2–6 人", "四档 AI", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "Four colours. One chain.", "zh": "四种颜色，一条牌链。" },
+    { "at": 5.2, "en": "Color Chain. A shedding game for the family table.", "zh": "颜色接龙。给全家人的出牌游戏。" },
+    { "at": 10.0, "en": "Match the colour or the number, and keep the chain moving.", "zh": "接颜色、接数字，让牌链一直走下去。" },
+    { "at": 16.0, "en": "Skip, reverse, draw two — or call a colour with a wild.", "zh": "跳过、反转、罚两张——万能牌还能改颜色。" },
+    { "at": 23.5, "en": "Empty your hand first. Leave the fewest points when the match hits two hundred.", "zh": "先出完手牌；总分到 200 时，分最低的人赢。" },
+    { "at": 31.0, "en": "Four AI levels, or two to six players on one screen and over Wi-Fi.", "zh": "四档 AI；二到六人同屏，或连同一 Wi-Fi。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a family record. Offline, no account, no ads.", "zh": "提示、悔棋、自动保存和家庭战绩。离线、无账号、无广告。" },
+    { "at": 42.0, "en": "Color Chain. Keep the chain going.", "zh": "颜色接龙。让牌链接下去。" }
+  ]
+}

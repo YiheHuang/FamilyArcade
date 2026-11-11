@@ -1,0 +1,32 @@
+{
+  "slug": "hue-garden",
+  "order": 6,
+  "title": "Hue Garden",
+  "titleZh": "彩庭",
+  "tagline": "A colour or a shape. One line at a time.",
+  "taglineZh": "颜色或形状，连成一条线。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "20–30 minutes",
+  "timeZh": "20–30 分钟",
+  "age": "8+",
+  "accent": "#b08a4f",
+  "paper": "#f7f1e5",
+  "ink": "#24303a",
+  "screens": {
+    "en": ["home.png", "lan-host.png", "game.png"],
+    "zh": ["home.png", "lan-host.png", "game.png"]
+  },
+  "facts": ["108 glazed tiles", "4 AI levels", "Hot-seat + LAN", "Six-line bloom"],
+  "factsZh": ["108 张釉面瓷砖", "四档 AI", "同屏 + 局域网", "六连开花"],
+  "lines": [
+    { "at": 0.4, "en": "A colour, or a shape. One line at a time.", "zh": "颜色，或形状。连成一条线。" },
+    { "at": 5.2, "en": "Hue Garden. A courtyard of glazed tiles.", "zh": "彩庭。一座铺满釉面瓷砖的庭院。" },
+    { "at": 10.0, "en": "One colour, new shapes. Or one shape, new colours.", "zh": "同色不同形，或者同形不同色。" },
+    { "at": 16.0, "en": "Six in a row blooms for six more points.", "zh": "六连开花，再加六分。" },
+    { "at": 23.5, "en": "Four AI levels, from gentle Companion to a planning Hard.", "zh": "四档 AI，从温和陪玩到会计划的挑战。" },
+    { "at": 31.0, "en": "One screen, or a phone joins over Wi-Fi. The host keeps the deal.", "zh": "一块屏幕，或者手机连同一 Wi-Fi 加入。主机保留牌局。" },
+    { "at": 38.0, "en": "Undo, hints, autosave and a family record.", "zh": "悔棋、提示、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Hue Garden. Offline, no account, no ads.", "zh": "彩庭。离线、无账号、无广告。" }
+  ]
+}

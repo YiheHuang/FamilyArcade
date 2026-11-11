@@ -1,0 +1,198 @@
+[
+  {
+    "slug": "balloon-rally",
+    "name": "Balloon Rally",
+    "version": "0.1.0",
+    "file": "releases/balloon-rally/balloon-rally_0.1.0_x64-setup.exe",
+    "bytes": 3517658
+  },
+  {
+    "slug": "blokus",
+    "name": "Blokus",
+    "version": "1.7.1",
+    "file": "releases/blokus/blokus_1.7.1_x64-setup.exe",
+    "bytes": 1474649
+  },
+  {
+    "slug": "boxes",
+    "name": "Boxes",
+    "version": "0.1.0",
+    "file": "releases/boxes/boxes_0.1.0_x64-setup.exe",
+    "bytes": 3472620
+  },
+  {
+    "slug": "codebreak",
+    "name": "Codebreak",
+    "version": "0.1.0",
+    "file": "releases/codebreak/codebreak_0.1.0_x64-setup.exe",
+    "bytes": 3475984
+  },
+  {
+    "slug": "color-chain",
+    "name": "Color Chain",
+    "version": "0.1.0",
+    "file": "releases/color-chain/color-chain_0.1.0_x64-setup.exe",
+    "bytes": 3483680
+  },
+  {
+    "slug": "domino-line",
+    "name": "Domino Line",
+    "version": "0.1.0",
+    "file": "releases/domino-line/domino-line_0.1.0_x64-setup.exe",
+    "bytes": 3477581
+  },
+  {
+    "slug": "draughts",
+    "name": "Draughts",
+    "version": "0.1.0",
+    "file": "releases/draughts/draughts_0.1.0_x64-setup.exe",
+    "bytes": 3463586
+  },
+  {
+    "slug": "family-arcade",
+    "name": "Family Arcade",
+    "version": "1.0.0",
+    "file": "releases/family-arcade/FamilyArcade_1.0.0_x64-setup.exe",
+    "bytes": 95740882
+  },
+  {
+    "slug": "field-and-wall",
+    "name": "Field & Wall",
+    "version": "0.1.0",
+    "file": "releases/field-and-wall/field-and-wall_0.1.0_x64-setup.exe",
+    "bytes": 3535657
+  },
+  {
+    "slug": "five-dice",
+    "name": "Five Dice",
+    "version": "0.1.0",
+    "file": "releases/five-dice/five-dice_0.1.0_x64-setup.exe",
+    "bytes": 3477885
+  },
+  {
+    "slug": "fleet",
+    "name": "Fleet",
+    "version": "0.1.0",
+    "file": "releases/fleet/fleet_0.1.0_x64-setup.exe",
+    "bytes": 3478303
+  },
+  {
+    "slug": "flip",
+    "name": "Flip",
+    "version": "0.1.0",
+    "file": "releases/flip/flip_0.1.0_x64-setup.exe",
+    "bytes": 3467108
+  },
+  {
+    "slug": "four",
+    "name": "Four",
+    "version": "0.1.0",
+    "file": "releases/four/four_0.1.0_x64-setup.exe",
+    "bytes": 3462527
+  },
+  {
+    "slug": "hex",
+    "name": "Hex",
+    "version": "0.1.0",
+    "file": "releases/hex/hex_0.1.0_x64-setup.exe",
+    "bytes": 3468388
+  },
+  {
+    "slug": "hue-garden",
+    "name": "Hue Garden",
+    "version": "0.1.0",
+    "file": "releases/hue-garden/hue-garden_0.1.0_x64-setup.exe",
+    "bytes": 3522635
+  },
+  {
+    "slug": "ladder-run",
+    "name": "Ladder Run",
+    "version": "0.1.0",
+    "file": "releases/ladder-run/ladder-run_0.1.0_x64-setup.exe",
+    "bytes": 3477970
+  },
+  {
+    "slug": "little-go",
+    "name": "Little Go",
+    "version": "0.1.0",
+    "file": "releases/little-go/little-go_0.1.0_x64-setup.exe",
+    "bytes": 3468720
+  },
+  {
+    "slug": "mill",
+    "name": "Mill",
+    "version": "0.1.0",
+    "file": "releases/mill/mill_0.1.0_x64-setup.exe",
+    "bytes": 3478327
+  },
+  {
+    "slug": "mini-chess",
+    "name": "Mini Chess",
+    "version": "0.1.0",
+    "file": "releases/mini-chess/mini-chess_0.1.0_x64-setup.exe",
+    "bytes": 3471933
+  },
+  {
+    "slug": "pair-up",
+    "name": "Pair Up",
+    "version": "0.1.0",
+    "file": "releases/pair-up/pair-up_0.1.0_x64-setup.exe",
+    "bytes": 3469319
+  },
+  {
+    "slug": "race-home",
+    "name": "Race Home",
+    "version": "0.1.0",
+    "file": "releases/race-home/race-home_0.1.0_x64-setup.exe",
+    "bytes": 3478732
+  },
+  {
+    "slug": "sowing",
+    "name": "Sowing",
+    "version": "0.1.0",
+    "file": "releases/sowing/sowing_0.1.0_x64-setup.exe",
+    "bytes": 3466592
+  },
+  {
+    "slug": "splendor",
+    "name": "Splendor",
+    "version": "2.5.0",
+    "file": "releases/splendor/splendor_2.5.0_x64-setup.exe",
+    "bytes": 3656460
+  },
+  {
+    "slug": "star-leap",
+    "name": "Star Leap",
+    "version": "0.2.0",
+    "file": "releases/star-leap/star-leap_0.2.0_x64-setup.exe",
+    "bytes": 3499787
+  },
+  {
+    "slug": "sweet-carousel",
+    "name": "Sweet Carousel",
+    "version": "0.1.0",
+    "file": "releases/sweet-carousel/sweet-carousel_0.1.0_x64-setup.exe",
+    "bytes": 3531566
+  },
+  {
+    "slug": "tables",
+    "name": "Tables",
+    "version": "0.1.0",
+    "file": "releases/tables/tables_0.1.0_x64-setup.exe",
+    "bytes": 3474437
+  },
+  {
+    "slug": "triple",
+    "name": "Triple",
+    "version": "0.1.0",
+    "file": "releases/triple/triple_0.1.0_x64-setup.exe",
+    "bytes": 3469198
+  },
+  {
+    "slug": "triple-find",
+    "name": "Triple Find",
+    "version": "0.1.0",
+    "file": "releases/triple-find/triple-find_0.1.0_x64-setup.exe",
+    "bytes": 3469074
+  }
+]

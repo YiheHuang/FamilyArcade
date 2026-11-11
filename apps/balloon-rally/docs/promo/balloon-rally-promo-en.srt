@@ -1,0 +1,35 @@
+1
+00:00:00,400 --> 00:00:04,850
+Five paper balloons. Four rounds of wind.
+
+2
+00:00:05,150 --> 00:00:08,380
+Pick one. Ride the wind.
+
+3
+00:00:08,500 --> 00:00:11,080
+Back a balloon in secret.
+
+4
+00:00:11,200 --> 00:00:14,080
+Two tailwinds add one space.
+
+5
+00:00:14,200 --> 00:00:17,330
+Five wind cards decide the race.
+
+6
+00:00:17,500 --> 00:00:25,600
+Leader scores three. Second scores one. After four rounds, the overall leader pays five.
+
+7
+00:00:27,500 --> 00:00:32,530
+Solo against four AI levels, or two to six on one screen.
+
+8
+00:00:33,100 --> 00:00:39,380
+Picks stay secret. Autosave, replay, stats, and mobile are built in.
+
+9
+00:00:39,500 --> 00:00:44,850
+Balloon Rally. Five balloons. Four winds.

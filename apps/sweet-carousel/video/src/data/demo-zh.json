@@ -1,0 +1,207 @@
+{
+  "seed": "shots-zh",
+  "players": [
+    {
+      "seat": 0,
+      "name": "玩家 1",
+      "total": 36,
+      "rounds": [
+        8,
+        11,
+        11
+      ],
+      "crowns": 1,
+      "types": 6,
+      "cards": 24
+    },
+    {
+      "seat": 1,
+      "name": "玩家 2",
+      "total": 47,
+      "rounds": [
+        16,
+        8,
+        11
+      ],
+      "crowns": 2,
+      "types": 6,
+      "cards": 24
+    },
+    {
+      "seat": 2,
+      "name": "玩家 3",
+      "total": 33,
+      "rounds": [
+        8,
+        11,
+        8
+      ],
+      "crowns": 1,
+      "types": 6,
+      "cards": 24
+    }
+  ],
+  "ranking": [
+    1,
+    0,
+    2
+  ],
+  "winner": 1,
+  "crowns": [
+    {
+      "dessert": "macaron",
+      "seat": 0,
+      "count": 6,
+      "points": 6
+    },
+    {
+      "dessert": "eclair",
+      "seat": 1,
+      "count": 7,
+      "points": 6
+    },
+    {
+      "dessert": "pudding",
+      "seat": 2,
+      "count": 6,
+      "points": 6
+    },
+    {
+      "dessert": "candy",
+      "seat": 1,
+      "count": 7,
+      "points": 6
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "passDirection": "left",
+      "totals": [
+        8,
+        16,
+        8
+      ],
+      "combos": [
+        {
+          "seat": 0,
+          "pairs": 2,
+          "triples": 0,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 4,
+          "total": 8
+        },
+        {
+          "seat": 1,
+          "pairs": 1,
+          "triples": 0,
+          "quads": 1,
+          "sampler": false,
+          "leftovers": 2,
+          "total": 16
+        },
+        {
+          "seat": 2,
+          "pairs": 3,
+          "triples": 0,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 2,
+          "total": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "passDirection": "right",
+      "totals": [
+        11,
+        8,
+        11
+      ],
+      "combos": [
+        {
+          "seat": 0,
+          "pairs": 2,
+          "triples": 1,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 1,
+          "total": 11
+        },
+        {
+          "seat": 1,
+          "pairs": 2,
+          "triples": 0,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 4,
+          "total": 8
+        },
+        {
+          "seat": 2,
+          "pairs": 2,
+          "triples": 1,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 1,
+          "total": 11
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "passDirection": "left",
+      "totals": [
+        11,
+        11,
+        8
+      ],
+      "combos": [
+        {
+          "seat": 0,
+          "pairs": 2,
+          "triples": 1,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 1,
+          "total": 11
+        },
+        {
+          "seat": 1,
+          "pairs": 2,
+          "triples": 1,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 1,
+          "total": 11
+        },
+        {
+          "seat": 2,
+          "pairs": 2,
+          "triples": 0,
+          "quads": 0,
+          "sampler": false,
+          "leftovers": 4,
+          "total": 8
+        }
+      ]
+    }
+  ],
+  "facts": {
+    "cards": 72,
+    "desserts": 6,
+    "copies": 12,
+    "rounds": 3,
+    "picksPerRound": 8,
+    "pair": 2,
+    "triple": 6,
+    "quad": 12,
+    "sampler": 5,
+    "crown": 6,
+    "leftover": 1,
+    "crownMin": 6,
+    "players": 3
+  }
+}

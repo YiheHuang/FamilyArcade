@@ -1,0 +1,1709 @@
+{
+  "version": 1,
+  "id": "demo-finished-game-zh",
+  "finishedAt": 1794329820680,
+  "config": {
+    "playerCount": 2,
+    "seats": [
+      {
+        "name": "玩家 1",
+        "kind": "human",
+        "level": "normal"
+      },
+      {
+        "name": "玩家 2",
+        "kind": "human",
+        "level": "normal"
+      }
+    ]
+  },
+  "moves": [
+    {
+      "seat": 0,
+      "from": 3,
+      "to": 14,
+      "path": [
+        3,
+        14
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 116,
+      "to": 103,
+      "path": [
+        116,
+        103
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 0,
+      "to": 16,
+      "path": [
+        0,
+        3,
+        16
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 111,
+      "to": 91,
+      "path": [
+        111,
+        91
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 5,
+      "to": 18,
+      "path": [
+        5,
+        18
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 115,
+      "to": 79,
+      "path": [
+        115,
+        104,
+        79
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 7,
+      "to": 29,
+      "path": [
+        7,
+        29
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 112,
+      "to": 69,
+      "path": [
+        112,
+        90,
+        69
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 4,
+      "to": 40,
+      "path": [
+        4,
+        17,
+        40
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 103,
+      "to": 59,
+      "path": [
+        103,
+        80,
+        59
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 29,
+      "to": 68,
+      "path": [
+        29,
+        50,
+        68
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 69,
+      "to": 49,
+      "path": [
+        69,
+        49
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 9,
+      "to": 48,
+      "path": [
+        9,
+        7,
+        29,
+        50,
+        48
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 79,
+      "to": 39,
+      "path": [
+        79,
+        58,
+        39
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 48,
+      "to": 58,
+      "path": [
+        48,
+        58
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 59,
+      "to": 38,
+      "path": [
+        59,
+        38
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 58,
+      "to": 104,
+      "path": [
+        58,
+        79,
+        104
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 49,
+      "to": 28,
+      "path": [
+        49,
+        28
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 104,
+      "to": 112,
+      "path": [
+        104,
+        112
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 38,
+      "to": 27,
+      "path": [
+        38,
+        27
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 6,
+      "to": 26,
+      "path": [
+        6,
+        26
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 27,
+      "to": 9,
+      "path": [
+        27,
+        29,
+        7,
+        9
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 14,
+      "to": 37,
+      "path": [
+        14,
+        37
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 120,
+      "to": 58,
+      "path": [
+        120,
+        115,
+        104,
+        79,
+        58
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 26,
+      "to": 47,
+      "path": [
+        26,
+        47
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 58,
+      "to": 49,
+      "path": [
+        58,
+        49
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 40,
+      "to": 78,
+      "path": [
+        40,
+        38,
+        59,
+        78
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 117,
+      "to": 58,
+      "path": [
+        117,
+        104,
+        79,
+        58
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 37,
+      "to": 56,
+      "path": [
+        37,
+        56
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 39,
+      "to": 27,
+      "path": [
+        39,
+        27
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 68,
+      "to": 89,
+      "path": [
+        68,
+        89
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 27,
+      "to": 7,
+      "path": [
+        27,
+        29,
+        7
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 112,
+      "to": 115,
+      "path": [
+        112,
+        115
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 58,
+      "to": 39,
+      "path": [
+        58,
+        39
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 78,
+      "to": 90,
+      "path": [
+        78,
+        90
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 39,
+      "to": 27,
+      "path": [
+        39,
+        27
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 89,
+      "to": 102,
+      "path": [
+        89,
+        102
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 28,
+      "to": 15,
+      "path": [
+        28,
+        15
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 102,
+      "to": 111,
+      "path": [
+        102,
+        111
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 15,
+      "to": 6,
+      "path": [
+        15,
+        6
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 18,
+      "to": 58,
+      "path": [
+        18,
+        5,
+        0,
+        3,
+        14,
+        39,
+        58
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 27,
+      "to": 14,
+      "path": [
+        27,
+        14
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 90,
+      "to": 102,
+      "path": [
+        90,
+        102
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 14,
+      "to": 3,
+      "path": [
+        14,
+        3
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 47,
+      "to": 57,
+      "path": [
+        47,
+        57
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 91,
+      "to": 80,
+      "path": [
+        91,
+        80
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 58,
+      "to": 67,
+      "path": [
+        58,
+        67
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 80,
+      "to": 69,
+      "path": [
+        80,
+        69
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 57,
+      "to": 78,
+      "path": [
+        57,
+        78
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 69,
+      "to": 59,
+      "path": [
+        69,
+        59
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 67,
+      "to": 90,
+      "path": [
+        67,
+        90
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 59,
+      "to": 38,
+      "path": [
+        59,
+        38
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 78,
+      "to": 103,
+      "path": [
+        78,
+        103
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 49,
+      "to": 26,
+      "path": [
+        49,
+        26
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 90,
+      "to": 112,
+      "path": [
+        90,
+        112
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 38,
+      "to": 27,
+      "path": [
+        38,
+        27
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 103,
+      "to": 116,
+      "path": [
+        103,
+        116
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 27,
+      "to": 15,
+      "path": [
+        27,
+        15
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 8,
+      "to": 28,
+      "path": [
+        8,
+        28
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 15,
+      "to": 4,
+      "path": [
+        15,
+        4
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 16,
+      "to": 39,
+      "path": [
+        16,
+        39
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 26,
+      "to": 14,
+      "path": [
+        26,
+        14
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 28,
+      "to": 49,
+      "path": [
+        28,
+        49
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 114,
+      "to": 105,
+      "path": [
+        114,
+        105
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 39,
+      "to": 58,
+      "path": [
+        39,
+        58
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 113,
+      "to": 93,
+      "path": [
+        113,
+        93
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 49,
+      "to": 67,
+      "path": [
+        49,
+        67
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 105,
+      "to": 82,
+      "path": [
+        105,
+        82
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 58,
+      "to": 77,
+      "path": [
+        58,
+        77
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 93,
+      "to": 72,
+      "path": [
+        93,
+        72
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 77,
+      "to": 89,
+      "path": [
+        77,
+        89
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 82,
+      "to": 63,
+      "path": [
+        82,
+        63
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 67,
+      "to": 77,
+      "path": [
+        67,
+        77
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 72,
+      "to": 54,
+      "path": [
+        72,
+        54
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 56,
+      "to": 66,
+      "path": [
+        56,
+        66
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 63,
+      "to": 53,
+      "path": [
+        63,
+        53
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 89,
+      "to": 90,
+      "path": [
+        89,
+        90
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 54,
+      "to": 43,
+      "path": [
+        54,
+        43
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 66,
+      "to": 91,
+      "path": [
+        66,
+        89,
+        91
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 53,
+      "to": 42,
+      "path": [
+        53,
+        42
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 91,
+      "to": 104,
+      "path": [
+        91,
+        104
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 42,
+      "to": 30,
+      "path": [
+        42,
+        30
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 104,
+      "to": 113,
+      "path": [
+        104,
+        113
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 30,
+      "to": 17,
+      "path": [
+        30,
+        17
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 77,
+      "to": 89,
+      "path": [
+        77,
+        89
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 17,
+      "to": 8,
+      "path": [
+        17,
+        8
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 90,
+      "to": 103,
+      "path": [
+        90,
+        103
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 119,
+      "to": 117,
+      "path": [
+        119,
+        117
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 103,
+      "to": 104,
+      "path": [
+        103,
+        104
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 43,
+      "to": 31,
+      "path": [
+        43,
+        31
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 104,
+      "to": 105,
+      "path": [
+        104,
+        105
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 117,
+      "to": 104,
+      "path": [
+        117,
+        104
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 105,
+      "to": 114,
+      "path": [
+        105,
+        114
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 31,
+      "to": 18,
+      "path": [
+        31,
+        18
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 2,
+      "to": 5,
+      "path": [
+        2,
+        5
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 104,
+      "to": 91,
+      "path": [
+        104,
+        91
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 102,
+      "to": 103,
+      "path": [
+        102,
+        103
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 91,
+      "to": 79,
+      "path": [
+        91,
+        79
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 89,
+      "to": 102,
+      "path": [
+        89,
+        102
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 79,
+      "to": 69,
+      "path": [
+        79,
+        69
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 102,
+      "to": 117,
+      "path": [
+        102,
+        104,
+        117
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 69,
+      "to": 60,
+      "path": [
+        69,
+        60
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 1,
+      "to": 2,
+      "path": [
+        1,
+        2
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 60,
+      "to": 50,
+      "path": [
+        60,
+        50
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 117,
+      "to": 119,
+      "path": [
+        117,
+        119
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 4,
+      "to": 1,
+      "path": [
+        4,
+        1
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 2,
+      "to": 4,
+      "path": [
+        2,
+        4
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 50,
+      "to": 40,
+      "path": [
+        50,
+        40
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 4,
+      "to": 13,
+      "path": [
+        4,
+        15,
+        13
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 1,
+      "to": 2,
+      "path": [
+        1,
+        2
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 13,
+      "to": 26,
+      "path": [
+        13,
+        26
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 2,
+      "to": 1,
+      "path": [
+        2,
+        1
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 26,
+      "to": 37,
+      "path": [
+        26,
+        37
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 40,
+      "to": 28,
+      "path": [
+        40,
+        28
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 37,
+      "to": 47,
+      "path": [
+        37,
+        47
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 28,
+      "to": 16,
+      "path": [
+        28,
+        16
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 119,
+      "to": 117,
+      "path": [
+        119,
+        117
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 14,
+      "to": 15,
+      "path": [
+        14,
+        15
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 47,
+      "to": 57,
+      "path": [
+        47,
+        57
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 15,
+      "to": 4,
+      "path": [
+        15,
+        4
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 57,
+      "to": 66,
+      "path": [
+        57,
+        66
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 18,
+      "to": 17,
+      "path": [
+        18,
+        17
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 66,
+      "to": 77,
+      "path": [
+        66,
+        77
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 17,
+      "to": 18,
+      "path": [
+        17,
+        18
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 77,
+      "to": 78,
+      "path": [
+        77,
+        78
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 1,
+      "to": 0,
+      "path": [
+        1,
+        0
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 78,
+      "to": 89,
+      "path": [
+        78,
+        89
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 16,
+      "to": 15,
+      "path": [
+        16,
+        15
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 89,
+      "to": 102,
+      "path": [
+        89,
+        102
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 0,
+      "to": 2,
+      "path": [
+        0,
+        2
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 116,
+      "to": 119,
+      "path": [
+        116,
+        119
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 118,
+      "to": 116,
+      "path": [
+        118,
+        116
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 102,
+      "to": 104,
+      "path": [
+        102,
+        104
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 15,
+      "to": 16,
+      "path": [
+        15,
+        16
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 115,
+      "to": 118,
+      "path": [
+        115,
+        118
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 116,
+      "to": 105,
+      "path": [
+        116,
+        105
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 104,
+      "to": 115,
+      "path": [
+        104,
+        102,
+        115
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 105,
+      "to": 93,
+      "path": [
+        105,
+        93
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 103,
+      "to": 116,
+      "path": [
+        103,
+        116
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 93,
+      "to": 81,
+      "path": [
+        93,
+        81
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 118,
+      "to": 120,
+      "path": [
+        118,
+        120
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 81,
+      "to": 70,
+      "path": [
+        81,
+        70
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 116,
+      "to": 118,
+      "path": [
+        116,
+        118
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 70,
+      "to": 61,
+      "path": [
+        70,
+        61
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 119,
+      "to": 116,
+      "path": [
+        119,
+        116
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 61,
+      "to": 52,
+      "path": [
+        61,
+        52
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 120,
+      "to": 119,
+      "path": [
+        120,
+        119
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 52,
+      "to": 42,
+      "path": [
+        52,
+        42
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 118,
+      "to": 120,
+      "path": [
+        118,
+        120
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 42,
+      "to": 31,
+      "path": [
+        42,
+        31
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 115,
+      "to": 118,
+      "path": [
+        115,
+        118
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 31,
+      "to": 30,
+      "path": [
+        31,
+        30
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 118,
+      "to": 115,
+      "path": [
+        118,
+        115
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 30,
+      "to": 17,
+      "path": [
+        30,
+        17
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 116,
+      "to": 118,
+      "path": [
+        116,
+        118
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 3,
+      "to": 1,
+      "path": [
+        3,
+        1
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 5,
+      "to": 14,
+      "path": [
+        5,
+        0,
+        3,
+        14
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 1,
+      "from": 18,
+      "to": 0,
+      "path": [
+        18,
+        5,
+        0
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 14,
+      "to": 26,
+      "path": [
+        14,
+        26
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 16,
+      "to": 5,
+      "path": [
+        16,
+        3,
+        5
+      ],
+      "kind": "jump"
+    },
+    {
+      "seat": 0,
+      "from": 26,
+      "to": 38,
+      "path": [
+        26,
+        38
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 17,
+      "to": 16,
+      "path": [
+        17,
+        16
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 0,
+      "from": 115,
+      "to": 116,
+      "path": [
+        115,
+        116
+      ],
+      "kind": "step"
+    },
+    {
+      "seat": 1,
+      "from": 16,
+      "to": 3,
+      "path": [
+        16,
+        3
+      ],
+      "kind": "jump"
+    }
+  ],
+  "winner": 1,
+  "ranking": [
+    {
+      "name": "玩家 2",
+      "home": 10,
+      "distance": 0
+    },
+    {
+      "name": "玩家 1",
+      "home": 9,
+      "distance": 7
+    }
+  ]
+}

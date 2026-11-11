@@ -1,0 +1,46 @@
+{
+  "slug": "ladder-run",
+  "order": 10,
+  "title": "Ladder Run",
+  "titleZh": "蛇梯棋",
+  "tagline": "Roll, climb, slide, giggle.",
+  "taglineZh": "掷骰、爬梯、滑下、开怀。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "5+",
+  "accent": "#d05f45",
+  "paper": "#faf3e6",
+  "ink": "#2c2822",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "10 × 10 board",
+    "2–4 players",
+    "9 ladders · 11 snakes",
+    "4 AI companions",
+    "Hot-seat + LAN",
+    "Autosave + undo"
+  ],
+  "factsZh": [
+    "10 × 10 棋盘",
+    "2–4 人",
+    "9 架梯子 · 11 条蛇",
+    "四档 AI 陪玩",
+    "同屏 + 局域网",
+    "自动保存 + 悔棋"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "One board. A hundred squares. No decisions.", "zh": "一张棋盘，一百格。不用做决定。" },
+    { "at": 5.2, "en": "Ladder Run — snakes and ladders for the whole family.", "zh": "蛇梯棋——全家人的蛇梯棋。" },
+    { "at": 10.4, "en": "Roll the die. Climb a ladder. Slip down a snake.", "zh": "掷骰子。爬梯子。滑下蛇。" },
+    { "at": 16.0, "en": "Two to four players pass one device, or join from a phone.", "zh": "二到四人同屏轮流，或手机加入。" },
+    { "at": 22.4, "en": "The AI never decides. It just rolls, and the level changes the company.", "zh": "AI 不做决定，只负责掷骰；档位只改变陪玩语气。" },
+    { "at": 28.8, "en": "A hint shows all six faces. Undo and autosave keep the table kind.", "zh": "提示会列出六种点数；悔棋和自动保存让牌桌更轻松。" },
+    { "at": 35.2, "en": "Exact roll to land on one hundred. First home wins.", "zh": "必须正好落在 100；先到家的人获胜。" },
+    { "at": 41.0, "en": "Ladder Run. Roll, climb, slide, giggle.", "zh": "蛇梯棋。掷骰、爬梯、滑下、开怀。" }
+  ]
+}

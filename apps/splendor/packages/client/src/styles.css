@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   设计系统 v2 —— 浅色纸感（对齐 BGA 的克制风格）
+   原则：中性底 + 白面 + 单一琥珀强调；彩色只留给宝石与卡片色带。
+   ========================================================================== */
+
+@theme {
+  /* 纸面中性色 */
+  --color-paper-0: #ffffff;
+  --color-paper-50: #fafbfc;
+  --color-paper-100: #f2f4f7;
+  --color-paper-200: #e8ebf0;
+  --color-paper-300: #d9dfe7;
+  --color-paper-400: #bcc6d2;
+  --color-paper-500: #9aa7b6;
+
+  /* 文字 */
+  --color-ink-900: #26303e;
+  --color-ink-700: #3d4a5c;
+  --color-ink-500: #5d6c80;
+  --color-ink-400: #7f8da0;
+  --color-ink-300: #a6b1c0;
+
+  /* 唯一强调色：琥珀（当前回合 / 分数 / 选中态） */
+  --color-accent-700: #8f6416;
+  --color-accent-600: #b07d20;
+  --color-accent-500: #c9932e;
+  --color-accent-300: #e8c583;
+  --color-accent-100: #f8eed8;
+
+  /* 语义色 */
+  --color-danger-500: #c25a54;
+  --color-danger-100: #f9e8e6;
+  --color-success-500: #3f9e73;
+  --color-success-100: #e3f3eb;
+
+  /* 宝石色（降饱和一档，成对：浅底 / 深描边） */
+  --color-gem-white: #e9eef7;
+  --color-gem-white-deep: #8ea4c4;
+  --color-gem-blue: #5b8ed6;
+  --color-gem-blue-deep: #3a68ad;
+  --color-gem-blue-soft: #dde8f8;
+  --color-gem-green: #45b586;
+  --color-gem-green-deep: #2c8a63;
+  --color-gem-green-soft: #dcefe6;
+  --color-gem-red: #d9615f;
+  --color-gem-red-deep: #ab3f3f;
+  --color-gem-red-soft: #f6e2e1;
+  --color-gem-black: #4c5567;
+  --color-gem-black-deep: #2d3442;
+  --color-gem-black-soft: #e0e3e9;
+  --color-gem-gold: #d9a33d;
+  --color-gem-gold-deep: #a97822;
+  --color-gem-gold-soft: #f5ead3;
+
+  --font-display: "Segoe UI Variable Display", "Segoe UI", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(28, 39, 58, 0.05), 0 10px 24px -14px rgba(28, 39, 58, 0.22);
+  --shadow-card: 0 1px 2px rgba(28, 39, 58, 0.06), 0 6px 14px -8px rgba(28, 39, 58, 0.25);
+  --shadow-pop: 0 12px 32px -12px rgba(28, 39, 58, 0.35);
+}
+
+/* 卡牌尺寸（随视口高度自适应，保证常见笔记本零滚动） */
+:root {
+  --card-w: clamp(92px, 9.6vh + 38px, 126px);
+  --card-h: calc(var(--card-w) * 1.375);
+  --mini-w: 46px;
+  --mini-h: 64px;
+  --pile-w: 64px;
+  --pile-h: 66px;
+  --noble-s: 78px;
+  --game-gap: 8px;
+  --panel-py: 8px;
+  --chip-fs: 12px;
+  --chip-px: 4px;
+  --score-fs: 26px;
+  --score-w: 64px;
+  --topbar-h: 44px;
+  --board-pad-y: 8px;
+}
+@media (min-height: 880px) {
+  :root {
+    --mini-w: 52px;
+    --mini-h: 72px;
+    --pile-w: 68px;
+    --pile-h: 74px;
+    --noble-s: 84px;
+  }
+}
+@media (max-height: 779px) {
+  :root {
+    --pile-w: 60px;
+    --card-w: clamp(88px, 9.4vh + 38px, 112px);
+    --mini-w: 40px;
+    --mini-h: 55px;
+    --pile-w: 56px;
+    --pile-h: 58px;
+    --noble-s: 72px;
+    --game-gap: 4px;
+    --panel-py: 6px;
+    --chip-fs: 11px;
+    --chip-px: 3px;
+    --score-fs: 22px;
+    --score-w: 54px;
+    --topbar-h: 40px;
+    --board-pad-y: 6px;
+  }
+}
+
+/* 主菜单：小屏（≤779 高度）下的紧凑排版；大屏保持从容留白 */
+@media (max-height: 779px) {
+  .menu-shell {
+    padding-top: 36px;
+    padding-bottom: 20px;
+  }
+  .menu-title {
+    font-size: 38px;
+  }
+  .menu-gems {
+    margin-top: 10px;
+  }
+  .menu-modes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 26px;
+    gap: 12px;
+  }
+  .menu-mode-card {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .menu-settings {
+    margin-top: 18px;
+    padding: 16px;
+  }
+  .menu-seat {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .menu-footer {
+    margin-top: 16px;
+  }
+}
+
+/* 四人局：面板更窄，筹码行会折行——在中等及以上高度强制紧凑档变量，避免整体超高
+   （≤779 高度时由更紧凑的视口变量接管，无需再覆盖） */
+@media (min-height: 780px) {
+  .game-dense {
+    --mini-w: 44px;
+    --mini-h: 60px;
+    --pile-h: 62px;
+    --game-gap: 6px;
+    --panel-py: 6px;
+    --chip-fs: 11px;
+    --chip-px: 3px;
+    --score-fs: 22px;
+    --score-w: 54px;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--color-ink-900);
+  background: var(--color-paper-200);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(70, 90, 120, 0.22);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------------- 组件级工具类 ---------------- */
+
+@utility surface {
+  background: var(--color-paper-0);
+  border: 1px solid var(--color-paper-300);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility card-face {
+  background: linear-gradient(180deg, #fefdfa 0%, #fbf9f3 100%);
+  box-shadow: var(--shadow-card);
+}
+
+@utility btn-primary {
+  background: var(--color-ink-900);
+  color: #fff;
+  border: 1px solid var(--color-ink-900);
+  box-shadow: 0 1px 2px rgba(28, 39, 58, 0.2);
+}
+
+@utility btn-accent {
+  background: var(--color-accent-500);
+  color: #3a2a08;
+  border: 1px solid var(--color-accent-600);
+}
+
+@utility btn-ghost {
+  background: var(--color-paper-0);
+  color: var(--color-ink-700);
+  border: 1px solid var(--color-paper-300);
+}
+
+@utility tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  font-size: 11px;
+  line-height: 1.6;
+  border: 1px solid var(--color-paper-300);
+  background: var(--color-paper-50);
+  color: var(--color-ink-500);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---------------- 动效（克制、有信息量） ---------------- */
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.96);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(1);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-8vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(104vh) rotate(600deg);
+    opacity: 0.65;
+  }
+}
+
+@utility anim-pop {
+  animation: pop-in 200ms cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+
+@utility anim-float {
+  animation: float-up 1100ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 思考时间告急（≤5 秒）：轻微脉动，不刺眼 */
+@keyframes clock-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.clock-pulse {
+  animation: clock-pulse 1s ease-in-out infinite;
+}
+
+.no-anim *,
+.no-anim *::before,
+.no-anim *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+
+/* ---------------- 手机 / 平板（按视口宽度收缩） ---------------- */
+@media (max-width: 1100px) {
+  :root {
+    --card-w: clamp(76px, 12.5vw, 112px);
+    --mini-w: clamp(34px, 5.4vw, 44px);
+    --mini-h: calc(var(--mini-w) * 1.38);
+    --pile-h: clamp(56px, 8vw, 70px);
+    --noble-s: clamp(56px, 8.4vw, 78px);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --card-w: clamp(58px, 18vw, 92px);
+    --mini-w: clamp(28px, 7.4vw, 38px);
+    --pile-w: clamp(44px, 12vw, 58px);
+    --pile-h: clamp(50px, 12vw, 62px);
+    --noble-s: clamp(44px, 12vw, 62px);
+    --game-gap: 6px;
+    --panel-py: 6px;
+    --score-fs: 20px;
+    --score-w: 48px;
+    --topbar-h: auto;
+    --board-pad-y: 6px;
+  }
+  /* 竖屏手机：整页可滚动，避免被 h-full 挤扁 */
+  .game-root {
+    height: auto !important;
+    min-height: 100%;
+  }
+  .topbar-row {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+  .players-row {
+    flex-wrap: wrap;
+  }
+  .players-row > * {
+    min-width: calc(50% - 4px);
+    max-width: none;
+  }
+  /* 贵族移到牌桌上方横排 */
+  .board-wrap {
+    flex-direction: column;
+  }
+  .board-nobles,
+  .board-nobles > div {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* 窄屏：次要徽章隐藏、行内允许换行 */
+  .tag-ai-level,
+  .tag-nobles {
+    display: none;
+  }
+  .panel-title-row {
+    flex-wrap: wrap;
+  }
+
+  /* 宝石供给区横向滚动（宽度已自适应，一般无需滚动） */
+  .token-bank {
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 4px;
+  }
+  button,
+  [role='button'] {
+    touch-action: manipulation;
+  }
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}

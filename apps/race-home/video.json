@@ -1,0 +1,32 @@
+{
+  "slug": "race-home",
+  "order": 9,
+  "title": "Race Home",
+  "titleZh": "飞行棋",
+  "tagline": "A four-colour race around the house",
+  "taglineZh": "四色棋子，绕着房子跑回家",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "20–30 minutes",
+  "timeZh": "20–30 分钟",
+  "age": "6+",
+  "accent": "#b3533f",
+  "paper": "#f6efe2",
+  "ink": "#2c251d",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["2–4 players", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
+  "factsZh": ["2–4 人", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "lines": [
+    { "at": 0.4, "en": "Four colours. Four pawns each. One way home.", "zh": "四种颜色，每色四枚棋子，一起跑回家。" },
+    { "at": 5.2, "en": "Race Home. A Ludo-like race for the whole table.", "zh": "飞行棋。给全家人的绕圈比赛。" },
+    { "at": 10.0, "en": "Roll a six to open the yard, then race around the ring.", "zh": "掷出 6 让棋子出家门，再沿跑道向前。" },
+    { "at": 16.0, "en": "Land on a rival and send it back home.", "zh": "落在对手格子上，把对方送回老家。" },
+    { "at": 23.5, "en": "Four AI levels, from gentle Companion to a one-ply Hard.", "zh": "四档 AI，从温和陪玩到一步预判的挑战。" },
+    { "at": 31.0, "en": "Hot-seat for two to four, or phones join over Wi-Fi.", "zh": "二到四人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 38.0, "en": "Undo, hints, autosave and a family record. Offline and ad-free.", "zh": "悔棋、提示、自动保存和家庭战绩。离线、无广告。" },
+    { "at": 42.0, "en": "Race Home. Roll, race, arrive.", "zh": "飞行棋。掷骰、绕圈、到家。" }
+  ]
+}

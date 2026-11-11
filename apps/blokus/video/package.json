@@ -1,0 +1,46 @@
+{
+  "name": "video",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/fonts": "4.0.537",
+    "@remotion/google-fonts": "4.0.537",
+    "@remotion/media": "4.0.537",
+    "@remotion/transitions": "4.0.537",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.537",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "gen": "tsx scripts/gen-game.mjs && node scripts/gen-audio.mjs && node scripts/gen-bgm.mjs && tsx scripts/gen-fonts.mjs",
+    "voice": "node scripts/gen-voice.mjs",
+    "facts": "tsx scripts/facts.mjs",
+    "shots": "node scripts/shoot-ui.mjs",
+    "stills": "node scripts/stills.mjs",
+    "render": "remotion render src/index.ts BlokusPromoZH out/blokus-promo-zh.mp4 --codec=h264 --crf=17 --pixel-format=yuv420p",
+    "render:en": "remotion render src/index.ts BlokusPromoEN out/blokus-promo-en.mp4 --codec=h264 --crf=17 --pixel-format=yuv420p"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}

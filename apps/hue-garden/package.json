@@ -1,0 +1,44 @@
+{
+  "name": "hue-garden",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Hue Garden (彩庭) — an original Mediterranean courtyard tile-laying game for family game night",
+  "scripts": {
+    "dev": "vite --port 5174",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4174",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc --noEmit && npm run data:verify && vitest run && vite build",
+    "data:verify": "node scripts/verify-data.mjs",
+    "demo": "tsx scripts/gen-demo.ts",
+    "screenshots": "node scripts/shots.mjs",
+    "screenshots:compress": "node scripts/compress-shots.mjs",
+    "lan:shots": "node scripts/lan-shots.mjs",
+    "lan:e2e": "node scripts/lan-e2e.mjs",
+    "e2e": "node scripts/e2e.mjs",
+    "lan": "node ../../tools/lan-server.mjs --dist dist --port 8097",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@family-arcade/lan": "file:../../packages/lan",
+    "@tauri-apps/api": "^2.12.4",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.3",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "playwright": "^1.65.0",
+    "sharp": "^0.35.5",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.2.0",
+    "vitest": "^4.0.0"
+  }
+}

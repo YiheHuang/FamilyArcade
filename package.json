@@ -1,0 +1,21 @@
+{
+  "name": "familyarcade",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "27 offline-first family board and card games with AI, hot-seat and LAN play",
+  "license": "MIT",
+  "scripts": {
+    "lan": "node tools/lan-server.mjs",
+    "check": "node tools/check-all.mjs",
+    "videos": "npm --prefix video run render:all",
+    "release": "node tools/build-releases.mjs"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.5"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "sowing",
+  "order": 7,
+  "title": "Sowing",
+  "titleZh": "播棋",
+  "tagline": "Mancala sowing and capturing",
+  "taglineZh": "播种、收获，跟着节奏走。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#b05c43",
+  "paper": "#f7f0e2",
+  "ink": "#2a241e",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["12 pits + 2 stores", "4 AI levels", "Hot-seat + LAN", "31 unit tests"],
+  "factsZh": ["12 坑 + 2 仓", "四档 AI", "同屏 + 局域网", "31 个单元测试"],
+  "lines": [
+    { "at": 0.4, "en": "Twelve pits. Two stores. One rhythm.", "zh": "十二个坑，两个仓，一个节奏。" },
+    { "at": 5.2, "en": "Sowing. A mancala game for the family table.", "zh": "播棋。给家庭牌桌的曼卡拉。" },
+    { "at": 10.0, "en": "Lift a pit, sow counter-clockwise, and skip the other store.", "zh": "拿起一坑，逆时针播种，跳过对方的仓。" },
+    { "at": 16.0, "en": "Land in your store and sow again. Land empty and capture across.", "zh": "落进自己的仓就再来一回合；落进空坑就收对面。" },
+    { "at": 23.5, "en": "Four AI levels, from gentle Companion to an eight-ply Hard.", "zh": "四档 AI，从温和陪玩到八步挑战。" },
+    { "at": 31.0, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a family record. Offline, no account.", "zh": "提示、悔棋、自动保存和家庭战绩。离线、无账号。" },
+    { "at": 42.0, "en": "Sowing. Keep the rhythm.", "zh": "播棋。跟着节奏走。" }
+  ]
+}

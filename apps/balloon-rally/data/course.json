@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "source": "Original design for Balloon Rally v0.1. No publisher text or art is used.",
+  "count": 5,
+  "trackLength": 20,
+  "rounds": 4,
+  "tailwindPerPlayer": 2,
+  "startPositions": [0, 0, 0, 0, 0],
+  "windCards": [1, 2, 2, 3, 3],
+  "scoring": {
+    "roundLeader": 3,
+    "roundSecond": 1,
+    "overallLeader": 5,
+    "unusedTailwind": 1
+  },
+  "balloons": [
+    {
+      "id": "ember",
+      "nameEn": "Ember",
+      "nameZh": "暖橙",
+      "color": "#c25b3f",
+      "light": "#f0c6b7",
+      "pattern": "stripes"
+    },
+    {
+      "id": "pebble",
+      "nameEn": "Pebble",
+      "nameZh": "石墨",
+      "color": "#5a6d7c",
+      "light": "#c9d4dc",
+      "pattern": "dots"
+    },
+    {
+      "id": "sunny",
+      "nameEn": "Sunny",
+      "nameZh": "金穗",
+      "color": "#c3932f",
+      "light": "#f1dfaa",
+      "pattern": "zigzag"
+    },
+    {
+      "id": "mint",
+      "nameEn": "Mint",
+      "nameZh": "薄荷",
+      "color": "#5c8a6b",
+      "light": "#c4ddc9",
+      "pattern": "rings"
+    },
+    {
+      "id": "puff",
+      "nameEn": "Puff",
+      "nameZh": "云紫",
+      "color": "#7b6a9e",
+      "light": "#d8cfe9",
+      "pattern": "diamonds"
+    }
+  ]
+}

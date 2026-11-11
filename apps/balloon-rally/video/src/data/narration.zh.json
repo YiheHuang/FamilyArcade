@@ -1,0 +1,68 @@
+{
+  "lang": "zh",
+  "lines": [
+    {
+      "at": 0.4,
+      "duration": 2.85,
+      "text": "五只纸气球，四轮风。",
+      "voDuration": 2.5,
+      "file": "audio/voice/zh/line-1.mp3"
+    },
+    {
+      "at": 5.4,
+      "duration": 2.73,
+      "text": "看准一只，跟着它飞。",
+      "voDuration": 2.38,
+      "file": "audio/voice/zh/line-2.mp3"
+    },
+    {
+      "at": 8.5,
+      "duration": 2.68,
+      "text": "每轮秘密支持一只气球。",
+      "voDuration": 2.52,
+      "file": "audio/voice/zh/line-3.mp3"
+    },
+    {
+      "at": 11.3,
+      "duration": 2.98,
+      "text": "两枚顺风，可以多推一格。",
+      "voDuration": 2.64,
+      "file": "audio/voice/zh/line-4.mp3"
+    },
+    {
+      "at": 14.4,
+      "duration": 2.8,
+      "text": "五张风卡，决定风向。",
+      "voDuration": 2.45,
+      "file": "audio/voice/zh/line-5.mp3"
+    },
+    {
+      "at": 17.5,
+      "duration": 6.13,
+      "text": "领先支持者得 3 分，第二得 1 分；四轮后，总领先再得 5 分。",
+      "voDuration": 5.78,
+      "file": "audio/voice/zh/line-6.mp3"
+    },
+    {
+      "at": 27.5,
+      "duration": 4.12,
+      "text": "单人四档 AI，或 2–6 人同屏传递。",
+      "voDuration": 3.77,
+      "file": "audio/voice/zh/line-7.mp3"
+    },
+    {
+      "at": 33.2,
+      "duration": 5.94,
+      "text": "遮罩守住秘密；自动保存、复盘、战绩与手机布局都有。",
+      "voDuration": 5.59,
+      "file": "audio/voice/zh/line-8.mp3"
+    },
+    {
+      "at": 39.5,
+      "duration": 4.91,
+      "text": "气球大赛：五只气球，四轮风，全桌一起猜。",
+      "voDuration": 4.56,
+      "file": "audio/voice/zh/line-9.mp3"
+    }
+  ]
+}

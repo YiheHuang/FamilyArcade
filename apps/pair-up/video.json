@@ -1,0 +1,32 @@
+{
+  "slug": "pair-up",
+  "order": 11,
+  "title": "Pair Up",
+  "titleZh": "翻牌记忆",
+  "tagline": "Flip two. Find the pair. Share the sweets.",
+  "taglineZh": "翻开两张，配成一对，分享甜点。",
+  "players": "2–6 players",
+  "playersZh": "2–6 人",
+  "time": "10–20 minutes",
+  "timeZh": "10–20 分钟",
+  "age": "5+",
+  "accent": "#c04b32",
+  "paper": "#fbf1e1",
+  "ink": "#34241b",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["4 × 4 or 6 × 6 dessert deck", "2–6 players · 4 AI levels", "Hot-seat + LAN", "Hints, undo, autosave"],
+  "factsZh": ["4 × 4 或 6 × 6 甜点牌组", "2–6 人 · 四档 AI", "同屏 + 局域网", "提示、悔棋、自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "Sixteen face-down desserts. Find the pairs.", "zh": "十六张甜点暗牌，找出成对的它们。" },
+    { "at": 5.2, "en": "Pair Up. A memory game for the whole table.", "zh": "翻牌记忆。给一整桌人的记忆游戏。" },
+    { "at": 10.0, "en": "Flip two cards. A match stays open, scores, and you go again.", "zh": "翻开两张。配对成功就留下、得分，再翻一次。" },
+    { "at": 16.0, "en": "A miss turns back and passes the turn clockwise.", "zh": "没配上就翻回去，轮到下一位。" },
+    { "at": 23.5, "en": "Two to six players on one screen, or phones joining over Wi-Fi.", "zh": "2–6 人同屏轮流，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Four AI levels: Companion forgets on purpose; Hard remembers every card.", "zh": "四档 AI：陪玩会故意忘牌，挑战记得每一张。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a local family record. No account, no ads.", "zh": "提示、悔棋、自动保存和本机家庭战绩。无账号、无广告。" },
+    { "at": 42.0, "en": "Pair Up. Flip two. Find the pair.", "zh": "翻牌记忆。翻开两张，配成一对。" }
+  ]
+}

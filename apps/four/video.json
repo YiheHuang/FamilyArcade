@@ -1,0 +1,32 @@
+{
+  "slug": "four",
+  "order": 2,
+  "title": "Four",
+  "titleZh": "四子棋",
+  "tagline": "Drop. Line up. Four in a row.",
+  "taglineZh": "落子、连线，四子成行。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10–15 minutes",
+  "timeZh": "10–15 分钟",
+  "age": "6+",
+  "accent": "#bf4334",
+  "paper": "#f5eddd",
+  "ink": "#27221b",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["7 × 6 board", "4 AI levels", "Hot-seat + LAN", "Undo + hints + autosave"],
+  "factsZh": ["7 × 6 棋盘", "四档 AI", "同屏 + 局域网", "悔棋 + 提示 + 自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "Seven columns. Six rows. One line of four.", "zh": "七列，六行，一条四子线。" },
+    { "at": 5.2, "en": "Four. A tiny game for a big table.", "zh": "四子棋。给一大家子的小游戏。" },
+    { "at": 10.0, "en": "Drop a disc and let it fall. Red starts.", "zh": "落下一枚棋子，红方先手。" },
+    { "at": 16.0, "en": "Build your line while you block theirs.", "zh": "一边连线，一边堵住对方。" },
+    { "at": 23.5, "en": "Four AI levels, from gentle Companion to a five-move Hard.", "zh": "四档 AI，从温和陪玩到五层搜索的挑战。" },
+    { "at": 31.0, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Four. Four in a row.", "zh": "四子棋，四子连线。" }
+  ]
+}

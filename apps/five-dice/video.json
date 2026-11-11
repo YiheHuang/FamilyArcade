@@ -1,0 +1,74 @@
+{
+  "slug": "five-dice",
+  "order": 14,
+  "title": "Five Dice",
+  "titleZh": "五骰",
+  "tagline": "Five dice. Thirteen boxes. One winner.",
+  "taglineZh": "五颗骰子，十三个格子，一位赢家。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "6+",
+  "accent": "#b9472f",
+  "paper": "#f3ecdb",
+  "ink": "#1f2a26",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "5 dice · 3 rolls",
+    "13 scoring boxes",
+    "4 AI levels",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "5 颗骰子 · 3 次掷骰",
+    "13 个记分格",
+    "四档 AI",
+    "同屏 + 局域网"
+  ],
+  "lines": [
+    {
+      "at": 0.4,
+      "en": "Five dice. Three rolls. Thirteen boxes.",
+      "zh": "五颗骰子，三次机会，十三个格子。"
+    },
+    {
+      "at": 5.2,
+      "en": "Five Dice. A Yahtzee-like table for the whole family.",
+      "zh": "五骰。给全家人的 Yahtzee 式骰子桌。"
+    },
+    {
+      "at": 10.0,
+      "en": "Roll the dice. Keep the ones you like. Reroll the rest.",
+      "zh": "掷出骰子，留下想要的，再把其余的重新掷。"
+    },
+    {
+      "at": 16.0,
+      "en": "Fill every box once. Chase straights, full houses and five of a kind.",
+      "zh": "每个格子填一次，追顺子、葫芦和五条。"
+    },
+    {
+      "at": 23.5,
+      "en": "Reach 63 upstairs for the 35-point bonus.",
+      "zh": "上区满 63 分，拿下 35 分奖励。"
+    },
+    {
+      "at": 31.0,
+      "en": "Four AI levels, two to four players, or a phone over Wi-Fi.",
+      "zh": "四档 AI、二到四人同屏，或者手机连 Wi-Fi 加入。"
+    },
+    {
+      "at": 38.0,
+      "en": "Hints, undo, autosave and a family record.",
+      "zh": "提示、撤销、自动保存和家庭战绩。"
+    },
+    {
+      "at": 42.0,
+      "en": "Five Dice. Roll. Keep. Score.",
+      "zh": "五骰。掷、留、记分。"
+    }
+  ]
+}

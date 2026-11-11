@@ -1,0 +1,58 @@
+{
+  "lines": [
+    {
+      "at": 0.3,
+      "text": "Six desserts. Three rounds. One card at a time.",
+      "file": "audio/voice/en/line-1.mp3",
+      "duration": 4.66
+    },
+    {
+      "at": 5.3,
+      "text": "Sweet Carousel. Pick one, pass it on.",
+      "file": "audio/voice/en/line-2.mp3",
+      "duration": 3.55
+    },
+    {
+      "at": 9.8,
+      "text": "Eight cards each. Everyone picks one together.",
+      "file": "audio/voice/en/line-3.mp3",
+      "duration": 3.7
+    },
+    {
+      "at": 13.9,
+      "text": "Pair two for two points. Triple three for six. Fill a plate for twelve.",
+      "file": "audio/voice/en/line-4.mp3",
+      "duration": 5.86
+    },
+    {
+      "at": 20.1,
+      "text": "Three different desserts make a sampler. Leftovers still count.",
+      "file": "audio/voice/en/line-5.mp3",
+      "duration": 4.56
+    },
+    {
+      "at": 25,
+      "text": "Pass left. Then right. Then left again. Three rounds.",
+      "file": "audio/voice/en/line-6.mp3",
+      "duration": 5.38
+    },
+    {
+      "at": 30.7,
+      "text": "Pass the device with a privacy cover. Or play solo against four AI levels.",
+      "file": "audio/voice/en/line-7.mp3",
+      "duration": 5.71
+    },
+    {
+      "at": 36.7,
+      "text": "Autosave, family stats, Chinese and English. Offline, no account.",
+      "file": "audio/voice/en/line-8.mp3",
+      "duration": 6.26
+    },
+    {
+      "at": 43.3,
+      "text": "Sweet Carousel. Pick one, pass it on.",
+      "file": "audio/voice/en/line-9.mp3",
+      "duration": 3.55
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+1
+00:00:00,900 --> 00:00:03,920
+Weekend night. Lay a little courtyard.
+
+2
+00:00:04,800 --> 00:00:09,640
+One colour, new shapes. Or one shape, new colours.
+
+3
+00:00:09,400 --> 00:00:13,910
+A line holds six. Six in a row blooms for six more.
+
+4
+00:00:18,000 --> 00:00:22,170
+This is a real game from the engine — thirty-eight turns.
+
+5
+00:00:31,200 --> 00:00:34,100
+One player, or the whole table.
+
+6
+00:00:37,000 --> 00:00:40,690
+Undo, hints and autosave are all here.
+
+7
+00:00:43,000 --> 00:00:49,350
+Hue Garden. A colour or a shape, one line at a time. Offline, no ads.

@@ -1,0 +1,32 @@
+{
+  "slug": "tables",
+  "order": 8,
+  "title": "Tables",
+  "titleZh": "双陆棋",
+  "tagline": "Roll, race, and bring everyone home.",
+  "taglineZh": "掷骰、奔跑，把每一枚棋子送回家。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "8+",
+  "accent": "#ad5538",
+  "paper": "#f4ecdc",
+  "ink": "#241f1a",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["24-point board", "15 checkers each", "4 AI levels", "Hot-seat + LAN"],
+  "factsZh": ["24 个点", "每人 15 枚棋子", "四档 AI", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "Roll two dice. Race every checker home.", "zh": "掷两颗骰子，把每一枚棋子送回家。" },
+    { "at": 5.2, "en": "Tables. Backgammon at the family table.", "zh": "双陆棋。家庭牌桌上的西洋双陆。" },
+    { "at": 10.0, "en": "Hit a blot and send it to the bar. Two checkers make a safe point.", "zh": "打中孤子，把它送回中线；两枚棋子才能守住一个点。" },
+    { "at": 16.0, "en": "Four AI levels, from gentle Companion to a Hard that samples your next rolls.", "zh": "四档 AI，从温和陪玩到会模拟你下一掷的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者让手机连上同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Hints with reasons, undo, autosave and a family record.", "zh": "带理由的提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 38.0, "en": "No doubling cube. No account. No ads.", "zh": "没有加倍骰、没有账号、没有广告。" },
+    { "at": 42.0, "en": "Tables. Roll, race, and bring everyone home.", "zh": "双陆棋。掷骰、奔跑，把大家送回家。" }
+  ]
+}

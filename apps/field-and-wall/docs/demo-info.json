@@ -1,0 +1,85 @@
+{
+  "seed": "showcase-1",
+  "midMoves": 41,
+  "midTiles": 42,
+  "midScores": [
+    30,
+    37
+  ],
+  "midTurn": 42,
+  "midCurrent": 1,
+  "midCurrentTile": "city-corner",
+  "midLastScored": [
+    {
+      "type": "monastery",
+      "tiles": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "points": 9,
+      "seats": [
+        0
+      ],
+      "complete": true,
+      "meeples": [
+        {
+          "seat": 0,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "boardBox": {
+    "w": 8,
+    "h": 10
+  },
+  "endMoves": 52,
+  "endScores": [
+    30,
+    37
+  ],
+  "target": {
+    "seat": 0,
+    "kind": "place",
+    "x": -5,
+    "y": -4,
+    "rot": 0,
+    "meeple": null
+  },
+  "full": {
+    "en": {
+      "playerCount": 2,
+      "seats": [
+        {
+          "name": "Mira",
+          "kind": "human",
+          "level": "normal"
+        },
+        {
+          "name": "Tomas",
+          "kind": "human",
+          "level": "normal"
+        }
+      ],
+      "seed": "showcase-1"
+    },
+    "zh": {
+      "playerCount": 2,
+      "seats": [
+        {
+          "name": "阿禾",
+          "kind": "human",
+          "level": "normal"
+        },
+        {
+          "name": "小满",
+          "kind": "human",
+          "level": "normal"
+        }
+      ],
+      "seed": "showcase-1"
+    }
+  }
+}

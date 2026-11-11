@@ -1,0 +1,32 @@
+{
+  "slug": "little-go",
+  "order": 18,
+  "title": "Little Go",
+  "titleZh": "小围棋",
+  "tagline": "A small board. A quiet game for the whole family.",
+  "taglineZh": "一张小棋盘，一家人安静下一局。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "6+",
+  "accent": "#a8442f",
+  "paper": "#f4eee1",
+  "ink": "#26221c",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["9 × 9 board", "4 AI levels", "Hot-seat + LAN", "6.5 komi territory scoring"],
+  "factsZh": ["9 × 9 棋盘", "四档 AI", "同屏 + 局域网", "6.5 目贴目数子"],
+  "lines": [
+    { "at": 0.4, "en": "Eighty-one crossings. Black moves first.", "zh": "八十一个交叉点，黑棋先行。" },
+    { "at": 5.2, "en": "Little Go. A small board, a quiet game for the whole family.", "zh": "小围棋。一张小棋盘，一家人安静下一局。" },
+    { "at": 10.0, "en": "Place stones, surround ground, and capture groups without liberties.", "zh": "落子、围地，提掉没有气的棋。" },
+    { "at": 16.0, "en": "Four AI levels, from gentle Companion to a 200-playout Hard.", "zh": "四档 AI，从温和陪玩到 200 次推演的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Undo, a hint with a reason, autosave and a family record.", "zh": "悔棋、带理由的提示、自动保存和家庭战绩。" },
+    { "at": 38.0, "en": "White gets 6.5 komi. Two passes end the game and the board shows the count.", "zh": "白棋贴 6.5 目。双方连续停一手，棋盘直接标出数子结果。" },
+    { "at": 42.0, "en": "Little Go. A quiet game for Family Arcade.", "zh": "小围棋。Family Arcade 的一局安静棋。" }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "mill",
+  "order": 5,
+  "title": "Mill",
+  "titleZh": "九子棋",
+  "tagline": "Nine men. Three in a line.",
+  "taglineZh": "九枚棋子，三点一线。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "约 10 分钟",
+  "age": "6+",
+  "accent": "#b24a31",
+  "paper": "#f3ead9",
+  "ink": "#24211c",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "24-point board",
+    "9 men each",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "Mill, block, capture",
+    "Autosave + undo"
+  ],
+  "factsZh": [
+    "24 点棋盘",
+    "每人 9 子",
+    "四档 AI",
+    "同屏 + 局域网",
+    "成三、围堵、吃子",
+    "自动保存 + 悔棋"
+  ],
+  "lines": [
+    {
+      "at": 0.4,
+      "en": "Nine men each. Three in a line. One small mill.",
+      "zh": "每人九子，三点一线，围成一个“磨”。"
+    },
+    {
+      "at": 5.2,
+      "en": "Mill. Nine Men's Morris for the family table.",
+      "zh": "九子棋。给家里牌桌的九人莫里斯。"
+    },
+    {
+      "at": 10.0,
+      "en": "Place all nine, then slide one man along the lines.",
+      "zh": "先摆下九子，再沿棋盘线走子。"
+    },
+    {
+      "at": 16.0,
+      "en": "Close a mill, remove a rival man. Men in mills stay protected.",
+      "zh": "成三即可吃子；磨中的棋子受到保护。"
+    },
+    {
+      "at": 23.5,
+      "en": "Four AI levels, from gentle Companion to a four-ply Hard.",
+      "zh": "四档 AI，从温和陪玩到四层搜索的挑战。"
+    },
+    {
+      "at": 31.0,
+      "en": "Two players on one screen, or a phone joins over Wi-Fi.",
+      "zh": "两人同屏，或让手机连同一 Wi-Fi 加入。"
+    },
+    {
+      "at": 38.0,
+      "en": "Hints that explain, undo, autosave and a family record.",
+      "zh": "会解释的提示、悔棋、自动保存与家庭战绩。"
+    },
+    {
+      "at": 42.0,
+      "en": "Mill. Three in a line, one family table.",
+      "zh": "九子棋。三点一线，一张家里的牌桌。"
+    }
+  ]
+}

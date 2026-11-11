@@ -1,0 +1,37 @@
+{
+  "name": "splendor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Offline-first Splendor (family edition) with local play and a built-in LAN server",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test -w @splendor/engine && npm run test -w @splendor/client && npm run test -w @splendor/server",
+    "typecheck": "npm run typecheck -w @splendor/engine && npm run typecheck -w @splendor/client && npm run typecheck -w @splendor/server",
+    "data:verify": "node scripts/verify-data.mjs",
+    "data:finalize": "node scripts/finalize-data.mjs",
+    "reconcile": "node scripts/reconcile.mjs",
+    "dev": "npm run dev -w @splendor/client",
+    "build": "npm run build -w @splendor/engine && npm run build -w @splendor/client",
+    "lan": "npm run build && npm run start -w @splendor/server",
+    "lan:quick": "npm run build -w @splendor/engine && npm run start -w @splendor/server",
+    "desktop:dev": "npm run dev -w @splendor/desktop",
+    "desktop:build": "npm run build -w @splendor/desktop",
+    "tauri:check": "node scripts/dev/tauri-check.mjs",
+    "verify": "npm run typecheck && npm test && npm run build && node scripts/dev/play-test.mjs && node scripts/dev/mobile-test.mjs && node scripts/dev/shots-regression.mjs",
+    "release": "node scripts/release.mjs",
+    "perf:check": "node scripts/dev/perf-check.mjs",
+    "video:studio": "npm --prefix video run dev",
+    "video:render": "npm --prefix video run render",
+    "video:render:en": "npm --prefix video run render:en",
+    "video:facts": "npm --prefix video run facts"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0"
+  }
+}

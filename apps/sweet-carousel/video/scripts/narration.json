@@ -1,0 +1,84 @@
+{
+  "zh": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "lines": [
+      {
+        "at": 0.3,
+        "text": "六种甜点。三轮。每次一张。"
+      },
+      {
+        "at": 5.3,
+        "text": "甜点转盘。选一张，传下去。"
+      },
+      {
+        "at": 9.8,
+        "text": "每人八张。大家一起选一张。"
+      },
+      {
+        "at": 13.9,
+        "text": "一对 2 分，三层 6 分，满盘 12 分。"
+      },
+      {
+        "at": 20.1,
+        "text": "三种不同甜点是拼盘。收尾也计分。"
+      },
+      {
+        "at": 25,
+        "text": "传左，传右，再传左。一共三轮。"
+      },
+      {
+        "at": 30.7,
+        "text": "传设备有隐私遮罩。单人可打四档 AI。"
+      },
+      {
+        "at": 36.7,
+        "text": "自动保存、家庭战绩、中英双语。离线，无账号。"
+      },
+      {
+        "at": 43.3,
+        "text": "甜点转盘。选一张，传下去。"
+      }
+    ]
+  },
+  "en": {
+    "voice": "en-US-AvaNeural",
+    "lines": [
+      {
+        "at": 0.3,
+        "text": "Six desserts. Three rounds. One card at a time."
+      },
+      {
+        "at": 5.3,
+        "text": "Sweet Carousel. Pick one, pass it on."
+      },
+      {
+        "at": 9.8,
+        "text": "Eight cards each. Everyone picks one together."
+      },
+      {
+        "at": 13.9,
+        "text": "Pair two for two points. Triple three for six. Fill a plate for twelve."
+      },
+      {
+        "at": 20.1,
+        "text": "Three different desserts make a sampler. Leftovers still count."
+      },
+      {
+        "at": 25,
+        "text": "Pass left. Then right. Then left again. Three rounds."
+      },
+      {
+        "at": 30.7,
+        "text": "Pass the device with a privacy cover. Or play solo against four AI levels."
+      },
+      {
+        "at": 36.7,
+        "text": "Autosave, family stats, Chinese and English. Offline, no account."
+      },
+      {
+        "at": 43.3,
+        "text": "Sweet Carousel. Pick one, pass it on."
+      }
+    ]
+  }
+}

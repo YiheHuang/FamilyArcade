@@ -1,0 +1,32 @@
+{
+  "slug": "balloon-rally",
+  "order": 4,
+  "title": "Balloon Rally",
+  "titleZh": "气球大赛",
+  "tagline": "Pick a balloon. Ride the wind.",
+  "taglineZh": "看准一只气球，跟着它飞。",
+  "players": "2–6 players",
+  "playersZh": "2–6 人",
+  "time": "20–25 minutes",
+  "timeZh": "20–25 分钟",
+  "age": "8+",
+  "accent": "#5d8164",
+  "paper": "#f6f0e3",
+  "ink": "#202a2e",
+  "screens": {
+    "en": ["home.png", "game.png", "lan-host.png"],
+    "zh": ["home.png", "game.png", "lan-host.png"]
+  },
+  "facts": ["5 balloons · 20 spaces", "4 AI levels", "Hot-seat + LAN", "Autosave + replay"],
+  "factsZh": ["5 只气球 · 20 格", "四档 AI", "同屏 + 局域网", "自动保存 + 复盘"],
+  "lines": [
+    { "at": 0.4, "en": "Five paper balloons. Four rounds of wind.", "zh": "五只纸气球，四轮风。" },
+    { "at": 5.4, "en": "Pick one. Ride the wind.", "zh": "看准一只，跟着它飞。" },
+    { "at": 8.5, "en": "Back a balloon in secret.", "zh": "每轮秘密支持一只气球。" },
+    { "at": 11.2, "en": "Two tailwinds add one space.", "zh": "两枚顺风，可以多推一格。" },
+    { "at": 14.2, "en": "Five wind cards decide the race.", "zh": "五张风卡，决定风向。" },
+    { "at": 17.5, "en": "Leader scores three. Second scores one. Four rounds, then the overall leader pays five.", "zh": "领先支持者得 3 分，第二得 1 分；四轮后总领先再得 5 分。" },
+    { "at": 27.5, "en": "Solo against four AI levels, or 2–6 players on one screen or over Wi-Fi.", "zh": "单人四档 AI，或 2–6 人同屏/局域网。" },
+    { "at": 39.6, "en": "Balloon Rally. Five balloons. Four winds. One shared guess.", "zh": "气球大赛：五只气球，四轮风，全桌一起猜。" }
+  ]
+}

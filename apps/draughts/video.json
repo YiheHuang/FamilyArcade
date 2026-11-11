@@ -1,0 +1,42 @@
+{
+  "slug": "draughts",
+  "order": 4,
+  "title": "Draughts",
+  "titleZh": "国际跳棋",
+  "tagline": "Twelve pieces. One quiet table.",
+  "taglineZh": "十二枚棋子，一张安静的桌子。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "7+",
+  "accent": "#2f6b5f",
+  "paper": "#f4efe3",
+  "ink": "#1f2a26",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "8 × 8 board",
+    "12 men each",
+    "4 AI levels",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "8 × 8 棋盘",
+    "双方各 12 子",
+    "四档 AI",
+    "同屏 + 局域网"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Twelve men. An eight-by-eight board. English draughts.", "zh": "十二枚棋子，八乘八棋盘。英式跳棋。" },
+    { "at": 5.2, "en": "Draughts. An old game for a full table.", "zh": "国际跳棋。老游戏，一桌人。" },
+    { "at": 10.0, "en": "Move diagonally. Captures are mandatory. Keep jumping.", "zh": "斜向走子。吃子必须走。能跳就继续跳。" },
+    { "at": 16.0, "en": "Four AI levels, from a gentle Companion to a five-ply Hard.", "zh": "四档 AI，从温和陪玩到五层搜索的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Hints with reasons, undo, autosave and a family record.", "zh": "带理由的提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 38.0, "en": "Kings walk backwards. Reach the far row to crown one.", "zh": "王棋可以后退。兵到达底线即可升变。" },
+    { "at": 42.0, "en": "Draughts. Twelve pieces. One quiet table.", "zh": "国际跳棋。十二枚棋子，一张安静的桌子。" }
+  ]
+}

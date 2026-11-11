@@ -1,0 +1,26 @@
+{
+  "zh": {
+    "voice": "zh-CN-YunxiNeural",
+    "lines": [
+      { "at": 0.8, "text": "周末晚上，来一局跳棋。" },
+      { "at": 5.0, "text": "走一步，或者跳过一颗珠子。" },
+      { "at": 9.4, "text": "可以连着跳；十颗珠子先进对面三角就赢。" },
+      { "at": 18.0, "text": "一颗，又一颗——整条路都通了。" },
+      { "at": 28.6, "text": "一个人练，一家人同屏。" },
+      { "at": 34.0, "text": "悔棋、提示，也都替你想好了。" },
+      { "at": 39.0, "text": "星跃，十颗玻璃珠，跨过一片星空。离线，无广告。" }
+    ]
+  },
+  "en": {
+    "voice": "en-US-AndrewNeural",
+    "lines": [
+      { "at": 0.8, "text": "Weekend night. One game of checkers." },
+      { "at": 5.0, "text": "Move one step, or jump a marble." },
+      { "at": 9.4, "text": "Chain your jumps. Fill the far triangle to win." },
+      { "at": 18.0, "text": "One jump, another, another — the whole route opens up." },
+      { "at": 28.6, "text": "Play solo, or share one screen." },
+      { "at": 34.0, "text": "Undo and hints are there when you need them." },
+      { "at": 39.0, "text": "Star Leap. Ten glass marbles. One starry board. Offline, no ads." }
+    ]
+  }
+}

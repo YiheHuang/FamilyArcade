@@ -1,0 +1,11 @@
+# 项目级 Cargo 镜像配置（仅对 packages/desktop 生效）
+# crates.io 直连在国内网络下经常失败，这里默认走 rsproxy 镜像。
+# 如果你的网络可以直连 crates.io，删除本文件即可。
+[source.crates-io]
+replace-with = "rsproxy"
+
+[source.rsproxy]
+registry = "sparse+https://rsproxy.cn/index/"
+
+[net]
+git-fetch-with-cli = true

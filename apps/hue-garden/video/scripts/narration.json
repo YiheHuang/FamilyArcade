@@ -1,0 +1,26 @@
+{
+  "zh": {
+    "voice": "zh-CN-YunxiNeural",
+    "lines": [
+      { "at": 0.9, "text": "周末晚上，来铺一座彩色庭院。" },
+      { "at": 4.8, "text": "同色不同形，或者同形不同色。" },
+      { "at": 9.4, "text": "一条线最多六张；六连开花，再加六分。" },
+      { "at": 18.0, "text": "这是引擎里真实的一局，三十八手。" },
+      { "at": 31.2, "text": "一个人，或者一家人，轮流铺。" },
+      { "at": 37.0, "text": "悔棋、提示、自动保存，都替你想好了。" },
+      { "at": 43.0, "text": "彩庭。颜色或形状，连成一条线。" }
+    ]
+  },
+  "en": {
+    "voice": "en-US-AndrewNeural",
+    "lines": [
+      { "at": 0.9, "text": "Weekend night. Lay a little courtyard." },
+      { "at": 4.8, "text": "One colour, new shapes. Or one shape, new colours." },
+      { "at": 9.4, "text": "A line holds six. Six in a row blooms for six more." },
+      { "at": 18.0, "text": "This is a real game from the engine — thirty-eight turns." },
+      { "at": 31.2, "text": "One player, or the whole table." },
+      { "at": 37.0, "text": "Undo, hints and autosave are all here." },
+      { "at": 43.0, "text": "Hue Garden. A colour or a shape, one line at a time. Offline, no ads." }
+    ]
+  }
+}

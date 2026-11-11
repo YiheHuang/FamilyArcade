@@ -1,0 +1,58 @@
+{
+  "lines": [
+    {
+      "at": 0.3,
+      "text": "六种甜点。三轮。每次一张。",
+      "file": "audio/voice/zh/line-1.mp3",
+      "duration": 4.63
+    },
+    {
+      "at": 5.3,
+      "text": "甜点转盘。选一张，传下去。",
+      "file": "audio/voice/zh/line-2.mp3",
+      "duration": 4.15
+    },
+    {
+      "at": 9.8,
+      "text": "每人八张。大家一起选一张。",
+      "file": "audio/voice/zh/line-3.mp3",
+      "duration": 3.72
+    },
+    {
+      "at": 13.9,
+      "text": "一对 2 分，三层 6 分，满盘 12 分。",
+      "file": "audio/voice/zh/line-4.mp3",
+      "duration": 4.2
+    },
+    {
+      "at": 20.1,
+      "text": "三种不同甜点是拼盘。收尾也计分。",
+      "file": "audio/voice/zh/line-5.mp3",
+      "duration": 4.61
+    },
+    {
+      "at": 25,
+      "text": "传左，传右，再传左。一共三轮。",
+      "file": "audio/voice/zh/line-6.mp3",
+      "duration": 4.78
+    },
+    {
+      "at": 30.7,
+      "text": "传设备有隐私遮罩。单人可打四档 AI。",
+      "file": "audio/voice/zh/line-7.mp3",
+      "duration": 4.94
+    },
+    {
+      "at": 36.7,
+      "text": "自动保存、家庭战绩、中英双语。离线，无账号。",
+      "file": "audio/voice/zh/line-8.mp3",
+      "duration": 6.17
+    },
+    {
+      "at": 43.3,
+      "text": "甜点转盘。选一张，传下去。",
+      "file": "audio/voice/zh/line-9.mp3",
+      "duration": 4.15
+    }
+  ]
+}

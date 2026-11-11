@@ -1,0 +1,44 @@
+{
+  "slug": "star-leap",
+  "order": 27,
+  "title": "Star Leap",
+  "titleZh": "星跃",
+  "tagline": "Ten glass marbles. One starry board.",
+  "taglineZh": "十颗玻璃珠，跨过一片星空。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "15–25 minutes",
+  "timeZh": "15–25 分钟",
+  "age": "7+",
+  "accent": "#b08a4f",
+  "paper": "#f7f3ea",
+  "ink": "#1d2430",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "121 holes, 10 marbles each",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "Autosave + undo",
+    "200-game calibration"
+  ],
+  "factsZh": [
+    "121 个孔位，每人 10 颗",
+    "四档 AI",
+    "同屏 + 局域网",
+    "自动保存 + 悔棋",
+    "每对 200 局校准"
+  ],
+  "lines": [
+    { "at": 0.8, "en": "Weekend night. One game of checkers.", "zh": "周末晚上，来一局跳棋。" },
+    { "at": 5.0, "en": "Move one step, or jump a marble.", "zh": "走一步，或者跳过一颗珠子。" },
+    { "at": 9.4, "en": "Chain your jumps. Fill the far triangle to win.", "zh": "可以连着跳；十颗珠子先进对面三角就赢。" },
+    { "at": 18.0, "en": "One jump, another, another — the whole route opens up.", "zh": "一颗，又一颗——整条路都通了。" },
+    { "at": 28.6, "en": "Play solo, or share one screen.", "zh": "一个人练，一家人同屏。" },
+    { "at": 34.0, "en": "Undo and hints are there when you need them.", "zh": "悔棋、提示，也都替你想好了。" },
+    { "at": 39.0, "en": "Star Leap. Ten glass marbles.", "zh": "星跃，十颗玻璃珠。" },
+    { "at": 43.0, "en": "One starry board. Offline, no ads.", "zh": "跨过一片星空。离线，无广告。" }
+  ]
+}

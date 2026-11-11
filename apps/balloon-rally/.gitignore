@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.tmp/
+tmp-*.png
+tmp-*.json
+video/node_modules/
+video/out/
+video/.cache/
+.DS_Store
+*.log

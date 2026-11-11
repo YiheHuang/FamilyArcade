@@ -1,0 +1,74 @@
+{
+  "slug": "hex",
+  "order": 20,
+  "title": "Hex",
+  "titleZh": "六角棋",
+  "tagline": "Two edges. One unbroken line.",
+  "taglineZh": "两条边，一条不断的线。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "7+",
+  "accent": "#e06a52",
+  "paper": "#0c171e",
+  "ink": "#f2ecdf",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "11 × 11 hex board",
+    "Four AI levels",
+    "Hot-seat + LAN",
+    "Hints, undo, autosave"
+  ],
+  "factsZh": [
+    "11 × 11 六角棋盘",
+    "四档 AI",
+    "同屏 + 局域网",
+    "提示、悔棋、自动保存"
+  ],
+  "lines": [
+    {
+      "at": 0.4,
+      "en": "A board of hexagons. Two players. No draws.",
+      "zh": "一张六角棋盘，两位玩家，没有平局。"
+    },
+    {
+      "at": 5.2,
+      "en": "Hex. Red joins north to south; Blue joins west to east.",
+      "zh": "六角棋。红方连接南北，蓝方连接东西。"
+    },
+    {
+      "at": 10.4,
+      "en": "Place one stone. Build an unbroken chain through neighbouring hexes.",
+      "zh": "放下一枚棋子，用相邻的六角格连成一条不断的线。"
+    },
+    {
+      "at": 16.2,
+      "en": "Four AI levels: a gentle Companion, Easy, Normal, and a searching Hard.",
+      "zh": "四档 AI：温和陪玩、轻松、标准，以及认真搜索的挑战。"
+    },
+    {
+      "at": 23.0,
+      "en": "Play solo, pass one screen, or let a phone join over Wi-Fi.",
+      "zh": "单人、同屏热座，或者让手机通过 Wi-Fi 加入。"
+    },
+    {
+      "at": 30.0,
+      "en": "Ask the coach for a hint and hear the reason, not just the hex.",
+      "zh": "向教练要一个提示，听到理由，而不只是一个格子。"
+    },
+    {
+      "at": 36.4,
+      "en": "Undo, autosave, and a family record that stays on this device.",
+      "zh": "悔棋、自动保存，还有留在这台设备上的家庭战绩。"
+    },
+    {
+      "at": 41.4,
+      "en": "Hex. Two edges. One unbroken line.",
+      "zh": "六角棋。两条边，一条不断的线。"
+    }
+  ]
+}

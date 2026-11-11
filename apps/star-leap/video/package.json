@@ -1,0 +1,33 @@
+{
+  "name": "star-leap-promo",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "gen": "tsx scripts/gen-data.ts && tsx scripts/gen-voice.mjs && tsx scripts/gen-srt.mjs",
+    "facts": "tsx scripts/facts.ts",
+    "stills": "remotion still src/index.ts StarLeapPromoZH out/poster.png --frame=120",
+    "render": "remotion render src/index.ts StarLeapPromoZH out/star-leap-promo-zh.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=160k",
+    "render:en": "remotion render src/index.ts StarLeapPromoEN out/star-leap-promo-en.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=160k",
+    "master": "node scripts/master.mjs",
+    "release": "npm run render && npm run render:en && npm run master"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/media": "4.0.537",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  }
+}

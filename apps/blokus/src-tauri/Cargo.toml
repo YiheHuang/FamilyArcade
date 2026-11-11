@@ -1,0 +1,35 @@
+[package]
+name = "blokus"
+version = "1.7.1"
+description = "Blokus (角斗士棋) desktop app"
+authors = ["YiheHuang"]
+edition = "2021"
+rust-version = "1.77"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "sync", "time"] }
+axum = { version = "0.8", features = ["ws"] }
+futures-util = "0.3"
+include_dir = "0.7"
+if-addrs = "0.13"
+
+[dev-dependencies]
+tokio-tungstenite = "0.29"
+
+# keep the local build cache small: dependency debug info is the bulk of
+# `target/debug` and is almost never needed when debugging our own code
+[profile.dev.package."*"]
+debug = false
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

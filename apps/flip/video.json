@@ -1,0 +1,32 @@
+{
+  "slug": "flip",
+  "order": 3,
+  "title": "Flip",
+  "titleZh": "黑白棋",
+  "tagline": "Corner the board. Flip the table.",
+  "taglineZh": "占住角，翻满盘。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#2f6b53",
+  "paper": "#f4ecdd",
+  "ink": "#241f19",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["8 × 8 board", "4 AI levels", "Hot-seat + LAN", "Hints, undo & autosave"],
+  "factsZh": ["8×8 棋盘", "四档 AI", "同屏 + 局域网", "提示、悔棋、自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "Sixty-four squares. Two colours. One quiet battle.", "zh": "六十四个格子，两种颜色，一场安静的对弈。" },
+    { "at": 5.2, "en": "Flip. Reversi for the family table.", "zh": "黑白棋。给一大家子的小游戏。" },
+    { "at": 10.0, "en": "Bracket a line and flip every disc between. Corners never move again.", "zh": "夹住一条线，翻掉中间的棋子。角上的棋子永远不会再翻。" },
+    { "at": 16.0, "en": "Four AI levels, from a gentle Companion to a four-ply Hard.", "zh": "四档 AI，从温和陪玩到四层搜索的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
+    { "at": 31.0, "en": "Hints explain the shape. Undo, autosave and a family record are built in.", "zh": "提示会解释棋形；悔棋、自动保存和家庭战绩都已内置。" },
+    { "at": 38.0, "en": "Offline, no account, no ads. Just the board.", "zh": "离线、无账号、无广告，只剩棋盘。" },
+    { "at": 42.0, "en": "Flip. Corner the board. Flip the table.", "zh": "黑白棋。占住角，翻满盘。" }
+  ]
+}

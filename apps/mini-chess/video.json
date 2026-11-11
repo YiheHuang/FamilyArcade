@@ -1,0 +1,44 @@
+{
+  "slug": "mini-chess",
+  "order": 19,
+  "title": "Mini Chess",
+  "titleZh": "迷你棋",
+  "tagline": "Small board. Real chess.",
+  "taglineZh": "小棋盘，真棋局。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#3f6b57",
+  "paper": "#f5eddf",
+  "ink": "#27231d",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "5×6 board · 10 pieces a side",
+    "No queens · promote to rook, bishop or knight",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "42 unit tests"
+  ],
+  "factsZh": [
+    "5×6 棋盘 · 每方 10 子",
+    "无皇后 · 兵可升变为车、象、马",
+    "四档 AI",
+    "同屏 + 局域网",
+    "42 个单元测试"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Five files. Six ranks. Ten pieces a side.", "zh": "五列，六行，每方十子。" },
+    { "at": 5.2, "en": "Mini Chess — an original chess variant for the family table.", "zh": "迷你棋——给家庭牌桌的原创国际象棋变体。" },
+    { "at": 10.5, "en": "No queens. Pawns still promote to a rook, bishop or knight.", "zh": "没有皇后。兵依然可以升变为车、象或马。" },
+    { "at": 16.5, "en": "Check, checkmate and stalemate use the rules you know.", "zh": "将军、将死、无子可动，都是熟悉的规则。" },
+    { "at": 22.5, "en": "Four AI levels, from a gentle Companion to a five-ply Hard.", "zh": "四档 AI，从温和陪玩到五层搜索的挑战。" },
+    { "at": 29.0, "en": "Pass one screen, or let a phone join over the same Wi-Fi.", "zh": "一台设备传着下，或让手机连同一 Wi-Fi 加入。" },
+    { "at": 35.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 40.5, "en": "Mini Chess. Small board. Real chess.", "zh": "迷你棋。小棋盘，真棋局。" }
+  ]
+}

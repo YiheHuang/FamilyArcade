@@ -1,0 +1,45 @@
+{
+  "name": "star-leap",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Star Leap (星跃) — a small, offline Chinese Checkers for family game night",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc --noEmit && vitest run && vite build",
+    "e2e": "node scripts/e2e.mjs",
+    "e2e:lan": "node scripts/e2e-lan.mjs",
+    "calibrate": "esbuild scripts/calibrate.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/star-leap-calibrate.mjs --log-level=warning && node node_modules/.cache/star-leap-calibrate.mjs",
+    "shots": "node scripts/shots.mjs",
+    "video:dev": "npm --prefix video run dev",
+    "video:facts": "npm --prefix video run facts",
+    "video:render": "npm --prefix video run render",
+    "video:render:en": "npm --prefix video run render:en",
+    "video:master": "npm --prefix video run master",
+    "video:release": "npm --prefix video run release",
+    "lan": "node scripts/lan.mjs",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@family-arcade/lan": "file:../../packages/lan",
+    "@tauri-apps/api": "^2.12.4",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.3",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "playwright": "^1.65.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.2.0",
+    "vitest": "^4.0.0"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "codebreak",
+  "order": 16,
+  "title": "Codebreak",
+  "titleZh": "猜色",
+  "tagline": "Four pegs. Six colours. One secret.",
+  "taglineZh": "四枚色钉，六种颜色，一个秘密。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#2f7f78",
+  "paper": "#f4edde",
+  "ink": "#20302c",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "4-peg secret code",
+    "6 colours · 10 guesses",
+    "4 AI levels",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "四位秘密密码",
+    "6 种颜色 · 10 次机会",
+    "四档 AI",
+    "同屏 + 局域网"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Four pegs. Six colours. One hidden code.", "zh": "四枚色钉，六种颜色，一个藏起来的密码。" },
+    { "at": 5.2, "en": "Codebreak — the family code-breaking game.", "zh": "猜色——全家一起破解密码。" },
+    { "at": 10.0, "en": "The setter hides a code. The breaker has ten guesses.", "zh": "一人藏密码，一人有十次机会。" },
+    { "at": 16.0, "en": "Black means right colour and place. White means right colour, wrong place.", "zh": "黑色代表颜色和位置都对，白色代表颜色对、位置不对。" },
+    { "at": 23.5, "en": "Four AI levels, from a gentle Companion to Knuth-style Hard.", "zh": "四档 AI，从温柔陪玩到 Knuth 式挑战。" },
+    { "at": 31.0, "en": "Two players on one screen, or a phone joins over Wi-Fi. The code stays hidden.", "zh": "两人同屏，或手机连同一 Wi-Fi 加入。密码始终藏好。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Codebreak. Crack the code.", "zh": "猜色。来破解密码吧。" }
+  ]
+}

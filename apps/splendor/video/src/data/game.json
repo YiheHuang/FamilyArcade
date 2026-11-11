@@ -1,0 +1,1405 @@
+{
+  "take": {
+    "turn": 8,
+    "seat": 3,
+    "move": {
+      "type": "take",
+      "colors": [
+        "green",
+        "red",
+        "black"
+      ]
+    },
+    "before": {
+      "turn": 8,
+      "current": 3,
+      "phase": "playing",
+      "finalRound": false,
+      "winners": null,
+      "bank": {
+        "white": 5,
+        "blue": 6,
+        "green": 5,
+        "red": 7,
+        "black": 6,
+        "gold": 0
+      },
+      "board": [
+        [
+          29,
+          22,
+          11,
+          4
+        ],
+        [
+          43,
+          59,
+          46,
+          63
+        ],
+        [
+          72,
+          81,
+          71,
+          77
+        ]
+      ],
+      "deckCounts": [
+        36,
+        24,
+        13
+      ],
+      "nobles": [
+        4,
+        5,
+        3,
+        2,
+        8
+      ],
+      "players": [
+        {
+          "seat": 0,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 1,
+            "green": 1,
+            "red": 0,
+            "black": 0,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 79,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        },
+        {
+          "seat": 1,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0,
+            "gold": 2
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 65,
+              "fromDeck": false
+            },
+            {
+              "cardId": 55,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        },
+        {
+          "seat": 2,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 0,
+            "green": 1,
+            "red": 0,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 87,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        },
+        {
+          "seat": 3,
+          "kind": "human",
+          "aiLevel": "friendly",
+          "tokens": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 70,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        }
+      ]
+    },
+    "after": {
+      "turn": 9,
+      "current": 0,
+      "phase": "playing",
+      "finalRound": false,
+      "winners": null,
+      "bank": {
+        "white": 5,
+        "blue": 6,
+        "green": 4,
+        "red": 6,
+        "black": 5,
+        "gold": 0
+      },
+      "board": [
+        [
+          29,
+          22,
+          11,
+          4
+        ],
+        [
+          43,
+          59,
+          46,
+          63
+        ],
+        [
+          72,
+          81,
+          71,
+          77
+        ]
+      ],
+      "deckCounts": [
+        36,
+        24,
+        13
+      ],
+      "nobles": [
+        4,
+        5,
+        3,
+        2,
+        8
+      ],
+      "players": [
+        {
+          "seat": 0,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 1,
+            "green": 1,
+            "red": 0,
+            "black": 0,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 79,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        },
+        {
+          "seat": 1,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0,
+            "gold": 2
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 65,
+              "fromDeck": false
+            },
+            {
+              "cardId": 55,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        },
+        {
+          "seat": 2,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 0,
+            "green": 1,
+            "red": 0,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 87,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        },
+        {
+          "seat": 3,
+          "kind": "human",
+          "aiLevel": "friendly",
+          "tokens": {
+            "white": 0,
+            "blue": 0,
+            "green": 1,
+            "red": 1,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 0,
+          "purchased": [],
+          "reserved": [
+            {
+              "cardId": 70,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 0
+        }
+      ]
+    },
+    "taken": {
+      "white": 0,
+      "blue": 0,
+      "green": 1,
+      "red": 1,
+      "black": 1,
+      "gold": 0
+    },
+    "paid": null,
+    "card": null,
+    "nobleId": null,
+    "scoreBefore": 0,
+    "scoreAfter": 0
+  },
+  "buy": {
+    "turn": 52,
+    "seat": 3,
+    "move": {
+      "type": "buy",
+      "target": {
+        "kind": "board",
+        "tier": 3,
+        "slot": 1
+      }
+    },
+    "before": {
+      "turn": 52,
+      "current": 3,
+      "phase": "playing",
+      "finalRound": false,
+      "winners": null,
+      "bank": {
+        "white": 0,
+        "blue": 1,
+        "green": 3,
+        "red": 2,
+        "black": 3,
+        "gold": 2
+      },
+      "board": [
+        [
+          29,
+          22,
+          20,
+          4
+        ],
+        [
+          44,
+          60,
+          47,
+          69
+        ],
+        [
+          85,
+          75,
+          86,
+          77
+        ]
+      ],
+      "deckCounts": [
+        35,
+        16,
+        6
+      ],
+      "nobles": [
+        4,
+        5,
+        3,
+        2,
+        8
+      ],
+      "players": [
+        {
+          "seat": 0,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 2,
+            "green": 2,
+            "red": 1,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 1,
+            "green": 1,
+            "red": 0,
+            "black": 1
+          },
+          "cardPoints": 5,
+          "purchased": [
+            11,
+            80,
+            68
+          ],
+          "reserved": [
+            {
+              "cardId": 79,
+              "fromDeck": false
+            },
+            {
+              "cardId": 74,
+              "fromDeck": false
+            },
+            {
+              "cardId": 89,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 5
+        },
+        {
+          "seat": 1,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 0,
+            "blue": 1,
+            "green": 0,
+            "red": 3,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 1,
+            "red": 0,
+            "black": 1
+          },
+          "cardPoints": 4,
+          "purchased": [
+            55,
+            65
+          ],
+          "reserved": [
+            {
+              "cardId": 81,
+              "fromDeck": false
+            },
+            {
+              "cardId": 83,
+              "fromDeck": false
+            },
+            {
+              "cardId": 71,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 4
+        },
+        {
+          "seat": 2,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 2,
+            "blue": 1,
+            "green": 2,
+            "red": 0,
+            "black": 1,
+            "gold": 0
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 2,
+            "black": 0
+          },
+          "cardPoints": 3,
+          "purchased": [
+            59,
+            63
+          ],
+          "reserved": [
+            {
+              "cardId": 87,
+              "fromDeck": false
+            },
+            {
+              "cardId": 72,
+              "fromDeck": false
+            },
+            {
+              "cardId": 46,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 3
+        },
+        {
+          "seat": 3,
+          "kind": "human",
+          "aiLevel": "friendly",
+          "tokens": {
+            "white": 4,
+            "blue": 2,
+            "green": 0,
+            "red": 1,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 2,
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 3,
+          "purchased": [
+            43,
+            45
+          ],
+          "reserved": [
+            {
+              "cardId": 70,
+              "fromDeck": false
+            },
+            {
+              "cardId": 49,
+              "fromDeck": false
+            },
+            {
+              "cardId": 61,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 3
+        }
+      ]
+    },
+    "after": {
+      "turn": 53,
+      "current": 0,
+      "phase": "playing",
+      "finalRound": false,
+      "winners": null,
+      "bank": {
+        "white": 4,
+        "blue": 1,
+        "green": 3,
+        "red": 2,
+        "black": 3,
+        "gold": 3
+      },
+      "board": [
+        [
+          29,
+          22,
+          20,
+          4
+        ],
+        [
+          44,
+          60,
+          47,
+          69
+        ],
+        [
+          85,
+          76,
+          86,
+          77
+        ]
+      ],
+      "deckCounts": [
+        35,
+        16,
+        5
+      ],
+      "nobles": [
+        4,
+        5,
+        3,
+        2,
+        8
+      ],
+      "players": [
+        {
+          "seat": 0,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 2,
+            "green": 2,
+            "red": 1,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 1,
+            "green": 1,
+            "red": 0,
+            "black": 1
+          },
+          "cardPoints": 5,
+          "purchased": [
+            11,
+            80,
+            68
+          ],
+          "reserved": [
+            {
+              "cardId": 79,
+              "fromDeck": false
+            },
+            {
+              "cardId": 74,
+              "fromDeck": false
+            },
+            {
+              "cardId": 89,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 5
+        },
+        {
+          "seat": 1,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 0,
+            "blue": 1,
+            "green": 0,
+            "red": 3,
+            "black": 1,
+            "gold": 1
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 1,
+            "red": 0,
+            "black": 1
+          },
+          "cardPoints": 4,
+          "purchased": [
+            55,
+            65
+          ],
+          "reserved": [
+            {
+              "cardId": 81,
+              "fromDeck": false
+            },
+            {
+              "cardId": 83,
+              "fromDeck": false
+            },
+            {
+              "cardId": 71,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 4
+        },
+        {
+          "seat": 2,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 2,
+            "blue": 1,
+            "green": 2,
+            "red": 0,
+            "black": 1,
+            "gold": 0
+          },
+          "bonuses": {
+            "white": 0,
+            "blue": 0,
+            "green": 0,
+            "red": 2,
+            "black": 0
+          },
+          "cardPoints": 3,
+          "purchased": [
+            59,
+            63
+          ],
+          "reserved": [
+            {
+              "cardId": 87,
+              "fromDeck": false
+            },
+            {
+              "cardId": 72,
+              "fromDeck": false
+            },
+            {
+              "cardId": 46,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 3
+        },
+        {
+          "seat": 3,
+          "kind": "human",
+          "aiLevel": "friendly",
+          "tokens": {
+            "white": 0,
+            "blue": 2,
+            "green": 0,
+            "red": 1,
+            "black": 1,
+            "gold": 0
+          },
+          "bonuses": {
+            "white": 2,
+            "blue": 1,
+            "green": 0,
+            "red": 0,
+            "black": 0
+          },
+          "cardPoints": 7,
+          "purchased": [
+            43,
+            45,
+            75
+          ],
+          "reserved": [
+            {
+              "cardId": 70,
+              "fromDeck": false
+            },
+            {
+              "cardId": 49,
+              "fromDeck": false
+            },
+            {
+              "cardId": 61,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 7
+        }
+      ]
+    },
+    "taken": null,
+    "paid": {
+      "white": 4,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0,
+      "gold": 1
+    },
+    "card": {
+      "id": 75,
+      "tier": 3,
+      "bonus": "blue",
+      "points": 4,
+      "cost": {
+        "white": 7,
+        "blue": 0,
+        "green": 0,
+        "red": 0,
+        "black": 0
+      },
+      "discount": 2
+    },
+    "nobleId": null,
+    "scoreBefore": 3,
+    "scoreAfter": 7
+  },
+  "noble": {
+    "turn": 55,
+    "seat": 0,
+    "move": {
+      "type": "buy",
+      "target": {
+        "kind": "board",
+        "tier": 1,
+        "slot": 1
+      }
+    },
+    "before": {
+      "turn": 55,
+      "current": 0,
+      "phase": "playing",
+      "finalRound": false,
+      "winners": null,
+      "bank": {
+        "white": 1,
+        "blue": 3,
+        "green": 3,
+        "red": 0,
+        "black": 2,
+        "gold": 3
+      },
+      "board": [
+        [
+          14,
+          39,
+          5,
+          3
+        ],
+        [
+          58,
+          54,
+          46,
+          69
+        ],
+        [
+          71,
+          74,
+          76,
+          77
+        ]
+      ],
+      "deckCounts": [
+        23,
+        16,
+        13
+      ],
+      "nobles": [
+        1,
+        7,
+        6
+      ],
+      "players": [
+        {
+          "seat": 0,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 2,
+            "blue": 0,
+            "green": 0,
+            "red": 1,
+            "black": 2,
+            "gold": 0
+          },
+          "bonuses": {
+            "white": 3,
+            "blue": 2,
+            "green": 2,
+            "red": 3,
+            "black": 2
+          },
+          "cardPoints": 6,
+          "purchased": [
+            25,
+            42,
+            33,
+            0,
+            6,
+            12,
+            11,
+            28,
+            19,
+            56,
+            60,
+            35
+          ],
+          "reserved": [
+            {
+              "cardId": 70,
+              "fromDeck": false
+            },
+            {
+              "cardId": 22,
+              "fromDeck": true
+            },
+            {
+              "cardId": 50,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 6
+        },
+        {
+          "seat": 1,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 1,
+            "green": 1,
+            "red": 3,
+            "black": 0,
+            "gold": 2
+          },
+          "bonuses": {
+            "white": 1,
+            "blue": 2,
+            "green": 2,
+            "red": 1,
+            "black": 2
+          },
+          "cardPoints": 12,
+          "purchased": [
+            20,
+            84,
+            7,
+            51,
+            65,
+            52,
+            34,
+            48
+          ],
+          "reserved": [
+            {
+              "cardId": 41,
+              "fromDeck": false
+            },
+            {
+              "cardId": 43,
+              "fromDeck": false
+            },
+            {
+              "cardId": 78,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 12
+        }
+      ]
+    },
+    "after": {
+      "turn": 56,
+      "current": 1,
+      "phase": "playing",
+      "finalRound": false,
+      "winners": null,
+      "bank": {
+        "white": 1,
+        "blue": 3,
+        "green": 3,
+        "red": 0,
+        "black": 2,
+        "gold": 3
+      },
+      "board": [
+        [
+          14,
+          16,
+          5,
+          3
+        ],
+        [
+          58,
+          54,
+          46,
+          69
+        ],
+        [
+          71,
+          74,
+          76,
+          77
+        ]
+      ],
+      "deckCounts": [
+        22,
+        16,
+        13
+      ],
+      "nobles": [
+        1,
+        6
+      ],
+      "players": [
+        {
+          "seat": 0,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 2,
+            "blue": 0,
+            "green": 0,
+            "red": 1,
+            "black": 2,
+            "gold": 0
+          },
+          "bonuses": {
+            "white": 3,
+            "blue": 2,
+            "green": 2,
+            "red": 3,
+            "black": 3
+          },
+          "cardPoints": 6,
+          "purchased": [
+            25,
+            42,
+            33,
+            0,
+            6,
+            12,
+            11,
+            28,
+            19,
+            56,
+            60,
+            35,
+            39
+          ],
+          "reserved": [
+            {
+              "cardId": 70,
+              "fromDeck": false
+            },
+            {
+              "cardId": 22,
+              "fromDeck": true
+            },
+            {
+              "cardId": 50,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [
+            7
+          ],
+          "points": 9
+        },
+        {
+          "seat": 1,
+          "kind": "human",
+          "aiLevel": "normal",
+          "tokens": {
+            "white": 1,
+            "blue": 1,
+            "green": 1,
+            "red": 3,
+            "black": 0,
+            "gold": 2
+          },
+          "bonuses": {
+            "white": 1,
+            "blue": 2,
+            "green": 2,
+            "red": 1,
+            "black": 2
+          },
+          "cardPoints": 12,
+          "purchased": [
+            20,
+            84,
+            7,
+            51,
+            65,
+            52,
+            34,
+            48
+          ],
+          "reserved": [
+            {
+              "cardId": 41,
+              "fromDeck": false
+            },
+            {
+              "cardId": 43,
+              "fromDeck": false
+            },
+            {
+              "cardId": 78,
+              "fromDeck": false
+            }
+          ],
+          "nobles": [],
+          "points": 12
+        }
+      ]
+    },
+    "taken": null,
+    "paid": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0,
+      "gold": 0
+    },
+    "card": {
+      "id": 39,
+      "tier": 1,
+      "bonus": "black",
+      "points": 0,
+      "cost": {
+        "white": 0,
+        "blue": 0,
+        "green": 1,
+        "red": 3,
+        "black": 1
+      },
+      "discount": 5
+    },
+    "nobleId": 7,
+    "scoreBefore": 6,
+    "scoreAfter": 9
+  },
+  "wide": {
+    "turn": 88,
+    "current": 3,
+    "phase": "playing",
+    "finalRound": false,
+    "winners": null,
+    "bank": {
+      "white": 3,
+      "blue": 1,
+      "green": 3,
+      "red": 0,
+      "black": 5,
+      "gold": 5
+    },
+    "board": [
+      [
+        2,
+        38,
+        23,
+        3
+      ],
+      [
+        44,
+        58,
+        47,
+        69
+      ],
+      [
+        84,
+        76,
+        86,
+        77
+      ]
+    ],
+    "deckCounts": [
+      22,
+      14,
+      4
+    ],
+    "nobles": [
+      4,
+      5,
+      3,
+      2,
+      8
+    ],
+    "players": [
+      {
+        "seat": 0,
+        "kind": "human",
+        "aiLevel": "normal",
+        "tokens": {
+          "white": 0,
+          "blue": 1,
+          "green": 1,
+          "red": 1,
+          "black": 0,
+          "gold": 0
+        },
+        "bonuses": {
+          "white": 1,
+          "blue": 2,
+          "green": 1,
+          "red": 2,
+          "black": 1
+        },
+        "cardPoints": 11,
+        "purchased": [
+          11,
+          80,
+          68,
+          60,
+          51,
+          4,
+          85
+        ],
+        "reserved": [
+          {
+            "cardId": 79,
+            "fromDeck": false
+          },
+          {
+            "cardId": 74,
+            "fromDeck": false
+          },
+          {
+            "cardId": 89,
+            "fromDeck": false
+          }
+        ],
+        "nobles": [],
+        "points": 11
+      },
+      {
+        "seat": 1,
+        "kind": "human",
+        "aiLevel": "normal",
+        "tokens": {
+          "white": 0,
+          "blue": 1,
+          "green": 1,
+          "red": 4,
+          "black": 0,
+          "gold": 0
+        },
+        "bonuses": {
+          "white": 0,
+          "blue": 2,
+          "green": 2,
+          "red": 1,
+          "black": 2
+        },
+        "cardPoints": 5,
+        "purchased": [
+          55,
+          65,
+          29,
+          15,
+          13,
+          33,
+          16
+        ],
+        "reserved": [
+          {
+            "cardId": 81,
+            "fromDeck": false
+          },
+          {
+            "cardId": 83,
+            "fromDeck": false
+          },
+          {
+            "cardId": 71,
+            "fromDeck": false
+          }
+        ],
+        "nobles": [],
+        "points": 5
+      },
+      {
+        "seat": 2,
+        "kind": "human",
+        "aiLevel": "normal",
+        "tokens": {
+          "white": 1,
+          "blue": 2,
+          "green": 0,
+          "red": 1,
+          "black": 0,
+          "gold": 0
+        },
+        "bonuses": {
+          "white": 0,
+          "blue": 2,
+          "green": 1,
+          "red": 2,
+          "black": 1
+        },
+        "cardPoints": 4,
+        "purchased": [
+          59,
+          63,
+          35,
+          22,
+          8,
+          10
+        ],
+        "reserved": [
+          {
+            "cardId": 87,
+            "fromDeck": false
+          },
+          {
+            "cardId": 72,
+            "fromDeck": false
+          },
+          {
+            "cardId": 46,
+            "fromDeck": false
+          }
+        ],
+        "nobles": [],
+        "points": 4
+      },
+      {
+        "seat": 3,
+        "kind": "human",
+        "aiLevel": "friendly",
+        "tokens": {
+          "white": 3,
+          "blue": 2,
+          "green": 2,
+          "red": 1,
+          "black": 2,
+          "gold": 0
+        },
+        "bonuses": {
+          "white": 2,
+          "blue": 1,
+          "green": 1,
+          "red": 1,
+          "black": 1
+        },
+        "cardPoints": 9,
+        "purchased": [
+          43,
+          45,
+          75,
+          20,
+          24,
+          32
+        ],
+        "reserved": [
+          {
+            "cardId": 70,
+            "fromDeck": false
+          },
+          {
+            "cardId": 49,
+            "fromDeck": false
+          },
+          {
+            "cardId": 61,
+            "fromDeck": false
+          }
+        ],
+        "nobles": [],
+        "points": 9
+      }
+    ]
+  },
+  "sources": {
+    "fourPlayer": "rich4-6",
+    "twoPlayerNoble": "noble2-10"
+  }
+}

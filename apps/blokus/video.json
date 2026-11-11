@@ -1,0 +1,32 @@
+{
+  "slug": "blokus",
+  "order": 6,
+  "title": "Blokus",
+  "titleZh": "角斗士棋",
+  "tagline": "Claim a corner. Cut off the table.",
+  "taglineZh": "占住一角，把桌子围起来。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "20–30 minutes",
+  "timeZh": "20–30 分钟",
+  "age": "7+",
+  "accent": "#3f7d6b",
+  "paper": "#f3efe4",
+  "ink": "#24332f",
+  "screens": {
+    "en": ["home.png", "game.png", "lobby.png"],
+    "zh": ["home.png", "game.png", "lobby.png"]
+  },
+  "facts": ["84 pieces", "3 AI levels", "Hot-seat + LAN", "Phone browser join"],
+  "factsZh": ["84 块拼片", "三档 AI", "同屏 + 局域网", "手机浏览器加入"],
+  "lines": [
+    { "at": 0.4, "en": "One corner. Eighty-four pieces. No shared edges.", "zh": "一个角，八十四块拼片，边只能角对角。" },
+    { "at": 5.2, "en": "Blokus. Claim the table.", "zh": "角斗士棋。把桌子围起来。" },
+    { "at": 10.0, "en": "Start in your corner, then grow outward.", "zh": "从自己的角出发，向外扩张。" },
+    { "at": 16.0, "en": "Touch corners, never edges. Block the others.", "zh": "只碰角、不碰边，堵住别人。" },
+    { "at": 22.5, "en": "Three AI levels, hot-seat, or LAN from a phone.", "zh": "三档 AI、同屏热座，或手机加入局域网。" },
+    { "at": 29.0, "en": "Hints, undo, replay and a family record.", "zh": "提示、悔棋、复盘和家庭战绩。" },
+    { "at": 35.5, "en": "Offline. No account. No ads.", "zh": "离线、无账号、无广告。" },
+    { "at": 40.0, "en": "Blokus. Claim a corner.", "zh": "角斗士棋。占住一角。" }
+  ]
+}

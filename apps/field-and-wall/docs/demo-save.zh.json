@@ -1,0 +1,350 @@
+{
+  "version": 1,
+  "config": {
+    "playerCount": 2,
+    "seats": [
+      {
+        "name": "阿禾",
+        "kind": "human",
+        "level": "normal"
+      },
+      {
+        "name": "小满",
+        "kind": "human",
+        "level": "normal"
+      }
+    ],
+    "seed": "showcase-1"
+  },
+  "moves": [
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -1,
+      "y": 0,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": 1,
+      "y": 0,
+      "rot": 2,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 0,
+      "y": 1,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -1,
+      "y": 1,
+      "rot": 1,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 0,
+      "y": 2,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -1,
+      "y": 2,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 1,
+      "y": 2,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": 0,
+      "y": -1,
+      "rot": 1,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -1,
+      "y": -1,
+      "rot": 2,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": 1,
+      "y": -1,
+      "rot": 3,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 0,
+      "y": 3,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": 2,
+      "y": 2,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -1,
+      "y": -2,
+      "rot": 1,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -1,
+      "y": 3,
+      "rot": 3,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -2,
+      "y": -2,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -1,
+      "y": -3,
+      "rot": 3,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 0,
+      "y": -2,
+      "rot": 3,
+      "meeple": 1
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -3,
+      "y": -2,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 1,
+      "y": 1,
+      "rot": 1,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -2,
+      "y": -1,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -3,
+      "y": -3,
+      "rot": 3,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -2,
+      "y": 3,
+      "rot": 1,
+      "meeple": 1
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -3,
+      "y": -4,
+      "rot": 2,
+      "meeple": 1
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -3,
+      "y": -1,
+      "rot": 2,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -4,
+      "y": -3,
+      "rot": 1,
+      "meeple": 1
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -3,
+      "y": 0,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -5,
+      "y": -3,
+      "rot": 1,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -3,
+      "y": 3,
+      "rot": 3,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -4,
+      "y": -2,
+      "rot": 0,
+      "meeple": 0
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -2,
+      "y": 0,
+      "rot": 3,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -3,
+      "y": -5,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -3,
+      "y": 1,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -3,
+      "y": -6,
+      "rot": 3,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -1,
+      "y": -4,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -4,
+      "y": -1,
+      "rot": 2,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -4,
+      "y": 3,
+      "rot": 1,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 0,
+      "y": -3,
+      "rot": 2,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -5,
+      "y": 3,
+      "rot": 1,
+      "meeple": null
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": -4,
+      "y": -5,
+      "rot": 0,
+      "meeple": null
+    },
+    {
+      "seat": 1,
+      "kind": "place",
+      "x": -5,
+      "y": -2,
+      "rot": 1,
+      "meeple": 0
+    },
+    {
+      "seat": 0,
+      "kind": "place",
+      "x": 1,
+      "y": 3,
+      "rot": 0,
+      "meeple": null
+    }
+  ],
+  "savedAt": 0
+}

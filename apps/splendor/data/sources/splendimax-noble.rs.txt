@@ -1,0 +1,41 @@
+// 来源快照：https://github.com/bouk/splendimax/blob/master/src/noble.rs
+// 抓取日期：2026-10-13（通过 cdn.jsdelivr.net 获取）
+// 说明：仅作数据核对审计用途，原样保存，勿修改。
+// 注意：该文件中的贵族列表只有 9 项（缺少 white4+blue4 一项），核对时按实际内容计票。
+use cost::Tokens;
+
+fn create_noble(black: u8, blue: u8, green: u8, red: u8, white: u8) -> Noble {
+    Noble {
+        cost: Tokens {
+            black: black,
+            blue: blue,
+            green: green,
+            red: red,
+            white: white,
+            joker: 0,
+        },
+    }
+}
+
+#[derive(Debug)]
+#[derive(Clone)]
+#[derive(PartialEq)]
+pub struct Noble {
+    pub cost: Tokens,
+}
+
+impl Noble {
+    pub fn all() -> Vec<Noble> {
+        vec![
+            create_noble(0, 0, 4, 4, 0),
+            create_noble(3, 0, 0, 3, 3),
+            create_noble(4, 0, 0, 0, 4),
+            create_noble(0, 4, 4, 0, 0),
+            create_noble(0, 3, 3, 3, 0),
+            create_noble(0, 3, 3, 0, 3),
+            create_noble(4, 0, 0, 4, 0),
+            create_noble(3, 3, 0, 0, 3),
+            create_noble(3, 0, 3, 3, 0),
+        ]
+    }
+}

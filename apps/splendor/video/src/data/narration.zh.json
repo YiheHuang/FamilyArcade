@@ -1,0 +1,67 @@
+{
+  "lang": "zh",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-6%",
+  "lines": [
+    {
+      "at": 0.65,
+      "file": "audio/voice/zh/line-1.mp3",
+      "duration": 3.72,
+      "text": "周末，四个人，一桌宝石。"
+    },
+    {
+      "at": 4.7,
+      "file": "audio/voice/zh/line-2.mp3",
+      "duration": 2.928,
+      "text": "璀璨宝石，家庭版。"
+    },
+    {
+      "at": 7.85,
+      "file": "audio/voice/zh/line-3.mp3",
+      "duration": 7.128,
+      "text": "规则很简单：拿宝石，买卡，先到十五分，打完最后一轮。"
+    },
+    {
+      "at": 15.2,
+      "file": "audio/voice/zh/line-4.mp3",
+      "duration": 5.784,
+      "text": "每回合选一件事：拿宝石、买卡，或者预留。"
+    },
+    {
+      "at": 21.4,
+      "file": "audio/voice/zh/line-5.mp3",
+      "duration": 4.56,
+      "text": "买下的卡会变成永久折扣，也会带来分数。"
+    },
+    {
+      "at": 30.3,
+      "file": "audio/voice/zh/line-6.mp3",
+      "duration": 5.304,
+      "text": "凑齐贵族要的折扣，他会亲自到访，再加三分。"
+    },
+    {
+      "at": 36.2,
+      "file": "audio/voice/zh/line-7.mp3",
+      "duration": 4.08,
+      "text": "四个人同屏；也可以各自用手机加入。"
+    },
+    {
+      "at": 40.55,
+      "file": "audio/voice/zh/line-8.mp3",
+      "duration": 4.464,
+      "text": "局域网内，扫码入座，手机不用装。"
+    },
+    {
+      "at": 45.35,
+      "file": "audio/voice/zh/line-9.mp3",
+      "duration": 4.656,
+      "text": "四档 AI，节奏更慢，走错了还能悔一步。"
+    },
+    {
+      "at": 50.6,
+      "file": "audio/voice/zh/line-10.mp3",
+      "duration": 2.688,
+      "text": "今晚，来一局。"
+    }
+  ]
+}

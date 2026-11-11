@@ -1,0 +1,49 @@
+{
+  "lang": "zh",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-6%",
+  "lines": [
+    {
+      "at": 1.2,
+      "file": "audio/voice/zh/line-1.mp3",
+      "duration": 3.744,
+      "text": "周末晚上，来一局角斗士棋。"
+    },
+    {
+      "at": 5.4,
+      "file": "audio/voice/zh/line-2.mp3",
+      "duration": 5.832,
+      "text": "规则只有三条：盖住角落，对角相连，不要边贴边。"
+    },
+    {
+      "at": 14.6,
+      "file": "audio/voice/zh/line-3.mp3",
+      "duration": 4.848,
+      "text": "四个人，一人一角，每一步都在抢地盘。"
+    },
+    {
+      "at": 24.2,
+      "file": "audio/voice/zh/line-4.mp3",
+      "duration": 3.984,
+      "text": "放完全部棋子，还有额外奖励。"
+    },
+    {
+      "at": 29.6,
+      "file": "audio/voice/zh/line-5.mp3",
+      "duration": 5.136,
+      "text": "一个人练，一家人同屏，或者手机扫码联机。"
+    },
+    {
+      "at": 36.9,
+      "file": "audio/voice/zh/line-6.mp3",
+      "duration": 4.08,
+      "text": "暂停、观战，也都替你想好了。"
+    },
+    {
+      "at": 42.6,
+      "file": "audio/voice/zh/line-7.mp3",
+      "duration": 4.752,
+      "text": "离线运行，没有广告，数据只留在家里。"
+    }
+  ]
+}

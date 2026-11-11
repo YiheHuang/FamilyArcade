@@ -1,0 +1,44 @@
+{
+  "slug": "sweet-carousel",
+  "order": 5,
+  "title": "Sweet Carousel",
+  "titleZh": "甜点转盘",
+  "tagline": "Pick one, pass it on.",
+  "taglineZh": "选一张，传下去。",
+  "players": "2–5 players",
+  "playersZh": "2–5 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "7+",
+  "accent": "#b4634a",
+  "paper": "#f8f1e4",
+  "ink": "#2b2520",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "72 original dessert cards",
+    "Three-round pick-and-pass",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "Autosave, stats and undo"
+  ],
+  "factsZh": [
+    "72 张原创甜点牌",
+    "三轮同时选牌与传递",
+    "四档 AI",
+    "同屏 + 局域网",
+    "自动保存、战绩与悔棋"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Six desserts. Three rounds. One card at a time.", "zh": "六种甜点，三轮，每次一张。" },
+    { "at": 5.0, "en": "Sweet Carousel. Pick one, pass it on.", "zh": "甜点转盘。选一张，传下去。" },
+    { "at": 9.5, "en": "Eight cards each. Everyone picks one together.", "zh": "每人八张，大家一起选一张。" },
+    { "at": 14.0, "en": "Pair, triple, full plate, sampler. Every leftover counts.", "zh": "一对、三层、满盘、拼盘。收尾也算分。" },
+    { "at": 20.0, "en": "Pass left, then right, then left. Three rounds.", "zh": "传左，传右，再传左。一共三轮。" },
+    { "at": 26.0, "en": "Hot-seat with a privacy cover, or solo against four AI levels.", "zh": "传设备有隐私遮罩，单人可打四档 AI。" },
+    { "at": 33.0, "en": "A phone joins over Wi-Fi. Each device gets only its own hand.", "zh": "手机连同一 Wi-Fi 加入，每台设备只收到自己的手牌。" },
+    { "at": 40.0, "en": "Offline, no account, no ads. Sweet Carousel.", "zh": "离线、无账号、无广告。甜点转盘。" }
+  ]
+}

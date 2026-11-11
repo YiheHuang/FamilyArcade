@@ -1,0 +1,13 @@
+{
+  "seat": 1,
+  "handTiles": [
+    28
+  ],
+  "placements": [
+    {
+      "x": 3,
+      "y": -6,
+      "tile": 28
+    }
+  ]
+}

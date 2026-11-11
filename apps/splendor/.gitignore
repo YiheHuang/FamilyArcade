@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+.vite/
+*.tsbuildinfo
+data/tmp/
+data/lan-rooms.json
+target/
+packages/desktop/src-tauri/gen/
+
+# local release config (update source folder)
+.release.json
+
+# Tauri build outputs (installers and update bundles are release artifacts, not source)
+packages/desktop/release/

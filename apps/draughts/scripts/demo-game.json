@@ -1,0 +1,494 @@
+{
+  "result": "won red all-captured plies 51",
+  "moves": [
+    {
+      "name": "g3-f4",
+      "from": 46,
+      "path": [
+        46,
+        37
+      ],
+      "captures": []
+    },
+    {
+      "name": "f6-g5",
+      "from": 21,
+      "path": [
+        21,
+        30
+      ],
+      "captures": []
+    },
+    {
+      "name": "e3-d4",
+      "from": 44,
+      "path": [
+        44,
+        35
+      ],
+      "captures": []
+    },
+    {
+      "name": "g5xe3",
+      "from": 30,
+      "path": [
+        30,
+        44
+      ],
+      "captures": [
+        37
+      ]
+    },
+    {
+      "name": "d2xf4",
+      "from": 51,
+      "path": [
+        51,
+        37
+      ],
+      "captures": [
+        44
+      ]
+    },
+    {
+      "name": "b6-a5",
+      "from": 17,
+      "path": [
+        17,
+        24
+      ],
+      "captures": []
+    },
+    {
+      "name": "c1-d2",
+      "from": 58,
+      "path": [
+        58,
+        51
+      ],
+      "captures": []
+    },
+    {
+      "name": "a7-b6",
+      "from": 8,
+      "path": [
+        8,
+        17
+      ],
+      "captures": []
+    },
+    {
+      "name": "c3-b4",
+      "from": 42,
+      "path": [
+        42,
+        33
+      ],
+      "captures": []
+    },
+    {
+      "name": "a5xc3",
+      "from": 24,
+      "path": [
+        24,
+        42
+      ],
+      "captures": [
+        33
+      ]
+    },
+    {
+      "name": "d2xb4",
+      "from": 51,
+      "path": [
+        51,
+        33
+      ],
+      "captures": [
+        42
+      ]
+    },
+    {
+      "name": "b8-a7",
+      "from": 1,
+      "path": [
+        1,
+        8
+      ],
+      "captures": []
+    },
+    {
+      "name": "b4-c5",
+      "from": 33,
+      "path": [
+        33,
+        26
+      ],
+      "captures": []
+    },
+    {
+      "name": "d6xb4",
+      "from": 19,
+      "path": [
+        19,
+        33
+      ],
+      "captures": [
+        26
+      ]
+    },
+    {
+      "name": "a3xc5",
+      "from": 40,
+      "path": [
+        40,
+        26
+      ],
+      "captures": [
+        33
+      ]
+    },
+    {
+      "name": "b6-a5",
+      "from": 17,
+      "path": [
+        17,
+        24
+      ],
+      "captures": []
+    },
+    {
+      "name": "f2-e3",
+      "from": 53,
+      "path": [
+        53,
+        44
+      ],
+      "captures": []
+    },
+    {
+      "name": "a7-b6",
+      "from": 8,
+      "path": [
+        8,
+        17
+      ],
+      "captures": []
+    },
+    {
+      "name": "c5xa7",
+      "from": 26,
+      "path": [
+        26,
+        8
+      ],
+      "captures": [
+        17
+      ]
+    },
+    {
+      "name": "c7-b6",
+      "from": 10,
+      "path": [
+        10,
+        17
+      ],
+      "captures": []
+    },
+    {
+      "name": "e1-d2",
+      "from": 60,
+      "path": [
+        60,
+        51
+      ],
+      "captures": []
+    },
+    {
+      "name": "d8-c7",
+      "from": 3,
+      "path": [
+        3,
+        10
+      ],
+      "captures": []
+    },
+    {
+      "name": "b2-c3",
+      "from": 49,
+      "path": [
+        49,
+        42
+      ],
+      "captures": []
+    },
+    {
+      "name": "h6-g5",
+      "from": 23,
+      "path": [
+        23,
+        30
+      ],
+      "captures": []
+    },
+    {
+      "name": "f4xh6",
+      "from": 37,
+      "path": [
+        37,
+        23
+      ],
+      "captures": [
+        30
+      ]
+    },
+    {
+      "name": "a5-b4",
+      "from": 24,
+      "path": [
+        24,
+        33
+      ],
+      "captures": []
+    },
+    {
+      "name": "c3xa5",
+      "from": 42,
+      "path": [
+        42,
+        24
+      ],
+      "captures": [
+        33
+      ]
+    },
+    {
+      "name": "c7-d6",
+      "from": 10,
+      "path": [
+        10,
+        19
+      ],
+      "captures": []
+    },
+    {
+      "name": "a5xc7",
+      "from": 24,
+      "path": [
+        24,
+        10
+      ],
+      "captures": [
+        17
+      ]
+    },
+    {
+      "name": "d6-c5",
+      "from": 19,
+      "path": [
+        19,
+        26
+      ],
+      "captures": []
+    },
+    {
+      "name": "d4xb6",
+      "from": 35,
+      "path": [
+        35,
+        17
+      ],
+      "captures": [
+        26
+      ]
+    },
+    {
+      "name": "e7-d6",
+      "from": 12,
+      "path": [
+        12,
+        19
+      ],
+      "captures": []
+    },
+    {
+      "name": "c7-b8=K",
+      "from": 10,
+      "path": [
+        10,
+        1
+      ],
+      "captures": []
+    },
+    {
+      "name": "f8-e7",
+      "from": 5,
+      "path": [
+        5,
+        12
+      ],
+      "captures": []
+    },
+    {
+      "name": "h6xf8=K",
+      "from": 23,
+      "path": [
+        23,
+        5
+      ],
+      "captures": [
+        14
+      ]
+    },
+    {
+      "name": "h8-g7",
+      "from": 7,
+      "path": [
+        7,
+        14
+      ],
+      "captures": []
+    },
+    {
+      "name": "f8xh6",
+      "from": 5,
+      "path": [
+        5,
+        23
+      ],
+      "captures": [
+        14
+      ]
+    },
+    {
+      "name": "d6-c5",
+      "from": 19,
+      "path": [
+        19,
+        26
+      ],
+      "captures": []
+    },
+    {
+      "name": "d2-c3",
+      "from": 51,
+      "path": [
+        51,
+        42
+      ],
+      "captures": []
+    },
+    {
+      "name": "c5-b4",
+      "from": 26,
+      "path": [
+        26,
+        33
+      ],
+      "captures": []
+    },
+    {
+      "name": "c3xa5",
+      "from": 42,
+      "path": [
+        42,
+        24
+      ],
+      "captures": [
+        33
+      ]
+    },
+    {
+      "name": "e7-d6",
+      "from": 12,
+      "path": [
+        12,
+        19
+      ],
+      "captures": []
+    },
+    {
+      "name": "e3-d4",
+      "from": 44,
+      "path": [
+        44,
+        35
+      ],
+      "captures": []
+    },
+    {
+      "name": "d6-c5",
+      "from": 19,
+      "path": [
+        19,
+        26
+      ],
+      "captures": []
+    },
+    {
+      "name": "d4-e5",
+      "from": 35,
+      "path": [
+        35,
+        28
+      ],
+      "captures": []
+    },
+    {
+      "name": "c5-b4",
+      "from": 26,
+      "path": [
+        26,
+        33
+      ],
+      "captures": []
+    },
+    {
+      "name": "e5-d6",
+      "from": 28,
+      "path": [
+        28,
+        19
+      ],
+      "captures": []
+    },
+    {
+      "name": "b4-a3",
+      "from": 33,
+      "path": [
+        33,
+        40
+      ],
+      "captures": []
+    },
+    {
+      "name": "d6-e7",
+      "from": 19,
+      "path": [
+        19,
+        12
+      ],
+      "captures": []
+    },
+    {
+      "name": "a3-b2",
+      "from": 40,
+      "path": [
+        40,
+        49
+      ],
+      "captures": []
+    },
+    {
+      "name": "a1xc3",
+      "from": 56,
+      "path": [
+        56,
+        42
+      ],
+      "captures": [
+        49
+      ]
+    }
+  ]
+}

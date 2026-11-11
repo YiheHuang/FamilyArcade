@@ -1,0 +1,32 @@
+{
+  "name": "hue-garden-promo",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "gen": "tsx scripts/gen-data.ts && node scripts/gen-audio.mjs && node scripts/gen-voice.mjs && node scripts/gen-srt.mjs",
+    "facts": "tsx scripts/facts.ts",
+    "master": "node scripts/master.mjs",
+    "stills": "remotion still src/index.ts HueGardenPosterZH out/poster-zh.png && remotion still src/index.ts HueGardenPosterEN out/poster-en.png",
+    "render": "remotion render src/index.ts HueGardenPromoZH out/hue-garden-promo-zh.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=160k",
+    "render:en": "remotion render src/index.ts HueGardenPromoEN out/hue-garden-promo-en.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=160k"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/media": "4.0.537",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  }
+}

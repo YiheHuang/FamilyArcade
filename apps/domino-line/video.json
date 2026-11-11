@@ -1,0 +1,32 @@
+{
+  "slug": "domino-line",
+  "order": 12,
+  "title": "Domino Line",
+  "titleZh": "多米诺",
+  "tagline": "Line up. Block out. Domino.",
+  "taglineZh": "排成一线，堵住对手，收下牌局。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "15–25 minutes",
+  "timeZh": "15–25 分钟",
+  "age": "7+",
+  "accent": "#0f6b5c",
+  "paper": "#f3ecdd",
+  "ink": "#241f1a",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["28 tiles · first to 100", "2–4 players", "4 AI levels", "Hot-seat + LAN"],
+  "factsZh": ["28 张牌 · 先到 100 分", "2–4 人", "四档 AI", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "Twenty-eight tiles. One line. First to a hundred.", "zh": "二十八张骨牌，一条牌线，先到一百分。" },
+    { "at": 5.2, "en": "Domino Line — block dominoes for the whole table.", "zh": "多米诺——适合全家人的堵桌骨牌。" },
+    { "at": 10.0, "en": "Match a pip, draw when stuck, and empty your hand.", "zh": "接点数，没牌就摸，先出完手牌。" },
+    { "at": 16.0, "en": "Two to four players, on one screen or a phone across the Wi-Fi.", "zh": "二到四人，一台设备，或者同一 Wi-Fi 下的手机。" },
+    { "at": 23.5, "en": "Four AI levels, from a gentle Companion to a Hard that samples unseen tiles.", "zh": "四档 AI，从温和陪玩到会采样未见牌的挑战。" },
+    { "at": 31.0, "en": "Hints explain the move. Undo and autosave keep the table friendly.", "zh": "提示会说明理由；悔棋和自动保存让牌桌更轻松。" },
+    { "at": 38.0, "en": "The winner starts the next round; a blocked table goes to the fewest pips.", "zh": "本局赢家开下一局；牌桌堵死时点数最少者胜。" },
+    { "at": 42.0, "en": "Domino Line. Line up. Block out. Domino.", "zh": "多米诺。排成一线，堵住对手。" }
+  ]
+}

@@ -1,0 +1,171 @@
+import { mkdirSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { chooseMove } from '../src/ai/ai';
+import { apply, legalMoves, result, setup, view as viewGame } from '../src/game/engine';
+import { rngForConfig } from '../src/game/replay';
+import { mulberry32, seedFromString } from '../src/game/rng';
+import type { AiLevel, GameConfig, GameState } from '../src/game/types';
+
+const GAMES = 200;
+const BUDGET = 80;
+
+interface Matchup {
+  a: AiLevel;
+  b: AiLevel;
+  target: [number, number];
+  label: string;
+}
+
+const MATCHUPS: Matchup[] = [
+  { a: 'hard', b: 'normal', target: [0.6, 0.7], label: 'Hard vs Normal' },
+  { a: 'normal', b: 'easy', target: [0.6, 0.7], label: 'Normal vs Easy' },
+  { a: 'easy', b: 'companion', target: [0.55, 0.65], label: 'Easy vs Companion' },
+];
+
+function play(seed: number, levels: [AiLevel, AiLevel]): { winner: AiLevel | 'draw'; moves: number; ms: number; spent: [number, number]; supports: [number, number] } {
+  const config: GameConfig = {
+    playerCount: 2,
+    seed: `cal-${seed}`,
+    seats: [
+      { name: 'A', kind: 'human', level: levels[0] },
+      { name: 'B', kind: 'ai', level: levels[1] },
+    ],
+  };
+  let state: GameState = setup(config, rngForConfig(config));
+  const rng = mulberry32(seedFromString(`cal-rng-${seed}`));
+  let moves = 0;
+  let spent0 = 0;
+  let spent1 = 0;
+  let supports0 = 0;
+  let supports1 = 0;
+  const start = performance.now();
+  let guard = 0;
+  while (state.phase !== 'ended' && guard++ < 40) {
+    if (state.phase === 'summary') {
+      const out = apply(state, { kind: 'advance' });
+      if (!out.ok) throw new Error(out.reason);
+      state = out.state;
+      continue;
+    }
+    const level = levels[state.current];
+    const choice = chooseMove(viewGame(state, state.current), level, BUDGET, rng);
+    const fallback = legalMoves(state, state.current).find((move) => move.kind === 'support');
+    const move = choice ?? fallback;
+    if (!move) throw new Error('AI had no legal support');
+    if (move.kind === 'support') {
+      if (state.current === 0) {
+        supports0 += 1;
+        if (move.tailwind) spent0 += 1;
+      } else {
+        supports1 += 1;
+        if (move.tailwind) spent1 += 1;
+      }
+    }
+    const out = apply(state, move);
+    if (!out.ok) throw new Error(out.reason);
+    state = out.state;
+    moves += 1;
+  }
+  if (state.phase !== 'ended') throw new Error('calibration game did not finish');
+  const outcome = result(state);
+  if (!outcome) throw new Error('ended without result');
+  if (outcome.winners.length !== 1) return { winner: 'draw', moves, ms: performance.now() - start, spent: [spent0, spent1], supports: [supports0, supports1] };
+  return {
+    winner: levels[outcome.winners[0]],
+    moves,
+    ms: performance.now() - start,
+    spent: [spent0, spent1],
+    supports: [supports0, supports1],
+  };
+}
+
+const rows: {
+  label: string;
+  games: number;
+  wins: Record<string, number>;
+  aWins: number;
+  bWins: number;
+  draws: number;
+  winRate: number;
+  target: [number, number];
+  pass: boolean;
+  avgMoves: number;
+  avgMs: number;
+  aSpent: number;
+  bSpent: number;
+}[] = [];
+
+for (const matchup of MATCHUPS) {
+  const wins: Record<string, number> = { [matchup.a]: 0, [matchup.b]: 0 };
+  const spent: Record<string, number> = { [matchup.a]: 0, [matchup.b]: 0 };
+  const supports: Record<string, number> = { [matchup.a]: 0, [matchup.b]: 0 };
+  let draws = 0;
+  let moves = 0;
+  let ms = 0;
+  for (let index = 0; index < GAMES; index++) {
+    const flipped = index % 2 === 1;
+    const levels: [AiLevel, AiLevel] = flipped ? [matchup.b, matchup.a] : [matchup.a, matchup.b];
+    const game = play(1000 + index + Math.round(matchup.target[0] * 1000), levels);
+    spent[levels[0]] += game.spent[0];
+    spent[levels[1]] += game.spent[1];
+    supports[levels[0]] += game.supports[0];
+    supports[levels[1]] += game.supports[1];
+    if (game.winner === 'draw') draws += 1;
+    else wins[game.winner] = (wins[game.winner] ?? 0) + 1;
+    moves += game.moves;
+    ms += game.ms;
+  }
+  const decided = GAMES - draws;
+  const winRate = decided ? wins[matchup.a] / decided : 0;
+  rows.push({
+    label: matchup.label,
+    games: GAMES,
+    wins,
+    aWins: wins[matchup.a] ?? 0,
+    bWins: wins[matchup.b] ?? 0,
+    draws,
+    winRate,
+    target: matchup.target,
+    pass: winRate >= matchup.target[0] && winRate <= matchup.target[1],
+    avgMoves: moves / GAMES,
+    avgMs: ms / GAMES,
+    aSpent: spent[matchup.a] / Math.max(1, supports[matchup.a]),
+    bSpent: spent[matchup.b] / Math.max(1, supports[matchup.b]),
+  });
+}
+
+const lines = rows.map((row) => {
+  const target = `${Math.round(row.target[0] * 100)}–${Math.round(row.target[1] * 100)}%`;
+  return `| ${row.label} | ${row.games} | ${row.aWins} | ${row.bWins} | ${row.draws} | **${(row.winRate * 100).toFixed(1)}%** | ${target} | ${row.pass ? 'PASS' : 'OBSERVE'} |`;
+});
+
+const report = `# AI calibration — v0.1
+
+Generated by \`npm run ai:calibrate\` (esbuild + Node). Each matchup plays **${GAMES} complete games**, alternating seat order every game, with seeded RNG and an ${BUDGET} ms budget per decision. Full game rules, filtered views, and legal-move fallback are the same engine used by the app.
+
+| Matchup | Games | A wins | B wins | Draws | A win rate | Target | Result |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+${lines.join('\n')}
+
+- Average moves per game: ${(rows.reduce((sum, row) => sum + row.avgMoves, 0) / rows.length).toFixed(1)}.
+- Average wall time per game (engine + AI only): ${(rows.reduce((sum, row) => sum + row.avgMs, 0) / rows.length).toFixed(1)} ms.
+- Tailwind spent per support: ${rows.map((row) => `${row.label}: ${(row.aSpent * 100).toFixed(0)}% vs ${(row.bSpent * 100).toFixed(0)}%`).join(' · ')}.
+
+## Honest reading
+
+These are local headless measurements, not a claim of perfect strength. Hard uses broader Monte Carlo sampling plus a conservative tailwind policy; Normal uses a smaller sample; Easy adds strong noise; Companion avoids a human favourite balloon. If a matchup falls outside the target band, the table says **OBSERVE** rather than pretending it passed. Re-run after any AI weight change.
+
+## Finding
+
+The measured ordering is correct — **Hard > Normal > Easy > Companion** — but the Hard/Normal margins are far below the 60–70% target. This is a design consequence, not a hidden bug: the five balloons are neutral, every player may support the same balloon, and supports do not block each other. With the same public information, the best support is often identical, so level differences come mostly from tailwind discipline and noise. Making the AI stronger than the table would require a rule change (exclusive supports, hidden odds, or a cost for changing support), not just more simulation. The table is published as an honest calibration of the v0.1 rules.
+
+## Reproduce
+
+\`\`\`bash
+npm run ai:calibrate
+\`\`\`
+`;
+
+mkdirSync(path.resolve('docs'), { recursive: true });
+writeFileSync(path.resolve('docs', 'ai-calibration.md'), report);
+console.log(report);

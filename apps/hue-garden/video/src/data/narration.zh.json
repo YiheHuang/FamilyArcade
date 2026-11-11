@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "at": 0.9,
+      "text": "周末晚上，来铺一座彩色庭院。",
+      "file": "audio/voice/zh/line-1.mp3",
+      "duration": 3.72
+    },
+    {
+      "at": 4.8,
+      "text": "同色不同形，或者同形不同色。",
+      "file": "audio/voice/zh/line-2.mp3",
+      "duration": 4.06
+    },
+    {
+      "at": 9.4,
+      "text": "一条线最多六张；六连开花，再加六分。",
+      "file": "audio/voice/zh/line-3.mp3",
+      "duration": 5.11
+    },
+    {
+      "at": 18,
+      "text": "这是引擎里真实的一局，三十八手。",
+      "file": "audio/voice/zh/line-4.mp3",
+      "duration": 4.2
+    },
+    {
+      "at": 31.2,
+      "text": "一个人，或者一家人，轮流铺。",
+      "file": "audio/voice/zh/line-5.mp3",
+      "duration": 4.34
+    },
+    {
+      "at": 37,
+      "text": "悔棋、提示、自动保存，都替你想好了。",
+      "file": "audio/voice/zh/line-6.mp3",
+      "duration": 5.21
+    },
+    {
+      "at": 43,
+      "text": "彩庭。颜色或形状，连成一条线。",
+      "file": "audio/voice/zh/line-7.mp3",
+      "duration": 5.09
+    }
+  ]
+}

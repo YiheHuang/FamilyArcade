@@ -1,0 +1,34 @@
+{
+  "name": "sweet-carousel-promo",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render src/index.ts SweetCarouselPromoEN out/sweet-carousel-promo-en.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=128k",
+    "render:zh": "remotion render src/index.ts SweetCarouselPromoZH out/sweet-carousel-promo-zh.mp4 --codec=h264 --crf=20 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=128k",
+    "still": "remotion still src/index.ts SweetCarouselPromoEN out/poster-en.png --frame=150",
+    "gen:music": "node scripts/gen-music.mjs",
+    "gen:voice": "node scripts/gen-voice.mjs",
+    "gen:data": "cd .. && npx vite-node video/scripts/gen-demo.ts",
+    "gen:srt": "node scripts/gen-srt.mjs",
+    "master": "node scripts/master.mjs",
+    "facts": "node scripts/facts.mjs",
+    "gen:all": "npm run gen:data && npm run gen:music && npm run gen:voice && npm run gen:srt"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/media": "4.0.537",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}
