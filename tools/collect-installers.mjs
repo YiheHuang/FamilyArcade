@@ -20,35 +20,46 @@ for (const slug of readdirSync(path.join(root, 'apps'))) {
   const conf = JSON.parse(readFileSync(confPath, 'utf8'));
   const expected = `${conf.productName}_${conf.version}_x64-setup.exe`;
   const candidate = path.join(bundleDir, expected);
+  const existingDir = path.join(releases, slug);
+  const already = existsSync(existingDir)
+    ? readdirSync(existingDir).find((file) => file.endsWith('.exe'))
+    : null;
+  const keepExisting = slug !== 'family-arcade' && already;
+  if (keepExisting) {
+    manifest.push({
+      slug,
+      name: conf.productName,
+      version: conf.version,
+      file: `releases/${slug}/${already}`,
+      bytes: statSync(path.join(existingDir, already)).size,
+    });
+    continue;
+  }
   if (!existsSync(candidate)) {
-    const existing = path.join(releases, slug);
-    const already = existsSync(existing)
-      ? readdirSync(existing).find((file) => file.endsWith('.exe'))
-      : null;
     if (already) {
       manifest.push({
         slug,
         name: conf.productName,
         version: conf.version,
         file: `releases/${slug}/${already}`,
-        bytes: statSync(path.join(existing, already)).size,
+        bytes: statSync(path.join(existingDir, already)).size,
       });
     } else {
       console.warn(`missing ${slug}: ${expected}`);
     }
     continue;
   }
-  mkdirSync(path.join(releases, slug), { recursive: true });
+  mkdirSync(existingDir, { recursive: true });
   const file = slug === 'family-arcade'
     ? `FamilyArcade_${conf.version}_x64-setup.exe`
     : `${slug}_${conf.version}_x64-setup.exe`;
-  copyFileSync(candidate, path.join(releases, slug, file));
+  copyFileSync(candidate, path.join(existingDir, file));
   manifest.push({
     slug,
     name: conf.productName,
     version: conf.version,
     file: `releases/${slug}/${file}`,
-    bytes: statSync(path.join(releases, slug, file)).size,
+    bytes: statSync(path.join(existingDir, file)).size,
   });
 }
 
