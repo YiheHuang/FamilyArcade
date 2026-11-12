@@ -1,32 +1,77 @@
 {
   "slug": "liars-dice",
-  "order": 1,
+  "order": 9,
   "title": "Liar's Dice",
   "titleZh": "吹牛骰",
-  "tagline": "Bluffing dice for 2–6 players",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "Five dice. One table. Nobody knows what is under the cups.",
+  "taglineZh": "五颗骰子，一桌胆量。",
+  "players": "2–6 players",
+  "playersZh": "2–6 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "8+",
+  "ageZh": "8 岁以上",
+  "accent": "#e06a4b",
+  "paper": "#f6efdf",
+  "ink": "#132723",
   "screens": {
     "en": ["home.png", "game.png", "game-over.png"],
     "zh": ["home.png", "game.png", "game-over.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "2–6 players",
+    "5 dice each",
+    "Wild ones + spot on",
+    "4 AI levels",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "2–6 人",
+    "每人 5 颗骰",
+    "一点万能 + 正好",
+    "四档电脑",
+    "同屏 + 局域网"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Liar's Dice. A tiny game for a big table.", "zh": "吹牛骰。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Liar's Dice. Three in a row.", "zh": "吹牛骰。三子连线。" }
+    {
+      "at": 0.4,
+      "en": "Five dice each, hidden under a cup.",
+      "zh": "每人五颗骰子，藏在骰盅下。"
+    },
+    {
+      "at": 5.2,
+      "en": "Liar's Dice. Bid a quantity and a face.",
+      "zh": "吹牛骰。叫一个数量和一个点数。"
+    },
+    {
+      "at": 10,
+      "en": "Three fours. Raise the quantity, raise the face, or challenge.",
+      "zh": "三个四点。加数量、加点数，或者开骰。"
+    },
+    {
+      "at": 16,
+      "en": "Ones are wild. Nobody sees your cup.",
+      "zh": "一点万能，没人看得见你的骰盅。"
+    },
+    {
+      "at": 23.5,
+      "en": "A true bid costs the challenger a die. A false bid costs the bidder.",
+      "zh": "叫点成立，开骰者输一颗；叫点不成立，叫点者输一颗。"
+    },
+    {
+      "at": 31,
+      "en": "Last player with dice wins the table.",
+      "zh": "最后手里还有骰子的人赢下牌桌。"
+    },
+    {
+      "at": 38,
+      "en": "Four computer levels, hot-seat, and tables on your own network.",
+      "zh": "四档电脑、同屏热座，还有局域网牌桌。"
+    },
+    {
+      "at": 42,
+      "en": "Spot on, hints, undo and a family record. Offline, no account, no ads.",
+      "zh": "正好、提示、悔棋和家庭战绩。离线、无账号、无广告。"
+    }
   ]
 }

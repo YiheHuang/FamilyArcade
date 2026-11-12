@@ -16,9 +16,13 @@ export async function startLanServer(): Promise<LanServerInfo> {
     return (await invoke('lan_start')) as LanServerInfo;
   }
   const host = typeof location !== 'undefined' ? location.hostname : '127.0.0.1';
+  // Vite dev/preview servers do not proxy the shared relay, which lives on 8080.
+  // When the built app is served by the relay, reuse that same port.
+  const pagePort = typeof location !== 'undefined' ? Number(location.port) : 0;
+  const port = pagePort && pagePort !== 5224 && pagePort !== 4224 ? pagePort : 8080;
   return {
-    port: 8080,
-    urls: [`http://${host}:8080`],
+    port,
+    urls: [`http://${host}:${port}`],
     token: 'browser',
   };
 }

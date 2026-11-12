@@ -72,7 +72,7 @@ function card(game, lang) {
 
 <sub>${players} · ${time} · ${age}</sub>
 
-<sub>[${lang === 'zh' ? '宣传片' : 'Trailer'}](${trailer}) · [${lang === 'zh' ? '安装包' : 'Installer'}](${game.installer})</sub>
+<sub>[${lang === 'zh' ? '宣传片' : 'Trailer'}](${trailer})</sub>
 </td>`;
 }
 

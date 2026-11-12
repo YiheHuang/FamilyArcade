@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Liar's Dice · 吹牛骰",
+        "title": "Liar's Dice",
         "width": 1180,
         "height": 820,
         "minWidth": 900,
