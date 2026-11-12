@@ -1,5 +1,12 @@
 [
   {
+    "slug": "abalone",
+    "name": "Abalone",
+    "version": "0.1.0",
+    "file": "releases/abalone/abalone_0.1.0_x64-setup.exe",
+    "bytes": 3472574
+  },
+  {
     "slug": "balloon-rally",
     "name": "Balloon Rally",
     "version": "0.1.0",
@@ -21,6 +28,13 @@
     "bytes": 3472620
   },
   {
+    "slug": "chess",
+    "name": "Chess",
+    "version": "0.1.0",
+    "file": "releases/chess/chess_0.1.0_x64-setup.exe",
+    "bytes": 3480555
+  },
+  {
     "slug": "codebreak",
     "name": "Codebreak",
     "version": "0.1.0",
@@ -33,6 +47,13 @@
     "version": "0.1.0",
     "file": "releases/color-chain/color-chain_0.1.0_x64-setup.exe",
     "bytes": 3483680
+  },
+  {
+    "slug": "cribbage",
+    "name": "Cribbage",
+    "version": "0.1.0",
+    "file": "releases/cribbage/cribbage_0.1.0_x64-setup.exe",
+    "bytes": 3490186
   },
   {
     "slug": "domino-line",
@@ -51,9 +72,9 @@
   {
     "slug": "family-arcade",
     "name": "Family Arcade",
-    "version": "1.0.2",
-    "file": "releases/family-arcade/FamilyArcade_1.0.2_x64-setup.exe",
-    "bytes": 313519850
+    "version": "2.0.0",
+    "file": "releases/family-arcade/FamilyArcade_2.0.0_x64-setup.exe",
+    "bytes": 363813181
   },
   {
     "slug": "field-and-wall",
@@ -91,6 +112,27 @@
     "bytes": 3462527
   },
   {
+    "slug": "go",
+    "name": "Go",
+    "version": "0.1.0",
+    "file": "releases/go/go_0.1.0_x64-setup.exe",
+    "bytes": 3485803
+  },
+  {
+    "slug": "gomoku",
+    "name": "Gomoku",
+    "version": "0.1.0",
+    "file": "releases/gomoku/gomoku_0.1.0_x64-setup.exe",
+    "bytes": 3472543
+  },
+  {
+    "slug": "hearts",
+    "name": "Hearts",
+    "version": "0.1.0",
+    "file": "releases/hearts/hearts_0.1.0_x64-setup.exe",
+    "bytes": 3487192
+  },
+  {
     "slug": "hex",
     "name": "Hex",
     "version": "0.1.0",
@@ -98,11 +140,32 @@
     "bytes": 3468388
   },
   {
+    "slug": "hive",
+    "name": "Hive",
+    "version": "0.1.0",
+    "file": "releases/hive/hive_0.1.0_x64-setup.exe",
+    "bytes": 3485844
+  },
+  {
     "slug": "hue-garden",
     "name": "Hue Garden",
     "version": "0.1.0",
     "file": "releases/hue-garden/hue-garden_0.1.0_x64-setup.exe",
     "bytes": 3522635
+  },
+  {
+    "slug": "intl-draughts",
+    "name": "International Draughts",
+    "version": "0.1.0",
+    "file": "releases/intl-draughts/intl-draughts_0.1.0_x64-setup.exe",
+    "bytes": 3478683
+  },
+  {
+    "slug": "jungle-chess",
+    "name": "Jungle Chess",
+    "version": "0.1.0",
+    "file": "releases/jungle-chess/jungle-chess_0.1.0_x64-setup.exe",
+    "bytes": 3482699
   },
   {
     "slug": "ladder-run",
@@ -140,6 +203,20 @@
     "bytes": 3469319
   },
   {
+    "slug": "president",
+    "name": "President",
+    "version": "0.1.0",
+    "file": "releases/president/president_0.1.0_x64-setup.exe",
+    "bytes": 3486747
+  },
+  {
+    "slug": "quarto",
+    "name": "Quarto",
+    "version": "0.1.0",
+    "file": "releases/quarto/quarto_0.1.0_x64-setup.exe",
+    "bytes": 3476940
+  },
+  {
     "slug": "race-home",
     "name": "Race Home",
     "version": "0.1.0",
@@ -147,11 +224,32 @@
     "bytes": 3478732
   },
   {
+    "slug": "rummy-500",
+    "name": "Rummy 500",
+    "version": "0.1.0",
+    "file": "releases/rummy-500/rummy-500_0.1.0_x64-setup.exe",
+    "bytes": 3489356
+  },
+  {
+    "slug": "shogi",
+    "name": "Shogi",
+    "version": "0.1.0",
+    "file": "releases/shogi/shogi_0.1.0_x64-setup.exe",
+    "bytes": 3478947
+  },
+  {
     "slug": "sowing",
     "name": "Sowing",
     "version": "0.1.0",
     "file": "releases/sowing/sowing_0.1.0_x64-setup.exe",
     "bytes": 3466592
+  },
+  {
+    "slug": "spades",
+    "name": "Spades",
+    "version": "0.1.0",
+    "file": "releases/spades/spades_0.1.0_x64-setup.exe",
+    "bytes": 3497077
   },
   {
     "slug": "splendor",
@@ -186,7 +284,7 @@
     "name": "Triple",
     "version": "0.1.0",
     "file": "releases/triple/triple_0.1.0_x64-setup.exe",
-    "bytes": 3469198
+    "bytes": 3468409
   },
   {
     "slug": "triple-find",
@@ -194,5 +292,12 @@
     "version": "0.1.0",
     "file": "releases/triple-find/triple-find_0.1.0_x64-setup.exe",
     "bytes": 3469074
+  },
+  {
+    "slug": "xiangqi",
+    "name": "Xiangqi",
+    "version": "0.1.0",
+    "file": "releases/xiangqi/xiangqi_0.1.0_x64-setup.exe",
+    "bytes": 3477135
   }
 ]
