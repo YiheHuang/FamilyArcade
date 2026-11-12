@@ -212,6 +212,7 @@ export default function App() {
 
   useEffect(() => {
     if (screen === 'home') setSaved(loadSave());
+    window.scrollTo(0, 0);
   }, [screen]);
 
   const broadcast = useCallback((next: GameState) => {
@@ -400,6 +401,7 @@ export default function App() {
   const newDeal = useCallback(() => {
     const current = stateRef.current;
     const next = setup({ size: current.size, players: current.playerCount }, Math.random);
+    window.scrollTo(0, 0);
     setState(next);
     setHistory([]);
     historyRef.current = [];
@@ -978,7 +980,6 @@ export default function App() {
           />
           <div className="board-meta">
             <span>{tr('pairsLeft', { n: Math.max(0, displaySize * displaySize / 2 - displayScores.reduce((sum, score) => sum + score, 0)) })}</span>
-            <span>{tr('scoreboard')}</span>
           </div>
 
           {displayStatus === 'finished' && (
@@ -1042,7 +1043,8 @@ export default function App() {
               <p>{tr('noRecordShort')}</p>
             ) : (
               <p>
-                {record.games} {tr(record.games === 1 ? 'gameOne' : 'games')} · {record.soloHumanWins}/{record.aiWins}/{record.ties}
+                {record.games} {tr(record.games === 1 ? 'gameOne' : 'games')}
+                {record.lastWinner ? ` · ${tr('lastWinner')} ${record.lastWinner}` : ''}
               </p>
             )}
             <button className="text-button" onClick={() => setRecord(clearRecord())}>

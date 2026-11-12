@@ -615,11 +615,12 @@ h1 {
   .hero-stamp span { font-size: 26px; }
   .game-top { flex-wrap: wrap; }
   .game-id { order: -1; width: 100%; text-align: left; }
-  .players-strip { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
-  .player-chip { flex: 0 0 auto; }
+  .players-strip { flex-wrap: wrap; overflow-x: visible; gap: 6px; padding-bottom: 0; }
+  .player-chip { flex: 0 0 auto; padding: 5px 10px 5px 6px; gap: 7px; }
   .turn-bar { align-items: flex-start; }
   .turn-chip { width: 42px; height: 42px; }
   .side { grid-template-columns: 1fr; }
+  .side-actions .secondary { min-height: 40px; padding: 9px 13px; }
   .setup-label { gap: 4px; }
   .choice-grid.two, .level-grid, .name-grid, .rule-cards, .stat-grid { grid-template-columns: 1fr; }
   .five-grid { grid-template-columns: 1fr 1fr; }

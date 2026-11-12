@@ -412,6 +412,7 @@ export default function App() {
 
   const advanceRound = useCallback(() => {
     if (mode === 'lan-guest') return;
+    window.scrollTo(0, 0);
     const current = stateRef.current;
     if (current.phase === 'round-over') {
       const next = dealNextRound(current, dealRngRef.current);

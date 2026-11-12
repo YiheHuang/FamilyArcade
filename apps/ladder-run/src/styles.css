@@ -1802,7 +1802,7 @@ kbd {
   .mobile-roll__text span {
     display: block;
     color: var(--muted);
-    font-size: 9px;
+    font-size: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1842,6 +1842,10 @@ kbd {
 @media (max-width: 560px) {
   .shell {
     width: calc(100% - 24px);
+  }
+
+  .dice-card {
+    display: none;
   }
 
   h1 {

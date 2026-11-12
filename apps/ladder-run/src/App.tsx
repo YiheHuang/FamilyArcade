@@ -674,6 +674,7 @@ export default function App() {
       return;
     }
     if (mode === 'lan-guest') return;
+    window.scrollTo(0, 0);
     const next = setup({
       players: state.players.length,
       names: state.players.map((player) => player.name),
@@ -757,6 +758,10 @@ export default function App() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
+  }, [screen]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, [screen]);
 
   actionRef.current = { roll: doRoll, hint: showHint, undo, home: goHome };
@@ -1213,19 +1218,17 @@ export default function App() {
             </button>
           </div>
 
-          {!hint && (mode === 'ai' || mode === 'local') && (
+          {!hint && mode === 'ai' && (
             <div className="side-card note-card">
               <span className="card-label">
-                {mode === 'local' ? tr('localTurnHint') : setupLevel === 'companion' ? tr('companionSays') : tr('aiSays', { name: aiName })}
+                {setupLevel === 'companion' ? tr('companionSays') : tr('aiSays', { name: aiName })}
               </span>
               <p>
-                {mode === 'local'
-                  ? t(lang, 'passDevice', { name: currentName })
-                  : note
-                    ? noteText(note, lang)
-                    : setupLevel === 'companion'
-                      ? tr('companionIdle')
-                      : tr('aiIdle')}
+                {note
+                  ? noteText(note, lang)
+                  : setupLevel === 'companion'
+                    ? tr('companionIdle')
+                    : tr('aiIdle')}
               </p>
             </div>
           )}

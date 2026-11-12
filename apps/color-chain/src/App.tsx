@@ -422,6 +422,7 @@ export default function App() {
 
   const dealNext = useCallback(() => {
     if (state.status !== 'round-over' || isGuest) return;
+    window.scrollTo(0, 0);
     const next = nextRound(state, rngRef.current);
     if (next === state) return;
     setHistory([]);
@@ -436,6 +437,7 @@ export default function App() {
 
   const startNewMatch = useCallback(() => {
     if (isGuest) return;
+    window.scrollTo(0, 0);
     if (mode === 'lan-host') {
       if (!lanHost) return;
       const seatPlayers = buildLanPlayers(lang, lanSize, lanPlayersRef.current);
