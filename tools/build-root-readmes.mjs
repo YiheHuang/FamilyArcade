@@ -94,7 +94,7 @@ const en = `English · [简体中文](README.zh-CN.md)
 
 **${games.length} offline family games. AI, hot-seat and LAN in every game.**
 
-[![Watch the 54-second tour](docs/cover.png)](docs/tour.mp4)
+[![Watch the 56-second tour](docs/cover.png)](docs/tour.mp4)
 
 [![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](${hubUrl})
 
@@ -142,7 +142,7 @@ const zh = `[English](README.md) · 简体中文
 
 **${games.length} 款离线家庭游戏。每一款都有 AI、同屏热座和局域网。**
 
-[![观看 54 秒总览](docs/cover.png)](docs/tour.mp4)
+[![观看 56 秒总览](docs/cover.png)](docs/tour.mp4)
 
 [![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](${hubUrl})
 

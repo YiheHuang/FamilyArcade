@@ -10,7 +10,7 @@ const target = path.join(drive, 'target');
 const releases = path.join(root, 'releases');
 mkdirSync(releases, { recursive: true });
 
-const games = [
+const ALL_GAMES = [
   'doudizhu',
   'texas-holdem',
   'zheng-shangyou',
@@ -23,6 +23,9 @@ const games = [
   'idiom-chain',
   'nanchang-mahjong',
 ];
+const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
+const only = onlyArg ? new Set(onlyArg.split(',').map((slug) => slug.trim()).filter(Boolean)) : null;
+const games = only ? ALL_GAMES.filter((slug) => only.has(slug)) : ALL_GAMES;
 
 for (const slug of games) {
   const cwd = path.join(drive, 'apps', slug);
