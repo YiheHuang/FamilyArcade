@@ -8,7 +8,7 @@
 同屏热座，以及手机浏览器直接加入的局域网对战。无账号、无广告、无远程素材；
 局域网只用自家 Wi-Fi。
 
-![海战棋主页](docs/screenshots/zh/home.jpg)
+![海战棋主页](docs/screenshots/zh/home.png)
 
 [![观看宣传片](docs/promo/fleet-poster-zh.png)](docs/promo/fleet-promo-zh.mp4)
 
@@ -53,23 +53,23 @@
 
 | 主页 | 选择对手 |
 | --- | --- |
-| ![主页](docs/screenshots/zh/home.jpg) | ![设置](docs/screenshots/zh/setup.jpg) |
+| ![主页](docs/screenshots/zh/home.png) | ![设置](docs/screenshots/zh/setup.png) |
 
 | 部署舰队 | 海战进行中 |
 | --- | --- |
-| ![布阵](docs/screenshots/zh/placement.jpg) | ![对局](docs/screenshots/zh/game.jpg) |
+| ![布阵](docs/screenshots/zh/placement.png) | ![对局](docs/screenshots/zh/game.png) |
 
 | 有理由的提示 | 终局 |
 | --- | --- |
-| ![提示](docs/screenshots/zh/game-hint.jpg) | ![终局](docs/screenshots/zh/game-over.jpg) |
+| ![提示](docs/screenshots/zh/game-hint.png) | ![终局](docs/screenshots/zh/game-over.png) |
 
 | 规则 | 家庭航海日志 |
 | --- | --- |
-| ![规则](docs/screenshots/zh/rules.jpg) | ![战绩](docs/screenshots/zh/stats.jpg) |
+| ![规则](docs/screenshots/zh/rules.png) | ![战绩](docs/screenshots/zh/stats.png) |
 
 | 手机主页 | 手机对局 |
 | --- | --- |
-| ![手机主页](docs/screenshots/zh/home-mobile.jpg) | ![手机对局](docs/screenshots/zh/game-mobile.jpg) |
+| ![手机主页](docs/screenshots/zh/home-mobile.png) | ![手机对局](docs/screenshots/zh/game-mobile.png) |
 
 全部来自真实运行的应用：桌面 1440×1000，手机 390×844 @2×（PNG 为 780×1688）。
 没有效果图。

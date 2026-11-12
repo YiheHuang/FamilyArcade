@@ -820,11 +820,11 @@ export default function App() {
         <div className="how-step">
           <span className="how-num">01</span>
           <strong>{t(lang, 'roll')}</strong>
-          <p>{t(lang, 'rollsLeft', { n: 3 })}</p>
+          <p>{t(lang, 'stepRollHint')}</p>
         </div>
         <div className="how-step">
           <span className="how-num">02</span>
-          <strong>{t(lang, 'held')}</strong>
+          <strong>{t(lang, 'stepKeep')}</strong>
           <p>{t(lang, 'keepHint')}</p>
         </div>
         <div className="how-step">
@@ -1010,12 +1010,16 @@ export default function App() {
             <div className="turn-copy">
               <strong>{turnText}</strong>
               <p>
-                {t(lang, 'round', { n: roundNumber })} ·{' '}
-                {baseView.status === 'playing'
-                  ? baseView.rollsLeft > 0
-                    ? rollsText(baseView.rollsLeft)
-                    : t(lang, 'chooseBox')
-                  : t(lang, 'gameOver')}
+                {baseView.status === 'playing' ? (
+                  <>
+                    {t(lang, 'round', { n: roundNumber })} ·{' '}
+                    {baseView.rollsLeft > 0
+                      ? rollsText(baseView.rollsLeft)
+                      : t(lang, 'chooseBox')}
+                  </>
+                ) : (
+                  t(lang, 'round', { n: roundNumber })
+                )}
               </p>
             </div>
             {aiThinking && <span className="thinking">…</span>}
@@ -1109,7 +1113,7 @@ export default function App() {
                     held: baseView.held[index] ? t(lang, 'a11yHeld') : '',
                   })}
                   heldLabel={t(lang, 'held')}
-                  idleLabel={t(lang, 'tapToHold')}
+                  idleLabel={canPickDice ? t(lang, 'tapToHold') : ''}
                   onToggle={() => toggleDie(index)}
                 />
               ))}
@@ -1139,9 +1143,11 @@ export default function App() {
             {baseView.status === 'playing' && (
               <p className="keep-hint">
                 {canAct
-                  ? baseView.rollsLeft > 0
-                    ? t(lang, 'keepHint')
-                    : t(lang, 'pickBoxHint')
+                  ? baseView.rollsUsed === 0
+                    ? t(lang, 'rollToStart')
+                    : baseView.rollsLeft > 0
+                      ? t(lang, 'keepHint')
+                      : t(lang, 'pickBoxHint')
                   : t(lang, 'waitingTurn', { name: activePlayer?.name ?? '' })}
               </p>
             )}
@@ -1156,38 +1162,6 @@ export default function App() {
               </div>
             </div>
           )}
-
-          <div className="game-notes">
-            {isGuest ? (
-              <div className="side-card guest-note">
-                <h3>{t(lang, 'lanGuestTitle')}</h3>
-                <p>{t(lang, 'lanGuestSeat', { name: guestSeatName })}</p>
-                <p>{t(lang, 'lanGuestHint')}</p>
-              </div>
-            ) : (
-              <>
-                <div className="side-card record-mini">
-                  <div className="side-card-head">
-                    <h3>{t(lang, 'familyRecord')}</h3>
-                    <button className="text-button" onClick={() => setScreen('record')}>
-                      {t(lang, 'record')} →
-                    </button>
-                  </div>
-                  <p>
-                    {record.games > 0
-                      ? `${record.games} ${t(lang, record.games === 1 ? 'gameOne' : 'gamesPlayed')} · ${t(lang, 'bestScore')} ${record.bestScore}`
-                      : t(lang, 'noRecord')}
-                  </p>
-                </div>
-                <div className="side-card shortcuts">
-                  <h3>{t(lang, 'keyboard')}</h3>
-                  <p>{t(lang, 'keyboardRoll')}</p>
-                  <p>{t(lang, 'keyboardHold')}</p>
-                  <p>{t(lang, 'keyboardHint')}</p>
-                </div>
-              </>
-            )}
-          </div>
 
           {isLanHost && (
             <div className="lan-mini">
@@ -1226,6 +1200,38 @@ export default function App() {
             onScore={scoreHuman}
           />
         </aside>
+
+        <div className="game-notes">
+          {isGuest ? (
+            <div className="side-card guest-note">
+              <h3>{t(lang, 'lanGuestTitle')}</h3>
+              <p>{t(lang, 'lanGuestSeat', { name: guestSeatName })}</p>
+              <p>{t(lang, 'lanGuestHint')}</p>
+            </div>
+          ) : (
+            <>
+              <div className="side-card record-mini">
+                <div className="side-card-head">
+                  <h3>{t(lang, 'familyRecord')}</h3>
+                  <button className="text-button" onClick={() => setScreen('record')}>
+                    {t(lang, 'record')} →
+                  </button>
+                </div>
+                <p>
+                  {record.games > 0
+                    ? `${record.games} ${t(lang, record.games === 1 ? 'gameOne' : 'gamesPlayed')} · ${t(lang, 'bestScore')} ${record.bestScore}`
+                    : t(lang, 'noRecord')}
+                </p>
+              </div>
+              <div className="side-card shortcuts">
+                <h3>{t(lang, 'keyboard')}</h3>
+                <p>{t(lang, 'keyboardRoll')}</p>
+                <p>{t(lang, 'keyboardHold')}</p>
+                <p>{t(lang, 'keyboardHint')}</p>
+              </div>
+            </>
+          )}
+        </div>
       </div>
       {toast && <div className="toast" role="status">{toast}</div>}
     </main>
@@ -1288,7 +1294,7 @@ export default function App() {
         <div className="stat-card">
           <span>{t(lang, 'winStreak')}</span>
           <strong>{record.streak}</strong>
-          <small>{record.streakBy ?? '—'}</small>
+          <small>{record.streakBy ? t(lang, 'streakBy', { name: record.streakBy }) : '—'}</small>
         </div>
         <div className="stat-card">
           <span>{t(lang, 'lastWinner')}</span>

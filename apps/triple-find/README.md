@@ -9,7 +9,7 @@ levels, one-screen hot-seat and LAN play from a phone. Every card has four clues
 colour, shape, fill and count. Find three cards where every clue is all-same or
 all-different. Five minutes. Highest score wins.
 
-![Triple Find home](docs/screenshots/en/home.jpg)
+![Triple Find home](docs/screenshots/en/home.png)
 
 [![Watch the promo](docs/promo/triple-find-poster-en.png)](docs/promo/triple-find-promo-en.mp4)
 
@@ -45,15 +45,15 @@ minutes, and the highest score wins.
 
 | A real table | Hint with a reason |
 | --- | --- |
-| ![Game](docs/screenshots/en/game.jpg) | ![Hint](docs/screenshots/en/game-hint.jpg) |
+| ![Game](docs/screenshots/en/game.png) | ![Hint](docs/screenshots/en/game-hint.png) |
 
 | Final table | Family record |
 | --- | --- |
-| ![Result](docs/screenshots/en/game-over.jpg) | ![Record](docs/screenshots/en/record.jpg) |
+| ![Result](docs/screenshots/en/game-over.png) | ![Record](docs/screenshots/en/record.png) |
 
 | LAN room | Phone |
 | --- | --- |
-| ![LAN](docs/screenshots/en/lan.jpg) | ![Phone](docs/screenshots/en/game-mobile.jpg) |
+| ![LAN](docs/screenshots/en/lan.png) | ![Phone](docs/screenshots/en/game-mobile.png) |
 
 All images are captured from the running app at 1440×1000; phone captures are
 390×844 at 2× (780×1688). The full set lives in

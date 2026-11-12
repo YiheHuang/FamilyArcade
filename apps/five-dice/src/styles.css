@@ -104,7 +104,7 @@ h1 {
 .hero-table-foot small { font: 600 9px/1 Consolas, monospace; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.62; }
 
 .hero-copy { min-width: 0; }
-.kicker { font: 600 12px/1.4 Consolas, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 0 0 18px; max-width: 48ch; }
+.kicker { font: 600 12px/1.4 Consolas, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 0 0 18px; max-width: 52ch; }
 .menu { display: flex; flex-direction: column; gap: 10px; }
 .primary, .secondary, .danger {
   border-radius: 16px;
@@ -211,9 +211,19 @@ h1 {
 .game-id { display: grid; gap: 3px; text-align: center; }
 .game-id strong { font: 600 22px/1 "Iowan Old Style", Georgia, serif; }
 .game-id span { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 430px; gap: 30px; margin-top: 22px; align-items: stretch; }
-.play-column { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-.score-column { display: grid; gap: 12px; min-width: 0; align-content: start; }
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  grid-template-areas:
+    "play score"
+    "notes score";
+  column-gap: 30px;
+  row-gap: 14px;
+  margin-top: 22px;
+  align-items: stretch;
+}
+.play-column { grid-area: play; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.score-column { grid-area: score; display: grid; gap: 12px; min-width: 0; align-content: start; }
 
 .turn-bar { display: flex; align-items: center; gap: 12px; }
 .turn-orb { width: 46px; height: 46px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; flex: none; }
@@ -387,7 +397,7 @@ h1 {
 }
 
 .side-card { background: rgba(251, 246, 234, 0.66); border: 1px solid var(--line); border-radius: 17px; padding: 13px 15px; }
-.game-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.game-notes { grid-area: notes; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-self: start; }
 .side-card h3 { margin: 0 0 5px; font: 600 15px/1.2 "Iowan Old Style", Georgia, serif; }
 .side-card p { margin: 0 0 5px; color: var(--muted); font-size: 11.5px; line-height: 1.5; }
 .side-card p:last-child { margin-bottom: 0; }
@@ -499,7 +509,7 @@ h1 {
   .hero-copy { order: 1; }
   .hero-table { order: 2; max-width: 560px; width: 100%; margin: 0 auto; min-height: 380px; }
   .setup-layout { grid-template-columns: 1fr; }
-  .game-layout { grid-template-columns: 1fr; gap: 20px; }
+  .game-layout { grid-template-columns: 1fr; grid-template-areas: "play" "score" "notes"; gap: 20px; }
   .score-column { grid-template-columns: minmax(0, 1fr); }
   .dice-stage { flex: none; }
   .how-strip { grid-template-columns: 1fr; }
@@ -520,9 +530,11 @@ h1 {
   .hero-table-foot { gap: 22px; }
   .hero-table-foot b { font-size: 22px; }
   .how-strip { margin-top: 32px; }
-  .game-top { flex-wrap: wrap; }
-  .game-id { order: -1; width: 100%; text-align: left; }
-  .game-top-actions { margin-left: auto; }
+  .game-top { flex-wrap: nowrap; gap: 10px; }
+  .game-id { flex: 1; min-width: 0; width: auto; text-align: center; }
+  .game-id strong { font-size: 19px; }
+  .game-id span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .game-top-actions { margin-left: 0; flex: none; }
   .game-layout { margin-top: 16px; }
   .game-notes { grid-template-columns: 1fr; }
   .dice-stage { padding: 14px 12px 14px; border-radius: 22px; min-height: 0; }
@@ -553,7 +565,7 @@ h1 {
   .stat-card strong { font-size: 28px; }
   .history-row { grid-template-columns: 48px 1fr; }
   .history-result { grid-column: 2; }
-  .level-grid { grid-template-columns: 1fr; }
+  .level-grid { grid-template-columns: 1fr 1fr; }
   .player-rail { gap: 5px; }
   .player-chip { padding: 5px 8px; font-size: 11px; }
   .chip-name { max-width: 76px; }

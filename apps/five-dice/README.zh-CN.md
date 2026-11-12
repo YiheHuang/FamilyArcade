@@ -1,4 +1,4 @@
-﻿# 五骰 · Five Dice
+# 五骰 · Five Dice
 
 [English](README.md) · **简体中文**
 
@@ -8,7 +8,7 @@
 同屏热座，以及手机浏览器直接加入的局域网之夜。无账号、无广告、无云端；除了自家
 Wi-Fi 的局域网，五骰不需要联网。
 
-![五骰主页](docs/screenshots/zh/home.jpg)
+![五骰主页](docs/screenshots/zh/home.png)
 
 [![观看宣传片](docs/promo/five-dice-poster-zh.png)](docs/promo/five-dice-promo-zh.mp4)
 
@@ -42,15 +42,15 @@ Wi-Fi 的局域网，五骰不需要联网。
 
 | 真实手牌 | AI 设置 |
 | --- | --- |
-| ![对局](docs/screenshots/zh/game.jpg) | ![设置](docs/screenshots/zh/setup.jpg) |
+| ![对局](docs/screenshots/zh/game.png) | ![设置](docs/screenshots/zh/setup.png) |
 
 | 带理由的提示 | 终局 |
 | --- | --- |
-| ![提示](docs/screenshots/zh/game-hint.jpg) | ![终局](docs/screenshots/zh/game-over.jpg) |
+| ![提示](docs/screenshots/zh/game-hint.png) | ![终局](docs/screenshots/zh/game-over.png) |
 
 | 家庭战绩 | 手机 |
 | --- | --- |
-| ![战绩](docs/screenshots/zh/record.jpg) | ![手机](docs/screenshots/zh/home-mobile.jpg) |
+| ![战绩](docs/screenshots/zh/record.png) | ![手机](docs/screenshots/zh/home-mobile.png) |
 
 全部来自真实运行的应用：桌面 1440×1000，手机 390×844 @2×。截图脚本使用固定随机种子
 和一份预置的本机家庭战绩，方便每次改动后复核同一套真实界面；见 `scripts/shots.mjs`。

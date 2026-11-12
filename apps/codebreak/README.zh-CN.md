@@ -8,7 +8,7 @@
 纯 TypeScript 引擎、四档 AI、带真正隐私交接的同屏热座，以及破解者屏幕上
 看不到密码的局域网对局。
 
-![猜色主页](docs/screenshots/zh/home.jpg)
+![猜色主页](docs/screenshots/zh/home.png)
 
 [![观看宣传片](docs/promo/codebreak-poster-zh.png)](docs/promo/codebreak-promo-zh.mp4)
 
@@ -47,19 +47,19 @@
 
 | 真实对局 | 带理由的提示 |
 | --- | --- |
-| ![对局](docs/screenshots/zh/game.jpg) | ![提示](docs/screenshots/zh/game-hint.jpg) |
+| ![对局](docs/screenshots/zh/game.png) | ![提示](docs/screenshots/zh/game-hint.png) |
 
 | 选择角色 | 破解成功 |
 | --- | --- |
-| ![设置](docs/screenshots/zh/setup.jpg) | ![结果](docs/screenshots/zh/game-over.jpg) |
+| ![设置](docs/screenshots/zh/setup.png) | ![结果](docs/screenshots/zh/game-over.png) |
 
 | 规则 | 家庭战绩 |
 | --- | --- |
-| ![规则](docs/screenshots/zh/rules.jpg) | ![战绩](docs/screenshots/zh/record.jpg) |
+| ![规则](docs/screenshots/zh/rules.png) | ![战绩](docs/screenshots/zh/record.png) |
 
 | 手机主页 | 手机对局 |
 | --- | --- |
-| ![手机主页](docs/screenshots/zh/home-mobile.jpg) | ![手机对局](docs/screenshots/zh/game-mobile.jpg) |
+| ![手机主页](docs/screenshots/zh/home-mobile.png) | ![手机对局](docs/screenshots/zh/game-mobile.png) |
 
 英文截图在 `docs/screenshots/en/`。
 

@@ -103,7 +103,7 @@ h1 {
   margin: 0 0 12px;
 }
 .menu { display: flex; flex-direction: column; gap: 9px; max-width: 440px; }
-.primary, .secondary {
+.primary, .secondary, .danger {
   border-radius: 15px;
   border: 1px solid transparent;
   padding: 12px 18px;
@@ -115,6 +115,8 @@ h1 {
 .primary:hover { transform: translateY(-1px); background: #33443e; }
 .secondary { background: rgba(255, 250, 240, 0.7); border-color: var(--line); color: var(--ink); }
 .secondary:hover { background: var(--card); transform: translateY(-1px); border-color: var(--line-strong); }
+.danger { background: #f8e1da; border-color: #dfb0a4; color: #8f3326; }
+.danger:hover { background: #f2d2c6; }
 .wide { width: 100%; display: flex; flex-direction: column; gap: 3px; }
 .wide small { font-weight: 400; opacity: 0.68; font-size: 11.5px; line-height: 1.3; }
 .menu-links { display: flex; gap: 20px; align-items: center; }
@@ -831,9 +833,10 @@ button.code-slot:hover .peg { filter: brightness(1.08); }
   .hero-sticker { width: 68px; height: 68px; font-size: 16px; right: -5px; bottom: -18px; }
   .level-grid { grid-template-columns: repeat(2, 1fr); }
   .role-grid { grid-template-columns: 1fr; }
-  .game-top { flex-wrap: wrap; }
-  .game-id { order: -1; width: 100%; text-align: left; }
-  .game-top-actions { margin-left: auto; }
+  .game-top { flex-wrap: nowrap; gap: 10px; }
+  .game-id { flex: 1; min-width: 0; width: auto; text-align: center; }
+  .game-id span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .game-top-actions { margin-left: 0; flex: none; }
   .status-bar { min-height: 60px; padding: 9px 11px; gap: 10px; }
   .status-copy strong { font-size: 18px; }
   .status-copy p { font-size: 10.5px; }
@@ -849,6 +852,7 @@ button.code-slot:hover .peg { filter: brightness(1.08); }
   .picker-slots { gap: 8px; }
   .picker-slot { width: 48px; height: 48px; }
   .picker-slot .peg { width: 41px; height: 41px; }
+  .key-hint { display: none; }
   .action-panel { padding: 11px 12px 9px; }
   .result-card { flex-direction: column; align-items: stretch; gap: 10px; }
   .result-actions { flex-direction: row; flex-wrap: wrap; min-width: 0; }

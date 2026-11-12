@@ -9,7 +9,7 @@ hides a four-peg code; the other has ten guesses to crack it. Built for Family A
 with a pure TypeScript engine, four AI levels, hot-seat play with a real privacy
 hand-off, and LAN play where the code stays hidden on the breaker’s screen.
 
-![Codebreak home](docs/screenshots/en/home.jpg)
+![Codebreak home](docs/screenshots/en/home.png)
 
 [![Watch the promo](docs/promo/codebreak-poster-en.png)](docs/promo/codebreak-promo-en.mp4)
 
@@ -54,19 +54,19 @@ are **390×844 at 2×** (780×1688).
 
 | A real guess | Hint with a reason |
 | --- | --- |
-| ![Game](docs/screenshots/en/game.jpg) | ![Hint](docs/screenshots/en/game-hint.jpg) |
+| ![Game](docs/screenshots/en/game.png) | ![Hint](docs/screenshots/en/game-hint.png) |
 
 | Choose a side | A cracked code |
 | --- | --- |
-| ![Setup](docs/screenshots/en/setup.jpg) | ![Result](docs/screenshots/en/game-over.jpg) |
+| ![Setup](docs/screenshots/en/setup.png) | ![Result](docs/screenshots/en/game-over.png) |
 
 | Rules | Family record |
 | --- | --- |
-| ![Rules](docs/screenshots/en/rules.jpg) | ![Record](docs/screenshots/en/record.jpg) |
+| ![Rules](docs/screenshots/en/rules.png) | ![Record](docs/screenshots/en/record.png) |
 
 | Phone home | Phone game |
 | --- | --- |
-| ![Phone home](docs/screenshots/en/home-mobile.jpg) | ![Phone game](docs/screenshots/en/game-mobile.jpg) |
+| ![Phone home](docs/screenshots/en/home-mobile.png) | ![Phone game](docs/screenshots/en/game-mobile.png) |
 
 The Chinese screenshots live in `docs/screenshots/zh/`.
 

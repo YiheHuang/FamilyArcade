@@ -90,6 +90,7 @@ export default function App() {
   const [passing, setPassing] = useState<Pass>(null);
   const [aiThinking, setAiThinking] = useState(false);
   const [record, setRecord] = useState<FamilyRecord>(() => loadRecord());
+  const [statsConfirm, setStatsConfirm] = useState(false);
   const [saved, setSaved] = useState<SavedGame | null>(() => loadSave());
   const [soundOn, setSoundOn] = useState<boolean>(() => {
     try {
@@ -161,6 +162,7 @@ export default function App() {
 
   useEffect(() => {
     setToast('');
+    setStatsConfirm(false);
   }, [screen]);
 
   // A guest opening an invite URL lands on the join form.
@@ -527,6 +529,7 @@ export default function App() {
     move?: { result: 'miss' | 'hit' | 'sunk'; ship: ShipId | null },
   ) => {
     setPassing({ to, kind, move });
+    setToast('');
     setHoverCell(null);
     setHintCell(null);
   };
@@ -1093,8 +1096,6 @@ export default function App() {
               </div>
             )}
 
-            <FleetStatus lang={lang} ships={shown.myShips} title={tr('yourFleet')} />
-
             <div className="side-card">
               <h3>{tr('placeTip').split('.')[0]}</h3>
               <p>{tr('keyboardPlace')}</p>
@@ -1256,16 +1257,6 @@ export default function App() {
             <FleetStatus lang={lang} ships={shown.myShips} title={tr('yourFleet')} />
             <FleetStatus lang={lang} ships={shown.enemyFleet} title={tr('enemyWaters')} />
 
-            <div className="side-card record-mini">
-              <h3>{tr('stats')}</h3>
-              <p>
-                {record.games} {tr('games')} · {record.wins0}/{record.wins1} · {tr('soloWins')} {record.aiWins}
-              </p>
-              <button type="button" className="text-button" onClick={() => setRecord(clearRecord())}>
-                {tr('resetStats')}
-              </button>
-            </div>
-
             {mode === 'lan-host' && (
               <div className="side-card lan-mini">
                 <h3>{tr('lanCode')}</h3>
@@ -1333,7 +1324,7 @@ export default function App() {
           <span>{tr('statStreak')}</span>
           <strong>{record.streak}</strong>
         </div>
-        <div className="stat-card wide-stat">
+        <div className="stat-card">
           <span>{tr('statSolo')}</span>
           <strong>{record.aiWins} / {record.aiGames}</strong>
           <small>{tr('statSoloLine', { wins: record.aiWins, games: record.aiGames })}</small>
@@ -1343,13 +1334,18 @@ export default function App() {
       <div className="row-actions">
         <button
           type="button"
-          className="secondary"
+          className={statsConfirm ? 'danger' : 'secondary'}
           onClick={() => {
+            if (!statsConfirm) {
+              setStatsConfirm(true);
+              return;
+            }
             setRecord(clearRecord());
+            setStatsConfirm(false);
             notify(tr('statsCleared'));
           }}
         >
-          {tr('statsReset')}
+          {statsConfirm ? tr('statsConfirm') : tr('statsReset')}
         </button>
         <button type="button" className="primary" onClick={closeStats}>
           {tr('close')}

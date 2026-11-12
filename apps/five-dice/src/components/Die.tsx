@@ -60,7 +60,9 @@ export function Die({
       onClick={onToggle}
     >
       <DieFace value={value} empty={empty} />
-      <span className={`die-badge ${held ? 'on' : ''}`}>{held ? heldLabel : idleLabel}</span>
+      {(held || idleLabel) && (
+        <span className={`die-badge ${held ? 'on' : ''}`}>{held ? heldLabel : idleLabel}</span>
+      )}
     </button>
   );
 }

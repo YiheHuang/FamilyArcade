@@ -112,6 +112,7 @@ export default function App() {
   const [aiThinking, setAiThinking] = useState(false);
   const [aiNote, setAiNote] = useState<AiNote | null>(null);
   const [record, setRecord] = useState<FamilyRecord>(() => loadRecord());
+  const [confirmClear, setConfirmClear] = useState(false);
   const [saved, setSaved] = useState<SavedGame | null>(() => loadSave());
   const [toast, setToast] = useState('');
   const [soundOn, setSoundOn] = useState<boolean>(() => {
@@ -173,6 +174,10 @@ export default function App() {
   useEffect(() => {
     stateRef.current = state;
   }, [state]);
+
+  useEffect(() => {
+    setConfirmClear(false);
+  }, [screen]);
 
   useEffect(() => {
     if (!guestRoom) return;
@@ -320,6 +325,8 @@ export default function App() {
   const canGuess = Boolean(myView?.canGuess);
   const guesses = myView?.guesses ?? [];
   const maxGuesses = myView?.maxGuesses ?? MAX_GUESSES;
+  const crackedBodyText =
+    guesses.length === 1 ? tr('crackedBodyOne') : tr('crackedBody', { n: guesses.length });
   const remaining = myView?.remaining ?? 0;
   const hintsLeft = myView?.hintsLeft ?? 0;
   const secret = myView?.secret ?? null;
@@ -650,9 +657,7 @@ export default function App() {
 
   const statusSub = () => {
     if (isTerminal) {
-      return breakerWon
-        ? tr('crackedBody', { n: guesses.length })
-        : tr('heldBody');
+      return breakerWon ? crackedBodyText : tr('heldBody');
     }
     if (shownStatus === 'setting') {
       if (canSet) return tr('setSecretPrivacy');
@@ -720,7 +725,7 @@ export default function App() {
           <button className="record-strip" onClick={() => setScreen('record')}>
             <span>{tr('familyRecord')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{tr(record.games === 1 ? 'gameOne' : 'games')}</span>
             <span className="dot">·</span>
             <span>{record.cracked} {tr('cracked')}</span>
             <span className="dot">·</span>
@@ -861,11 +866,7 @@ export default function App() {
           )}
         </div>
         <h2>{breakerWon ? tr('crackedTitle') : tr('heldTitle')}</h2>
-        <p>
-          {breakerWon
-            ? tr('crackedBody', { n: guesses.length })
-            : tr('heldBody')}
-        </p>
+        <p>{breakerWon ? crackedBodyText : tr('heldBody')}</p>
       </div>
       <div className="result-actions">
         {mode === 'local' && (
@@ -1043,21 +1044,21 @@ export default function App() {
 
       <div className="game-layout">
         <section className="play-area">
-          <div className={`status-bar ${isTerminal ? (breakerWon ? 'is-win' : 'is-hold') : ''}`}>
-            <span className="turn-chip" aria-hidden="true">
-              <span className="turn-ring" />
-            </span>
-            <div className="status-copy">
-              <strong>{statusHeading()}</strong>
-              <p>{statusSub()}</p>
-            </div>
-            {!isTerminal && (
+          {!isTerminal && (
+            <div className="status-bar">
+              <span className="turn-chip" aria-hidden="true">
+                <span className="turn-ring" />
+              </span>
+              <div className="status-copy">
+                <strong>{statusHeading()}</strong>
+                <p>{statusSub()}</p>
+              </div>
               <div className="remaining-badge">
                 <strong>{remaining}</strong>
-                <span>{tr('guessesLeftShort')}</span>
+                <span>{tr(remaining === 1 ? 'guessLeftShort' : 'guessesLeftShort')}</span>
               </div>
-            )}
-          </div>
+            </div>
+          )}
 
           {hintCard}
           {revealCard}
@@ -1131,7 +1132,6 @@ export default function App() {
               {tr('roleSetter')}: {seatName(state.setterSeat)} · {tr('roleBreaker')}:{' '}
               {seatName(state.breakerSeat)}
             </p>
-            <p className="muted">{tr('keyboardHint')}</p>
             <div className="side-actions">
               <button className="secondary" onClick={undo} disabled={!canUndo}>
                 {tr('undo')}
@@ -1188,7 +1188,7 @@ export default function App() {
           <section className="side-card record-mini">
             <h3>{tr('familyRecord')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.cracked} {tr('cracked')} · {record.held}{' '}
+              {record.games} {tr(record.games === 1 ? 'gameOne' : 'games')} · {record.cracked} {tr('cracked')} · {record.held}{' '}
               {tr('held')}
             </p>
             <p>★ {tr('bestScore')} {record.bestGuesses ?? tr('noBest')}</p>
@@ -1452,11 +1452,18 @@ export default function App() {
         </p>
       </section>
       <button
-        className="secondary"
-        onClick={() => setRecord(clearRecord())}
+        className={confirmClear ? 'danger' : 'secondary'}
+        onClick={() => {
+          if (!confirmClear) {
+            setConfirmClear(true);
+            return;
+          }
+          setRecord(clearRecord());
+          setConfirmClear(false);
+        }}
         disabled={record.games === 0}
       >
-        {tr('clearRecord')}
+        {confirmClear ? tr('clearConfirm') : tr('clearRecord')}
       </button>
     </main>
   );

@@ -55,6 +55,7 @@ const EN = {
   statStreak: 'Current streak',
   statsEmpty: 'Play a game and the logbook will start filling up.',
   statsReset: 'Clear the logbook',
+  statsConfirm: 'Click again to clear',
   statsCleared: 'Logbook cleared.',
   footer: 'Browser v0.1 · LAN works on this Wi-Fi. Installer is next.',
 
@@ -276,6 +277,7 @@ const ZH: Record<Key, string> = {
   statStreak: '当前连胜',
   statsEmpty: '先打一局，航海日志就会开始记录。',
   statsReset: '清空日志',
+  statsConfirm: '再点一次以清空',
   statsCleared: '日志已清空。',
   footer: '网页 v0.1 · 局域网限同一 Wi-Fi；安装包是下一版。',
 
@@ -310,7 +312,7 @@ const ZH: Record<Key, string> = {
   shipCruiser: '巡洋舰',
   shipSubmarine: '潜艇',
   shipDestroyer: '驱逐舰',
-  afloat: '在水上',
+  afloat: '未沉',
   sunk: '已击沉',
   remaining: '剩 {count} 艘',
   passTitle: '把设备递过去',

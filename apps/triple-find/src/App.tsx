@@ -156,6 +156,7 @@ export default function App() {
   const [now, setNow] = useState(() => Date.now());
 
   const [record, setRecord] = useState<FamilyRecord>(() => loadRecord());
+  const [confirmClear, setConfirmClear] = useState(false);
   const [saved, setSaved] = useState<SavedGame | null>(() => loadSave());
   const [soundOn, setSoundOn] = useState<boolean>(() => {
     try {
@@ -213,6 +214,7 @@ export default function App() {
 
   useEffect(() => {
     screenRef.current = screen;
+    setConfirmClear(false);
   }, [screen]);
 
   useEffect(() => {
@@ -1057,7 +1059,12 @@ export default function App() {
   };
 
   const handleClearRecord = () => {
+    if (!confirmClear) {
+      setConfirmClear(true);
+      return;
+    }
     setRecord(clearRecord());
+    setConfirmClear(false);
     say(tr('recordCleared'), 'good');
   };
 
@@ -1606,13 +1613,13 @@ export default function App() {
             </ol>
             <div className="result-actions">
               {mode !== 'lan-guest' ? (
-                <button className="primary" onClick={restartMatch}>
+                <button className="primary" autoFocus onClick={restartMatch}>
                   {tr('playAgain')}
                 </button>
               ) : (
                 <span className="muted">{tr('waitingHostRestart')}</span>
               )}
-              <button className="secondary" onClick={goHome}>{tr('home')}</button>
+              <button className="secondary" autoFocus={mode === 'lan-guest'} onClick={goHome}>{tr('home')}</button>
               {mode !== 'lan-guest' && (
                 <button className="ghost" onClick={() => setScreen('record')}>
                   {tr('seeRecord')}
@@ -1739,7 +1746,9 @@ export default function App() {
         )}
       </section>
 
-      <button className="secondary" onClick={handleClearRecord}>{tr('clearRecord')}</button>
+      <button className={confirmClear ? 'danger' : 'secondary'} onClick={handleClearRecord}>
+        {confirmClear ? tr('clearConfirm') : tr('clearRecord')}
+      </button>
       {toast && <div className={`toast ${toast.tone}`}>{toast.text}</div>}
     </main>
   );

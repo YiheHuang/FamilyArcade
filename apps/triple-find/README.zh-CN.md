@@ -8,7 +8,7 @@
 浏览器直接加入的局域网对战。每张牌有颜色、形状、填充、数量四条线索。找出三张
 牌，让每条线索都“全一样”或“全不同”。一局五分钟，分数最高者获胜。
 
-![三连找主页](docs/screenshots/zh/home.jpg)
+![三连找主页](docs/screenshots/zh/home.png)
 
 [![观看宣传片](docs/promo/triple-find-poster-zh.png)](docs/promo/triple-find-promo-zh.mp4)
 
@@ -39,15 +39,15 @@
 
 | 真实牌桌 | 带理由的提示 |
 | --- | --- |
-| ![对局](docs/screenshots/zh/game.jpg) | ![提示](docs/screenshots/zh/game-hint.jpg) |
+| ![对局](docs/screenshots/zh/game.png) | ![提示](docs/screenshots/zh/game-hint.png) |
 
 | 终局 | 家庭战绩 |
 | --- | --- |
-| ![终局](docs/screenshots/zh/game-over.jpg) | ![战绩](docs/screenshots/zh/record.jpg) |
+| ![终局](docs/screenshots/zh/game-over.png) | ![战绩](docs/screenshots/zh/record.png) |
 
 | 局域网房间 | 手机 |
 | --- | --- |
-| ![局域网](docs/screenshots/zh/lan.jpg) | ![手机](docs/screenshots/zh/game-mobile.jpg) |
+| ![局域网](docs/screenshots/zh/lan.png) | ![手机](docs/screenshots/zh/game-mobile.png) |
 
 全部来自真实运行的应用：桌面 1440×1000，手机 390×844 @2×（780×1688）。完整图片在
 `docs/screenshots/{en,zh}/`。

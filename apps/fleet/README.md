@@ -8,7 +8,7 @@ A hidden-fleet battleship game for the family table: **2 players**, a 10×10 cha
 five ships each, four AI captains, same-screen hot-seat and LAN play from a phone.
 No account, no ads, no remote assets. LAN needs only your own Wi-Fi.
 
-![Fleet home](docs/screenshots/en/home.jpg)
+![Fleet home](docs/screenshots/en/home.png)
 
 [![Watch the promo](docs/promo/fleet-poster-en.png)](docs/promo/fleet-promo-en.mp4)
 
@@ -57,23 +57,23 @@ passes `Math.random` for variety; tests pass seeded generators.
 
 | Home | Choose an opponent |
 | --- | --- |
-| ![Home](docs/screenshots/en/home.jpg) | ![Setup](docs/screenshots/en/setup.jpg) |
+| ![Home](docs/screenshots/en/home.png) | ![Setup](docs/screenshots/en/setup.png) |
 
 | Deploy the fleet | A battle |
 | --- | --- |
-| ![Placement](docs/screenshots/en/placement.jpg) | ![Game](docs/screenshots/en/game.jpg) |
+| ![Placement](docs/screenshots/en/placement.png) | ![Game](docs/screenshots/en/game.png) |
 
 | Hint with a reason | Game over |
 | --- | --- |
-| ![Hint](docs/screenshots/en/game-hint.jpg) | ![Result](docs/screenshots/en/game-over.jpg) |
+| ![Hint](docs/screenshots/en/game-hint.png) | ![Result](docs/screenshots/en/game-over.png) |
 
 | Rules | Family logbook |
 | --- | --- |
-| ![Rules](docs/screenshots/en/rules.jpg) | ![Stats](docs/screenshots/en/stats.jpg) |
+| ![Rules](docs/screenshots/en/rules.png) | ![Stats](docs/screenshots/en/stats.png) |
 
 | Phone home | Phone battle |
 | --- | --- |
-| ![Phone home](docs/screenshots/en/home-mobile.jpg) | ![Phone game](docs/screenshots/en/game-mobile.jpg) |
+| ![Phone home](docs/screenshots/en/home-mobile.png) | ![Phone game](docs/screenshots/en/game-mobile.png) |
 
 All screenshots come from the running app: desktop 1440×1000, phone 390×844 @2×
 (780×1688 PNG). No mockups.

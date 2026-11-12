@@ -1,4 +1,4 @@
-﻿# Five Dice · 五骰
+# Five Dice · 五骰
 
 **English** · [简体中文](README.zh-CN.md)
 
@@ -8,7 +8,7 @@ A warm, offline family dice table for **2–4 players**: five dice, three rolls,
 scoring boxes, four AI levels, hot-seat and LAN night from a phone. No account, no ads,
 no cloud; the only network Five Dice needs is your own Wi-Fi for LAN.
 
-![Five Dice home](docs/screenshots/en/home.jpg)
+![Five Dice home](docs/screenshots/en/home.png)
 
 [![Watch the promo](docs/promo/five-dice-poster-en.png)](docs/promo/five-dice-promo-en.mp4)
 
@@ -46,15 +46,15 @@ kind 50, chance = the raw sum.
 
 | A real hand | AI setup |
 | --- | --- |
-| ![Game](docs/screenshots/en/game.jpg) | ![Setup](docs/screenshots/en/setup.jpg) |
+| ![Game](docs/screenshots/en/game.png) | ![Setup](docs/screenshots/en/setup.png) |
 
 | Hint with a reason | Final table |
 | --- | --- |
-| ![Hint](docs/screenshots/en/game-hint.jpg) | ![Game over](docs/screenshots/en/game-over.jpg) |
+| ![Hint](docs/screenshots/en/game-hint.png) | ![Game over](docs/screenshots/en/game-over.png) |
 
 | Family record | Phone |
 | --- | --- |
-| ![Record](docs/screenshots/en/record.jpg) | ![Mobile](docs/screenshots/en/home-mobile.jpg) |
+| ![Record](docs/screenshots/en/record.png) | ![Mobile](docs/screenshots/en/home-mobile.png) |
 
 All screenshots come from the running app at 1440×1000 (phone 390×844 @2×). The
 screenshot script uses a fixed seed and a prepared local family record so the same real
