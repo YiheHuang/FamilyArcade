@@ -1,0 +1,44 @@
+{
+  "slug": "rummy-500",
+  "order": 10,
+  "title": "Rummy 500",
+  "titleZh": "五百分拉米",
+  "tagline": "Draw. Meld. Lay off. Reach 500.",
+  "taglineZh": "摸牌。组牌。接牌。先到五百分。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "20–30 minutes",
+  "timeZh": "20–30 分钟",
+  "age": "8+",
+  "accent": "#b05c43",
+  "paper": "#f7f0e2",
+  "ink": "#2a241e",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "Full Rummy 500 rules",
+    "2–4 players",
+    "Four AI levels",
+    "Hot-seat + LAN",
+    "Undo + hint + autosave"
+  ],
+  "factsZh": [
+    "完整五百分规则",
+    "2–4 人",
+    "四档电脑",
+    "同屏 + 局域网",
+    "悔棋 + 提示 + 自动保存"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "A deck, a table, and a race to five hundred.", "zh": "一副牌，一张桌，先到五百分。" },
+    { "at": 5.2, "en": "Rummy 500. Draw, meld, lay off.", "zh": "五百分拉米。摸牌、组牌、接牌。" },
+    { "at": 10.0, "en": "Take the stock, or dig into the discard pile.", "zh": "摸牌堆，或从弃牌堆里取牌。" },
+    { "at": 15.5, "en": "Sets, runs, and lay-offs on anyone's meld.", "zh": "套牌、顺子，还能接任何人的牌组。" },
+    { "at": 21.0, "en": "Aces play high or low. Table cards score; hand cards cost.", "zh": "A 可大可小。桌上的牌加分，手里的牌减分。" },
+    { "at": 27.0, "en": "Four AI levels, from a gentle Companion to a careful Hard.", "zh": "四档电脑对手，从温和陪玩到谨慎挑战。" },
+    { "at": 33.0, "en": "Pass one device, or join from a phone over the local network.", "zh": "一台设备传着玩，或手机连同一网络加入。" },
+    { "at": 39.0, "en": "First to 500 wins. Offline, no account, no ads.", "zh": "先到 500 分获胜。离线、无账号、无广告。" }
+  ]
+}

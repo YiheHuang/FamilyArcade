@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:03,750
+A deck, a table, and a race to five hundred.
+
+2
+00:00:05,200 --> 00:00:08,550
+Rummy 500. Draw, meld, lay off.
+
+3
+00:00:10,000 --> 00:00:13,350
+Take the stock, or dig into the discard pile.
+
+4
+00:00:15,500 --> 00:00:18,850
+Sets, runs, and lay-offs on anyone's meld.
+
+5
+00:00:21,000 --> 00:00:24,350
+Aces play high or low. Table cards score; hand cards cost.
+
+6
+00:00:27,000 --> 00:00:30,350
+Four AI levels, from a gentle Companion to a careful Hard.
+
+7
+00:00:33,000 --> 00:00:36,350
+Pass one device, or join from a phone over the local network.
+
+8
+00:00:39,000 --> 00:00:42,350
+First to 500 wins. Offline, no account, no ads.
