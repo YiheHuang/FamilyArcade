@@ -1,0 +1,41 @@
+{
+  "productName": "Family Arcade Lite",
+  "version": "3.0.0",
+  "identifier": "com.familyarcade.lite",
+  "build": {
+    "beforeDevCommand": "npm run dev:lite",
+    "devUrl": "http://localhost:5200",
+    "beforeBuildCommand": "npm run build:lite",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Family Arcade Lite",
+        "width": 1400,
+        "height": 920,
+        "minWidth": 1000,
+        "minHeight": 680,
+        "resizable": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "resources": [],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "compression": "lzma",
+        "languages": ["SimpChinese", "English"]
+      }
+    }
+  }
+}

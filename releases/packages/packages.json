@@ -1,0 +1,217 @@
+{
+  "repo": "YiheHuang/FamilyArcade",
+  "tag": "game-packages-v3.0.0",
+  "generated": "2026-11-12T14:29:21.579Z",
+  "games": {
+    "abalone": {
+      "asset": "abalone.zip",
+      "bytes": 4801523,
+      "sha256": "a4fd9afc74f03c889d116136595ccc136a214aea15258137de195b1bbf148ac4"
+    },
+    "blokus": {
+      "asset": "blokus.zip",
+      "bytes": 4644531,
+      "sha256": "9d9d64b272a58c5e154e8fbd379b7f7cbd6b42b49661b20fe0e1ee3e06fbe8c4"
+    },
+    "chess": {
+      "asset": "chess.zip",
+      "bytes": 4810690,
+      "sha256": "5cb6895d14c66fd3aa3f71c8da332b2df1aa04a245fd7ce83f03dd22a035deb1"
+    },
+    "go": {
+      "asset": "go.zip",
+      "bytes": 4812853,
+      "sha256": "ef2e7246ddd77991841ef61d45e6723f9596554a7bc2fd4482805576f74a7d7d"
+    },
+    "gomoku": {
+      "asset": "gomoku.zip",
+      "bytes": 4800355,
+      "sha256": "bb130ebb6ac1cbd839f50b39f55572563a67ec31f6104a78e3eb3cdec61c3768"
+    },
+    "hive": {
+      "asset": "hive.zip",
+      "bytes": 4812928,
+      "sha256": "30021e285dc5547d2c6827ffe45817267ba4eebc43d69129c34884f0c607cd3e"
+    },
+    "intl-draughts": {
+      "asset": "intl-draughts.zip",
+      "bytes": 4808157,
+      "sha256": "81780087f85f766b7d47ebe16ce4ab1c3cbfe67d34d589ec36aff32d7e7ff89e"
+    },
+    "jungle-chess": {
+      "asset": "jungle-chess.zip",
+      "bytes": 4813239,
+      "sha256": "ab4b00844de87b7807e4f7b9e53d14eac1776380a7b0364262f9ac8644fc8400"
+    },
+    "quarto": {
+      "asset": "quarto.zip",
+      "bytes": 4803605,
+      "sha256": "4bbdcb7babcd77449277f68e32bff5136d193df5ccd8c447a5a61f751e72dda7"
+    },
+    "shogi": {
+      "asset": "shogi.zip",
+      "bytes": 4809724,
+      "sha256": "c06e07082c29ff04935ccd6199d9f65534c6d7193ee12df7bdebe0e77c32bd60"
+    },
+    "splendor": {
+      "asset": "splendor.zip",
+      "bytes": 7436660,
+      "sha256": "126e84f71067c3c064106438dd1be24ddac5db2664258ed3558f98a5e1085f3c"
+    },
+    "xiangqi": {
+      "asset": "xiangqi.zip",
+      "bytes": 4806310,
+      "sha256": "06de4b9aff74c8e27cbd4453b14b3e1915f5533e2a18409b3d1c63ac6e712a28"
+    },
+    "balloon-rally": {
+      "asset": "balloon-rally.zip",
+      "bytes": 4852930,
+      "sha256": "01daf100245bb939d619d930fa0090e90739d379ac27b46cbd96c4981dcee3fb"
+    },
+    "cribbage": {
+      "asset": "cribbage.zip",
+      "bytes": 4819627,
+      "sha256": "233aa71188d7e2ba36d8b97b6f324f4b3ce9d5e754be2806328e2bccf6730b4d"
+    },
+    "field-and-wall": {
+      "asset": "field-and-wall.zip",
+      "bytes": 4870596,
+      "sha256": "4437ea9b2d263dcb4782c542692c9077b4167896bcbbddf7fe86bfd84ebf0ef5"
+    },
+    "hearts": {
+      "asset": "hearts.zip",
+      "bytes": 4816390,
+      "sha256": "d814adfec6cf16e25629ddbb979ed75111fddd8ca0af8e0ae5cbb4239824cac6"
+    },
+    "hue-garden": {
+      "asset": "hue-garden.zip",
+      "bytes": 4856939,
+      "sha256": "8962c47c788a50982a4cede2250ace34f49bf6d0d9fce26381831c25d04a66d2"
+    },
+    "president": {
+      "asset": "president.zip",
+      "bytes": 4815911,
+      "sha256": "5b65385e248e8a87225aa498a0b13f3f73652cbf4b0d1b434fd2ba48c54da1fe"
+    },
+    "rummy-500": {
+      "asset": "rummy-500.zip",
+      "bytes": 4818884,
+      "sha256": "d3a9296f46bb59bddff2d2cc24ad148ea8635616cd8e76b2c646c10b93472048"
+    },
+    "spades": {
+      "asset": "spades.zip",
+      "bytes": 4826997,
+      "sha256": "1a0c0f64cfeb3ca66a8c79c1788ca3c07245d33df869b68e559040172ac28a96"
+    },
+    "star-leap": {
+      "asset": "star-leap.zip",
+      "bytes": 4938615,
+      "sha256": "b0688884b89fd369084eceff39f8a4986a11ea00bb99ef9b02d3b0ebd5952a4a"
+    },
+    "sweet-carousel": {
+      "asset": "sweet-carousel.zip",
+      "bytes": 4994136,
+      "sha256": "80f42dc9b07cf37b1336b9a2311e84833795cfe5429f1a12a4a2604154b42cc9"
+    },
+    "boxes": {
+      "asset": "boxes.zip",
+      "bytes": 4797122,
+      "sha256": "0998000a5e5e547fa33a657b8a2a4804ff010ac0ba808feabde05f6c50fb1a98"
+    },
+    "codebreak": {
+      "asset": "codebreak.zip",
+      "bytes": 4804979,
+      "sha256": "6059775b3b2338046526bf4e2a908179abc312dc17a919c3e23dd287266e0ca1"
+    },
+    "color-chain": {
+      "asset": "color-chain.zip",
+      "bytes": 4811623,
+      "sha256": "ccb12b25cd283c327f58335e1ddf5c1c26b3059112ec3e40a2bf73ea52d2af34"
+    },
+    "domino-line": {
+      "asset": "domino-line.zip",
+      "bytes": 4804016,
+      "sha256": "751d131775946cb6a88b16cc31b72f405d1f9b06a7558e575db3ab4ec0d48998"
+    },
+    "draughts": {
+      "asset": "draughts.zip",
+      "bytes": 4887465,
+      "sha256": "06f8248f033929e0c02a1ec81f88cc60aa19e0aadec502a76e4a49bdd10e9269"
+    },
+    "five-dice": {
+      "asset": "five-dice.zip",
+      "bytes": 4808390,
+      "sha256": "106e6818fcc4bddd3962bfeb42cace779613b379213b04741a9292846bbdcabb"
+    },
+    "fleet": {
+      "asset": "fleet.zip",
+      "bytes": 4808585,
+      "sha256": "039deab7a9932c8ccb0eac8b76ac13a9ef60b66fcb782222400db889c334e7ce"
+    },
+    "flip": {
+      "asset": "flip.zip",
+      "bytes": 4794188,
+      "sha256": "1c5f10decd20c2ed8aa6304a3495721c98dc59dbc82cbb8b4455534431d00c6c"
+    },
+    "four": {
+      "asset": "four.zip",
+      "bytes": 4788051,
+      "sha256": "1aeecffc0ca1bbac887e0813b1ee77d2c5a59baeb1bbc71dc666a284887d0de8"
+    },
+    "hex": {
+      "asset": "hex.zip",
+      "bytes": 4795306,
+      "sha256": "fe28d02f507eb1eed10f42724aec12afd6ebe07be1328726a4ec0dbe0a3fc7e3"
+    },
+    "ladder-run": {
+      "asset": "ladder-run.zip",
+      "bytes": 4809228,
+      "sha256": "54a75a6495e6e0519b5e9838aa2fa2efeb1185bce8cbd9d03e3695219f28ee24"
+    },
+    "little-go": {
+      "asset": "little-go.zip",
+      "bytes": 4798404,
+      "sha256": "31d5c2ef2a01b7a6b2acb2b709fee759c9ba2a58ee9d8c1a35efec9b0add39b7"
+    },
+    "mill": {
+      "asset": "mill.zip",
+      "bytes": 4806874,
+      "sha256": "c80adde9ce9fd330c7f194cf4740ee1f47d8cf324f1e2b0da88b17b546c0a412"
+    },
+    "mini-chess": {
+      "asset": "mini-chess.zip",
+      "bytes": 4800533,
+      "sha256": "8114957aed54acc543a5c68bba29ce9602c0cf21873278859c9e5099d8911b94"
+    },
+    "pair-up": {
+      "asset": "pair-up.zip",
+      "bytes": 4895956,
+      "sha256": "a0cf448628b088d91e6655cef6626738b11b42a749c845ec4cfe4ff206407404"
+    },
+    "race-home": {
+      "asset": "race-home.zip",
+      "bytes": 4906231,
+      "sha256": "0749d7e5c8e41177bd4ab801dfc541d507282c3b3e8d771603e2be111317cbb2"
+    },
+    "sowing": {
+      "asset": "sowing.zip",
+      "bytes": 4887243,
+      "sha256": "746a6b79431bcbd5055936513b852889a379477b2276753f0120b8e31e20eec9"
+    },
+    "tables": {
+      "asset": "tables.zip",
+      "bytes": 4900467,
+      "sha256": "56eab616d27208c68adb5618055ea614d5e5c879f11689b7d36ba5ce8c2f52bf"
+    },
+    "triple": {
+      "asset": "triple.zip",
+      "bytes": 4797494,
+      "sha256": "94ea8f95fb77d9d9f1e05b058ae1e7bc63847961a5ddd50f426c5fcbfda58c8a"
+    },
+    "triple-find": {
+      "asset": "triple-find.zip",
+      "bytes": 4900038,
+      "sha256": "e635dfe1ec2003d26c105713800ddf2046ca59428482e4c29883b69c6cd03db9"
+    }
+  }
+}

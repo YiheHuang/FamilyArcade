@@ -3,10 +3,12 @@
   "private": true,
   "version": "3.0.0",
   "type": "module",
-  "description": "Family Arcade — one launcher for 27 family games",
+  "description": "Family Arcade — one launcher for 53 family games",
   "scripts": {
     "dev": "vite --port 5200",
+    "dev:lite": "vite --mode lite --port 5200",
     "build": "tsc --noEmit && vite build",
+    "build:lite": "tsc --noEmit && vite build --mode lite",
     "preview": "vite preview --port 4200",
     "check": "tsc --noEmit && vite build",
     "e2e": "node scripts/e2e.mjs",

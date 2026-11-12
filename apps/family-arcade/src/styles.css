@@ -64,3 +64,21 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(176, 92, 6
   input { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+.installed-badge { position:absolute; right:12px; top:12px; background:var(--mint); color:#fff; border-radius:999px; padding:5px 10px; font-size:10px; font-weight:700; letter-spacing:0.06em; }
+.progress { position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(42,36,30,0.18); }
+.progress span { display:block; height:100%; background:var(--accent); transition:width 0.2s ease; }
+.notice { margin:14px 0; padding:11px 14px; border-radius:12px; background:#e6f0e9; border:1px solid #c6dccd; color:#315b45; font-size:13px; }
+.modal-backdrop { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:24px; background:rgba(42,36,30,0.42); }
+.modal { width:min(620px,100%); max-height:calc(100vh - 48px); overflow:auto; background:var(--card); border:1px solid var(--line); border-radius:22px; padding:24px; box-shadow:0 28px 80px rgba(42,36,30,0.28); }
+.modal-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
+.modal-head h2 { margin:0; font:600 30px/1.1 "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", Georgia, serif; }
+.modal h3 { margin:22px 0 8px; font:600 18px/1.2 "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", Georgia, serif; }
+.field { display:grid; gap:8px; font-size:13px; color:var(--muted); }
+.field input { width:100%; }
+.hint { margin:8px 0 0; color:var(--muted); font-size:12px; line-height:1.5; }
+.modal-actions { display:flex; gap:8px; margin-top:14px; }
+.primary { border:1px solid var(--ink); background:var(--ink); color:#fff8ec; border-radius:999px; padding:9px 18px; font-size:13px; }
+.installed-list { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:6px; }
+.installed-list li { display:flex; align-items:center; justify-content:space-between; gap:12px; border-top:1px solid var(--line); padding-top:8px; font-size:13px; }
+@media (max-width: 520px) { .modal { padding:18px; } }

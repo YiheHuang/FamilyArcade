@@ -9,7 +9,7 @@
 
 ![家庭游戏馆启动器](docs/screenshots/zh/home.jpg)
 
-**运行时：** **离线版**内含 WebView2 运行时；**精简版**改用 Tauri 的小型引导器。每个便携游戏也都带有 `WebView2Loader.dll`。见 [`RUNTIME.md`](RUNTIME.md)。
+**运行时：** **离线版**内含 WebView2 运行时；**精简版**改用 Tauri 的小型引导器；**Lite** 只下载你选择的游戏。每个便携游戏也都带有 `WebView2Loader.dll`。见 [`RUNTIME.md`](RUNTIME.md) 和 [Lite 说明](LITE.zh-CN.md)。
 
 ## 它做什么
 

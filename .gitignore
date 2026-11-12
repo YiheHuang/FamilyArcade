@@ -20,6 +20,7 @@ apps/*/video/public/voice/
 apps/*/video/out/
 apps/*/video/node_modules/
 releases/*/*.exe
+releases/packages/*.zip
 
 apps/family-arcade/games/
 
