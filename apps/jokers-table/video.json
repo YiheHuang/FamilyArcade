@@ -1,32 +1,76 @@
 {
   "slug": "jokers-table",
-  "order": 1,
+  "order": 4,
   "title": "Joker's Table",
   "titleZh": "小丑牌桌",
-  "tagline": "An original poker roguelike with original jokers",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "An original poker roguelike with 24 original jokers.",
+  "taglineZh": "二十四张原创小丑的扑克冒险。",
+  "players": "1–4 players",
+  "playersZh": "1–4 人",
+  "time": "20–35 minutes",
+  "timeZh": "20–35 分钟",
+  "age": "10+",
+  "accent": "#783139",
+  "paper": "#f2e8d4",
+  "ink": "#22322c",
   "screens": {
-    "en": ["home.png", "game.png", "game-over.png"],
-    "zh": ["home.png", "game.png", "game-over.png"]
+    "en": ["home.png", "game.png", "shop.png"],
+    "zh": ["home.png", "game.png", "shop.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "52 cards · 8-card hand",
+    "24 original jokers · 8 bosses",
+    "4 decks · 6 enhancements",
+    "4 AI levels",
+    "Solo · hot-seat · LAN"
+  ],
+  "factsZh": [
+    "52 张牌 · 8 张手牌",
+    "24 张原创小丑 · 8 位首领",
+    "4 种牌组 · 6 种强化",
+    "四档电脑",
+    "单人 · 同屏 · 局域网"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Joker's Table. A tiny game for a big table.", "zh": "小丑牌桌。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Joker's Table. Three in a row.", "zh": "小丑牌桌。三子连线。" }
+    {
+      "at": 0.4,
+      "en": "Six antes. Four seats. One deck.",
+      "zh": "六个底注，四个座位，一副牌。"
+    },
+    {
+      "at": 5.2,
+      "en": "Joker's Table. An original poker roguelike.",
+      "zh": "小丑牌桌。原创的扑克冒险。"
+    },
+    {
+      "at": 10.0,
+      "en": "Eight cards in hand. Play up to five. Build chips times mult.",
+      "zh": "手中八张牌，最多打出五张。把筹码和倍率叠起来。"
+    },
+    {
+      "at": 16.0,
+      "en": "Add original jokers, enhancements and vouchers between blinds.",
+      "zh": "盲注之间收集原创小丑、强化和代金券。"
+    },
+    {
+      "at": 23.0,
+      "en": "Meet eight bosses, four decks and six enhancements.",
+      "zh": "八位首领、四种牌组、六种强化。"
+    },
+    {
+      "at": 30.0,
+      "en": "Same seed, three hearts. The unique lowest blind score loses one.",
+      "zh": "同一牌序，三颗心。每个盲注唯一的最低分失去一颗心。"
+    },
+    {
+      "at": 37.0,
+      "en": "Solo, AI rivals, hot-seat with a cover, or LAN score submission.",
+      "zh": "单人、电脑对手、带遮挡的同屏，或局域网提交分数。"
+    },
+    {
+      "at": 42.0,
+      "en": "Joker's Table. Deal the first blind.",
+      "zh": "小丑牌桌。发下第一个盲注。"
+    }
   ]
 }
