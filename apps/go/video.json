@@ -1,0 +1,42 @@
+{
+  "slug": "go",
+  "order": 4,
+  "title": "Go",
+  "titleZh": "围棋",
+  "tagline": "The whole board. The whole family.",
+  "taglineZh": "一整张棋盘，一家人慢慢下。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "30 minutes",
+  "timeZh": "30 分钟",
+  "age": "6+",
+  "accent": "#b05c43",
+  "paper": "#f5eddd",
+  "ink": "#27221b",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "19 × 19 with 9 × 9 and 13 × 13",
+    "Four AI levels",
+    "Captures, ko, komi 6.5 / 7.5",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "19 × 19 棋盘，另有 9 × 9 和 13 × 13",
+    "四档电脑难度",
+    "提子、打劫、贴目 6.5 / 7.5",
+    "同屏 + 局域网"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Three hundred and sixty-one crossings. Black moves first.", "zh": "三百六十一个交叉点，黑棋先行。" },
+    { "at": 5.2, "en": "Go. The whole board, the whole family.", "zh": "围棋。一整张棋盘，一家人慢慢下。" },
+    { "at": 10.0, "en": "Place stones, surround ground, and capture groups with no liberties.", "zh": "落子、围地，提掉没有气的棋。" },
+    { "at": 16.0, "en": "Choose 9×9, 13×13 or the full 19×19 board.", "zh": "可选 9×9、13×13，或完整的 19×19 棋盘。" },
+    { "at": 23.5, "en": "Four computer levels, from gentle Companion to a playout-driven Hard.", "zh": "四档电脑难度，从温和陪玩到会做推演的挑战。" },
+    { "at": 31.0, "en": "Two players on one screen, or a phone joins on the same network.", "zh": "两人同屏，或者手机连同一局域网加入。" },
+    { "at": 38.0, "en": "Undo, a hint with a reason, autosave and a family record.", "zh": "悔棋、带理由的提示、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Go. Count the stones and the ground.", "zh": "围棋。数子，也数地。" }
+  ]
+}
