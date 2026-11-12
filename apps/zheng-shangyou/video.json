@@ -1,32 +1,77 @@
 {
   "slug": "zheng-shangyou",
-  "order": 1,
+  "order": 3,
   "title": "Zheng Shangyou",
   "titleZh": "争上游",
-  "tagline": "Chinese climbing game for 3–6 players",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "Climb first. Leave the last seat behind.",
+  "taglineZh": "先出完的人坐上游，最后一张牌留在下游。",
+  "players": "3–6 players",
+  "playersZh": "3–6 人",
+  "time": "15–25 minutes",
+  "timeZh": "15–25 分钟",
+  "age": "8+",
+  "ageZh": "8 岁以上",
+  "accent": "#2d6a52",
+  "paper": "#f4ecdc",
+  "ink": "#231f1a",
   "screens": {
     "en": ["home.png", "game.png", "game-over.png"],
     "zh": ["home.png", "game.png", "game-over.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "3–6 players",
+    "52 cards, no jokers",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "Tribute + running score"
+  ],
+  "factsZh": [
+    "3–6 人",
+    "52 张牌，不用王",
+    "四档电脑",
+    "同屏 + 局域网",
+    "进贡 + 累计得分"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Zheng Shangyou. A tiny game for a big table.", "zh": "争上游。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Zheng Shangyou. Three in a row.", "zh": "争上游。三子连线。" }
+    {
+      "at": 0.4,
+      "en": "Fifty-two cards. Three to six players. No jokers.",
+      "zh": "五十二张牌，三到六个人，不用王。"
+    },
+    {
+      "at": 5.2,
+      "en": "Zheng Shangyou. Climb from downstream to upstream.",
+      "zh": "争上游。从下游一路打到上游。"
+    },
+    {
+      "at": 10,
+      "en": "Lead a single, pair, triple, road or bomb. Beat it with a bigger set.",
+      "zh": "出单张、对子、三张、顺子或炸弹，用更大的牌型压住。"
+    },
+    {
+      "at": 16,
+      "en": "Two passes clear the trick. The last player to play leads again.",
+      "zh": "两个人过牌就清空这一墩，最后出牌的人重新领出。"
+    },
+    {
+      "at": 23.5,
+      "en": "Finish first for upstream. Last place is downstream, and the points follow.",
+      "zh": "先出完当上游，最后一名是下游，得分也跟着排定。"
+    },
+    {
+      "at": 31,
+      "en": "Next round, downstream pays tribute and upstream returns any card.",
+      "zh": "下一局，下游进贡，上游回一张任意牌。"
+    },
+    {
+      "at": 38,
+      "en": "Four computer levels, hot-seat, and private seats on your own network.",
+      "zh": "四档电脑、同屏热座，还有自己网络里的私密座位。"
+    },
+    {
+      "at": 42,
+      "en": "Offline. No account. No ads.",
+      "zh": "离线、无账号、无广告。"
+    }
   ]
 }
