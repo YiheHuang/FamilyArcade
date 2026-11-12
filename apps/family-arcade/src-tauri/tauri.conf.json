@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Family Arcade · 家庭游戏馆",
+        "title": "Family Arcade",
         "width": 1400,
         "height": 920,
         "minWidth": 1000,

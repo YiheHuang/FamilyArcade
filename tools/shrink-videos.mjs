@@ -5,8 +5,11 @@ import { readdirSync, renameSync, statSync } from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
+const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
+const only = onlyArg ? new Set(onlyArg.split(',').map((slug) => slug.trim()).filter(Boolean)) : null;
 const files = [];
 for (const slug of readdirSync(path.join(root, 'apps'))) {
+  if (only && !only.has(slug)) continue;
   const dir = path.join(root, 'apps', slug, 'docs', 'promo');
   try {
     for (const file of readdirSync(dir)) {

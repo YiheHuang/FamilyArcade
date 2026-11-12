@@ -54,11 +54,19 @@ function card(game, lang) {
   const time = lang === 'zh' ? game.timeZh : `${game.time} min`;
   const players = lang === 'zh' ? `${game.players} 人` : `${game.players} players`;
   const trailer = lang === 'zh' ? game.videoZh : game.video;
-  const age = lang === 'zh' ? `${game.age} 岁+` : `ages ${game.age}`;
+  const age = lang === 'zh' ? `${game.age.replace('+', '')} 岁+` : `ages ${game.age}`;
+  const readmeZh = game.readme.replace(/README\.md$/, 'README.zh-CN.md');
+  const readme = lang === 'zh' && existsSync(path.join(root, readmeZh)) ? readmeZh : game.readme;
+  const shotEn = [game.shot, game.shot.replace(/\.jpg$/, '.png')]
+    .find((candidate) => existsSync(path.join(root, candidate))) ?? game.shot;
+  const shotZh = shotEn.replace('/screenshots/en/', '/screenshots/zh/');
+  const shot = lang === 'zh'
+    ? [shotZh, shotZh.replace(/\.jpg$/, '.png'), shotEn].find((candidate) => existsSync(path.join(root, candidate))) ?? shotEn
+    : shotEn;
   return `<td width="25%" valign="top">
-<a href="${trailer}"><img src="${game.shot}" width="100%" alt="${title}"></a>
+<a href="${trailer}"><img src="${shot}" width="100%" alt="${title}"></a>
 
-**[${title}](${game.readme})**
+**[${title}](${readme})**
 
 <sub>${players} · ${time} · ${age}</sub>
 
@@ -84,7 +92,7 @@ const en = `English · [简体中文](README.zh-CN.md)
 
 **${games.length} offline family games. AI, hot-seat and LAN in every game.**
 
-[![Watch the 37-second tour](docs/cover.png)](docs/tour.mp4)
+[![Watch the 54-second tour](docs/cover.png)](docs/tour.mp4)
 
 [![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](${hubUrl})
 
@@ -130,7 +138,7 @@ const zh = `[English](README.md) · 简体中文
 
 **${games.length} 款离线家庭游戏。每一款都有 AI、同屏热座和局域网。**
 
-[![观看 37 秒总览](docs/cover.png)](docs/tour.mp4)
+[![观看 54 秒总览](docs/cover.png)](docs/tour.mp4)
 
 [![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](${hubUrl})
 

@@ -79,8 +79,14 @@ export default function App() {
   const t = COPY[lang];
 
   useEffect(() => {
+    const title = lang === 'zh' ? '家庭游戏馆' : 'Family Arcade';
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.title = lang === 'zh' ? '?????' : 'Family Arcade';
+    document.title = title;
+    if ('__TAURI_INTERNALS__' in window) {
+      void import('@tauri-apps/api/window')
+        .then(({ getCurrentWindow }) => getCurrentWindow().setTitle(title))
+        .catch(() => undefined);
+    }
     localStorage.setItem('familyarcade.lang', lang);
   }, [lang]);
 

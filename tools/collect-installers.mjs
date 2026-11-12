@@ -39,7 +39,9 @@ for (const slug of readdirSync(path.join(root, 'apps'))) {
     continue;
   }
   mkdirSync(path.join(releases, slug), { recursive: true });
-  const file = `${slug}_${conf.version}_x64-setup.exe`;
+  const file = slug === 'family-arcade'
+    ? `FamilyArcade_${conf.version}_x64-setup.exe`
+    : `${slug}_${conf.version}_x64-setup.exe`;
   copyFileSync(candidate, path.join(releases, slug, file));
   manifest.push({
     slug,

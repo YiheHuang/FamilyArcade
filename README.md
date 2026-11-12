@@ -2,13 +2,13 @@ English · [简体中文](README.zh-CN.md)
 
 # Family Arcade
 
-**27 offline family games. AI, hot-seat and LAN in every game.**
+**42 offline family games. AI, hot-seat and LAN in every game.**
 
-[![Watch the 37-second tour](docs/cover.png)](docs/tour.mp4)
+[![Watch the 54-second tour](docs/cover.png)](docs/tour.mp4)
 
-[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.2/FamilyArcade_1.0.2_x64-setup.exe)
+[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v2.0.0/FamilyArcade_2.0.0_x64-setup.exe)
 
-**All-in-one:** [Family Arcade 1.0.2](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.2/FamilyArcade_1.0.2_x64-setup.exe) · **WebView2 runtime (only if needed):** [offline x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
+**All-in-one:** [Family Arcade 2.0.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v2.0.0/FamilyArcade_2.0.0_x64-setup.exe) · **WebView2 runtime (only if needed):** [offline x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
 ## Classics
 
@@ -30,6 +30,96 @@ English · [简体中文](README.zh-CN.md)
 <sub>2–4 players · 30 min · ages 8+</sub>
 
 <sub>[Trailer](apps/splendor/docs/promo/splendor-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/splendor-v2.5.0/splendor_2.5.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/gomoku/docs/promo/gomoku-promo-en.mp4"><img src="apps/gomoku/docs/screenshots/en/game.png" width="100%" alt="Gomoku"></a>
+
+**[Gomoku](apps/gomoku/README.md)**
+
+<sub>2 players · 10–20 min · ages 6+</sub>
+
+<sub>[Trailer](apps/gomoku/docs/promo/gomoku-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/gomoku-v0.1.0/gomoku_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/xiangqi/docs/promo/xiangqi-promo-en.mp4"><img src="apps/xiangqi/docs/screenshots/en/game.png" width="100%" alt="Xiangqi"></a>
+
+**[Xiangqi](apps/xiangqi/README.md)**
+
+<sub>2 players · 20 min · ages 8+</sub>
+
+<sub>[Trailer](apps/xiangqi/docs/promo/xiangqi-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/xiangqi-v0.1.0/xiangqi_0.1.0_x64-setup.exe)</sub>
+</td></tr>
+<tr><td width="25%" valign="top">
+<a href="apps/chess/docs/promo/chess-promo-en.mp4"><img src="apps/chess/docs/screenshots/en/game.png" width="100%" alt="Chess"></a>
+
+**[Chess](apps/chess/README.md)**
+
+<sub>2 players · 30 min · ages 6+</sub>
+
+<sub>[Trailer](apps/chess/docs/promo/chess-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/chess-v0.1.0/chess_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/go/docs/promo/go-promo-en.mp4"><img src="apps/go/docs/screenshots/en/game.png" width="100%" alt="Go"></a>
+
+**[Go](apps/go/README.md)**
+
+<sub>2 players · 30 min · ages 6+</sub>
+
+<sub>[Trailer](apps/go/docs/promo/go-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/go-v0.1.0/go_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/shogi/docs/promo/shogi-promo-en.mp4"><img src="apps/shogi/docs/screenshots/en/game.png" width="100%" alt="Shogi"></a>
+
+**[Shogi](apps/shogi/README.md)**
+
+<sub>2 players · 20 min · ages 8+</sub>
+
+<sub>[Trailer](apps/shogi/docs/promo/shogi-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/shogi-v0.1.0/shogi_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/intl-draughts/docs/promo/intl-draughts-promo-en.mp4"><img src="apps/intl-draughts/docs/screenshots/en/game.png" width="100%" alt="International Draughts"></a>
+
+**[International Draughts](apps/intl-draughts/README.md)**
+
+<sub>2 players · 15–30 min · ages 7+</sub>
+
+<sub>[Trailer](apps/intl-draughts/docs/promo/intl-draughts-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/intl-draughts-v0.1.0/intl-draughts_0.1.0_x64-setup.exe)</sub>
+</td></tr>
+<tr><td width="25%" valign="top">
+<a href="apps/jungle-chess/docs/promo/jungle-chess-promo-en.mp4"><img src="apps/jungle-chess/docs/screenshots/en/game.png" width="100%" alt="Jungle Chess"></a>
+
+**[Jungle Chess](apps/jungle-chess/README.md)**
+
+<sub>2 players · 15 min · ages 6+</sub>
+
+<sub>[Trailer](apps/jungle-chess/docs/promo/jungle-chess-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/jungle-chess-v0.1.0/jungle-chess_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/abalone/docs/promo/abalone-promo-en.mp4"><img src="apps/abalone/docs/screenshots/en/game.png" width="100%" alt="Abalone"></a>
+
+**[Abalone](apps/abalone/README.md)**
+
+<sub>2 players · 15 min · ages 7+</sub>
+
+<sub>[Trailer](apps/abalone/docs/promo/abalone-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/abalone-v0.1.0/abalone_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/hive/docs/promo/hive-promo-en.mp4"><img src="apps/hive/docs/screenshots/en/game.png" width="100%" alt="Hive"></a>
+
+**[Hive](apps/hive/README.md)**
+
+<sub>2 players · 25 min · ages 8+</sub>
+
+<sub>[Trailer](apps/hive/docs/promo/hive-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/hive-v0.1.0/hive_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/quarto/docs/promo/quarto-promo-en.mp4"><img src="apps/quarto/docs/screenshots/en/game.png" width="100%" alt="Quarto"></a>
+
+**[Quarto](apps/quarto/README.md)**
+
+<sub>2 players · 10 min · ages 6+</sub>
+
+<sub>[Trailer](apps/quarto/docs/promo/quarto-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/quarto-v0.1.0/quarto_0.1.0_x64-setup.exe)</sub>
 </td></tr>
 </table>
 
@@ -80,6 +170,51 @@ English · [简体中文](README.zh-CN.md)
 <sub>2–6 players · 20–25 min · ages 8+</sub>
 
 <sub>[Trailer](apps/balloon-rally/docs/promo/balloon-rally-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/balloon-rally-v0.1.0/balloon-rally_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/hearts/docs/promo/hearts-promo-en.mp4"><img src="apps/hearts/docs/screenshots/en/game.png" width="100%" alt="Hearts"></a>
+
+**[Hearts](apps/hearts/README.md)**
+
+<sub>4 players · 25 min · ages 8+</sub>
+
+<sub>[Trailer](apps/hearts/docs/promo/hearts-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/hearts-v0.1.0/hearts_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/spades/docs/promo/spades-promo-en.mp4"><img src="apps/spades/docs/screenshots/en/game.png" width="100%" alt="Spades"></a>
+
+**[Spades](apps/spades/README.md)**
+
+<sub>4 players · 20–30 min · ages 8+</sub>
+
+<sub>[Trailer](apps/spades/docs/promo/spades-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/spades-v0.1.0/spades_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/rummy-500/docs/promo/rummy-500-promo-en.mp4"><img src="apps/rummy-500/docs/screenshots/en/game.png" width="100%" alt="Rummy 500"></a>
+
+**[Rummy 500](apps/rummy-500/README.md)**
+
+<sub>2–4 players · 20–30 min · ages 8+</sub>
+
+<sub>[Trailer](apps/rummy-500/docs/promo/rummy-500-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/rummy-500-v0.1.0/rummy-500_0.1.0_x64-setup.exe)</sub>
+</td></tr>
+<tr><td width="25%" valign="top">
+<a href="apps/cribbage/docs/promo/cribbage-promo-en.mp4"><img src="apps/cribbage/docs/screenshots/en/game.png" width="100%" alt="Cribbage"></a>
+
+**[Cribbage](apps/cribbage/README.md)**
+
+<sub>2–4 players · 20 min · ages 8+</sub>
+
+<sub>[Trailer](apps/cribbage/docs/promo/cribbage-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/cribbage-v0.1.0/cribbage_0.1.0_x64-setup.exe)</sub>
+</td>
+<td width="25%" valign="top">
+<a href="apps/president/docs/promo/president-promo-en.mp4"><img src="apps/president/docs/screenshots/en/game.png" width="100%" alt="President"></a>
+
+**[President](apps/president/README.md)**
+
+<sub>3–6 players · 20 min · ages 8+</sub>
+
+<sub>[Trailer](apps/president/docs/promo/president-promo-en.mp4) · [Installer](https://github.com/YiheHuang/FamilyArcade/releases/download/president-v0.1.0/president_0.1.0_x64-setup.exe)</sub>
 </td></tr>
 </table>
 
@@ -271,7 +406,7 @@ English · [简体中文](README.zh-CN.md)
 ## Releases
 
 Every game has a separate installer under [Releases](https://github.com/YiheHuang/FamilyArcade/releases). The all-in-one
-installer includes the launcher, all 27 games and the WebView2 runtime. Individual
+installer includes the launcher, all 42 games and the WebView2 runtime. Individual
 installers are 1–4 MB. See each game README for rules, LAN and limitations.
 
 ## Build
