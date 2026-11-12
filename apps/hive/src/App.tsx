@@ -1206,9 +1206,8 @@ export default function App() {
             </div>
           </div>
           <div className="record-strip">
-            <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{tr(record.games === 1 ? 'gameSingular' : 'gamePlural')}</span>
             <span className="dot">·</span>
             <span>{record.winsW} {tr('amber')}</span>
             <span className="dot">·</span>
@@ -1352,37 +1351,35 @@ export default function App() {
         </section>
 
         <aside className="side">
-          <div className="side-card">
-            <h3>{sideTitle}</h3>
-            <p>{sideDetail}</p>
-            {shownState.status === 'playing' && (
-              <>
-                <div className="side-actions">
-                  <button
-                    className="secondary"
-                    onClick={undo}
-                    disabled={history.length === 0 || isLan}
-                  >
-                    {tr('undo')}
+          {shownState.status === 'playing' && (
+            <div className="side-card">
+              <h3>{sideTitle}</h3>
+              <p>{sideDetail}</p>
+              <div className="side-actions">
+                <button
+                  className="secondary"
+                  onClick={undo}
+                  disabled={history.length === 0 || isLan}
+                >
+                  {tr('undo')}
+                </button>
+                <button
+                  className="secondary"
+                  onClick={showHint}
+                  disabled={isLan || aiTurn || onlyPass}
+                >
+                  {tr('hint')}
+                </button>
+                {onlyPass && actorCanPlay && (
+                  <button className="primary side-pass" onClick={() => playMove({ type: 'pass' })}>
+                    {tr('pass')}
                   </button>
-                  <button
-                    className="secondary"
-                    onClick={showHint}
-                    disabled={isLan || aiTurn || onlyPass}
-                  >
-                    {tr('hint')}
-                  </button>
-                  {onlyPass && actorCanPlay && (
-                    <button className="primary side-pass" onClick={() => playMove({ type: 'pass' })}>
-                      {tr('pass')}
-                    </button>
-                  )}
-                </div>
-                {isLan && <p className="side-note">{tr('localOnly')}</p>}
-                {!isLan && <p className="side-note">{tr('keyboardHint')}</p>}
-              </>
-            )}
-          </div>
+                )}
+              </div>
+              {isLan && <p className="side-note">{tr('localOnly')}</p>}
+              {!isLan && <p className="side-note">{tr('keyboardHint')}</p>}
+            </div>
+          )}
 
           {mode === 'lan-host' && (
             <div className="side-card lan-mini">
@@ -1421,7 +1418,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.winsW}/{record.winsB}/{record.draws}
+              {record.games} {tr(record.games === 1 ? 'gameSingular' : 'gamePlural')} · {record.winsW} {tr('amber')} · {record.winsB} {tr('onyx')} · {record.draws} {tr('draws')}
             </p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
             {!isLan && (

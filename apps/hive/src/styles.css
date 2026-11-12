@@ -861,9 +861,9 @@ h1 {
   .hand-label { display: none; }
   .game-id { gap: 6px; }
   .game-id span { max-width: 55vw; }
-  .record-strip .dot:nth-of-type(3) { display: none; }
   .stats-top { grid-template-columns: 1fr 1fr; }
   .stat-card.total { grid-column: 1 / -1; }
+  .stat-card.draw { grid-column: 1 / -1; }
 }
 
 @media (hover: none) {

@@ -983,7 +983,6 @@ export default function App() {
             </div>
           </div>
           <div className="record-strip">
-            <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
             <span>{tr(record.games === 1 ? 'gameSingular' : 'gamePlural')}</span>
             <span className="dot">·</span>
@@ -1157,43 +1156,37 @@ export default function App() {
         </section>
 
         <aside className="side">
-          <div className="side-card selection-card">
-            <h3>
-              {shownStatus === 'won'
-                ? winnerText
-                : selected.length
+          {shownStatus === 'playing' && (
+            <div className="side-card selection-card">
+              <h3>
+                {selected.length
                   ? t(lang, 'selectedCount', { n: selected.length })
                   : tr('selectCopy')}
-            </h3>
-            <p>
-              {shownStatus === 'won'
-                ? tr('winnerDetail')
-                : selected.length
-                  ? tr('moveCopy')
-                  : tr('turnDetail')}
-            </p>
-            <div className="side-actions">
-              <button
-                className="secondary"
-                onClick={undo}
-                disabled={history.length === 0 || isLan || state.status !== 'playing'}
-              >
-                {tr('undo')}
-              </button>
-              <button
-                className="secondary"
-                onClick={showHint}
-                disabled={state.status !== 'playing' || isLan || (mode === 'ai' && state.turn !== 'B')}
-              >
-                {tr('hint')}
-              </button>
+              </h3>
+              <p>{selected.length ? tr('moveCopy') : tr('turnDetail')}</p>
+              <div className="side-actions">
+                <button
+                  className="secondary"
+                  onClick={undo}
+                  disabled={history.length === 0 || isLan || state.status !== 'playing'}
+                >
+                  {tr('undo')}
+                </button>
+                <button
+                  className="secondary"
+                  onClick={showHint}
+                  disabled={state.status !== 'playing' || isLan || (mode === 'ai' && state.turn !== 'B')}
+                >
+                  {tr('hint')}
+                </button>
+              </div>
+              {isLan ? (
+                <p className="side-note">{tr('rule6')}</p>
+              ) : (
+                <p className="side-note">{tr('keyboardHint')}</p>
+              )}
             </div>
-            {isLan ? (
-              <p className="side-note">{tr('rule6')}</p>
-            ) : (
-              <p className="side-note">{tr('keyboardHint')}</p>
-            )}
-          </div>
+          )}
 
           <div className="side-card capture-card">
             <h3>{tr('capturesTitle')}</h3>
@@ -1207,7 +1200,6 @@ export default function App() {
               <CapturePips count={shownCaptured.W} />
               <strong>{shownCaptured.W}</strong>
             </div>
-            <p className="side-note">{tr('turnDetail')}</p>
           </div>
 
           {mode === 'lan-host' && (
@@ -1246,7 +1238,7 @@ export default function App() {
 
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
-            <p>{t(lang, record.games === 1 ? 'gameOne' : 'gameMany', { n: record.games })} · {record.winsB}/{record.winsW}/{record.draws}</p>
+            <p>{t(lang, record.games === 1 ? 'gameOne' : 'gameMany', { n: record.games })} · {record.winsB} {tr('black')} · {record.winsW} {tr('white')} · {record.draws} {tr('draws')}</p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
             {!isLan && (
               <button className="text-button" onClick={() => setScreen('stats')}>

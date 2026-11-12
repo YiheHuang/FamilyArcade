@@ -78,7 +78,7 @@ h1 {
   font: 600 12px/1.4 Consolas, monospace;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #8a6125;
   margin: 0 0 16px;
 }
 .menu { display: flex; flex-direction: column; gap: 10px; }
@@ -426,6 +426,10 @@ h1 {
   z-index: 20;
   max-width: min(540px, calc(100vw - 32px));
   text-align: center;
+  pointer-events: none;
+}
+@media (min-width: 900px) {
+  .game-shell .toast { left: auto; right: 32px; transform: none; }
 }
 
 /* LAN */
@@ -560,8 +564,8 @@ h1 {
 }
 @media (max-width: 620px) {
   .shell { width: calc(100% - 26px); padding-top: 20px; }
-  h1 { font-size: 58px; }
-  .masthead { align-items: center; }
+  h1 { font-size: 58px; white-space: nowrap; }
+  .masthead { align-items: center; flex-wrap: wrap; }
   .mast-actions { gap: 2px; }
   .hero { margin-top: 24px; gap: 22px; }
   .hero-board { padding: 18px; border-radius: 26px; transform: rotate(-0.8deg); }

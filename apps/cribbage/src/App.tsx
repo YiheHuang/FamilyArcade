@@ -1168,9 +1168,8 @@ export default function App() {
             </div>
           </div>
           <div className="record-strip">
-            <span>{tr('viewRecord')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{tr(record.games === 1 ? 'gameSingular' : 'gamePlural')}</span>
             <span className="dot">·</span>
             <span>{tr('bestHand')} {record.bestHand || '—'}</span>
             <span className="dot">·</span>
@@ -1389,7 +1388,6 @@ export default function App() {
                   ) : (
                     <div className="show-heading">
                       <h2>{tr('phaseCount')}</h2>
-                      <span>{cribOwnerLabel}</span>
                     </div>
                   )}
 
@@ -1476,7 +1474,7 @@ export default function App() {
                       {shownPhase !== 'cut' && (
                         <div className="hand-meta">
                           <span>{handLabel}</span>
-                          <strong>{t(lang, 'cardsLeft', { n: shown.hand.length })}</strong>
+                          <strong>{t(lang, shown.hand.length === 1 ? 'cardOne' : 'cardsLeft', { n: shown.hand.length })}</strong>
                         </div>
                       )}
                     </div>
@@ -1532,7 +1530,7 @@ export default function App() {
                         {shownPhase === 'pegging' && (
                           <div className="peg-note">
                             <span>{t(lang, 'countLabel')} {shown.count} / 31</span>
-                            <span>{t(lang, 'scorePeg')} · {t(lang, 'points', { n: shownScores[seat] })}</span>
+                            <span>{t(lang, 'scorePeg')} · {t(lang, shownScores[seat] === 1 ? 'pointOne' : 'points', { n: shownScores[seat] })}</span>
                           </div>
                         )}
                       </>
@@ -1618,7 +1616,7 @@ export default function App() {
               <div className="side-card record-mini">
                 <h3>{tr('viewRecord')}</h3>
                 <p>
-                  {record.games} {tr('games')} · {tr('bestHand')} {record.bestHand || '—'}
+                  {record.games} {tr(record.games === 1 ? 'gameSingular' : 'gamePlural')} · {tr('bestHand')} {record.bestHand || '—'}
                 </p>
                 <p className="record-mini-note">{tr('clearNote')}</p>
                 <button className="text-button" onClick={() => setScreen('stats')}>

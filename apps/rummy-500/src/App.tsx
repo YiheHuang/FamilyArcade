@@ -1138,7 +1138,7 @@ export default function App() {
             <strong>{record.games}</strong>
             <span className="dot">·</span>
             <span>{tr('bestScore')}</span>
-            <strong>{record.bestScore}</strong>
+            <strong>{record.games ? record.bestScore : '—'}</strong>
             <span className="dot">·</span>
             <span>{tr('target')} {TARGET}</span>
           </div>
@@ -1417,7 +1417,7 @@ export default function App() {
                     <div className="opp-body">
                       <CardBackRow count={player.handCount} />
                       <span className="opp-count">
-                        {t(lang, 'cardCount', { n: player.handCount })}
+                        {t(lang, player.handCount === 1 ? 'cardOne' : 'cardCount', { n: player.handCount })}
                       </span>
                     </div>
                   </div>
@@ -1485,7 +1485,6 @@ export default function App() {
                     })
                   )}
                 </div>
-                {phase === 'draw' && canActNow && <span className="pile-help">{tr('takeHint')}</span>}
               </div>
             </div>
 
@@ -1647,7 +1646,7 @@ export default function App() {
 
           <div className="side-card record-mini">
             <h3>{tr('viewRecord')}</h3>
-            <p>{tr('recordMini', { games: record.games, best: record.bestScore })}</p>
+            <p>{tr('recordMini', { games: record.games, best: record.games ? record.bestScore : '—' })}</p>
             <button className="text-button" onClick={() => setScreen('stats')}>
               {tr('viewRecord')} →
             </button>
@@ -1730,7 +1729,7 @@ export default function App() {
             </div>
             <div className="stat-card best">
               <span>{tr('bestGame')}</span>
-              <strong>{record.bestScore}</strong>
+              <strong>{record.games ? record.bestScore : '—'}</strong>
             </div>
             <div className="stat-card target">
               <span>{tr('target')}</span>

@@ -181,7 +181,7 @@ button:disabled { opacity: 0.45; }
   font: 700 12px/1.4 Consolas, "Courier New", monospace;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #8a6125;
   margin: 0 0 16px;
 }
 .menu { display: flex; flex-direction: column; gap: 10px; }
