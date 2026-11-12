@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Mahjong · 麻将",
+        "title": "Mahjong",
         "width": 1180,
         "height": 820,
         "minWidth": 900,

@@ -1,12 +1,13 @@
 # NOTICE · Mahjong / 麻将
 
-Mahjong is an original, non-commercial family game made for Family Arcade. The 3×3
-three-in-a-row mechanic is a public-domain folk game; this implementation, its name,
-copy, visual design and code are original.
+Mahjong is an original, non-commercial family game made for Family Arcade. Mahjong is a
+public-domain tile game; this implementation, its engine, copy, tile faces, table design
+and sound cues are original to this project.
 
-- No third-party art, card text, font files or audio samples are included.
-- All marks, board and icons are drawn in CSS/SVG for this project.
-- Music and sound in the promo are synthesised from scratch; narration is synthetic
-  Edge TTS.
+- No third-party art, tile scans, fonts, music or audio samples are included.
+- Tiles, backs, table, stamps and marks are drawn with CSS and system fonts only.
+- Sound is synthesised at runtime with the Web Audio API.
+- No CDN, remote font, telemetry, account or cloud service.
 - Code and original assets: MIT. See [LICENSE](LICENSE).
-- Trademarks mentioned in general discussion belong to their respective owners.
+- Mahjong terminology and regional rule names are used descriptively; trademarks belong
+  to their respective owners.
