@@ -1,0 +1,32 @@
+{
+  "slug": "hive",
+  "order": 13,
+  "title": "Hive",
+  "titleZh": "虫虫棋",
+  "tagline": "One hive. Six sides. One queen.",
+  "taglineZh": "一个蜂巢，六面围杀，一位蜂后。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "25 minutes",
+  "timeZh": "25 分钟",
+  "age": "8+",
+  "accent": "#b0652c",
+  "paper": "#f5eddd",
+  "ink": "#2b2620",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["22 pieces · one hive", "4 AI levels", "Hot-seat + LAN", "Hints + autosave"],
+  "factsZh": ["22 枚棋子 · 一个蜂巢", "四档电脑对手", "同屏 + 局域网", "提示 + 自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "One hive. Six sides. One queen.", "zh": "一个蜂巢，六个面，一位蜂后。" },
+    { "at": 5.2, "en": "Hive. A full base-set duel for the family table.", "zh": "虫虫棋。给全家人的完整基础对局。" },
+    { "at": 10.0, "en": "Place, slide, climb and jump. Keep the hive in one piece.", "zh": "放子、滑行、攀爬、跳跃。蜂巢始终连成一体。" },
+    { "at": 16.0, "en": "Four computer levels, from gentle Companion to a three-ply Hard.", "zh": "四档电脑对手，从温和陪玩到三层搜索的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over the local network.", "zh": "两人同屏，或者手机在同一网络中扫码加入。" },
+    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
+    { "at": 42.0, "en": "Hive. Surround the queen.", "zh": "虫虫棋。围住蜂后。" }
+  ]
+}
