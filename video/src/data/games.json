@@ -1,5 +1,121 @@
 [
   {
+    "slug": "doudizhu",
+    "order": 1,
+    "title": "Dou Dizhu",
+    "titleZh": "斗地主",
+    "tagline": "One landlord. Two farmers. Fifty-four cards.",
+    "taglineZh": "一个地主，两个农民，五十四张牌。",
+    "players": "3 players",
+    "playersZh": "3 人",
+    "time": "10–15 minutes",
+    "timeZh": "10–15 分钟",
+    "age": "8+",
+    "accent": "#a33a2b",
+    "paper": "#f3ead9",
+    "ink": "#241d18",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "54 cards · 3 seats",
+      "1/2/3 bidding",
+      "Bombs + spring",
+      "4 AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "54 张牌 · 3 个座位",
+      "1/2/3 叫分",
+      "炸弹 + 春天",
+      "四档电脑",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "One landlord. Two farmers. Fifty-four cards.",
+        "zh": "一个地主，两个农民，五十四张牌。",
+        "enFile": "voice/doudizhu/en/line-1.mp3",
+        "zhFile": "voice/doudizhu/zh/line-1.mp3",
+        "enDuration": 4.464,
+        "zhDuration": 3.96
+      },
+      {
+        "at": 5.2,
+        "en": "Dou Dizhu. The family card table.",
+        "zh": "斗地主。一家人的牌桌。",
+        "enFile": "voice/doudizhu/en/line-2.mp3",
+        "zhFile": "voice/doudizhu/zh/line-2.mp3",
+        "enDuration": 3.072,
+        "zhDuration": 3.456
+      },
+      {
+        "at": 10,
+        "en": "Deal seventeen each and three bottom cards.",
+        "zh": "三家各十七张，三张底牌。",
+        "enFile": "voice/doudizhu/en/line-3.mp3",
+        "zhFile": "voice/doudizhu/zh/line-3.mp3",
+        "enDuration": 3.36,
+        "zhDuration": 3.336
+      },
+      {
+        "at": 16,
+        "en": "Bid one, two or three. The highest call takes the bottom.",
+        "zh": "叫 1、2 或 3 分，最高叫分拿底牌。",
+        "enFile": "voice/doudizhu/en/line-4.mp3",
+        "zhFile": "voice/doudizhu/zh/line-4.mp3",
+        "enDuration": 4.512,
+        "zhDuration": 4.344
+      },
+      {
+        "at": 23,
+        "en": "Singles, pairs, straights, airplanes, bombs and rockets.",
+        "zh": "单张、对子、顺子、飞机、炸弹和王炸。",
+        "enFile": "voice/doudizhu/en/line-5.mp3",
+        "zhFile": "voice/doudizhu/zh/line-5.mp3",
+        "enDuration": 4.92,
+        "zhDuration": 5.232
+      },
+      {
+        "at": 30,
+        "en": "Two passes reset the trick. Spring doubles the stake.",
+        "zh": "两家不出重置牌权，春天再翻一倍。",
+        "enFile": "voice/doudizhu/en/line-6.mp3",
+        "zhFile": "voice/doudizhu/zh/line-6.mp3",
+        "enDuration": 4.464,
+        "zhDuration": 4.008
+      },
+      {
+        "at": 37,
+        "en": "Four honest AI levels, hot-seat privacy, or two phones on one network.",
+        "zh": "四档诚实电脑、同屏隐私遮挡，或两台手机连同一网络。",
+        "enFile": "voice/doudizhu/en/line-7.mp3",
+        "zhFile": "voice/doudizhu/zh/line-7.mp3",
+        "enDuration": 5.448,
+        "zhDuration": 6.48
+      },
+      {
+        "at": 42,
+        "en": "Dou Dizhu. Deal the next hand.",
+        "zh": "斗地主。发下一手牌。",
+        "enFile": "voice/doudizhu/en/line-8.mp3",
+        "zhFile": "voice/doudizhu/zh/line-8.mp3",
+        "enDuration": 2.928,
+        "zhDuration": 3.336
+      }
+    ]
+  },
+  {
     "slug": "gomoku",
     "order": 1,
     "title": "Gomoku",
@@ -440,6 +556,120 @@
     ]
   },
   {
+    "slug": "texas-holdem",
+    "order": 2,
+    "title": "Texas Hold'em",
+    "titleZh": "德州扑克",
+    "tagline": "One table. Six seats. One honest bluff.",
+    "taglineZh": "一张桌，六个座位，一次诚实的诈唬。",
+    "players": "2–6 players",
+    "playersZh": "2–6 人",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "8+",
+    "accent": "#b34a2f",
+    "paper": "#f4ecdd",
+    "ink": "#241f1a",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "2–6 seats",
+      "Side pots + the wheel",
+      "Four AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "2–6 个座位",
+      "边池 + 轮子顺",
+      "四档电脑对手",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Two to six seats. One honest table.",
+        "zh": "二到六个座位，一张诚实的牌桌。",
+        "enFile": "voice/texas-holdem/en/line-1.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-1.mp3",
+        "enDuration": 3.264,
+        "zhDuration": 3.672
+      },
+      {
+        "at": 5.2,
+        "en": "Texas Hold'em, play money only.",
+        "zh": "德州扑克，只用游戏筹码。",
+        "enFile": "voice/texas-holdem/en/line-2.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-2.mp3",
+        "enDuration": 2.712,
+        "zhDuration": 3.144
+      },
+      {
+        "at": 10,
+        "en": "Blinds, flop, turn, river, showdown.",
+        "zh": "盲注、翻牌、转牌、河牌、摊牌。",
+        "enFile": "voice/texas-holdem/en/line-3.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-3.mp3",
+        "enDuration": 3.768,
+        "zhDuration": 4.512
+      },
+      {
+        "at": 16,
+        "en": "Fold, check, call, bet, raise or all-in.",
+        "zh": "弃牌、过牌、跟注、下注、加注或全押。",
+        "enFile": "voice/texas-holdem/en/line-4.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-4.mp3",
+        "enDuration": 4.272,
+        "zhDuration": 5.28
+      },
+      {
+        "at": 23.5,
+        "en": "Side pots, split pots and the odd chip, all settled.",
+        "zh": "边池、平分底池和零头筹码，都算清楚。",
+        "enFile": "voice/texas-holdem/en/line-5.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-5.mp3",
+        "enDuration": 4.32,
+        "zhDuration": 4.92
+      },
+      {
+        "at": 31,
+        "en": "Four honest AI levels read pot odds and position.",
+        "zh": "四档诚实电脑对手会看底池赔率和位置。",
+        "enFile": "voice/texas-holdem/en/line-6.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-6.mp3",
+        "enDuration": 3.672,
+        "zhDuration": 4.536
+      },
+      {
+        "at": 38,
+        "en": "Hot-seat privacy, LAN seats and a family record.",
+        "zh": "同屏遮牌、局域网座位和家庭战绩。",
+        "enFile": "voice/texas-holdem/en/line-7.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-7.mp3",
+        "enDuration": 4.032,
+        "zhDuration": 4.272
+      },
+      {
+        "at": 42,
+        "en": "Texas Hold'em. One table. Six seats.",
+        "zh": "德州扑克。一张桌，六个座位。",
+        "enFile": "voice/texas-holdem/en/line-8.mp3",
+        "zhFile": "voice/texas-holdem/zh/line-8.mp3",
+        "enDuration": 4.152,
+        "zhDuration": 4.152
+      }
+    ]
+  },
+  {
     "slug": "xiangqi",
     "order": 2,
     "title": "Xiangqi",
@@ -774,6 +1004,123 @@
     ]
   },
   {
+    "slug": "zheng-shangyou",
+    "order": 3,
+    "title": "Zheng Shangyou",
+    "titleZh": "争上游",
+    "tagline": "Climb first. Leave the last seat behind.",
+    "taglineZh": "先出完的人坐上游，最后一张牌留在下游。",
+    "players": "3–6 players",
+    "playersZh": "3–6 人",
+    "time": "15–25 minutes",
+    "timeZh": "15–25 分钟",
+    "age": "8+",
+    "ageZh": "8 岁以上",
+    "accent": "#2d6a52",
+    "paper": "#f4ecdc",
+    "ink": "#231f1a",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "3–6 players",
+      "52 cards, no jokers",
+      "4 AI levels",
+      "Hot-seat + LAN",
+      "Tribute + running score"
+    ],
+    "factsZh": [
+      "3–6 人",
+      "52 张牌，不用王",
+      "四档电脑",
+      "同屏 + 局域网",
+      "进贡 + 累计得分"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Fifty-two cards. Three to six players. No jokers.",
+        "zh": "五十二张牌，三到六个人，不用王。",
+        "enFile": "voice/zheng-shangyou/en/line-1.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-1.mp3",
+        "enDuration": 5.064,
+        "zhDuration": 3.888
+      },
+      {
+        "at": 5.2,
+        "en": "Zheng Shangyou. Climb from downstream to upstream.",
+        "zh": "争上游。从下游一路打到上游。",
+        "enFile": "voice/zheng-shangyou/en/line-2.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-2.mp3",
+        "enDuration": 4.248,
+        "zhDuration": 4.128
+      },
+      {
+        "at": 10,
+        "en": "Lead a single, pair, triple, road or bomb. Beat it with a bigger set.",
+        "zh": "出单张、对子、三张、顺子或炸弹，用更大的牌型压住。",
+        "enFile": "voice/zheng-shangyou/en/line-3.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-3.mp3",
+        "enDuration": 5.448,
+        "zhDuration": 6.312
+      },
+      {
+        "at": 16,
+        "en": "Two passes clear the trick. The last player to play leads again.",
+        "zh": "两个人过牌就清空这一墩，最后出牌的人重新领出。",
+        "enFile": "voice/zheng-shangyou/en/line-4.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-4.mp3",
+        "enDuration": 4.824,
+        "zhDuration": 5.472
+      },
+      {
+        "at": 23.5,
+        "en": "Finish first for upstream. Last place is downstream, and the points follow.",
+        "zh": "先出完当上游，最后一名是下游，得分也跟着排定。",
+        "enFile": "voice/zheng-shangyou/en/line-5.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-5.mp3",
+        "enDuration": 5.856,
+        "zhDuration": 5.304
+      },
+      {
+        "at": 31,
+        "en": "Next round, downstream pays tribute and upstream returns any card.",
+        "zh": "下一局，下游进贡，上游回一张任意牌。",
+        "enFile": "voice/zheng-shangyou/en/line-6.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-6.mp3",
+        "enDuration": 5.64,
+        "zhDuration": 4.416
+      },
+      {
+        "at": 38,
+        "en": "Four computer levels, hot-seat, and private seats on your own network.",
+        "zh": "四档电脑、同屏热座，还有自己网络里的私密座位。",
+        "enFile": "voice/zheng-shangyou/en/line-7.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-7.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 5.376
+      },
+      {
+        "at": 42,
+        "en": "Offline. No account. No ads.",
+        "zh": "离线、无账号、无广告。",
+        "enFile": "voice/zheng-shangyou/en/line-8.mp3",
+        "zhFile": "voice/zheng-shangyou/zh/line-8.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 3.192
+      }
+    ]
+  },
+  {
     "slug": "draughts",
     "order": 4,
     "title": "Draughts",
@@ -990,6 +1337,241 @@
         "zhFile": "voice/go/zh/line-8.mp3",
         "enDuration": 3.216,
         "zhDuration": 3.6
+      }
+    ]
+  },
+  {
+    "slug": "jokers-table",
+    "order": 4,
+    "title": "Joker's Table",
+    "titleZh": "小丑牌桌",
+    "tagline": "An original poker roguelike with 24 original jokers.",
+    "taglineZh": "二十四张原创小丑的扑克冒险。",
+    "players": "1–4 players",
+    "playersZh": "1–4 人",
+    "time": "20–35 minutes",
+    "timeZh": "20–35 分钟",
+    "age": "10+",
+    "accent": "#783139",
+    "paper": "#f2e8d4",
+    "ink": "#22322c",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "shop.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "shop.png"
+      ]
+    },
+    "facts": [
+      "52 cards · 8-card hand",
+      "24 original jokers · 8 bosses",
+      "4 decks · 6 enhancements",
+      "4 AI levels",
+      "Solo · hot-seat · LAN"
+    ],
+    "factsZh": [
+      "52 张牌 · 8 张手牌",
+      "24 张原创小丑 · 8 位首领",
+      "4 种牌组 · 6 种强化",
+      "四档电脑",
+      "单人 · 同屏 · 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Six antes. Four seats. One deck.",
+        "zh": "六个底注，四个座位，一副牌。",
+        "enFile": "voice/jokers-table/en/line-1.mp3",
+        "zhFile": "voice/jokers-table/zh/line-1.mp3",
+        "enDuration": 3.96,
+        "zhDuration": 3.576
+      },
+      {
+        "at": 5.2,
+        "en": "Joker's Table. An original poker roguelike.",
+        "zh": "小丑牌桌。原创的扑克冒险。",
+        "enFile": "voice/jokers-table/en/line-2.mp3",
+        "zhFile": "voice/jokers-table/zh/line-2.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 4.032
+      },
+      {
+        "at": 10,
+        "en": "Eight cards in hand. Play up to five. Build chips times mult.",
+        "zh": "手中八张牌，最多打出五张。把筹码和倍率叠起来。",
+        "enFile": "voice/jokers-table/en/line-3.mp3",
+        "zhFile": "voice/jokers-table/zh/line-3.mp3",
+        "enDuration": 5.496,
+        "zhDuration": 6
+      },
+      {
+        "at": 16,
+        "en": "Add original jokers, enhancements and vouchers between blinds.",
+        "zh": "盲注之间收集原创小丑、强化和代金券。",
+        "enFile": "voice/jokers-table/en/line-4.mp3",
+        "zhFile": "voice/jokers-table/zh/line-4.mp3",
+        "enDuration": 4.8,
+        "zhDuration": 4.848
+      },
+      {
+        "at": 23,
+        "en": "Meet eight bosses, four decks and six enhancements.",
+        "zh": "八位首领、四种牌组、六种强化。",
+        "enFile": "voice/jokers-table/en/line-5.mp3",
+        "zhFile": "voice/jokers-table/zh/line-5.mp3",
+        "enDuration": 4.008,
+        "zhDuration": 4.056
+      },
+      {
+        "at": 30,
+        "en": "Same seed, three hearts. The unique lowest blind score loses one.",
+        "zh": "同一牌序，三颗心。每个盲注唯一的最低分失去一颗心。",
+        "enFile": "voice/jokers-table/en/line-6.mp3",
+        "zhFile": "voice/jokers-table/zh/line-6.mp3",
+        "enDuration": 5.52,
+        "zhDuration": 6.384
+      },
+      {
+        "at": 37,
+        "en": "Solo, AI rivals, hot-seat with a cover, or LAN score submission.",
+        "zh": "单人、电脑对手、带遮挡的同屏，或局域网提交分数。",
+        "enFile": "voice/jokers-table/en/line-7.mp3",
+        "zhFile": "voice/jokers-table/zh/line-7.mp3",
+        "enDuration": 5.616,
+        "zhDuration": 5.928
+      },
+      {
+        "at": 42,
+        "en": "Joker's Table. Deal the first blind.",
+        "zh": "小丑牌桌。发下第一个盲注。",
+        "enFile": "voice/jokers-table/en/line-8.mp3",
+        "zhFile": "voice/jokers-table/zh/line-8.mp3",
+        "enDuration": 3.336,
+        "zhDuration": 3.816
+      }
+    ]
+  },
+  {
+    "slug": "guandan",
+    "order": 5,
+    "title": "Guandan",
+    "titleZh": "掼蛋",
+    "tagline": "Two decks. Four seats. One partnership climb.",
+    "taglineZh": "两副牌，四个人，搭档一起升级。",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "30 minutes",
+    "timeZh": "30 分钟",
+    "age": "10+",
+    "ageZh": "10 岁以上",
+    "accent": "#b23b2e",
+    "paper": "#f4ecdd",
+    "ink": "#26221b",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "108 cards",
+      "Two partnerships",
+      "Level cards + wilds",
+      "Bombs + tribute",
+      "Solo · hot-seat · LAN",
+      "4 computer levels"
+    ],
+    "factsZh": [
+      "108 张牌",
+      "两对搭档",
+      "级牌 + 配牌",
+      "炸弹 + 进贡",
+      "单人 · 同屏 · 局域网",
+      "四档电脑"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Two decks. One hundred and eight cards. Four seats.",
+        "zh": "两副牌，一百零八张，四个座位。",
+        "enFile": "voice/guandan/en/line-1.mp3",
+        "zhFile": "voice/guandan/zh/line-1.mp3",
+        "enDuration": 4.68,
+        "zhDuration": 3.864
+      },
+      {
+        "at": 5.2,
+        "en": "Guandan. Partners sit opposite.",
+        "zh": "掼蛋。搭档坐对家。",
+        "enFile": "voice/guandan/en/line-2.mp3",
+        "zhFile": "voice/guandan/zh/line-2.mp3",
+        "enDuration": 3.096,
+        "zhDuration": 3.096
+      },
+      {
+        "at": 10,
+        "en": "The level card rules the table. The heart level card is wild.",
+        "zh": "级牌压场，红桃级牌是配牌。",
+        "enFile": "voice/guandan/en/line-3.mp3",
+        "zhFile": "voice/guandan/zh/line-3.mp3",
+        "enDuration": 4.92,
+        "zhDuration": 3.576
+      },
+      {
+        "at": 16,
+        "en": "Singles, pairs, straights, consecutive pairs and triples, bombs and the joker bomb.",
+        "zh": "单张、对子、顺子、钢板、炸弹，还有天王炸。",
+        "enFile": "voice/guandan/en/line-4.mp3",
+        "zhFile": "voice/guandan/zh/line-4.mp3",
+        "enDuration": 6.648,
+        "zhDuration": 5.616
+      },
+      {
+        "at": 23.5,
+        "en": "Three passes reset the trick. First and second gain three levels.",
+        "zh": "三家过牌重置，包揽第一第二升三级。",
+        "enFile": "voice/guandan/en/line-5.mp3",
+        "zhFile": "voice/guandan/zh/line-5.mp3",
+        "enDuration": 5.28,
+        "zhDuration": 4.248
+      },
+      {
+        "at": 31,
+        "en": "Tribute, anti-tribute, and a match that ends at A.",
+        "zh": "进贡、抗贡，一路打到 A。",
+        "enFile": "voice/guandan/en/line-6.mp3",
+        "zhFile": "voice/guandan/zh/line-6.mp3",
+        "enDuration": 4.248,
+        "zhDuration": 3.288
+      },
+      {
+        "at": 38,
+        "en": "Four computer levels, private hot-seat, and three guests on your network.",
+        "zh": "四档电脑、同屏热座，还能在同一网络里坐满四位。",
+        "enFile": "voice/guandan/en/line-7.mp3",
+        "zhFile": "voice/guandan/zh/line-7.mp3",
+        "enDuration": 4.896,
+        "zhDuration": 5.784
+      },
+      {
+        "at": 42,
+        "en": "Offline. No account. No ads.",
+        "zh": "离线、无账号、无广告。",
+        "enFile": "voice/guandan/en/line-8.mp3",
+        "zhFile": "voice/guandan/zh/line-8.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 3.192
       }
     ]
   },
@@ -1544,6 +2126,123 @@
     ]
   },
   {
+    "slug": "big-two",
+    "order": 7,
+    "title": "Big Two",
+    "titleZh": "大老二",
+    "tagline": "Poker hands. One family table.",
+    "taglineZh": "扑克牌型，一家人一桌。",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "8+",
+    "ageZh": "8 岁以上",
+    "accent": "#9c3b2c",
+    "paper": "#f4ecdd",
+    "ink": "#241f19",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "4 players",
+      "52-card deck",
+      "4 AI levels",
+      "Hot-seat + LAN",
+      "Reasoned hints + record"
+    ],
+    "factsZh": [
+      "4 人",
+      "52 张牌",
+      "四档电脑",
+      "同屏 + 局域网",
+      "提示 + 战绩"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Fifty-two cards. Four seats. Thirteen each.",
+        "zh": "五十二张牌，四个座位，每人十三张。",
+        "enFile": "voice/big-two/en/line-1.mp3",
+        "zhFile": "voice/big-two/zh/line-1.mp3",
+        "enDuration": 4.536,
+        "zhDuration": 4.128
+      },
+      {
+        "at": 5.2,
+        "en": "Big Two. Diamonds, clubs, hearts, spades.",
+        "zh": "大老二。方块、梅花、红桃、黑桃。",
+        "enFile": "voice/big-two/en/line-2.mp3",
+        "zhFile": "voice/big-two/zh/line-2.mp3",
+        "enDuration": 4.008,
+        "zhDuration": 5.064
+      },
+      {
+        "at": 10,
+        "en": "The holder of 3♦ leads, and the first play must include it.",
+        "zh": "持有 ♦3 的玩家先出，首手必须带上它。",
+        "enFile": "voice/big-two/en/line-3.mp3",
+        "zhFile": "voice/big-two/zh/line-3.mp3",
+        "enDuration": 4.92,
+        "zhDuration": 5.136
+      },
+      {
+        "at": 16,
+        "en": "Singles, pairs, triples, and five-card poker hands.",
+        "zh": "单张、对子、三张，还有五张牌型。",
+        "enFile": "voice/big-two/en/line-4.mp3",
+        "zhFile": "voice/big-two/zh/line-4.mp3",
+        "enDuration": 4.92,
+        "zhDuration": 4.32
+      },
+      {
+        "at": 23.5,
+        "en": "Straights, flushes, full houses, four plus one, straight flushes.",
+        "zh": "顺子、同花、葫芦、四带一、同花顺。",
+        "enFile": "voice/big-two/en/line-5.mp3",
+        "zhFile": "voice/big-two/zh/line-5.mp3",
+        "enDuration": 5.136,
+        "zhDuration": 4.8
+      },
+      {
+        "at": 31,
+        "en": "First to empty their hand wins. Every card left scores.",
+        "zh": "最先出完手牌的人获胜，剩下的牌要算分。",
+        "enFile": "voice/big-two/en/line-6.mp3",
+        "zhFile": "voice/big-two/zh/line-6.mp3",
+        "enDuration": 4.344,
+        "zhDuration": 4.56
+      },
+      {
+        "at": 38,
+        "en": "Four computer levels, hot-seat, and a private LAN table.",
+        "zh": "四档电脑对手、同屏热座，还有私密局域网牌桌。",
+        "enFile": "voice/big-two/en/line-7.mp3",
+        "zhFile": "voice/big-two/zh/line-7.mp3",
+        "enDuration": 4.488,
+        "zhDuration": 5.448
+      },
+      {
+        "at": 42,
+        "en": "Offline. No account. No ads.",
+        "zh": "离线、无账号、无广告。",
+        "enFile": "voice/big-two/en/line-8.mp3",
+        "zhFile": "voice/big-two/zh/line-8.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 3.192
+      }
+    ]
+  },
+  {
     "slug": "jungle-chess",
     "order": 7,
     "title": "Jungle Chess",
@@ -1878,6 +2577,125 @@
     ]
   },
   {
+    "slug": "sheng-ji",
+    "order": 8,
+    "title": "Sheng Ji",
+    "titleZh": "升级",
+    "tagline": "Two decks. Two partnerships. One level at a time.",
+    "taglineZh": "两副牌，两对搭档，一级一级往上打。",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "30 minutes",
+    "timeZh": "30 分钟",
+    "age": "8+",
+    "ageZh": "8 岁以上",
+    "accent": "#244335",
+    "paper": "#f5efe3",
+    "ink": "#29231d",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "4 players · 2 partnerships",
+      "108 cards · 8-card bottom",
+      "Level cards + no-trump",
+      "Tractors, throws, 100 points",
+      "4 AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "4 人 · 两对搭档",
+      "108 张牌 · 8 张底牌",
+      "级牌 + 无主",
+      "拖拉机、甩牌、100 分",
+      "四档电脑",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "One hundred and eight cards. Four players. Two partnerships.",
+        "zh": "一百零八张牌，四个人，两对搭档。",
+        "enFile": "voice/sheng-ji/en/line-1.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-1.mp3",
+        "enDuration": 5.016,
+        "zhDuration": 3.96
+      },
+      {
+        "at": 5.2,
+        "en": "Sheng Ji. Two decks. One level at a time.",
+        "zh": "升级。两副牌，一级一级往上打。",
+        "enFile": "voice/sheng-ji/en/line-2.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-2.mp3",
+        "enDuration": 4.272,
+        "zhDuration": 4.56
+      },
+      {
+        "at": 10,
+        "en": "Declare with a level card. A pair is stronger. A pair of jokers calls no-trump.",
+        "zh": "用级牌叫主。一对更强，一对王可以叫无主。",
+        "enFile": "voice/sheng-ji/en/line-3.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-3.mp3",
+        "enDuration": 6.648,
+        "zhDuration": 5.376
+      },
+      {
+        "at": 16,
+        "en": "The declarer takes the bottom, buries eight, and leads.",
+        "zh": "庄家拿底牌、扣八张，然后领出第一墩。",
+        "enFile": "voice/sheng-ji/en/line-4.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-4.mp3",
+        "enDuration": 4.224,
+        "zhDuration": 4.56
+      },
+      {
+        "at": 23.5,
+        "en": "Follow the led group. Pair with pair, tractor with tractor, or ruff with trump.",
+        "zh": "跟着桌面走：对子跟对子，拖拉机跟拖拉机，或者用主牌将吃。",
+        "enFile": "voice/sheng-ji/en/line-5.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-5.mp3",
+        "enDuration": 5.952,
+        "zhDuration": 6.864
+      },
+      {
+        "at": 31,
+        "en": "Take 5, 10 and K. Eighty points upgrades one level; a shutout jumps three.",
+        "zh": "拿走 5、10、K。八十分升一级，零分连升三级。",
+        "enFile": "voice/sheng-ji/en/line-6.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-6.mp3",
+        "enDuration": 6.24,
+        "zhDuration": 6.168
+      },
+      {
+        "at": 38,
+        "en": "Four computer levels, a private hot-seat, and a LAN table.",
+        "zh": "四档电脑、私密同屏，还有局域网牌桌。",
+        "enFile": "voice/sheng-ji/en/line-7.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-7.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 4.512
+      },
+      {
+        "at": 42,
+        "en": "Offline. No account. No ads.",
+        "zh": "离线、无账号、无广告。",
+        "enFile": "voice/sheng-ji/en/line-8.mp3",
+        "zhFile": "voice/sheng-ji/zh/line-8.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 3.192
+      }
+    ]
+  },
+  {
     "slug": "tables",
     "order": 8,
     "title": "Tables",
@@ -1980,6 +2798,123 @@
         "zhFile": "voice/tables/zh/line-8.mp3",
         "enDuration": 4.512,
         "zhDuration": 5.04
+      }
+    ]
+  },
+  {
+    "slug": "liars-dice",
+    "order": 9,
+    "title": "Liar's Dice",
+    "titleZh": "吹牛骰",
+    "tagline": "Five dice. One table. Nobody knows what is under the cups.",
+    "taglineZh": "五颗骰子，一桌胆量。",
+    "players": "2–6 players",
+    "playersZh": "2–6 人",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "8+",
+    "ageZh": "8 岁以上",
+    "accent": "#e06a4b",
+    "paper": "#f6efdf",
+    "ink": "#132723",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "2–6 players",
+      "5 dice each",
+      "Wild ones + spot on",
+      "4 AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "2–6 人",
+      "每人 5 颗骰",
+      "一点万能 + 正好",
+      "四档电脑",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Five dice each, hidden under a cup.",
+        "zh": "每人五颗骰子，藏在骰盅下。",
+        "enFile": "voice/liars-dice/en/line-1.mp3",
+        "zhFile": "voice/liars-dice/zh/line-1.mp3",
+        "enDuration": 3.168,
+        "zhDuration": 3.312
+      },
+      {
+        "at": 5.2,
+        "en": "Liar's Dice. Bid a quantity and a face.",
+        "zh": "吹牛骰。叫一个数量和一个点数。",
+        "enFile": "voice/liars-dice/en/line-2.mp3",
+        "zhFile": "voice/liars-dice/zh/line-2.mp3",
+        "enDuration": 3.624,
+        "zhDuration": 4.32
+      },
+      {
+        "at": 10,
+        "en": "Three fours. Raise the quantity, raise the face, or challenge.",
+        "zh": "三个四点。加数量、加点数，或者开骰。",
+        "enFile": "voice/liars-dice/en/line-3.mp3",
+        "zhFile": "voice/liars-dice/zh/line-3.mp3",
+        "enDuration": 5.112,
+        "zhDuration": 5.232
+      },
+      {
+        "at": 16,
+        "en": "Ones are wild. Nobody sees your cup.",
+        "zh": "一点万能，没人看得见你的骰盅。",
+        "enFile": "voice/liars-dice/en/line-4.mp3",
+        "zhFile": "voice/liars-dice/zh/line-4.mp3",
+        "enDuration": 3.36,
+        "zhDuration": 3.48
+      },
+      {
+        "at": 23.5,
+        "en": "A true bid costs the challenger a die. A false bid costs the bidder.",
+        "zh": "叫点成立，开骰者输一颗；叫点不成立，叫点者输一颗。",
+        "enFile": "voice/liars-dice/en/line-5.mp3",
+        "zhFile": "voice/liars-dice/zh/line-5.mp3",
+        "enDuration": 5.4,
+        "zhDuration": 6.024
+      },
+      {
+        "at": 31,
+        "en": "Last player with dice wins the table.",
+        "zh": "最后手里还有骰子的人赢下牌桌。",
+        "enFile": "voice/liars-dice/en/line-6.mp3",
+        "zhFile": "voice/liars-dice/zh/line-6.mp3",
+        "enDuration": 2.784,
+        "zhDuration": 4.128
+      },
+      {
+        "at": 38,
+        "en": "Four computer levels, hot-seat, and tables on your own network.",
+        "zh": "四档电脑、同屏热座，还有局域网牌桌。",
+        "enFile": "voice/liars-dice/en/line-7.mp3",
+        "zhFile": "voice/liars-dice/zh/line-7.mp3",
+        "enDuration": 4.392,
+        "zhDuration": 4.536
+      },
+      {
+        "at": 42,
+        "en": "Spot on, hints, undo and a family record. Offline, no account, no ads.",
+        "zh": "正好、提示、悔棋和家庭战绩。离线、无账号、无广告。",
+        "enFile": "voice/liars-dice/en/line-8.mp3",
+        "zhFile": "voice/liars-dice/zh/line-8.mp3",
+        "enDuration": 6.576,
+        "zhDuration": 7.272
       }
     ]
   },
@@ -2202,6 +3137,122 @@
         "zhFile": "voice/spades/zh/line-8.mp3",
         "enDuration": 2.904,
         "zhDuration": 3.576
+      }
+    ]
+  },
+  {
+    "slug": "idiom-chain",
+    "order": 10,
+    "title": "Idiom Chain",
+    "titleZh": "成语接龙",
+    "tagline": "One idiom. One last character. One chain.",
+    "taglineZh": "一个成语，一个字，一条接龙。",
+    "players": "2–6 players",
+    "playersZh": "2–6 人",
+    "time": "10–20 minutes",
+    "timeZh": "10–20 分钟",
+    "age": "7+",
+    "accent": "#b04732",
+    "paper": "#f3ead8",
+    "ink": "#292821",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "680 idioms · pinyin + gloss",
+      "2–6 players · 4 AI levels",
+      "15-second timer",
+      "Hot-seat + LAN",
+      "Hints, undo, autosave"
+    ],
+    "factsZh": [
+      "680 个成语 · 拼音 + 释义",
+      "2–6 人 · 四档电脑",
+      "15 秒回合计时",
+      "同屏 + 局域网",
+      "提示、悔棋、自动保存"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "A chain of Chinese idioms around one table.",
+        "zh": "一家人围桌，一句接一句。",
+        "enFile": "voice/idiom-chain/en/line-1.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-1.mp3",
+        "enDuration": 3.048,
+        "zhDuration": 3.048
+      },
+      {
+        "at": 5.2,
+        "en": "Idiom Chain. The last character opens the next.",
+        "zh": "成语接龙。上一个的末字，就是下一个的开头。",
+        "enFile": "voice/idiom-chain/en/line-2.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-2.mp3",
+        "enDuration": 4.128,
+        "zhDuration": 5.28
+      },
+      {
+        "at": 10,
+        "en": "Play any idiom to begin. Then keep the last character alive.",
+        "zh": "先出任意一个成语开局，再让最后一个字一直走下去。",
+        "enFile": "voice/idiom-chain/en/line-3.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-3.mp3",
+        "enDuration": 4.584,
+        "zhDuration": 5.544
+      },
+      {
+        "at": 16,
+        "en": "Fifteen seconds a turn. A rare idiom adds two points.",
+        "zh": "每回合十五秒，生僻成语加两分。",
+        "enFile": "voice/idiom-chain/en/line-4.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-4.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 3.96
+      },
+      {
+        "at": 23,
+        "en": "Three hint-free idioms in a row earn a bonus.",
+        "zh": "连续三个不靠提示，再加一分。",
+        "enFile": "voice/idiom-chain/en/line-5.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-5.mp3",
+        "enDuration": 3.264,
+        "zhDuration": 3.48
+      },
+      {
+        "at": 30,
+        "en": "Four computer levels search the dictionary by first character.",
+        "zh": "四档电脑，都按首字查词典。",
+        "enFile": "voice/idiom-chain/en/line-6.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-6.mp3",
+        "enDuration": 4.056,
+        "zhDuration": 3.504
+      },
+      {
+        "at": 37,
+        "en": "Two to six players on one screen, or phones on the same Wi-Fi.",
+        "zh": "二到六人同屏，或手机连同一无线网络。",
+        "enFile": "voice/idiom-chain/en/line-7.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-7.mp3",
+        "enDuration": 4.776,
+        "zhDuration": 4.584
+      },
+      {
+        "at": 42,
+        "en": "Idiom Chain. Keep the last character going.",
+        "zh": "成语接龙。让最后一个字继续。",
+        "enFile": "voice/idiom-chain/en/line-8.mp3",
+        "zhFile": "voice/idiom-chain/zh/line-8.mp3",
+        "enDuration": 3.504,
+        "zhDuration": 3.984
       }
     ]
   },
@@ -2542,6 +3593,122 @@
         "zhFile": "voice/cribbage/zh/line-8.mp3",
         "enDuration": 2.832,
         "zhDuration": 3.696
+      }
+    ]
+  },
+  {
+    "slug": "nanchang-mahjong",
+    "order": 11,
+    "title": "Nanchang Mahjong",
+    "titleZh": "南昌麻将",
+    "tagline": "Four seats. One wall. Seven spirits.",
+    "taglineZh": "四个座位，一座牌墙，七张精。",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "15–25 minutes",
+    "timeZh": "15–25 分钟",
+    "age": "10+",
+    "accent": "#17483d",
+    "paper": "#f4ead8",
+    "ink": "#20322b",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "136 tiles · no flowers",
+      "17-stack dead wall",
+      "Seven spirits",
+      "4 AI levels",
+      "Solo · hot-seat · LAN"
+    ],
+    "factsZh": [
+      "136 张牌 · 无花牌",
+      "17 墩海底",
+      "七张精",
+      "四档电脑",
+      "单机 · 同屏 · 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Four seats. One wall. Seven spirits.",
+        "zh": "四个座位，一座牌墙，七张精。",
+        "enFile": "voice/nanchang-mahjong/en/line-1.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-1.mp3",
+        "enDuration": 4.08,
+        "zhDuration": 3.792
+      },
+      {
+        "at": 5.2,
+        "en": "Nanchang Mahjong. True and secondary spirits change every hand.",
+        "zh": "南昌麻将。正精副精，每手都变。",
+        "enFile": "voice/nanchang-mahjong/en/line-2.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-2.mp3",
+        "enDuration": 5.736,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 10,
+        "en": "Flip the wall-end tile. Three true spirits, four secondary.",
+        "zh": "翻开牌墙末端。三张正精，四张副精。",
+        "enFile": "voice/nanchang-mahjong/en/line-3.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-3.mp3",
+        "enDuration": 4.584,
+        "zhDuration": 5.016
+      },
+      {
+        "at": 16,
+        "en": "Chi, peng, kong. Winds and dragons run in threes.",
+        "zh": "吃、碰、杠。风牌箭牌三张成顺。",
+        "enFile": "voice/nanchang-mahjong/en/line-4.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-4.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 5.016
+      },
+      {
+        "at": 23,
+        "en": "German, spirit sprint, robbing a kong, seven-star thirteen scattered.",
+        "zh": "德国、冲关、抢杠、七星十三烂。",
+        "enFile": "voice/nanchang-mahjong/en/line-5.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-5.mp3",
+        "enDuration": 5.76,
+        "zhDuration": 4.272
+      },
+      {
+        "at": 30,
+        "en": "Four AI levels with wild-tile efficiency and defence.",
+        "zh": "四档电脑，会算精、会防守。",
+        "enFile": "voice/nanchang-mahjong/en/line-6.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-6.mp3",
+        "enDuration": 4.104,
+        "zhDuration": 3.672
+      },
+      {
+        "at": 37,
+        "en": "Solo, hot-seat with privacy, or four seats on one network.",
+        "zh": "单机、同屏盖牌，或同一网络四座位。",
+        "enFile": "voice/nanchang-mahjong/en/line-7.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-7.mp3",
+        "enDuration": 4.824,
+        "zhDuration": 4.44
+      },
+      {
+        "at": 42,
+        "en": "Nanchang Mahjong. Read the spirits.",
+        "zh": "南昌麻将。看懂精牌。",
+        "enFile": "voice/nanchang-mahjong/en/line-8.mp3",
+        "zhFile": "voice/nanchang-mahjong/zh/line-8.mp3",
+        "enDuration": 3.336,
+        "zhDuration": 3.432
       }
     ]
   },
@@ -3949,6 +5116,124 @@
         "zhFile": "voice/hex/zh/line-8.mp3",
         "enDuration": 4.08,
         "zhDuration": 4.296
+      }
+    ]
+  },
+  {
+    "slug": "mahjong",
+    "order": 48,
+    "title": "Mahjong",
+    "titleZh": "麻将",
+    "tagline": "Draw. Read. Win.",
+    "taglineZh": "摸牌 · 读牌 · 胡牌",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "10–20 minutes",
+    "timeZh": "10–20 分钟",
+    "age": "8+",
+    "accent": "#173f33",
+    "paper": "#f3ecdb",
+    "ink": "#211b15",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "136 tiles · 4 seats",
+      "Chi / pong / three kongs",
+      "Four melds · seven pairs · thirteen orphans",
+      "4 AI levels",
+      "Hot-seat + LAN",
+      "Undo · hint · autosave"
+    ],
+    "factsZh": [
+      "136 张牌 · 四个座位",
+      "吃 / 碰 / 三种杠",
+      "四副一将 · 七对 · 十三幺",
+      "四档电脑",
+      "同屏 + 局域网",
+      "悔棋 · 提示 · 自动保存"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "136 tiles. Four seats. One wall.",
+        "zh": "136 张牌，四个座位，一道牌墙。",
+        "enFile": "voice/mahjong/en/line-1.mp3",
+        "zhFile": "voice/mahjong/zh/line-1.mp3",
+        "enDuration": 4.872,
+        "zhDuration": 4.464
+      },
+      {
+        "at": 5.2,
+        "en": "Mahjong. The family tile table.",
+        "zh": "麻将。家里的牌桌。",
+        "enFile": "voice/mahjong/en/line-2.mp3",
+        "zhFile": "voice/mahjong/zh/line-2.mp3",
+        "enDuration": 3.144,
+        "zhDuration": 3.072
+      },
+      {
+        "at": 10,
+        "en": "Draw one, discard one. Build four melds and a pair.",
+        "zh": "摸一张，打一张。做四副一将。",
+        "enFile": "voice/mahjong/en/line-3.mp3",
+        "zhFile": "voice/mahjong/zh/line-3.mp3",
+        "enDuration": 4.56,
+        "zhDuration": 4.032
+      },
+      {
+        "at": 16,
+        "en": "Chow from the left. Pong, kong, and rob the kong.",
+        "zh": "只能吃上家。碰、杠，还能抢杠。",
+        "enFile": "voice/mahjong/en/line-4.mp3",
+        "zhFile": "voice/mahjong/zh/line-4.mp3",
+        "enDuration": 4.584,
+        "zhDuration": 4.512
+      },
+      {
+        "at": 23,
+        "en": "Seven pairs, thirteen orphans, or a clean pure straight.",
+        "zh": "七对、十三幺，或者漂亮的一气通贯。",
+        "enFile": "voice/mahjong/en/line-5.mp3",
+        "zhFile": "voice/mahjong/zh/line-5.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 4.296
+      },
+      {
+        "at": 30,
+        "en": "Four computer levels, four on one screen, or four phones.",
+        "zh": "四档电脑、四人同屏，或四部手机。",
+        "enFile": "voice/mahjong/en/line-6.mp3",
+        "zhFile": "voice/mahjong/zh/line-6.mp3",
+        "enDuration": 4.392,
+        "zhDuration": 4.296
+      },
+      {
+        "at": 37,
+        "en": "Every fan counted, every hand private.",
+        "zh": "每一番都算清，每一手牌都保密。",
+        "enFile": "voice/mahjong/en/line-7.mp3",
+        "zhFile": "voice/mahjong/zh/line-7.mp3",
+        "enDuration": 3.384,
+        "zhDuration": 3.648
+      },
+      {
+        "at": 42,
+        "en": "Mahjong. Deal the next hand.",
+        "zh": "麻将。发下一手牌。",
+        "enFile": "voice/mahjong/en/line-8.mp3",
+        "zhFile": "voice/mahjong/zh/line-8.mp3",
+        "enDuration": 2.88,
+        "zhDuration": 3.144
       }
     ]
   }

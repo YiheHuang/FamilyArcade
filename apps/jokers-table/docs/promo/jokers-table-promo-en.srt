@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:03,750
+Six antes. Four seats. One deck.
+
+2
+00:00:05,200 --> 00:00:08,550
+Joker's Table. An original poker roguelike.
+
+3
+00:00:10,000 --> 00:00:13,350
+Eight cards in hand. Play up to five. Build chips times mult.
+
+4
+00:00:16,000 --> 00:00:19,350
+Add original jokers, enhancements and vouchers between blinds.
+
+5
+00:00:23,000 --> 00:00:26,350
+Meet eight bosses, four decks and six enhancements.
+
+6
+00:00:30,000 --> 00:00:33,350
+Same seed, three hearts. The unique lowest blind score loses one.
+
+7
+00:00:37,000 --> 00:00:40,350
+Solo, AI rivals, hot-seat with a cover, or LAN score submission.
+
+8
+00:00:42,000 --> 00:00:44,400
+Joker's Table. Deal the first blind.

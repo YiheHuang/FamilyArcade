@@ -32,9 +32,9 @@ npm run shots          # screenshots (dev server required)
 npx tauri build --bundles nsis
 ```
 
-The all-in-one installer includes `games/<slug>/game.exe` + `dist` for every game.
-Those portable folders are assembled by `node tools/prepare-hub.mjs` from the shared
-build output.
+The offline and slim installers include `games/<slug>/game.exe` + `dist` for every
+game. Lite downloads the same portable folders on demand. Those folders are assembled
+by `node tools/prepare-hub.mjs` from the shared build output.
 
 ## Known limits
 

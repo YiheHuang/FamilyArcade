@@ -1,0 +1,31 @@
+{
+  "version": "3.0.0",
+  "release": "family-arcade-v3.0.0",
+  "packagesTag": "game-packages-v3.0.0",
+  "launchers": [
+    {
+      "id": "offline",
+      "name": "FamilyArcade_3.0.0_x64-setup.exe",
+      "file": "releases/family-arcade/FamilyArcade_3.0.0_x64-setup.exe",
+      "bytes": 400898372,
+      "sha256": "cddbae18bd6ae82c8498f7d3221b37d7abbde31ed4c1209d82768ac506bfb6c6",
+      "description": "Full installer with the WebView2 runtime and all games"
+    },
+    {
+      "id": "slim",
+      "name": "FamilyArcade_3.0.0_slim_x64-setup.exe",
+      "file": "releases/family-arcade/FamilyArcade_3.0.0_slim_x64-setup.exe",
+      "bytes": 183110815,
+      "sha256": "a37091681ead98b622f05dd6f51501a4f8ce3e99ee82c186500245ab5a96316d",
+      "description": "All games, no bundled runtime; WebView2 bootstrapper"
+    },
+    {
+      "id": "lite",
+      "name": "FamilyArcade_Lite_3.0.0_x64-setup.exe",
+      "file": "releases/family-arcade/FamilyArcade_Lite_3.0.0_x64-setup.exe",
+      "bytes": 9757429,
+      "sha256": "b03ba42866f59be3cda94c6aa0cb4dd10d1aef5c7bccb7b57efedff58ed1a0e0",
+      "description": "Launcher only; downloads games on demand"
+    }
+  ]
+}

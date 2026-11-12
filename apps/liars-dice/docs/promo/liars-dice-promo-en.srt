@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:03,750
+Five dice each, hidden under a cup.
+
+2
+00:00:05,200 --> 00:00:08,550
+Liar's Dice. Bid a quantity and a face.
+
+3
+00:00:10,000 --> 00:00:13,350
+Three fours. Raise the quantity, raise the face, or challenge.
+
+4
+00:00:16,000 --> 00:00:19,350
+Ones are wild. Nobody sees your cup.
+
+5
+00:00:23,500 --> 00:00:26,850
+A true bid costs the challenger a die. A false bid costs the bidder.
+
+6
+00:00:31,000 --> 00:00:34,350
+Last player with dice wins the table.
+
+7
+00:00:38,000 --> 00:00:41,350
+Four computer levels, hot-seat, and tables on your own network.
+
+8
+00:00:42,000 --> 00:00:44,400
+Spot on, hints, undo and a family record. Offline, no account, no ads.

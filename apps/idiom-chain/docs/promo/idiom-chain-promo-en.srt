@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:03,750
+A chain of Chinese idioms around one table.
+
+2
+00:00:05,200 --> 00:00:08,550
+Idiom Chain. The last character opens the next.
+
+3
+00:00:10,000 --> 00:00:13,350
+Play any idiom to begin. Then keep the last character alive.
+
+4
+00:00:16,000 --> 00:00:19,350
+Fifteen seconds a turn. A rare idiom adds two points.
+
+5
+00:00:23,000 --> 00:00:26,350
+Three hint-free idioms in a row earn a bonus.
+
+6
+00:00:30,000 --> 00:00:33,350
+Four computer levels search the dictionary by first character.
+
+7
+00:00:37,000 --> 00:00:40,350
+Two to six players on one screen, or phones on the same Wi-Fi.
+
+8
+00:00:42,000 --> 00:00:44,400
+Idiom Chain. Keep the last character going.

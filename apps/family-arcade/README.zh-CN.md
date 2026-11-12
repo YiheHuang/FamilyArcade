@@ -30,8 +30,8 @@ npm run shots          # 截图（需先运行 dev）
 npx tauri build --bundles nsis
 ```
 
-一体化安装包包含 `games/<slug>/game.exe` 和 `dist`；这些目录由
-`node tools/prepare-hub.mjs` 从共享构建产物组装。
+离线版和精简版包含 `games/<slug>/game.exe` 和 `dist`；Lite 则按需下载同样的便携目录。
+这些目录由 `node tools/prepare-hub.mjs` 从共享构建产物组装。
 
 ## 已知限制
 

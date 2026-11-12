@@ -1,7 +1,7 @@
 {
   "repo": "YiheHuang/FamilyArcade",
   "tag": "game-packages-v3.0.0",
-  "generated": "2026-11-12T14:29:21.579Z",
+  "generated": "2026-11-12T16:09:05.882Z",
   "games": {
     "abalone": {
       "asset": "abalone.zip",
@@ -212,6 +212,61 @@
       "asset": "triple-find.zip",
       "bytes": 4900038,
       "sha256": "e635dfe1ec2003d26c105713800ddf2046ca59428482e4c29883b69c6cd03db9"
+    },
+    "mahjong": {
+      "asset": "mahjong.zip",
+      "bytes": 4820655,
+      "sha256": "8a62d334dc763e9670f2c1afe8fccd6f04e00699f44343ec6c2e22dfee5cf118"
+    },
+    "nanchang-mahjong": {
+      "asset": "nanchang-mahjong.zip",
+      "bytes": 4824140,
+      "sha256": "ea793867f0154e27e221921df1a228965bc550297ec2be6d2f7f5f5e9d1cc009"
+    },
+    "big-two": {
+      "asset": "big-two.zip",
+      "bytes": 4815399,
+      "sha256": "0f606466b498fb5ab7bd777392c9f3950213aef942cbb8b6a4c50c89bfe0c0df"
+    },
+    "doudizhu": {
+      "asset": "doudizhu.zip",
+      "bytes": 4814855,
+      "sha256": "dc6becc0bbbddc64d38b677170330f61337426d10e5c46b9180fb84b11ee6b64"
+    },
+    "guandan": {
+      "asset": "guandan.zip",
+      "bytes": 4826911,
+      "sha256": "2235cf3dc1ce78f22eeb89c98f574c97bb0045d33d536354c7089b5a42b33177"
+    },
+    "idiom-chain": {
+      "asset": "idiom-chain.zip",
+      "bytes": 4851483,
+      "sha256": "edb77667e4c40cf5565abb441a3cc990e3a8d6a0d30d7c456c1a02156a9ea44c"
+    },
+    "liars-dice": {
+      "asset": "liars-dice.zip",
+      "bytes": 4819647,
+      "sha256": "4043b9fb16f072eda9838753e009dde96136c747ecfebf132a6000ff3ec99d1c"
+    },
+    "sheng-ji": {
+      "asset": "sheng-ji.zip",
+      "bytes": 4840506,
+      "sha256": "4da4a1b5061f063336b6a7fd9f910c888432d945fc68d85d49b25b9f37bbc250"
+    },
+    "texas-holdem": {
+      "asset": "texas-holdem.zip",
+      "bytes": 4829746,
+      "sha256": "67bd78aee80192834edd8041b82ce1bdc2d55f2360bf9d2df20d5b4a9da0da45"
+    },
+    "zheng-shangyou": {
+      "asset": "zheng-shangyou.zip",
+      "bytes": 4820509,
+      "sha256": "0e4ef0dca9cc7df48bb4acba955dcfd3e3eb5acf27b444053a8fe3dc49dc95d7"
+    },
+    "jokers-table": {
+      "asset": "jokers-table.zip",
+      "bytes": 4839392,
+      "sha256": "9af86e77f0ef4fc19023a1c4e6aec9281f32f21be5c1bc47d542e3ca6b0846fa"
     }
   }
 }

@@ -112,6 +112,34 @@
     "thumb": "thumbs/jungle-chess.jpg"
   },
   {
+    "slug": "mahjong",
+    "title": "Mahjong",
+    "zh": "麻将",
+    "tagline": "Draw. Read. Win.",
+    "taglineZh": "摸牌 · 读牌 · 胡牌",
+    "players": "4",
+    "time": "10–20 minutes",
+    "timeZh": "10–20 分钟",
+    "age": "8+",
+    "category": "classic",
+    "accent": "#173f33",
+    "thumb": "thumbs/mahjong.jpg"
+  },
+  {
+    "slug": "nanchang-mahjong",
+    "title": "Nanchang Mahjong",
+    "zh": "南昌麻将",
+    "tagline": "Four seats. One wall. Seven spirits.",
+    "taglineZh": "四个座位，一座牌墙，七张精。",
+    "players": "4",
+    "time": "15–25 minutes",
+    "timeZh": "15–25 分钟",
+    "age": "10+",
+    "category": "classic",
+    "accent": "#17483d",
+    "thumb": "thumbs/nanchang-mahjong.jpg"
+  },
+  {
     "slug": "quarto",
     "title": "Quarto",
     "zh": "四连棋",
@@ -182,6 +210,20 @@
     "thumb": "thumbs/balloon-rally.jpg"
   },
   {
+    "slug": "big-two",
+    "title": "Big Two",
+    "zh": "大老二",
+    "tagline": "Poker hands. One family table.",
+    "taglineZh": "扑克牌型，一家人一桌。",
+    "players": "4",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "8+",
+    "category": "family",
+    "accent": "#9c3b2c",
+    "thumb": "thumbs/big-two.jpg"
+  },
+  {
     "slug": "cribbage",
     "title": "Cribbage",
     "zh": "克里比奇",
@@ -196,6 +238,20 @@
     "thumb": "thumbs/cribbage.jpg"
   },
   {
+    "slug": "doudizhu",
+    "title": "Dou Dizhu",
+    "zh": "斗地主",
+    "tagline": "One landlord. Two farmers. Fifty-four cards.",
+    "taglineZh": "一个地主，两个农民，五十四张牌。",
+    "players": "3",
+    "time": "10–15 minutes",
+    "timeZh": "10–15 分钟",
+    "age": "8+",
+    "category": "family",
+    "accent": "#a33a2b",
+    "thumb": "thumbs/doudizhu.jpg"
+  },
+  {
     "slug": "field-and-wall",
     "title": "Field & Wall",
     "zh": "筑野",
@@ -208,6 +264,20 @@
     "category": "family",
     "accent": "#b98f46",
     "thumb": "thumbs/field-and-wall.jpg"
+  },
+  {
+    "slug": "guandan",
+    "title": "Guandan",
+    "zh": "掼蛋",
+    "tagline": "Two decks. Four seats. One partnership climb.",
+    "taglineZh": "两副牌，四个人，搭档一起升级。",
+    "players": "4",
+    "time": "30 minutes",
+    "timeZh": "30 分钟",
+    "age": "10+",
+    "category": "family",
+    "accent": "#b23b2e",
+    "thumb": "thumbs/guandan.jpg"
   },
   {
     "slug": "hearts",
@@ -238,6 +308,34 @@
     "thumb": "thumbs/hue-garden.jpg"
   },
   {
+    "slug": "idiom-chain",
+    "title": "Idiom Chain",
+    "zh": "成语接龙",
+    "tagline": "One idiom. One last character. One chain.",
+    "taglineZh": "一个成语，一个字，一条接龙。",
+    "players": "2–6",
+    "time": "10–20 minutes",
+    "timeZh": "10–20 分钟",
+    "age": "7+",
+    "category": "family",
+    "accent": "#b04732",
+    "thumb": "thumbs/idiom-chain.jpg"
+  },
+  {
+    "slug": "liars-dice",
+    "title": "Liar's Dice",
+    "zh": "吹牛骰",
+    "tagline": "Five dice. One table. Nobody knows what is under the cups.",
+    "taglineZh": "五颗骰子，一桌胆量。",
+    "players": "2–6",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "8+",
+    "category": "family",
+    "accent": "#e06a4b",
+    "thumb": "thumbs/liars-dice.jpg"
+  },
+  {
     "slug": "president",
     "title": "President",
     "zh": "排位赛",
@@ -264,6 +362,20 @@
     "category": "family",
     "accent": "#b05c43",
     "thumb": "thumbs/rummy-500.jpg"
+  },
+  {
+    "slug": "sheng-ji",
+    "title": "Sheng Ji",
+    "zh": "升级",
+    "tagline": "Two decks. Two partnerships. One level at a time.",
+    "taglineZh": "两副牌，两对搭档，一级一级往上打。",
+    "players": "4",
+    "time": "30 minutes",
+    "timeZh": "30 分钟",
+    "age": "8+",
+    "category": "family",
+    "accent": "#244335",
+    "thumb": "thumbs/sheng-ji.jpg"
   },
   {
     "slug": "spades",
@@ -306,6 +418,34 @@
     "category": "family",
     "accent": "#b4634a",
     "thumb": "thumbs/sweet-carousel.jpg"
+  },
+  {
+    "slug": "texas-holdem",
+    "title": "Texas Hold'em",
+    "zh": "德州扑克",
+    "tagline": "One table. Six seats. One honest bluff.",
+    "taglineZh": "一张桌，六个座位，一次诚实的诈唬。",
+    "players": "2–6",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "8+",
+    "category": "family",
+    "accent": "#b34a2f",
+    "thumb": "thumbs/texas-holdem.jpg"
+  },
+  {
+    "slug": "zheng-shangyou",
+    "title": "Zheng Shangyou",
+    "zh": "争上游",
+    "tagline": "Climb first. Leave the last seat behind.",
+    "taglineZh": "先出完的人坐上游，最后一张牌留在下游。",
+    "players": "3–6",
+    "time": "15–25 minutes",
+    "timeZh": "15–25 分钟",
+    "age": "8+",
+    "category": "family",
+    "accent": "#2d6a52",
+    "thumb": "thumbs/zheng-shangyou.jpg"
   },
   {
     "slug": "boxes",
@@ -446,6 +586,20 @@
     "category": "arcade",
     "accent": "#e06a52",
     "thumb": "thumbs/hex.jpg"
+  },
+  {
+    "slug": "jokers-table",
+    "title": "Joker's Table",
+    "zh": "小丑牌桌",
+    "tagline": "An original poker roguelike with 24 original jokers.",
+    "taglineZh": "二十四张原创小丑的扑克冒险。",
+    "players": "1–4",
+    "time": "20–35 minutes",
+    "timeZh": "20–35 分钟",
+    "age": "10+",
+    "category": "arcade",
+    "accent": "#783139",
+    "thumb": "thumbs/jokers-table.jpg"
   },
   {
     "slug": "ladder-run",
