@@ -410,6 +410,7 @@ h1 {
   padding: 16px 18px;
   box-shadow: var(--shadow-soft);
 }
+.result-banner.is-top { margin: 0 0 14px; }
 .result-copy { display: grid; gap: 2px; min-width: 0; }
 .result-kicker { font: 600 10px/1.2 Consolas, monospace; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
 .result-copy strong { font: 600 26px/1.1 "Iowan Old Style", Georgia, serif; }

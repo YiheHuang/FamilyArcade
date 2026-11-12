@@ -1040,6 +1040,7 @@ export default function App() {
   })();
 
   const gameWord = (count: number) => t(lang, count === 1 ? 'oneGame' : 'games');
+  const drawWord = (count: number) => t(lang, count === 1 ? 'oneDraw' : 'draws');
   const share = (count: number) =>
     record.games > 0 ? `${Math.round((count / record.games) * 100)}%` : '0%';
   const lastResultLabel =
@@ -1131,7 +1132,7 @@ export default function App() {
             </span>
             <span className="dot">·</span>
             <span>
-              {record.draws} {tr('draws')}
+              {record.draws} {drawWord(record.draws)}
             </span>
           </div>
         </div>
@@ -1488,7 +1489,7 @@ export default function App() {
             </div>
 
             <div className="record-card modes-card">
-              <h3>{tr('games')}</h3>
+              <h3>{tr('byMode')}</h3>
               <div className="mode-list">
                 {(['ai', 'local', 'lan'] as const).map((value) => (
                   <div className="mode-row" key={value}>

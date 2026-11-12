@@ -870,6 +870,8 @@ h1 {
   .game-id { gap: 6px; }
   .game-id span { max-width: 55vw; }
   .record-strip .dot:nth-of-type(3) { display: none; }
+  .masthead { flex-wrap: wrap; }
+  .mast-actions { width: 100%; justify-content: flex-end; }
 }
 
 @media (hover: none) {

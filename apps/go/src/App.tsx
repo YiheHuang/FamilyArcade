@@ -1123,9 +1123,6 @@ export default function App() {
               </>
             )}
           </div>
-          <button className="text-button record-link" onClick={() => setScreen('record')}>
-            {tr('openRecord')}
-          </button>
         </div>
       </section>
 
@@ -1725,13 +1722,13 @@ export default function App() {
                 <div><span>{tr('bestRun')}</span><strong>{record.bestStreak}</strong></div>
                 <div>
                   <span>{tr('lastResult')}</span>
-                  <strong>{record.lastWinner ? tr(record.lastWinner === 'B' ? 'black' : 'white') : tr('none')}</strong>
+                  <strong>{record.lastWinner ? tr(record.lastWinner === 'B' ? 'blackWins' : 'whiteWins') : tr('none')}</strong>
                 </div>
               </div>
             </div>
 
             <div className="record-card modes-card">
-              <h3>{tr('games')}</h3>
+              <h3>{tr('byMode')}</h3>
               <div className="mode-list">
                 {(['ai', 'local', 'lan'] as const).map((value) => (
                   <div className="mode-row" key={value}>
@@ -1814,7 +1811,6 @@ export default function App() {
               <p>{tr('controlsText')}</p>
             </section>
           </div>
-          <button className="primary" onClick={goHome}>{tr('close')}</button>
         </div>
         <aside className="example-card">
           <h3>{tr('exampleTitle')}</h3>
@@ -1836,6 +1832,7 @@ export default function App() {
           </p>
         </aside>
       </div>
+      <button className="primary rules-close" onClick={goHome}>{tr('close')}</button>
     </main>
   );
 

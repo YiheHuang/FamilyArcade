@@ -1029,6 +1029,8 @@ export default function App() {
               : tr('lanWaitingForHost');
 
   const share = (value: number) => (record.games > 0 ? `${Math.round((value / record.games) * 100)}%` : '0%');
+  const gameWord = (count: number) => t(lang, count === 1 ? 'gameOne' : 'games');
+  const drawWord = (count: number) => t(lang, count === 1 ? 'drawOne' : 'draws');
   const shareB = share(record.winsBlack);
   const shareW = share(record.winsWhite);
   const shareD = share(record.draws);
@@ -1104,13 +1106,13 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{gameWord(record.games)}</span>
             <span className="dot">·</span>
             <span>{record.winsBlack} {tr('black')}</span>
             <span className="dot">·</span>
             <span>{record.winsWhite} {tr('white')}</span>
             <span className="dot">·</span>
-            <span>{record.draws} {tr('draws')}</span>
+            <span>{record.draws} {drawWord(record.draws)}</span>
           </div>
         </div>
       </section>
@@ -1169,27 +1171,60 @@ export default function App() {
 
       <div className="game-layout">
         <section className="board-wrap">
-          <div className={`turn-bar ${shownStatus !== 'playing' ? 'is-over' : ''}`} aria-live="polite">
-            <span className={`side-chip ${shownSide ?? 'draw'}`}>
-              {shownSide === 'b'
-                ? lang === 'zh'
-                  ? '先'
-                  : 'B'
-                : shownSide === 'w'
+          {shownStatus === 'playing' && (
+            <div className="turn-bar" aria-live="polite">
+              <span className={`side-chip ${shownSide ?? 'draw'}`}>
+                {shownSide === 'b'
                   ? lang === 'zh'
-                    ? '後'
-                    : 'W'
-                  : '='}
-            </span>
-            <div className="turn-copy">
-              <strong>{statusHeadline}</strong>
-              <p>{statusDetail}</p>
+                    ? '先'
+                    : 'B'
+                  : shownSide === 'w'
+                    ? lang === 'zh'
+                      ? '後'
+                      : 'W'
+                    : '='}
+              </span>
+              <div className="turn-copy">
+                <strong>{statusHeadline}</strong>
+                <p>{statusDetail}</p>
+              </div>
+              {checkVisible && <span className="check-pill">{tr('check')}</span>}
+              {aiThinking && <span className="thinking" aria-hidden="true">…</span>}
             </div>
-            {checkVisible && <span className="check-pill">{tr('check')}</span>}
-            {aiThinking && <span className="thinking" aria-hidden="true">…</span>}
-          </div>
+          )}
 
           {isLan && lanError && <p className="error game-error" role="alert">{lanError}</p>}
+
+          {shownStatus !== 'playing' && (
+            <div className="result-banner is-top" role="status">
+              <div className="result-copy">
+                <span className="result-kicker">{tr('gameOver')}</span>
+                <strong>{winnerText}</strong>
+                <small>{tr(resultReasonKey(engineState))}</small>
+              </div>
+              {isGuest ? (
+                <span className="wait-pill">
+                  <span className="wait-dot" aria-hidden="true" />
+                  {tr('lanWaitRestart')}
+                </span>
+              ) : (
+                <div className="result-actions">
+                  <button
+                    className="primary"
+                    onClick={restartGame}
+                    disabled={mode === 'lan-host' && !lanHost}
+                  >
+                    {tr('restart')}
+                  </button>
+                  {mode === 'ai' && (
+                    <button className="secondary" onClick={() => setScreen('setup')}>
+                      {tr('changeLevel')}
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
 
           <HandTray
             hand={engineState.hands.w}
@@ -1234,37 +1269,6 @@ export default function App() {
             onPick={pickHand}
             lang={lang}
           />
-
-          {shownStatus !== 'playing' && (
-            <div className="result-banner" role="status">
-              <div className="result-copy">
-                <span className="result-kicker">{tr('gameOver')}</span>
-                <strong>{winnerText}</strong>
-                <small>{tr(resultReasonKey(engineState))}</small>
-              </div>
-              {isGuest ? (
-                <span className="wait-pill">
-                  <span className="wait-dot" aria-hidden="true" />
-                  {tr('lanWaitRestart')}
-                </span>
-              ) : (
-                <div className="result-actions">
-                  <button
-                    className="primary"
-                    onClick={restartGame}
-                    disabled={mode === 'lan-host' && !lanHost}
-                  >
-                    {tr('restart')}
-                  </button>
-                  {mode === 'ai' && (
-                    <button className="secondary" onClick={() => setScreen('setup')}>
-                      {tr('changeLevel')}
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
         </section>
 
         <aside className="side">
@@ -1343,7 +1347,7 @@ export default function App() {
 
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
-            <p>{record.games} {tr('games')} · {record.winsBlack}/{record.winsWhite}/{record.draws}</p>
+            <p>{record.games} {gameWord(record.games)} · {record.winsBlack}/{record.winsWhite}/{record.draws}</p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
             {!isLan && (
               <button className="text-button" onClick={() => setScreen('stats')}>
@@ -1579,11 +1583,11 @@ export default function App() {
               <strong>{record.games}</strong>
             </div>
             <div className="stat-card black">
-              <span>{tr('black')}</span>
+              <span>{tr('blackWins')}</span>
               <strong>{record.winsBlack}</strong>
             </div>
             <div className="stat-card white">
-              <span>{tr('white')}</span>
+              <span>{tr('whiteWins')}</span>
               <strong>{record.winsWhite}</strong>
             </div>
             <div className="stat-card draw">
@@ -1613,7 +1617,7 @@ export default function App() {
             </div>
 
             <div className="record-card modes-card">
-              <h3>{tr('games')}</h3>
+              <h3>{tr('byMode')}</h3>
               <div className="mode-list">
                 {(['ai', 'local', 'lan'] as const).map((value) => (
                   <div className="mode-row" key={value}>

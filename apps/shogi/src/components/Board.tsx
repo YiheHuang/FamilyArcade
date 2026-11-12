@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import {
   HAND_TYPES,
   squareName,
@@ -188,8 +189,37 @@ export function PromotionDialog({
   onKeep: () => void;
   onCancel: () => void;
 }) {
+  const overlay = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = overlay.current;
+    if (!node) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      const items = [...node.querySelectorAll<HTMLElement>('button:not(:disabled)')];
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    node.addEventListener('keydown', onKey);
+    return () => node.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
-    <div className="promotion-overlay" role="dialog" aria-modal="true" aria-labelledby="promotion-title">
+    <div
+      ref={overlay}
+      className="promotion-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="promotion-title"
+    >
       <div className="promotion-dialog">
         <h3 id="promotion-title">{t(lang, 'promotion')}</h3>
         <div className="promotion-actions">

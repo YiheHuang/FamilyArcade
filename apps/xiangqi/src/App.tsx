@@ -986,6 +986,8 @@ export default function App() {
   const resultLabel = (winner: 'R' | 'B' | 'draw') =>
     winner === 'R' ? tr('winsRed') : winner === 'B' ? tr('winsBlack') : tr('draw');
   const share = (count: number) => (record.games > 0 ? `${Math.round((count / record.games) * 100)}%` : '0%');
+  const gameWord = (count: number) => t(lang, count === 1 ? 'gameOne' : 'games');
+  const drawWord = (count: number) => t(lang, count === 1 ? 'drawOne' : 'draws');
   const shareRed = share(record.winsRed);
   const shareBlack = share(record.winsBlack);
   const shareDraw = share(record.draws);
@@ -1047,13 +1049,13 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{gameWord(record.games)}</span>
             <span className="dot">·</span>
             <span>{record.winsRed} {tr('sideRed')}</span>
             <span className="dot">·</span>
             <span>{record.winsBlack} {tr('sideBlack')}</span>
             <span className="dot">·</span>
-            <span>{record.draws} {tr('draws')}</span>
+            <span>{record.draws} {drawWord(record.draws)}</span>
           </div>
         </div>
       </section>
@@ -1239,7 +1241,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.winsRed}/{record.winsBlack}/{record.draws}
+              {record.games} {gameWord(record.games)} · {record.winsRed}/{record.winsBlack}/{record.draws}
             </p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
             {!isLan && (
@@ -1519,7 +1521,7 @@ export default function App() {
             </div>
 
             <div className="record-card modes-card">
-              <h3>{tr('games')}</h3>
+              <h3>{tr('byMode')}</h3>
               <div className="mode-list">
                 {(['ai', 'local', 'lan'] as const).map((value) => (
                   <div className="mode-row" key={value}>
