@@ -1,0 +1,77 @@
+{
+  "slug": "president",
+  "order": 15,
+  "title": "President",
+  "titleZh": "排位赛",
+  "tagline": "Climb the table. Do not finish last.",
+  "taglineZh": "一级一级往上打，别做最后一名。",
+  "players": "3–6 players",
+  "playersZh": "3–6 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "8+",
+  "ageZh": "8 岁以上",
+  "accent": "#2f6b52",
+  "paper": "#f3ecdc",
+  "ink": "#241f19",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "3–6 players",
+    "52-card deck",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "Card exchange + record"
+  ],
+  "factsZh": [
+    "3–6 人",
+    "52 张牌",
+    "四档电脑",
+    "同屏 + 局域网",
+    "换牌 + 战绩"
+  ],
+  "lines": [
+    {
+      "at": 0.4,
+      "en": "Fifty-two cards. Three to six players.",
+      "zh": "五十二张牌，三到六个人。"
+    },
+    {
+      "at": 5.2,
+      "en": "President. Climb the table.",
+      "zh": "排位赛。一级一级往上打。"
+    },
+    {
+      "at": 10,
+      "en": "Play singles, pairs and triples. Equal or higher takes the trick.",
+      "zh": "出单张、对子或三张，点数不小于桌面就能压住。"
+    },
+    {
+      "at": 16,
+      "en": "Pass to save your twos, or take control.",
+      "zh": "过牌留住 2，或者拿下这一墩。"
+    },
+    {
+      "at": 23.5,
+      "en": "Finish first to become President. Finish last and you are Scum.",
+      "zh": "第一个出完当总统，最后一名是末位。"
+    },
+    {
+      "at": 31,
+      "en": "Next round, the President takes the Scum's best cards.",
+      "zh": "下一局，总统收下末位最好的牌。"
+    },
+    {
+      "at": 38,
+      "en": "Four computer levels, hot-seat, and play on your own network.",
+      "zh": "四档电脑对手、同屏热座，还有局域网。"
+    },
+    {
+      "at": 42,
+      "en": "Offline. No account. No ads.",
+      "zh": "离线、无账号、无广告。"
+    }
+  ]
+}
