@@ -1,0 +1,32 @@
+{
+  "slug": "cribbage",
+  "order": 11,
+  "title": "Cribbage",
+  "titleZh": "克里比奇",
+  "tagline": "Thirty-one, and a little luck.",
+  "taglineZh": "凑到三十一，也碰一点运气。",
+  "players": "2–4 players",
+  "playersZh": "2–4 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "8+",
+  "accent": "#b55438",
+  "paper": "#f4ecdd",
+  "ink": "#1f2a24",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["2–4 players", "First to 121", "Four computer levels", "Hot-seat + LAN"],
+  "factsZh": ["2–4 人", "先到 121 分", "四档电脑", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "Six cards each. Discard two. Cut for the starter.", "zh": "每人六张，弃两张，再切起始牌。" },
+    { "at": 5.2, "en": "Cribbage. Thirty-one, and a little luck.", "zh": "克里比奇。凑到三十一，也碰一点运气。" },
+    { "at": 10.0, "en": "Peg to fifteen and thirty-one. Pairs and runs score too.", "zh": "出牌凑十五和三十一，对子与顺子也能得分。" },
+    { "at": 16.0, "en": "Count your hand with the starter, then the dealer counts the crib.", "zh": "手牌加起始牌计数，庄家最后数弃牌堆。" },
+    { "at": 23.5, "en": "First to 121 wins. Four computer levels, from gentle to sharp.", "zh": "先到 121 分获胜；四档电脑，从温和到犀利。" },
+    { "at": 31.0, "en": "Two to four players on one screen, or a phone joins over the network.", "zh": "两到四人同屏，手机也能连同一网络加入。" },
+    { "at": 38.0, "en": "Hints, undo, autosave, and a family record.", "zh": "提示、悔牌、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Cribbage. Deal the first hand.", "zh": "克里比奇。发第一手牌吧。" }
+  ]
+}
