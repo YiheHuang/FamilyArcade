@@ -949,7 +949,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span>{record.winsX} {tr('red')}</span>
             <span className="dot">·</span>
@@ -1165,7 +1165,7 @@ export default function App() {
 
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
-            <p>{record.games} {tr('games')} · {record.winsX} {tr('red')} · {record.winsO} {tr('blue')} · {record.draws} {tr('draws')}</p>
+            <p>{record.games} {record.games === 1 ? tr('gameOne') : tr('games')} · {record.winsX} {tr('red')} · {record.winsO} {tr('blue')} · {record.draws} {tr('draws')}</p>
             {!isLan && (
               <button className="text-button" onClick={() => setScreen('stats')}>
                 {tr('viewRecord')} →

@@ -1207,7 +1207,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('recordMini')}</span>
             <strong>{record.matches}</strong>
-            <span>{tr('matches')}</span>
+            <span>{record.matches === 1 ? tr('matchOne') : tr('matches')}</span>
             <span className="dot">·</span>
             <span>
               {teamNames[0]} {record.winsA}
@@ -1524,7 +1524,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('recordMini')}</h3>
             <p className="peer">
-              {record.matches} {tr('matches')} · {record.winsA}/{record.winsB}
+              {record.matches} {record.matches === 1 ? tr('matchOne') : tr('matches')} · {record.winsA}/{record.winsB}
             </p>
             <p className="side-note">{tr('recordNote')}</p>
             {!isGuest && (

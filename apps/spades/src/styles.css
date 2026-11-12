@@ -1180,11 +1180,11 @@ h3.section-label {
   .felt-foot { left: 14px; right: 14px; bottom: 10px; }
   .felt-foot .turn-copy strong { font-size: 14px; }
   .felt-foot .turn-copy small { font-size: 10px; }
-  .seat-badge { padding: 5px 6px; border-radius: 10px; }
+  .seat-badge { padding: 4px; border-radius: 10px; }
   .seat-name { font-size: 9px; max-width: 64px; }
-  .seat-bid small, .seat-trick-count small { display: none; }
+  .seat-bid small, .seat-trick-count small { display: inline; font-size: 7px; letter-spacing: 0; }
   .seat-bid b, .seat-trick-count b { font-size: 11px; }
-  .seat-numbers { gap: 5px; }
+  .seat-numbers { gap: 4px; }
   .seat-badge .ai-tag { display: none; }
   .seat-badge.compact { min-width: 0; }
   .seat-badge.compact .seat-name { max-width: 120px; font-size: 11px; }
@@ -1197,10 +1197,11 @@ h3.section-label {
   .trick-card.pos-2 { top: 0; }
   .trick-card.pos-0 { bottom: 0; }
   .spade-watermark { font-size: 62px; }
-  .bid-panel { width: min(300px, 100%); padding: 9px; border-radius: 14px; }
-  .bid-title { font-size: 14px; margin-bottom: 6px; }
-  .bid-grid { gap: 4px; }
-  .bid-btn { min-height: 29px; font-size: 10px; border-radius: 7px; }
+  .trick-center-slot { left: -11px; right: -11px; }
+  .bid-panel { width: 100%; max-width: 300px; padding: 10px; border-radius: 14px; }
+  .bid-title { font-size: 14px; margin-bottom: 7px; }
+  .bid-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .bid-btn { min-height: 38px; font-size: 11px; border-radius: 8px; }
   .hand-dock { margin: -8px 7px 0; padding: 7px 8px 12px; border-radius: 20px; min-height: 148px; }
   .card.card-hand { --cw: clamp(40px, 11vw, 48px); }
   .hand {

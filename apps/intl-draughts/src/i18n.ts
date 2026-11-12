@@ -174,7 +174,7 @@ const EN = {
   lanOpenAddress: 'Open this address on a phone',
   lanHostWaitingGuest: 'Waiting for a guest to scan the code or type it on their phone.',
   lanStartHint: 'The host starts when both players are here.',
-  lanHostCodeHelp: 'Type this code on the guest phone, or scan the code at right.',
+  lanHostCodeHelp: 'Type this code on the guest phone, or scan the QR code.',
   lanGuestCode: 'Four digits',
 } as const;
 
@@ -354,7 +354,7 @@ const ZH: Record<Key, string> = {
   lanOpenAddress: '在手机上打开这个地址',
   lanHostWaitingGuest: '等待访客扫码，或在手机上输入房间码。',
   lanStartHint: '两位玩家到齐后由主机开始。',
-  lanHostCodeHelp: '让访客在手机上输入这个房间码，或扫右边的二维码。',
+  lanHostCodeHelp: '让访客在手机上输入这个房间码，或扫描二维码。',
   lanGuestCode: '四位数字',
 };
 

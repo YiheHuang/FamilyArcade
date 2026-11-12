@@ -1007,19 +1007,27 @@ export default function App() {
           ? tr('lanHostMode')
           : tr('lanGuestMode');
 
+  const passDirectionText =
+    shownView.passDirection === 'left'
+      ? tr('passLeft')
+      : shownView.passDirection === 'right'
+        ? tr('passRight')
+        : shownView.passDirection === 'across'
+          ? tr('passAcross')
+          : tr('passHold');
+  const passingText =
+    shownView.passDirection === 'hold'
+      ? tr('passingHold')
+      : tr('passing', { direction: passDirectionText });
+
   let statusHeadline = tr('yourTurn');
   let statusDetail = '';
   if (shownView.phase === 'passing') {
-    const direction =
-      shownView.passDirection === 'left'
-        ? tr('passLeft')
-        : shownView.passDirection === 'right'
-          ? tr('passRight')
-          : shownView.passDirection === 'across'
-            ? tr('passAcross')
-            : tr('passHold');
-    statusHeadline = shownView.passDirection === 'hold' ? tr('passingHold') : tr('passing', { direction });
-    statusDetail = t(lang, 'handNo', { n: shownView.handNumber });
+    statusHeadline = passingText;
+    statusDetail =
+      shownView.passDirection === 'hold'
+        ? tr('waitingOthers')
+        : tr('passInstruction', { direction: passDirectionText });
   } else if (shownView.phase === 'playing') {
     if (mode === 'local') {
       statusHeadline = t(lang, 'turnOf', { name: playerAt(shownView.turn) });
@@ -1038,6 +1046,8 @@ export default function App() {
     statusHeadline = tr('gameOverTitle');
     statusDetail = t(lang, 'handNo', { n: shownView.handNumber });
   }
+
+  const totalWins = record.wins.reduce((total, value) => total + value, 0);
 
   const home = (
     <main className="shell home-shell">
@@ -1122,7 +1132,7 @@ export default function App() {
             <span>{tr('games')}</span>
             <strong>{record.games}</strong>
             <span className="dot">·</span>
-            <span>{tr('wins')} {record.wins.reduce((total, value) => total + value, 0)}</span>
+            <span>{tr('wins')} {totalWins}</span>
             <span className="dot">·</span>
             <span>{tr('moons')} {record.moons}</span>
             <span className="record-note">{tr('recordNote')}</span>
@@ -1429,7 +1439,9 @@ export default function App() {
             <div className="round-lines">
               <span>{shownView.phase === 'playing' || shownView.phase === 'hand-over' || shownView.phase === 'game-over'
                 ? t(lang, 'trickNo', { n: Math.min(13, shownView.trickNumber + (shownView.phase === 'playing' ? 1 : 0)) })
-                : tr('waitingDeal')}</span>
+                : shownView.phase === 'passing'
+                  ? passingText
+                  : tr('waitingDeal')}</span>
               <span>{shownView.heartsBroken ? tr('heartsBroken') : tr('heartsClosed')}</span>
               <span>{shownView.playedCards.includes(QUEEN_SPADES) ? tr('queenPlayed') : tr('queenWaiting')}</span>
             </div>
@@ -1470,7 +1482,11 @@ export default function App() {
 
           <section className="side-card record-mini">
             <h3>{tr('record')}</h3>
-            <p>{record.games} {tr('games')} · {record.wins.reduce((total, value) => total + value, 0)} {tr('wins')} · {record.moons} {tr('moons')}</p>
+            <p>
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} ·{' '}
+              {totalWins} {totalWins === 1 ? tr('winOne') : tr('wins')} ·{' '}
+              {record.moons} {record.moons === 1 ? tr('moonOne') : tr('moons')}
+            </p>
             {!isLan && (
               <button className="text-button" onClick={() => setScreen('stats')}>
                 {tr('record')} →
@@ -1797,7 +1813,7 @@ export default function App() {
                       {t(lang, entry.mode === 'ai' ? 'modeAi' : entry.mode === 'local' ? 'modeLocal' : 'modeLan')}
                       {entry.level ? ` · ${t(lang, LEVEL_LABEL[entry.level])}` : ''}
                       {' · '}
-                      {t(lang, 'handsCount', { n: entry.hands })}
+                      {t(lang, entry.hands === 1 ? 'handsOne' : 'handsCount', { n: entry.hands })}
                     </span>
                     <time dateTime={new Date(entry.at).toISOString()}>{formatDate(entry.at, lang)}</time>
                   </li>
