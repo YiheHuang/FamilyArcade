@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Texas Hold'em",
+  "productName": "Texas Holdem",
   "version": "0.1.0",
   "identifier": "com.familyarcade.texas-holdem",
   "build": {

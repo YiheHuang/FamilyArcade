@@ -1,9 +1,9 @@
 {
   "name": "familyarcade",
   "private": true,
-  "version": "2.0.0",
+  "version": "3.0.0",
   "type": "module",
-  "description": "42 offline-first family board and card games with AI, hot-seat and LAN play",
+  "description": "53 offline-first family board and card games with AI, hot-seat and LAN play",
   "license": "MIT",
   "scripts": {
     "lan": "node tools/lan-server.mjs",
