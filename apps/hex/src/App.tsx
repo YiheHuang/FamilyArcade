@@ -540,7 +540,7 @@ export default function App() {
   }
 
   let subline: string;
-  if (shownStatus === 'won') subline = resultNote;
+  if (shownStatus === 'won') subline = '';
   else if (mode === 'ai') subline = `${tr('you')}: ${humanName} · ${tr('ai')}: ${aiName}`;
   else if (mode === 'local') subline = `${tr('redGoal')} / ${tr('blueGoal')}`;
   else if (mode === 'lan-host') subline = tr('lanHostSeat');
@@ -639,7 +639,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span className="red-text">{record.redWins} {tr('red')}</span>
             <span className="dot">·</span>
@@ -702,7 +702,6 @@ export default function App() {
               </button>
             ))}
           </div>
-          <p className="setup-note">{tr('sideHint')}</p>
           <button className="primary wide" onClick={() => startGame('ai')}>
             {tr('begin')}
           </button>
@@ -739,7 +738,7 @@ export default function App() {
             </span>
             <div>
               <strong>{headline}</strong>
-              <p>{subline}</p>
+              {subline && <p>{subline}</p>}
             </div>
             {aiThinking && <span className="thinking">···</span>}
           </div>
@@ -766,7 +765,9 @@ export default function App() {
                 </strong>
               </span>
             )}
-            <span className="mode-goal">{tr('redGoal')} / {tr('blueGoal')}</span>
+            {mode !== 'local' && (
+              <span className="mode-goal">{tr('redGoal')} / {tr('blueGoal')}</span>
+            )}
           </div>
 
           {shownStatus === 'won' && (
@@ -795,7 +796,9 @@ export default function App() {
         <aside className="side">
           <div className="side-card coach-card">
             <h3>{tr('hintTitle')}</h3>
-            <p className={hint?.reason === 'block' ? 'hint-reason' : undefined}>{hintText}</p>
+            {(shownStatus === 'playing' || hint) && (
+              <p className={hint?.reason === 'block' ? 'hint-reason' : undefined}>{hintText}</p>
+            )}
             <div className="side-actions">
               <button className="secondary" onClick={undo} disabled={!canUndo}>
                 {tr('undo')}
@@ -845,7 +848,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.redWins} {tr('red')} / {record.blueWins}{' '}
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} · {record.redWins} {tr('red')} / {record.blueWins}{' '}
               {tr('blue')}
             </p>
             {mode !== 'lan-host' && mode !== 'lan-guest' && (
@@ -1048,7 +1051,6 @@ export default function App() {
             <span className="blue-text">{record.blueWins}</span>
           </div>
           <p>{tr('lastWinner')}: {record.lastWinner ? tr(record.lastWinner === 'R' ? 'red' : 'blue') : '—'}</p>
-          <p>{record.games === 0 ? tr('noRecord') : tr('statsLead')}</p>
         </div>
       </div>
     </main>

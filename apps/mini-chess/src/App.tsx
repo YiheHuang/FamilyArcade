@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import QRCode from 'qrcode';
 import {
   LanGuest,
@@ -101,6 +101,13 @@ function PlayerBadge({
   lang: Lang;
 }) {
   const capturedColor: Color = side === 'w' ? 'b' : 'w';
+  const sideLabel = t(lang, side === 'w' ? 'white' : 'black');
+  const detail =
+    name === sideLabel
+      ? thinking
+        ? `${t(lang, 'thinking')}…`
+        : ''
+      : `${sideLabel}${thinking ? ` · ${t(lang, 'thinking')}…` : ''}`;
   return (
     <div className={`player-badge ${side} ${active ? 'active' : ''}`}>
       <div className={`badge-piece ${side}`}>
@@ -108,10 +115,7 @@ function PlayerBadge({
       </div>
       <div className="badge-copy">
         <strong>{name}</strong>
-        <small>
-          {t(lang, side === 'w' ? 'white' : 'black')}
-          {thinking ? ` · ${t(lang, 'thinking')}…` : ''}
-        </small>
+        {detail && <small>{detail}</small>}
       </div>
       <div className="captured-tray" aria-label={t(lang, 'captured')}>
         {captured.map((type, index) => (
@@ -757,6 +761,23 @@ export default function App() {
         ? tr('setupSideNote')
         : tr('localHint');
 
+  const trapPromotionFocus = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Tab') return;
+    const focusable = Array.from(
+      event.currentTarget.querySelectorAll<HTMLButtonElement>('button:not(:disabled)'),
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
   const home = (
     <main className="shell home-shell">
       <header className="masthead">
@@ -814,7 +835,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span>
               {record.winsW} {tr('white')}
@@ -937,7 +958,7 @@ export default function App() {
             <span className={`turn-chip ${chipColor ?? 'w'}`}>{chipColor === 'b' ? '♚' : '♔'}</span>
             <div aria-live="polite">
               <strong>{displayStatus}</strong>
-              <p>{defaultHelp}</p>
+              {shownStatus === 'playing' && <p>{defaultHelp}</p>}
             </div>
             {aiThinking && <span className="thinking">…</span>}
           </div>
@@ -1012,9 +1033,7 @@ export default function App() {
         <aside className="side">
           <div className="side-card coach-card">
             <h3>{tr('hintTitle')}</h3>
-            <p className="coach-text">
-              {hint ? tr(HINT_KEYS[hint.reason]) : defaultHelp}
-            </p>
+            {hint && <p className="coach-text">{tr(HINT_KEYS[hint.reason])}</p>}
             <div className="side-actions">
               <button
                 className="secondary"
@@ -1094,7 +1113,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.winsW}/{record.winsB}/{record.draws}
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} · {record.winsW}/{record.winsB}/{record.draws}
             </p>
             <button className="text-button" onClick={() => setRecord(clearRecord())}>
               {tr('resetStats')}
@@ -1111,6 +1130,7 @@ export default function App() {
             aria-modal="true"
             aria-labelledby="promotion-title"
             onClick={(event) => event.stopPropagation()}
+            onKeyDown={trapPromotionFocus}
           >
             <h3 id="promotion-title">{tr('promotionTitle')}</h3>
             <p>{tr('promotionLede')}</p>

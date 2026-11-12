@@ -733,9 +733,6 @@ export default function App() {
               </>
             )}
           </div>
-          <button className="text-button record-link" onClick={() => setScreen('record')}>
-            {tr('openRecord')}
-          </button>
         </div>
       </section>
 
@@ -899,7 +896,6 @@ export default function App() {
               <span className="mini-stone white" />
               <span>{tr('whiteCaptured', { n: shownCaptures.W })}</span>
             </div>
-            <p className="side-note">{moveLine}</p>
           </div>
 
           {finished && shownScore && (

@@ -743,10 +743,10 @@ export default function App() {
   let statusDetail = '';
   if (shownStatus === 'won') {
     statusHeadline = t(lang, shownWinner === 'B' ? 'blackWins' : 'whiteWins');
-    statusDetail = tr('resultFive');
+    statusDetail = '';
   } else if (shownStatus === 'draw') {
     statusHeadline = tr('draw');
-    statusDetail = tr('resultDraw');
+    statusDetail = '';
   } else if (isGuest) {
     statusHeadline = guestStarted
       ? guestCanPlay
@@ -800,20 +800,6 @@ export default function App() {
         : mode === 'lan-host'
           ? tr('lanHostMode')
           : tr('lanGuestMode');
-  const sideDetail =
-    mode === 'ai'
-      ? tr('youAreBlack')
-      : mode === 'local'
-        ? tr('localTurnHint')
-        : mode === 'lan-host'
-          ? guestOnline
-            ? tr('lanReady')
-            : tr('lanGuestLeft')
-          : guestCanPlay
-            ? tr('yourTurn')
-            : guestStarted
-              ? tr('lanWaitingForHost')
-              : tr('lanWaitingHost');
 
   const resultLabel = (winner: ResultWinner) =>
     winner === 'B' ? tr('winsBlack') : winner === 'W' ? tr('winsWhite') : tr('draw');
@@ -896,7 +882,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span className="record-mark">
               <Stone mark="B" small /> {record.winsBlack}
@@ -982,7 +968,7 @@ export default function App() {
             </span>
             <div className="turn-copy">
               <strong>{statusHeadline}</strong>
-              <p>{statusDetail}</p>
+              {statusDetail && <p>{statusDetail}</p>}
             </div>
             {aiThinking && (
               <span className="thinking" aria-hidden="true">
@@ -1042,7 +1028,6 @@ export default function App() {
         <aside className="side">
           <div className="side-card">
             <h3>{sideTitle}</h3>
-            <p>{sideDetail}</p>
             <div className="side-actions">
               <button
                 className="secondary"
@@ -1104,7 +1089,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p className="mini-score">
-              {record.games} {tr('games')} · <Stone mark="B" small /> {record.winsBlack}{' '}
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} · <Stone mark="B" small /> {record.winsBlack}{' '}
               <Stone mark="W" small /> {record.winsWhite} · {record.draws} {tr('draws')}
             </p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
@@ -1206,7 +1191,6 @@ export default function App() {
               )}
             </section>
           </div>
-          <p className="lan-footnote">{tr('lanStartHint')}</p>
         </>
       )}
 

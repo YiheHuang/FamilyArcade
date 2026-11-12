@@ -126,11 +126,11 @@ async function run(lang) {
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   const page = await browser.newPage({ viewport: DESKTOP });
   await setLang(page, lang);
-  await page.screenshot({ path: path.join(dir, 'home.png') });
+  await page.screenshot({ path: path.join(dir, 'home.jpg') });
 
   await page.getByRole('button', { name: /Play against|和 AI/ }).click();
   await page.waitForTimeout(280);
-  await page.screenshot({ path: path.join(dir, 'setup.png') });
+  await page.screenshot({ path: path.join(dir, 'setup.jpg') });
 
   await page.locator('.back').first().click();
   await page.getByRole('button', { name: /Two players|两人同屏/ }).click();
@@ -139,11 +139,11 @@ async function run(lang) {
   // A real mid-game position from the recorded game.
   await playRange(page, 0, 28);
   await page.waitForTimeout(250);
-  await page.screenshot({ path: path.join(dir, 'game.png') });
+  await page.screenshot({ path: path.join(dir, 'game.jpg') });
 
   await page.getByRole('button', { name: /^Hint$|^提示$/ }).click();
   await page.waitForTimeout(450);
-  await page.screenshot({ path: path.join(dir, 'game-hint.png') });
+  await page.screenshot({ path: path.join(dir, 'game-hint.jpg') });
 
   // Finish the same game with two passes.
   await playRange(page, 28, MOVES.length);
@@ -151,18 +151,18 @@ async function run(lang) {
   if (!(await page.locator('.result-banner').isVisible())) {
     throw new Error('Game did not finish during screenshots');
   }
-  await page.screenshot({ path: path.join(dir, 'game-over.png') });
+  await page.screenshot({ path: path.join(dir, 'game-over.jpg') });
 
   await page.locator('.game-top .back').click();
   await page.waitForTimeout(250);
   await page.getByRole('button', { name: /Family record|家庭战绩/ }).first().click();
   await page.waitForTimeout(250);
-  await page.screenshot({ path: path.join(dir, 'record.png') });
+  await page.screenshot({ path: path.join(dir, 'record.jpg') });
 
   await page.locator('.back').first().click();
   await page.getByRole('button', { name: /How to play|玩法/ }).click();
   await page.waitForTimeout(250);
-  await page.screenshot({ path: path.join(dir, 'rules.png') });
+  await page.screenshot({ path: path.join(dir, 'rules.jpg') });
 
   const mobile = await browser.newPage({
     viewport: MOBILE,
@@ -171,11 +171,11 @@ async function run(lang) {
     deviceScaleFactor: 2,
   });
   await setLang(mobile, lang);
-  await mobile.screenshot({ path: path.join(dir, 'home-mobile.png') });
+  await mobile.screenshot({ path: path.join(dir, 'home-mobile.jpg') });
   await mobile.getByRole('button', { name: /Two players|两人同屏/ }).click();
   await mobile.locator('.go-point').nth(40).click();
   await mobile.waitForTimeout(350);
-  await mobile.screenshot({ path: path.join(dir, 'game-mobile.png') });
+  await mobile.screenshot({ path: path.join(dir, 'game-mobile.jpg') });
 
   await browser.close();
   console.log(`screenshots ${lang}: ok`);

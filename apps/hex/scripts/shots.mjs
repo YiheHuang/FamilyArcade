@@ -87,12 +87,12 @@ async function run(lang) {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await setLang(page, lang);
   console.log(`  ${lang}: home`);
-  await page.screenshot({ path: path.join(dir, 'home.png') });
+  await page.screenshot({ path: path.join(dir, 'home.jpg') });
 
   await page.getByRole('button', { name: /Play against|和 AI/ }).click();
   await page.waitForTimeout(250);
   console.log(`  ${lang}: setup`);
-  await page.screenshot({ path: path.join(dir, 'setup.png') });
+  await page.screenshot({ path: path.join(dir, 'setup.jpg') });
 
   await page.getByRole('button', { name: /Back|返回/ }).click();
   await page.waitForTimeout(150);
@@ -100,12 +100,12 @@ async function run(lang) {
   await playMoves(page, MIDGAME);
   await page.waitForTimeout(300);
   console.log(`  ${lang}: game`);
-  await page.screenshot({ path: path.join(dir, 'game.png') });
+  await page.screenshot({ path: path.join(dir, 'game.jpg') });
 
   await page.getByRole('button', { name: /Hint|提示/ }).click();
   await page.waitForTimeout(900);
   console.log(`  ${lang}: hint`);
-  await page.screenshot({ path: path.join(dir, 'game-hint.png') });
+  await page.screenshot({ path: path.join(dir, 'game-hint.jpg') });
 
   await page.getByRole('button', { name: /Home|主页/ }).click();
   await page.waitForTimeout(150);
@@ -113,21 +113,21 @@ async function run(lang) {
   await playMoves(page, VICTORY);
   await page.waitForTimeout(350);
   console.log(`  ${lang}: game-over`);
-  await page.screenshot({ path: path.join(dir, 'game-over.png') });
+  await page.screenshot({ path: path.join(dir, 'game-over.jpg') });
 
   await page.getByRole('button', { name: /Home|主页/ }).click();
   await page.waitForTimeout(150);
   await page.getByRole('button', { name: /Rules|规则/ }).click();
   await page.waitForTimeout(200);
   console.log(`  ${lang}: rules`);
-  await page.screenshot({ path: path.join(dir, 'rules.png') });
+  await page.screenshot({ path: path.join(dir, 'rules.jpg') });
   await page.getByRole('button', { name: /Close|关闭/ }).click();
   await page.waitForTimeout(150);
 
   console.log(`  ${lang}: stats`);
   await page.getByRole('button', { name: /Family record|家庭战绩/ }).click();
   await page.waitForTimeout(250);
-  await page.screenshot({ path: path.join(dir, 'stats.png') });
+  await page.screenshot({ path: path.join(dir, 'stats.jpg') });
 
   const mobile = await browser.newPage({
     viewport: MOBILE,
@@ -138,12 +138,12 @@ async function run(lang) {
   await mobile.emulateMedia({ reducedMotion: 'reduce' });
   await setLang(mobile, lang);
   console.log(`  ${lang}: home-mobile`);
-  await mobile.screenshot({ path: path.join(dir, 'home-mobile.png') });
+  await mobile.screenshot({ path: path.join(dir, 'home-mobile.jpg') });
   await mobile.getByRole('button', { name: /Two players|两人同屏/ }).click();
   await playMoves(mobile, MOBILE_GAME);
   await mobile.waitForTimeout(250);
   console.log(`  ${lang}: game-mobile`);
-  await mobile.screenshot({ path: path.join(dir, 'game-mobile.png') });
+  await mobile.screenshot({ path: path.join(dir, 'game-mobile.jpg') });
 
   await browser.close();
   console.log(`screenshots ${lang}: ok`);
