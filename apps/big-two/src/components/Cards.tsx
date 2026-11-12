@@ -68,6 +68,9 @@ export function PlayingCard({
   const body = (
     <>
       <span className="card-rank">{rankLabel(card.rank)}</span>
+      <span className="card-corner-suit" aria-hidden="true">
+        {suitSymbol(card.suit)}
+      </span>
       <span className="card-suit">{suitSymbol(card.suit)}</span>
       <span className="card-rank foot">{rankLabel(card.rank)}</span>
     </>

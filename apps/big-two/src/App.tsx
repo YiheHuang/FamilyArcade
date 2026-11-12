@@ -1214,7 +1214,11 @@ export default function App() {
   const resultPanel = result ? (
     <section className="result-panel" aria-live="polite">
       <span className="result-kicker">{tr('gameOver')}</span>
-      <h3>{t(lang, 'winnerIs', { name: nameAt(result.winner) })}</h3>
+      <h3>
+        {nameAt(result.winner) === t(lang, 'you')
+          ? t(lang, 'winnerYou')
+          : t(lang, 'winnerIs', { name: nameAt(result.winner) })}
+      </h3>
       <div className="score-table">
         <div className="score-head">
           <span>{tr('table')}</span>

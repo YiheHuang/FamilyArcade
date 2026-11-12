@@ -164,7 +164,7 @@ await finishGame(page);
 await page.waitForTimeout(200);
 assert(await page.locator('.result-panel').isVisible(), 'result panel missing');
 const resultText = await page.locator('.result-panel').innerText();
-assert(/wins/.test(resultText), 'winner line missing');
+assert(/wins|You win/.test(resultText), 'winner line missing');
 assert((await page.locator('.score-row').count()) === 4, 'score table should list four seats');
 const record = await page.evaluate(() =>
   JSON.parse(localStorage.getItem('familyarcade.big-two.record') || '{}'),

@@ -1032,7 +1032,9 @@ export default function App() {
   const winnerName =
     shown.winner === null
       ? tr('sharedWin')
-      : tr('winnerName', { name: shownNames[shown.winner] ?? '' });
+      : shownNames[shown.winner] === tr('you')
+        ? tr('winnerYou')
+        : tr('winnerName', { name: shownNames[shown.winner] ?? '' });
   const resultReason =
     shown.closedBy === 'score'
       ? tr('byScore', { n: shown.config.target })

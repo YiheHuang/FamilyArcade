@@ -420,7 +420,7 @@ const ZH: Record<Key, string> = {
   hardHint: '会记缺门、控制王牌、判断甩牌和八十分线。',
   tableFacts: '这张牌桌',
   factCards: '108 张牌 · 每人 25 张 · 底牌 8 张',
-  factTarget: '闲家要拿 80 分才能升级',
+  factTarget: '庄家要拿 80 分才能升级',
   factMatch: '先在本级 A 打赢一局的一方获胜',
   factThrow: '甩牌的每一组都必须是当前最大',
   startSolo: '开始这一场',

@@ -858,8 +858,8 @@ h1 {
   .masthead { align-items: center; }
   .mast-actions { gap: 0; }
   .screen-title { margin-top: 16px; margin-bottom: 18px; font-size: 38px; }
-  .game-top { flex-wrap: wrap; }
-  .game-id { order: -1; width: 100%; text-align: left; }
+  .game-top { flex-wrap: wrap; gap: 4px; padding-bottom: 10px; }
+  .game-id { order: -1; width: 100%; text-align: left; padding-top: 0; }
   .game-id strong { font-size: 19px; }
   .seat-grid, .seats-2, .seats-3, .seats-4, .seats-5, .seats-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .seat-card { padding: 9px; }
@@ -878,6 +878,12 @@ h1 {
 @media (max-width: 520px) {
   .shell { width: calc(100% - 20px); }
   h1 { font-size: 50px; }
+  .game-layout { margin-top: 12px; }
+  .turn-bar { margin-bottom: 10px; }
+  .table-center { padding: 16px 8px 4px; }
+  .seat-cups { margin: 5px 0 4px; }
+  .hand-head { margin-bottom: 7px; }
+  .bid-builder { margin-top: 9px; padding-top: 9px; }
   .hero-felt { min-height: 280px; padding: 18px; }
   .hero-dice { gap: 6px; }
   .hero-dice .die { --die-size: 42px; }
@@ -886,13 +892,13 @@ h1 {
   .face-grid { gap: 4px; }
   .face-button { padding: 4px; }
   .face-button .die { --die-size: 23px; }
-  .own-cup { padding: 10px; }
+  .own-cup { padding: 8px 10px; }
   .dice-tray { gap: 6px; }
   .dice-tray .die { --die-size: 42px; }
   .current-bid .bid-chip { transform: scale(1); }
   .bid-chip strong { font-size: 21px; }
-  .felt { padding: 12px; border-radius: 22px; }
-  .hand-area { padding: 12px; border-radius: 18px; }
+  .felt { padding: 10px; border-radius: 22px; }
+  .hand-area { margin-top: 10px; padding: 10px; border-radius: 18px; }
   .seat-name strong { font-size: 11px; }
   .seat-name span { font-size: 8px; }
   .mini-cup { width: 10px; height: 12px; }

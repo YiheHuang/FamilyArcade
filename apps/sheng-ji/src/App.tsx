@@ -269,6 +269,7 @@ export default function App() {
   const namesRef = useRef(names);
   const lanPlayersRef = useRef(lanPlayers);
   const hostRef = useRef<LanHost | null>(null);
+  const handRef = useRef<HTMLDivElement>(null);
   const lanStartedRef = useRef(false);
   const lanActiveRef = useRef(false);
   const autoJoinRef = useRef(false);
@@ -329,6 +330,19 @@ export default function App() {
   useEffect(() => {
     if (screen !== 'stats') setClearArmed(false);
   }, [screen]);
+
+  useEffect(() => {
+    if (!hint || (hint.type !== 'play' && hint.type !== 'bury') || hint.cards.length === 0) return;
+    const hand = handRef.current;
+    if (!hand) return;
+    const first = hand.querySelector<HTMLElement>('.playing-card.selected');
+    if (!first) return;
+    first.scrollIntoView({ block: 'nearest', inline: 'start' });
+    const rect = first.getBoundingClientRect();
+    if (rect.top < 0 || rect.bottom > window.innerHeight) {
+      first.scrollIntoView({ block: 'center', inline: 'start' });
+    }
+  }, [hint]);
 
   const localViewerSeat = mode === 'local' ? actorSeat(state) : 0;
   const localView = useMemo(
@@ -1440,7 +1454,7 @@ export default function App() {
             levelRank={activeView.levelRank}
           />
 
-          <div className="felt">
+          <div className={`felt felt-${activeView.phase}`}>
             <div className="seat-ring">
               {([0, 1, 2, 3] as Seat[]).map((seat) => (
                 <SeatBadge
@@ -1532,7 +1546,7 @@ export default function App() {
 
               {handVisible ? (
                 <>
-                  <div className="hand" role="group" aria-label={tr('handLabel')} data-hand-count={activeView.hand.length}>
+                  <div className="hand" role="group" aria-label={tr('handLabel')} data-hand-count={activeView.hand.length} ref={handRef}>
                     {activeView.hand.map((card, index) => (
                       <CardFace
                         key={card.id}

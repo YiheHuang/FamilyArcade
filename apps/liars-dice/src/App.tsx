@@ -544,7 +544,6 @@ export default function App() {
       setQuantity(next.action.quantity);
       setFace(next.action.face);
     }
-    setToast(hintMessage(lang, next));
   }, [canHint, lang, state]);
 
   const canBidControls = canAct && activeView.phase === 'bidding';
@@ -1690,7 +1689,7 @@ export default function App() {
 
         <aside className="side">
           <div className="side-card">
-            <h3>{tr('roundShort')}</h3>
+            <h3>{tr('tableInfo')}</h3>
             <div className="side-stat">
               <span>{tr('players')}</span>
               <strong>{activeView.playerCount}</strong>

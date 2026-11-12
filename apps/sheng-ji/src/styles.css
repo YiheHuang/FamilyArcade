@@ -2782,6 +2782,11 @@ button.playing-card:hover:not(:disabled) {
     border-radius: 26px;
   }
 
+  .felt.felt-declare,
+  .felt.felt-bury {
+    min-height: 250px;
+  }
+
   .seat-ring {
     inset: 6px 6px auto;
     display: grid;
