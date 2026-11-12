@@ -1,0 +1,42 @@
+{
+  "slug": "jungle-chess",
+  "order": 7,
+  "title": "Jungle Chess",
+  "titleZh": "斗兽棋",
+  "tagline": "Seven columns. Nine rows. One den.",
+  "taglineZh": "七列九行，一个兽穴。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "6+",
+  "accent": "#b4553b",
+  "paper": "#f2ead8",
+  "ink": "#22281f",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "7 × 9 board",
+    "16 animals · 8 ranks",
+    "4 AI levels",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "七乘九棋盘",
+    "十六只动物 · 八级",
+    "四档电脑难度",
+    "同屏 + 局域网"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Seven columns. Nine rows. Two rivers.", "zh": "七列九行，两条河流。" },
+    { "at": 5.2, "en": "Jungle Chess. The classic Dou Shou Qi.", "zh": "斗兽棋，经典动物棋。" },
+    { "at": 10.0, "en": "Elephant, lion, tiger, rat. Rank decides who eats whom.", "zh": "大象、狮子、老虎、老鼠，等级决定谁能吃谁。" },
+    { "at": 16.0, "en": "Rats swim. Lions and tigers leap the river. Traps bring any animal down.", "zh": "老鼠会游泳，狮子老虎会跳河，陷阱能让任何动物降级。" },
+    { "at": 23.5, "en": "Four computer levels, from gentle Companion to a three-move Hard.", "zh": "四档电脑难度，从温和陪玩到向前算三步的挑战。" },
+    { "at": 31.0, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一局域网加入。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Jungle Chess. Enter the den, or capture them all.", "zh": "斗兽棋。进入兽穴，或吃光对方。" }
+  ]
+}
