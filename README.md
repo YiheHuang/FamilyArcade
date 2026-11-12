@@ -6,9 +6,9 @@ English · [简体中文](README.zh-CN.md)
 
 [![Watch the 37-second tour](docs/cover.png)](docs/tour.mp4)
 
-[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.1/FamilyArcade_1.0.1_x64-setup.exe)
+[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.2/FamilyArcade_1.0.2_x64-setup.exe)
 
-**All-in-one:** [Family Arcade 1.0.1](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.1/FamilyArcade_1.0.1_x64-setup.exe) · **WebView2 runtime (only if needed):** [offline x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
+**All-in-one:** [Family Arcade 1.0.2](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v1.0.2/FamilyArcade_1.0.2_x64-setup.exe) · **WebView2 runtime (only if needed):** [offline x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
 ## Classics
 

@@ -4,6 +4,7 @@
 1eedca88708b37e5c4f58bf13c90f9d3d407539bb54ff084bdd40293ea07e774  releases/codebreak/codebreak_0.1.0_x64-setup.exe
 2ac4771d831ccdaf4b84defc07f19dc9fefc4fc91257cde03bc0975164db7f90  releases/star-leap/star-leap_0.2.0_x64-setup.exe
 4b7a9b5359dcf8c1d9224820150113459979917cae5394007adec181ca050eec  releases/hex/hex_0.1.0_x64-setup.exe
+56075fdeea57e211eeffe11d7dfbd4755cfef5be2a99865fce4c1b9f540e4cf4  releases/family-arcade/FamilyArcade_1.0.2_x64-setup.exe
 57d52c32815e686b07363bcaea467647f546951e7e187827c91b2b7098f30d4d  releases/mini-chess/mini-chess_0.1.0_x64-setup.exe
 5912a70a845d26ff1d8e18d73f355167246e987730fe0f033b919d430969d1b6  releases/sowing/sowing_0.1.0_x64-setup.exe
 5c4a202c5699c2bb4b9690b93604c96bc815a1623c63e3c0a54bca59150a8850  releases/hue-garden/hue-garden_0.1.0_x64-setup.exe
@@ -23,7 +24,6 @@ c54db87cf24974f913730b47b95692d5a3f5a03bfb596c8fec2888a57d55c27e  releases/ballo
 da2832a51a3a21f21bb8aa558e70d986378606d3fc9545c9cfb16c09f83d3107  releases/mill/mill_0.1.0_x64-setup.exe
 da4a46ce8919a8fdcab9107279e4046bed1c69feba00c8a99dacb5d0bf04cfcd  releases/boxes/boxes_0.1.0_x64-setup.exe
 e10c61947eda97580f8e19a291a6bc170c10491e7c531b8a14139e94e55ea964  releases/blokus/blokus_1.7.1_x64-setup.exe
-ef206d92a3f538dd73c6153ea14533c6d42d61894c02f85d722015263c7f2dbc  releases/family-arcade/FamilyArcade_1.0.1_x64-setup.exe
 ef9752559774fef94675fefbcf1fca44c1d8e75da06d1c298161fd6c8cc62c8b  releases/little-go/little-go_0.1.0_x64-setup.exe
 f3d2e946e47079e03e51017e34b0a49afeb5ac0201c496c0ccb48b4dc44562f7  releases/tables/tables_0.1.0_x64-setup.exe
 fa75df9a13e9700951e084fda935e269d73849227f06168cb43662bba3094b34  releases/flip/flip_0.1.0_x64-setup.exe

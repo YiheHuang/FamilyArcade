@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const repo = 'https://github.com/YiheHuang/FamilyArcade';
-const hubUrl = `${repo}/releases/download/family-arcade-v1.0.1/FamilyArcade_1.0.1_x64-setup.exe`;
+const hubUrl = `${repo}/releases/download/family-arcade-v1.0.2/FamilyArcade_1.0.2_x64-setup.exe`;
 const webviewUrl = `${repo}/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe`;
 
 const extra = {
@@ -84,7 +84,7 @@ const en = `English · [简体中文](README.zh-CN.md)
 
 [![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](${hubUrl})
 
-**All-in-one:** [Family Arcade 1.0.1](${hubUrl}) · **WebView2 runtime (only if needed):** [offline x64](${webviewUrl})
+**All-in-one:** [Family Arcade 1.0.2](${hubUrl}) · **WebView2 runtime (only if needed):** [offline x64](${webviewUrl})
 
 ## Classics
 
@@ -130,7 +130,7 @@ const zh = `[English](README.md) · 简体中文
 
 [![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](${hubUrl})
 
-**一体化安装包：** [Family Arcade 1.0.1](${hubUrl}) · **WebView2 运行时（仅在需要时）：** [离线 x64](${webviewUrl})
+**一体化安装包：** [Family Arcade 1.0.2](${hubUrl}) · **WebView2 运行时（仅在需要时）：** [离线 x64](${webviewUrl})
 
 ## 经典
 

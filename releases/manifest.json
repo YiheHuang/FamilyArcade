@@ -51,9 +51,9 @@
   {
     "slug": "family-arcade",
     "name": "Family Arcade",
-    "version": "1.0.1",
-    "file": "releases/family-arcade/FamilyArcade_1.0.1_x64-setup.exe",
-    "bytes": 313510829
+    "version": "1.0.2",
+    "file": "releases/family-arcade/FamilyArcade_1.0.2_x64-setup.exe",
+    "bytes": 313519850
   },
   {
     "slug": "field-and-wall",
