@@ -29,7 +29,10 @@ $files += Get-ChildItem $packages -Filter *.zip | Sort-Object Name | Select-Obje
 foreach ($file in $files) {
   $assetName = Split-Path $file -Leaf
   $exists = $release.assets | Where-Object { $_.name -eq $assetName }
-  if ($exists) {
+  if ($exists -and $assetName -eq 'packages.json') {
+    Invoke-RestMethod -Method Delete -Headers $headers -Uri "https://api.github.com/repos/YiheHuang/FamilyArcade/releases/assets/$($exists.id)" -TimeoutSec 30 | Out-Null
+    Write-Host "replaced catalog $assetName"
+  } elseif ($exists) {
     Write-Host "skip $assetName"
     continue
   }
