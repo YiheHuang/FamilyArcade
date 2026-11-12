@@ -1,82 +1,180 @@
-import { apply, legalMoves, winningLine, type GameState, type Mark } from '../game/idiom-chain';
+/**
+ * Four deterministic AI opponents for Idiom Chain.
+ *
+ * Every level searches the bundled dictionary by the required first character
+ * (or first syllable in homophone mode). Difficulty is expressed through the
+ * value it places on idiom frequency, length, rarity points and the number of
+ * continuations it leaves on the table. No level reads a clock or Math.random;
+ * callers inject the RNG.
+ */
+
+import {
+  chainCandidates,
+  isRare,
+  type Idiom,
+} from '../game/dictionary';
+import {
+  chainableIdioms,
+  lastEntry,
+  usedTexts,
+  type GameState,
+} from '../game/idiom-chain';
 
 export const AI_LEVELS = ['companion', 'easy', 'normal', 'hard'] as const;
 export type AiLevel = (typeof AI_LEVELS)[number];
 
 type Rng = () => number;
 
-const opponent = (mark: Mark): Mark => (mark === 'X' ? 'O' : 'X');
-
-function minimax(state: GameState, me: Mark, depth: number, alpha: number, beta: number): number {
-  if (state.status === 'won') return state.winner === me ? 10 - depth : depth - 10;
-  if (state.status === 'draw') return 0;
-  const maximizing = state.turn === me;
-  let best = maximizing ? -Infinity : Infinity;
-  for (const move of legalMoves(state)) {
-    const next = apply(state, move).state;
-    const score = minimax(next, me, depth + 1, alpha, beta);
-    if (maximizing) {
-      best = Math.max(best, score);
-      alpha = Math.max(alpha, score);
-    } else {
-      best = Math.min(best, score);
-      beta = Math.min(beta, score);
-    }
-    if (beta <= alpha) break;
-  }
-  return best;
+interface Option {
+  idiom: Idiom;
+  length: number;
+  rare: boolean;
+  points: number;
+  nextCount: number;
+  /** Best reply available to the next player after this idiom. */
+  replyValue: number;
+  jitter: number;
 }
 
-function bestBy(state: GameState, score: (next: GameState) => number): number {
+function clampRng(rng: Rng): number {
+  const value = rng();
+  if (!Number.isFinite(value)) return 0;
+  return Math.min(0.999999999, Math.max(0, value));
+}
+
+function valueOf(idiom: Idiom, lengthWeight: number): number {
+  return 1 + (isRare(idiom) ? 2 : 0) + idiom.frequency * 0.15 - lengthWeight * [...idiom.text].length;
+}
+
+function optionsFor(state: GameState): Option[] {
+  const candidates = chainableIdioms(state);
+  if (candidates.length === 0) return [];
+  const previous = lastEntry(state);
+  const used = usedTexts(state);
+  return candidates.map((idiom) => {
+    const trial = new Set(used);
+    trial.add(idiom.text);
+    const replies = chainCandidates(idiom, state.config.homophone, trial);
+    let replyValue = 0;
+    for (const reply of replies) {
+      replyValue = Math.max(replyValue, valueOf(reply, 0.15));
+    }
+    return {
+      idiom,
+      length: [...idiom.text].length,
+      rare: isRare(idiom),
+      points: 1 + (isRare(idiom) ? 2 : 0),
+      nextCount: replies.length,
+      replyValue: previous ? replyValue : 0,
+      jitter: 0,
+    };
+  });
+}
+
+function chooseBy(
+  options: Option[],
+  score: (option: Option) => number,
+  rng: Rng,
+): Option {
   let best = -Infinity;
-  let picks: number[] = [];
-  for (const move of legalMoves(state)) {
-    const next = apply(state, move).state;
-    const value = score(next);
+  let picks: Option[] = [];
+  for (const option of options) {
+    const value = score(option);
     if (value > best + 1e-9) {
       best = value;
-      picks = [move];
-    } else if (Math.abs(value - best) < 1e-9) {
-      picks.push(move);
+      picks = [option];
+    } else if (Math.abs(value - best) <= 1e-9) {
+      picks.push(option);
     }
   }
-  return picks[0] ?? -1;
+  const index = Math.floor(clampRng(rng) * picks.length);
+  return picks[index] ?? options[0];
 }
 
-export function chooseMove(state: GameState, level: AiLevel, rng: Rng = Math.random): number {
-  const moves = legalMoves(state);
-  if (moves.length === 0) return -1;
-  const me = state.turn;
-  const pick = (items: number[]) => items[Math.floor(rng() * items.length)] ?? items[0];
+function random(options: Option[], rng: Rng): Option {
+  return options[Math.floor(clampRng(rng) * options.length)] ?? options[0];
+}
 
-  if (level === 'easy') {
-    if (rng() < 0.45) return pick(moves);
-    return bestBy(state, (next) => {
-      const line = winningLine(next.board);
-      if (line && next.winner === me) return 100;
-      return next.board[4] === me ? 2 : 0;
-    });
-  }
+/**
+ * Choose the AI's next idiom. Returns null when the chain has no continuation;
+ * the caller then records a no-move strike.
+ */
+export function chooseIdiom(
+  state: GameState,
+  level: AiLevel,
+  rng: Rng = () => 0.5,
+): Idiom | null {
+  if (state.status !== 'playing') return null;
+  const options = optionsFor(state);
+  if (options.length === 0) return null;
+
+  const deadPenalty = (option: Option): number => (option.nextCount === 0 ? 80 : 0);
 
   if (level === 'companion') {
-    // Take a win, block a loss, otherwise prefer the middle and corners.
-    for (const move of moves) {
-      if (apply(state, move).state.winner === me) return move;
+    // Gentle: common, short idioms with a comfortable number of replies.
+    return chooseBy(
+      options,
+      (option) =>
+        option.idiom.frequency * 3 +
+        Math.min(option.nextCount, 8) * 0.35 -
+        option.length * 0.5 -
+        (option.rare ? 3 : 0) -
+        deadPenalty(option) +
+        clampRng(rng) * 1.2,
+      rng,
+    ).idiom;
+  }
+
+  if (level === 'easy') {
+    // Easy: often reaches for a familiar first idea, sometimes plays at random.
+    if (clampRng(rng) < 0.34) {
+      const live = options.filter((option) => option.nextCount > 0);
+      return random(live.length ? live : options, rng).idiom;
     }
-    const opp = opponent(me);
-    const safe = moves.filter((move) => {
-      const next = apply(state, move).state;
-      if (next.status !== 'playing') return true;
-      return !legalMoves(next).some((reply) => apply(next, reply).state.winner === opp);
-    });
-    const preferences = [4, 0, 2, 6, 8, 1, 3, 5, 7].filter((cell) => safe.includes(cell));
-    return preferences[0] ?? safe[0] ?? pick(moves);
+    return chooseBy(
+      options,
+      (option) =>
+        option.idiom.frequency * 2.2 +
+        Math.min(option.nextCount, 10) * 0.12 -
+        option.length * 0.25 -
+        deadPenalty(option) +
+        clampRng(rng) * 3.4,
+      rng,
+    ).idiom;
   }
 
   if (level === 'normal') {
-    if (rng() < 0.18) return pick(moves);
-    return bestBy(state, (next) => minimax(next, me, 0, -Infinity, Infinity));
+    // Normal: balances points, familiar language and keeping the chain open.
+    return chooseBy(
+      options,
+      (option) =>
+        option.points * 1.8 +
+        option.idiom.frequency * 0.7 +
+        Math.min(option.nextCount, 12) * 0.4 -
+        option.length * 0.12 -
+        deadPenalty(option) +
+        clampRng(rng) * 0.9,
+      rng,
+    ).idiom;
   }
 
-  return bestBy(state, (next) => minimax(next, me, 0, -Infinity, Infinity));
+  // Hard: takes high-value rare idioms, but refuses to leave an easy reply
+  // worth more than its own play. A small two-ply estimate is enough for a
+  // family table and keeps every decision explainable.
+  return chooseBy(
+    options,
+    (option) =>
+      option.points * 4.2 +
+      Math.min(option.nextCount, 14) * 0.55 -
+      option.replyValue * 1.35 -
+      option.length * 0.05 -
+      deadPenalty(option) +
+      clampRng(rng) * 0.35,
+    rng,
+  ).idiom;
+}
+
+/** True when the active seat has at least one legal dictionary continuation. */
+export function hasMove(state: GameState): boolean {
+  return chainableIdioms(state).length > 0;
 }
