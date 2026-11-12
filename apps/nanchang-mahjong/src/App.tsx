@@ -1,10 +1,32 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import QRCode from 'qrcode';
 import { LanGuest, LanHost, guestParams, newRoomCode, type LanPublicPeer } from '@family-arcade/lan';
-import { chooseMove, type AiLevel } from './ai/ai';
-import { Board, MarkGlyph } from './components/Board';
-import { apply, applySeat, setup, view, type GameState } from './game/nanchang-mahjong';
-import { detectLang, t, type Lang } from './i18n';
+import { chooseAiAction, hintFor, type AiLevel, type Hint } from './ai/ai';
+import { Discards, Hand, HandBacks, Melds, SpiritBadge, TileButton, TileBack } from './components/Tiles';
+import {
+  claim,
+  currentClaim,
+  declareKong,
+  declareWin,
+  discard,
+  draw,
+  nextHand,
+  passClaim,
+  setup,
+  sortTiles,
+  tileLabel,
+  view,
+  windOfSeat,
+  type ClaimOption,
+  type GameState,
+  type KongOption,
+  type SeatView,
+  type Tile,
+  type WinMethod,
+  type WinPattern,
+} from './game/nanchang-mahjong';
+import { makeDemoState, type DemoKind } from './demo';
+import { detectLang, t, type Lang, type MessageKey } from './i18n';
 import {
   guestWsUrl,
   hostWsUrl,
@@ -19,37 +41,103 @@ import {
   loadSave,
   recordResult,
   saveGame,
-  type Record,
+  type FamilyRecord,
+  type RecordMode,
   type SavedGame,
 } from './storage';
 import { chime } from './sound';
 
-type Screen = 'home' | 'setup' | 'game' | 'rules' | 'lan';
+type Screen = 'home' | 'setup' | 'game' | 'rules' | 'record' | 'lan';
 type Mode = 'ai' | 'local' | 'lan-host' | 'lan-guest';
 
-const AI_LEVELS: { id: AiLevel; label: string; note: string }[] = [
-  { id: 'companion', label: 'companion', note: 'companionHint' },
-  { id: 'easy', label: 'easy', note: 'easyHint' },
-  { id: 'normal', label: 'normal', note: 'normalHint' },
-  { id: 'hard', label: 'hard', note: 'hardHint' },
+const LEVELS: { id: AiLevel; label: MessageKey; note: MessageKey }[] = [
+  { id: 'companion', label: 'companion', note: 'companionNote' },
+  { id: 'easy', label: 'easy', note: 'easyNote' },
+  { id: 'normal', label: 'normal', note: 'normalNote' },
+  { id: 'hard', label: 'hard', note: 'hardNote' },
 ];
 
-function statusText(lang: Lang, state: GameState): string {
-  if (state.status === 'won') return t(lang, state.winner === 'X' ? 'xWins' : 'oWins');
-  if (state.status === 'draw') return t(lang, 'draw');
-  return t(lang, state.turn === 'X' ? 'turnX' : 'turnO');
+const PATTERN_KEY: Record<WinPattern, MessageKey> = {
+  basic: 'patternBasic',
+  'small-seven-pairs': 'patternSmallSevenPairs',
+  'big-seven-pairs': 'patternBigSevenPairs',
+  'thirteen-scattered': 'patternThirteenScattered',
+  'seven-star': 'patternSevenStar',
+};
+
+const METHOD_KEY: Record<WinMethod, MessageKey> = {
+  'self-draw': 'methodSelfDraw',
+  discard: 'methodDiscard',
+  'rob-kong': 'methodRobKong',
+  heavenly: 'methodHeavenly',
+  human: 'methodHuman',
+};
+
+const WIND_KEYS: MessageKey[] = ['seatEast', 'seatSouth', 'seatWest', 'seatNorth'];
+
+function windKey(seat: number, dealer: number): MessageKey {
+  const wind = windOfSeat(seat, dealer);
+  const index = Number(wind.slice(1)) - 1;
+  return WIND_KEYS[index] ?? 'seatEast';
+}
+
+function windBadge(seat: number, dealer: number, lang: Lang): string {
+  const wind = windOfSeat(seat, dealer);
+  const index = Number(wind.slice(1)) - 1;
+  if (lang === 'zh') return ['东', '南', '西', '北'][index] ?? '东';
+  return ['E', 'S', 'W', 'N'][index] ?? 'E';
+}
+
+function signed(value: number): string {
+  return value > 0 ? `+${value}` : String(value);
+}
+
+function nextDecisionSeat(state: GameState): number {
+  if (state.phase === 'claim') return currentClaim(state)?.seat ?? 0;
+  return state.turn;
+}
+
+function soundFor(previous: GameState, next: GameState): Parameters<typeof chime>[0] {
+  if (next.phase === 'game-over' || next.phase === 'hand-over') {
+    return next.win ? 'win' : 'draw-hand';
+  }
+  const meldBefore = previous.melds.reduce((sum, list) => sum + list.length, 0);
+  const meldAfter = next.melds.reduce((sum, list) => sum + list.length, 0);
+  if (meldAfter > meldBefore) return 'meld';
+  const handBefore = previous.hands.reduce((sum, hand) => sum + hand.length, 0);
+  const handAfter = next.hands.reduce((sum, hand) => sum + hand.length, 0);
+  if (handAfter > handBefore) return 'draw';
+  return 'discard';
 }
 
 export default function App() {
+  const params = useMemo(() => guestParams(), []);
+  const demoKind = useMemo<DemoKind | null>(() => {
+    if (typeof location === 'undefined') return null;
+    const value = new URLSearchParams(location.search).get('demo');
+    return value === 'mid' || value === 'end' || value === 'over' ? value : null;
+  }, []);
+
+  const homeSpirit = useMemo(() => makeDemoState('mid').spirit, []);
   const [lang, setLang] = useState<Lang>(() => detectLang());
-  const [screen, setScreen] = useState<Screen>('home');
-  const [mode, setMode] = useState<Mode>('ai');
+  const [screen, setScreen] = useState<Screen>(() => (demoKind ? 'game' : 'home'));
+  const [mode, setMode] = useState<Mode>(() => (params ? 'lan-guest' : 'ai'));
   const [level, setLevel] = useState<AiLevel>('normal');
-  const [state, setState] = useState<GameState>(() => setup('X'));
+  const [state, setState] = useState<GameState>(() =>
+    demoKind
+      ? makeDemoState(demoKind)
+      : setup({ rng: Math.random, dealer: 0, matchTarget: 100 }),
+  );
   const [history, setHistory] = useState<GameState[]>([]);
-  const [hint, setHint] = useState<number | null>(null);
-  const [record, setRecord] = useState<Record>(() => loadRecord());
-  const [saved, setSaved] = useState<SavedGame | null>(() => loadSave());
+  const [selected, setSelected] = useState<Tile | null>(null);
+  const [hint, setHint] = useState<Hint | null>(null);
+  const [toast, setToast] = useState('');
+  const [aiThinking, setAiThinking] = useState(false);
+  const [kongOpen, setKongOpen] = useState(false);
+  const [localReveal, setLocalReveal] = useState(true);
+  const [record, setRecord] = useState<FamilyRecord>(() => loadRecord());
+  const [saved, setSaved] = useState<SavedGame | null>(() => (demoKind ? null : loadSave()));
+  const [clearArmed, setClearArmed] = useState(false);
   const [soundOn, setSoundOn] = useState<boolean>(() => {
     try {
       return localStorage.getItem('familyarcade.nanchang-mahjong.sound') !== 'off';
@@ -57,9 +145,13 @@ export default function App() {
       return true;
     }
   });
-  const [toast, setToast] = useState('');
-  const [aiThinking, setAiThinking] = useState(false);
-  const [recorded, setRecorded] = useState(false);
+  const [motionOn, setMotionOn] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('familyarcade.nanchang-mahjong.motion') !== 'off';
+    } catch {
+      return true;
+    }
+  });
 
   const [lanInfo, setLanInfo] = useState<LanServerInfo | null>(null);
   const [lanHost, setLanHost] = useState<LanHost | null>(null);
@@ -69,24 +161,45 @@ export default function App() {
   const [lanQr, setLanQr] = useState('');
   const [lanBusy, setLanBusy] = useState(false);
   const [lanError, setLanError] = useState('');
+  const [hostName, setHostName] = useState(() => {
+    try {
+      return localStorage.getItem('familyarcade.nanchang-mahjong.hostName') ?? '';
+    } catch {
+      return '';
+    }
+  });
+  const [humanSeats, setHumanSeats] = useState<number[]>([0]);
   const [guest, setGuest] = useState<LanGuest | null>(null);
-  const [guestView, setGuestView] = useState<ReturnType<typeof view> | null>(null);
+  const [guestView, setGuestView] = useState<SeatView | null>(null);
   const [guestStarted, setGuestStarted] = useState(false);
-  const [guestName, setGuestName] = useState(() => guestParams()?.name ?? '');
-  const [guestCode, setGuestCode] = useState(() => guestParams()?.code ?? '');
-  const [guestRoom] = useState(() => guestParams()?.room ?? '');
+  const [guestName, setGuestName] = useState(() => params?.name ?? '');
+  const [guestCode, setGuestCode] = useState(() => params?.code || params?.room || '');
+  const [guestRoom] = useState(() => params?.room ?? '');
   const [guestConnecting, setGuestConnecting] = useState(false);
+  const [guestPlayers, setGuestPlayers] = useState<LanPublicPeer[]>([]);
 
   const stateRef = useRef(state);
   const hostRef = useRef<LanHost | null>(null);
+  const hostStartedRef = useRef(false);
+  const humanSeatsRef = useRef<number[]>([0]);
+  const guestRef = useRef<LanGuest | null>(null);
+  const autoJoinRef = useRef(false);
+  const finishRecordedRef = useRef(Boolean(demoKind && demoKind !== 'mid'));
+  const lastDecisionRef = useRef<number>(-1);
+  const aiTimerRef = useRef<number | null>(null);
+  const commitRef = useRef<(next: GameState, previous: GameState, history: boolean) => void>(() => undefined);
+
   useEffect(() => {
     stateRef.current = state;
   }, [state]);
 
-  const tr = useCallback((key: Parameters<typeof t>[1]) => t(lang, key), [lang]);
+  useEffect(() => {
+    humanSeatsRef.current = humanSeats;
+  }, [humanSeats]);
 
   useEffect(() => {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = t(lang, 'title');
     try {
       localStorage.setItem('familyarcade.lang', lang);
     } catch {
@@ -97,169 +210,486 @@ export default function App() {
   useEffect(() => {
     try {
       localStorage.setItem('familyarcade.nanchang-mahjong.sound', soundOn ? 'on' : 'off');
+      localStorage.setItem('familyarcade.nanchang-mahjong.motion', motionOn ? 'on' : 'off');
     } catch {
       /* ignore */
     }
-  }, [soundOn]);
+  }, [soundOn, motionOn]);
 
   useEffect(() => {
     if (!toast) return;
-    const timer = window.setTimeout(() => setToast(''), 2200);
+    const timer = window.setTimeout(() => setToast(''), 4200);
     return () => window.clearTimeout(timer);
   }, [toast]);
 
-  const finish = useCallback(
-    (next: GameState, currentMode: Mode) => {
-      if (next.status === 'playing' || recorded) return;
-      setRecorded(true);
-      if (currentMode !== 'lan-host' && currentMode !== 'lan-guest') {
-        setRecord(recordResult(next));
-        clearSave();
-        setSaved(null);
-      }
-      if (soundOn) chime(next.status === 'draw' ? 'draw' : 'win');
-    },
-    [recorded, soundOn],
+  const lastGuestViewRef = useRef<SeatView | null>(null);
+  useEffect(() => {
+    const next = guestView;
+    if (!next) {
+      lastGuestViewRef.current = null;
+      return;
+    }
+    const previous = lastGuestViewRef.current;
+    lastGuestViewRef.current = next;
+    if (!previous || previous.version === next.version || !soundOn) return;
+    if (next.phase === 'hand-over' || next.phase === 'game-over') {
+      chime(next.win ? 'win' : 'draw-hand');
+      return;
+    }
+    const meldsBefore = previous.melds.reduce((sum, list) => sum + list.length, 0);
+    const meldsAfter = next.melds.reduce((sum, list) => sum + list.length, 0);
+    if (meldsAfter > meldsBefore) chime('meld');
+    else if (next.hand.length > previous.hand.length || next.drawn) chime('draw');
+    else chime('discard');
+  }, [guestView, soundOn]);
+
+  const tr = useCallback(
+    (key: MessageKey, values?: Record<string, string | number>) => t(lang, key, values),
+    [lang],
   );
+
+  const sendViews = useCallback((next: GameState) => {
+    const host = hostRef.current;
+    if (!host) return;
+    for (const seat of humanSeatsRef.current) {
+      if (seat === 0) continue;
+      host.sendView(seat, view(next, seat));
+    }
+  }, []);
 
   const commit = useCallback(
-    (next: GameState, currentMode: Mode, previous: GameState) => {
-      setHistory((items) => [...items, previous]);
+    (next: GameState, previous: GameState, addHistory: boolean) => {
+      if (addHistory) setHistory((items) => [...items, previous]);
       setState(next);
+      setSelected(null);
       setHint(null);
-      if (soundOn) chime('place');
-      finish(next, currentMode);
-      if (currentMode === 'ai' || currentMode === 'local') {
-        if (next.status === 'playing') saveGame({ state: next, mode: currentMode, level });
+      setKongOpen(false);
+      setAiThinking(false);
+      if (soundOn) chime(soundFor(previous, next));
+      if (mode === 'ai' || mode === 'local') {
+        if (next.phase === 'game-over') clearSave();
+        else saveGame({ state: next, mode, level });
         setSaved(null);
       }
-      if (currentMode === 'lan-host' && hostRef.current) {
-        hostRef.current.sendView(1, view(next, 1));
-        if (next.status !== 'playing') hostRef.current.sendResult(view(next, 1));
-      }
-    },
-    [finish, level, soundOn],
-  );
-
-  const playAt = useCallback(
-    (index: number) => {
-      if (mode === 'lan-guest') {
-        if (guestView?.canMove && guestView.board[index] === null) {
-          guest?.sendIntent({ type: 'place', index });
+      if (mode === 'lan-host') sendViews(next);
+      if ((next.phase === 'hand-over' || next.phase === 'game-over') && !finishRecordedRef.current) {
+        finishRecordedRef.current = true;
+        if (!demoKind) {
+          const sheet = next.scoreSheet;
+          const recordMode: RecordMode =
+            mode === 'lan-host' ? 'lan' : mode === 'local' ? 'local' : 'ai';
+          setRecord(
+            recordResult(
+              {
+                winner: next.win?.seat ?? null,
+                pattern: next.win?.pattern ?? null,
+                deltas: sheet?.deltas ?? [0, 0, 0, 0],
+                hand: next.handNumber,
+              },
+              { mode: recordMode, level },
+            ),
+          );
         }
-        return;
       }
-      if (mode === 'lan-host' && !lanPlayers[1]?.connected) return;
-      const result = mode === 'lan-host' ? applySeat(state, 0, index) : apply(state, index);
-      if (!result.ok) return;
-      commit(result.state, mode, state);
     },
-    [commit, guest, guestView, lanPlayers, mode, state],
+    [demoKind, level, mode, sendViews, soundOn],
   );
 
-  // AI reply
-  useEffect(() => {
-    if (mode !== 'ai' || state.status !== 'playing' || state.turn !== 'O') return;
-    setAiThinking(true);
-    const timer = window.setTimeout(() => {
-      const move = chooseMove(state, level);
-      setAiThinking(false);
-      if (move < 0) return;
-      const result = apply(state, move);
-      if (!result.ok) return;
-      commit(result.state, 'ai', state);
-    }, 380);
-    return () => {
-      window.clearTimeout(timer);
-      setAiThinking(false);
-    };
-  }, [commit, level, mode, state]);
+  commitRef.current = commit;
 
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setScreen('home');
-        return;
-      }
-      if (screen !== 'game') return;
-      const number = Number(event.key);
-      if (Number.isInteger(number) && number >= 1 && number <= 9) {
-        event.preventDefault();
-        playAt(number - 1);
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [playAt, screen]);
+  const startGame = useCallback(
+    (nextMode: 'ai' | 'local') => {
+      const next = setup({ rng: Math.random, dealer: 0, matchTarget: 100 });
+      setMode(nextMode);
+      setState(next);
+      setHistory([]);
+      setSelected(null);
+      setHint(null);
+      setKongOpen(false);
+      setLocalReveal(nextMode !== 'local');
+      lastDecisionRef.current = -1;
+      finishRecordedRef.current = false;
+      setScreen('game');
+      setSaved(null);
+      clearSave();
+    },
+    [],
+  );
 
-  // Auto-join when the URL contains a room.
-  useEffect(() => {
-    if (!guestRoom) return;
-    setScreen('lan');
-    setMode('lan-guest');
-  }, [guestRoom]);
+  const goHome = useCallback(() => {
+    if ((mode === 'ai' || mode === 'local') && (state.phase === 'draw' || state.phase === 'discard' || state.phase === 'claim' || state.phase === 'hand-over')) {
+      saveGame({ state, mode, level });
+      setSaved({ version: 1, state, mode, level, savedAt: Date.now() });
+    }
+    try {
+      hostRef.current?.sendResult({ kind: 'closed' });
+    } catch {
+      /* socket may be gone */
+    }
+    hostRef.current?.close();
+    hostRef.current = null;
+    hostStartedRef.current = false;
+    guestRef.current?.close();
+    guestRef.current = null;
+    setLanHost(null);
+    setLanPlayers([]);
+    setLanInfo(null);
+    setLanCode('');
+    setLanInvite('');
+    setLanQr('');
+    setLanError('');
+    setGuest(null);
+    setGuestView(null);
+    setGuestStarted(false);
+    setGuestPlayers([]);
+    setHumanSeats([0]);
+    setScreen('home');
+  }, [level, mode, state]);
 
-  const startLocal = (nextMode: 'ai' | 'local') => {
-    const next = setup('X');
-    setMode(nextMode);
-    setState(next);
-    setHistory([]);
-    setRecorded(false);
-    setScreen('game');
-    clearSave();
-    setSaved(null);
-  };
-
-  const startAi = () => {
-    setMode('ai');
-    setScreen('setup');
-  };
-
-  const resume = () => {
+  const resume = useCallback(() => {
     if (!saved) return;
     setMode(saved.mode);
     setLevel(saved.level);
     setState(saved.state);
     setHistory([]);
-    setRecorded(saved.state.status !== 'playing');
+    setSelected(null);
+    setHint(null);
+    setKongOpen(false);
+    finishRecordedRef.current = saved.state.phase === 'hand-over' || saved.state.phase === 'game-over';
+    lastDecisionRef.current = -1;
+    setLocalReveal(saved.mode !== 'local');
     setScreen('game');
     setSaved(null);
-  };
+  }, [saved]);
 
-  const undo = () => {
-    if (history.length === 0) return;
+  const localActor = mode === 'local' && (state.phase === 'draw' || state.phase === 'discard' || state.phase === 'claim')
+    ? nextDecisionSeat(state)
+    : 0;
+  const shownSeat = mode === 'lan-guest' ? (guestView?.seat ?? 0) : mode === 'local' ? localActor : 0;
+  const localView = useMemo(() => view(state, shownSeat), [state, shownSeat]);
+  const shown: SeatView = guestView ?? localView;
+
+  useEffect(() => {
+    if (mode !== 'local') {
+      setLocalReveal(true);
+      return;
+    }
+    if (state.phase === 'hand-over' || state.phase === 'game-over') {
+      setLocalReveal(true);
+      return;
+    }
+    const seat = nextDecisionSeat(state);
+    if (seat !== lastDecisionRef.current) {
+      lastDecisionRef.current = seat;
+      setLocalReveal(false);
+    }
+  }, [mode, state.phase, state.turn, state.claimIndex, state.version]);
+
+  const hidden = mode === 'local' && !localReveal &&
+    (state.phase === 'draw' || state.phase === 'discard' || state.phase === 'claim');
+
+  useEffect(() => {
+    if (selected && !shown.hand.includes(selected)) setSelected(null);
+  }, [selected, shown.hand]);
+
+  const isGuest = mode === 'lan-guest';
+  const shownPhase = shown.phase;
+  const shownTurn = shown.turn;
+
+  useEffect(() => {
+    if (isGuest || hidden || shownPhase === 'hand-over' || shownPhase === 'game-over') {
+      setAiThinking(false);
+      return;
+    }
+    const seat = shownPhase === 'claim' ? shown.claimSeat : shownTurn;
+    if (seat === null || seat === undefined || seat < 0) {
+      setAiThinking(false);
+      return;
+    }
+    const human = mode === 'ai' ? seat === 0 : mode === 'lan-host' ? humanSeats.includes(seat) : true;
+    if (mode === 'local' || human) {
+      setAiThinking(false);
+      return;
+    }
+    setAiThinking(true);
+    if (aiTimerRef.current !== null) window.clearTimeout(aiTimerRef.current);
+    aiTimerRef.current = window.setTimeout(() => {
+      const current = stateRef.current;
+      const actor = current.phase === 'claim' ? current.claimQueue[current.claimIndex]?.seat : current.turn;
+      if (actor === undefined || actor < 0) {
+        setAiThinking(false);
+        return;
+      }
+      const action = chooseAiAction(current, actor, level, Math.random);
+      if (!action) {
+        setAiThinking(false);
+        return;
+      }
+      let result;
+      switch (action.type) {
+        case 'draw':
+          result = draw(current, actor);
+          break;
+        case 'discard':
+          result = discard(current, actor, action.tile);
+          break;
+        case 'win':
+          result = declareWin(current, actor);
+          break;
+        case 'kong':
+          result = declareKong(current, actor, action.option);
+          break;
+        case 'claim':
+          result = claim(current, actor, action.option);
+          break;
+        case 'pass':
+          result = passClaim(current, actor);
+          break;
+        default:
+          result = { ok: false, state: current };
+      }
+      setAiThinking(false);
+      if (result.ok) commit(result.state, current, false);
+    }, 420);
+    return () => {
+      if (aiTimerRef.current !== null) {
+        window.clearTimeout(aiTimerRef.current);
+        aiTimerRef.current = null;
+      }
+    };
+  }, [commit, hidden, humanSeats, isGuest, level, mode, shown.claimSeat, shownPhase, shownTurn, state.version]);
+
+  const canHintNow =
+    !isGuest &&
+    !hidden &&
+    ((shownPhase === 'discard' && shownTurn === shownSeat) ||
+      (shownPhase === 'claim' && shown.claimSeat === shownSeat));
+
+  const showHint = useCallback(() => {
+    if (!canHintNow) return;
+    const seat = shownPhase === 'claim' ? shown.claimSeat : shown.turn;
+    if (seat === null || seat === undefined || seat < 0) return;
+    const nextHint = hintFor(state, seat);
+    if (!nextHint) return;
+    setHint(nextHint);
+    if (nextHint.tile) setSelected(nextHint.tile);
+    if (nextHint.action.type === 'kong') setKongOpen(true);
+    const tile = nextHint.tile ?? state.lastDiscard?.tile;
+    const pattern = nextHint.pattern ? tr(PATTERN_KEY[nextHint.pattern]) : '';
+    let text = '';
+    switch (nextHint.reason) {
+      case 'win':
+        text = tr('hintWin', { pattern });
+        break;
+      case 'kong':
+        text = tr('hintKong');
+        break;
+      case 'claim-win':
+        text = tr('hintClaimWin', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      case 'claim-gang':
+        text = tr('hintClaimGang', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      case 'claim-peng':
+        text = tr('hintClaimPeng', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      case 'claim-chi':
+        text = tr('hintClaimChi', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      case 'pass':
+        text = tr('hintPass');
+        break;
+      case 'discard-tenpai':
+        text = tr('hintDiscardTenpai', { tile: tile ? tileLabel(tile, lang) : '', n: nextHint.waits ?? 0 });
+        break;
+      case 'discard-spirit':
+        text = tr('hintDiscardSpirit', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      case 'discard-scatter':
+        text = tr('hintDiscardScatter', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      case 'discard-safe':
+        text = tr('hintDiscardSafe', { tile: tile ? tileLabel(tile, lang) : '' });
+        break;
+      default:
+        text = tr('hintDiscardIsolated', { tile: tile ? tileLabel(tile, lang) : '' });
+    }
+    setToast(text);
+  }, [canHintNow, lang, shown.claimSeat, shown.turn, shownPhase, state, tr]);
+
+  const undo = useCallback(() => {
+    if (isGuest || mode === 'lan-host' || history.length === 0) return;
     const previous = history[history.length - 1];
     setHistory((items) => items.slice(0, -1));
     setState(previous);
+    setSelected(null);
     setHint(null);
-    setRecorded(false);
-  };
+    setKongOpen(false);
+    finishRecordedRef.current = false;
+    if (mode === 'local') setLocalReveal(true);
+    setSaved(null);
+  }, [history, isGuest, mode]);
 
-  const showHint = () => {
-    if (state.status !== 'playing' || mode === 'lan-guest') return;
-    const move = chooseMove(state, 'hard');
-    if (move >= 0) {
-      setHint(move);
-      setToast(tr('hintText'));
+  const doDraw = useCallback(() => {
+    if (isGuest) {
+      if (shown.canDraw) guestRef.current?.sendIntent({ type: 'draw' });
+      return;
     }
-  };
+    const result = draw(state, shownSeat);
+    if (result.ok) commit(result.state, state, true);
+  }, [commit, isGuest, shown.canDraw, shownSeat, state]);
+
+  const doDiscard = useCallback(() => {
+    if (!selected) return;
+    if (isGuest) {
+      if (shown.canDiscard) guestRef.current?.sendIntent({ type: 'discard', tile: selected });
+      return;
+    }
+    const result = discard(state, shownSeat, selected);
+    if (result.ok) commit(result.state, state, true);
+  }, [commit, isGuest, selected, shown.canDiscard, shownSeat, state]);
+
+  const doWin = useCallback(() => {
+    if (isGuest) {
+      guestRef.current?.sendIntent({ type: 'win' });
+      return;
+    }
+    const result = declareWin(state, shownSeat);
+    if (result.ok) commit(result.state, state, true);
+  }, [commit, isGuest, shownSeat, state]);
+
+  const doClaim = useCallback(
+    (option: ClaimOption) => {
+      if (isGuest) {
+        guestRef.current?.sendIntent({ type: 'claim', option });
+        return;
+      }
+      const result = claim(state, shownSeat, option);
+      if (result.ok) commit(result.state, state, true);
+    },
+    [commit, isGuest, shownSeat, state],
+  );
+
+  const doPass = useCallback(() => {
+    if (isGuest) {
+      guestRef.current?.sendIntent({ type: 'pass' });
+      return;
+    }
+    const result = passClaim(state, shownSeat);
+    if (result.ok) commit(result.state, state, true);
+  }, [commit, isGuest, shownSeat, state]);
+
+  const doKong = useCallback(
+    (option: KongOption) => {
+      if (isGuest) {
+        guestRef.current?.sendIntent({ type: 'kong', option });
+        return;
+      }
+      const result = declareKong(state, shownSeat, option);
+      if (result.ok) commit(result.state, state, true);
+    },
+    [commit, isGuest, shownSeat, state],
+  );
+
+  const doNextHand = useCallback(() => {
+    if (isGuest) return;
+    const result = nextHand(state, Math.random);
+    if (!result.ok) return;
+    setState(result.state);
+    setHistory([]);
+    setSelected(null);
+    setHint(null);
+    setKongOpen(false);
+    setLocalReveal(mode !== 'local');
+    lastDecisionRef.current = -1;
+    finishRecordedRef.current = false;
+    if (mode === 'lan-host') sendViews(result.state);
+    if (mode === 'ai' || mode === 'local') saveGame({ state: result.state, mode, level });
+  }, [isGuest, level, mode, sendViews, state]);
+
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        if (screen === 'game') goHome();
+        else setScreen('home');
+        return;
+      }
+      if (screen !== 'game' || hidden) return;
+      if (event.key === 'd' || event.key === 'D') {
+        event.preventDefault();
+        if (shown.canDraw) doDraw();
+        return;
+      }
+      if (event.key === 'w' || event.key === 'W') {
+        event.preventDefault();
+        if (shown.canWin) doWin();
+        return;
+      }
+      if (event.key === 'k' || event.key === 'K') {
+        event.preventDefault();
+        if (shown.kongOptions.length > 0) setKongOpen((value) => !value);
+        return;
+      }
+      if (event.key === 'h' || event.key === 'H') {
+        event.preventDefault();
+        if (canHintNow) showHint();
+        return;
+      }
+      if (event.key === 'u' || event.key === 'U') {
+        event.preventDefault();
+        undo();
+        return;
+      }
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        doDiscard();
+        return;
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        const hand = shown.hand;
+        if (hand.length === 0) return;
+        const index = selected ? hand.indexOf(selected) : -1;
+        const nextIndex =
+          event.key === 'ArrowRight'
+            ? Math.min(hand.length - 1, index < 0 ? 0 : index + 1)
+            : Math.max(0, index < 0 ? hand.length - 1 : index - 1);
+        setSelected(hand[nextIndex]);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [canHintNow, doDiscard, doDraw, doWin, goHome, hidden, screen, selected, showHint, shown.canDraw, shown.canWin, shown.hand, shown.kongOptions.length, undo]);
 
   const closeLan = useCallback(() => {
+    try {
+      hostRef.current?.sendResult({ kind: 'closed' });
+    } catch {
+      /* socket may be gone */
+    }
     hostRef.current?.close();
     hostRef.current = null;
+    hostStartedRef.current = false;
+    const activeGuest = guestRef.current;
+    guestRef.current = null;
+    activeGuest?.close();
     setLanHost(null);
     setLanPlayers([]);
     setLanInfo(null);
+    setLanCode('');
     setLanInvite('');
     setLanQr('');
     setLanError('');
-    guest?.close();
     setGuest(null);
     setGuestView(null);
     setGuestStarted(false);
-  }, [guest]);
+    setGuestPlayers([]);
+    setHumanSeats([0]);
+  }, []);
 
-  const openLanHost = async () => {
+  const openLanHost = useCallback(async () => {
+    if (lanBusy) return;
+    closeLan();
     setScreen('lan');
     setMode('lan-host');
     setLanBusy(true);
@@ -268,361 +698,955 @@ export default function App() {
       const info = await startLanServer();
       setLanInfo(info);
       const code = newRoomCode();
-      const room = newRoomCode();
-      const host = await LanHost.create({
+      const name = hostName.trim() || tr('lanHostTag');
+      const created = await LanHost.create({
         wsUrl: hostWsUrl(info),
-        room,
+        room: code,
         code,
-        name: lang === 'zh' ? '主机' : 'Host',
-        maxPlayers: 2,
+        name,
+        maxPlayers: 4,
       });
-      hostRef.current = host;
-      setLanHost(host);
+      hostRef.current = created;
+      setLanHost(created);
       setLanCode(code);
-      host.onChange((players) => setLanPlayers(players));
-      host.onIntent((seat, intent) => {
-        const index = Number((intent as { index?: number } | null)?.index);
-        if (!Number.isInteger(index)) return;
-        const current = stateRef.current;
-        const result = applySeat(current, seat, index);
-        if (!result.ok) return;
-        commit(result.state, 'lan-host', current);
+      created.onChange((players) => {
+        if (hostRef.current !== created) return;
+        setLanPlayers(players);
+        created.sendLobby();
+        const humans = [0, ...players.filter((player) => player.connected && !player.host).map((player) => player.seat)];
+        humanSeatsRef.current = humans;
+        setHumanSeats(humans);
+        if (hostStartedRef.current) {
+          for (const seat of humans) {
+            if (seat !== 0) created.sendView(seat, view(stateRef.current, seat));
+          }
+        }
       });
-      host.onClose(() => setLanError(tr('lanClosed')));
-      const url = inviteUrl(info, room, code, lang === 'zh' ? '家人' : 'Guest');
+      created.onIntent((seat, intent) => {
+        if (hostRef.current !== created) return;
+        if (!humanSeatsRef.current.includes(seat)) return;
+        const value = intent as
+          | { type?: string; tile?: string; option?: ClaimOption | KongOption }
+          | null;
+        if (!value || typeof value.type !== 'string') return;
+        const current = stateRef.current;
+        let result;
+        switch (value.type) {
+          case 'draw':
+            result = draw(current, seat);
+            break;
+          case 'discard':
+            result = typeof value.tile === 'string' ? discard(current, seat, value.tile) : { ok: false, state: current };
+            break;
+          case 'win':
+            result = declareWin(current, seat);
+            break;
+          case 'claim':
+            result = value.option ? claim(current, seat, value.option as ClaimOption) : { ok: false, state: current };
+            break;
+          case 'pass':
+            result = passClaim(current, seat);
+            break;
+          case 'kong':
+            result = value.option ? declareKong(current, seat, value.option as KongOption) : { ok: false, state: current };
+            break;
+          default:
+            result = { ok: false, state: current };
+        }
+        if (result.ok) {
+          commitRef.current(result.state, current, false);
+        } else {
+          created.sendView(seat, view(current, seat));
+        }
+      });
+      created.onClose(() => {
+        if (hostRef.current !== created) return;
+        hostRef.current = null;
+        hostStartedRef.current = false;
+        setLanHost(null);
+        setLanPlayers([]);
+        setLanError(tr('hostLost'));
+      });
+      const url = inviteUrl(info, code, code, lang === 'zh' ? '家人' : 'Guest');
       setLanInvite(url);
-      setLanQr(await QRCode.toDataURL(url, { margin: 1, width: 320, color: { dark: '#2b2520', light: '#fffaf0' } }));
+      setLanQr(
+        await QRCode.toDataURL(url, {
+          margin: 1,
+          width: 320,
+          color: { dark: '#173d32', light: '#fff8e8' },
+        }),
+      );
     } catch (error) {
-      setLanError(error instanceof Error ? error.message : String(error));
+      setLanError(lanMessage(lang, error instanceof Error ? error.message : String(error)));
       hostRef.current?.close();
       hostRef.current = null;
+      setLanHost(null);
+      setLanPlayers([]);
     } finally {
       setLanBusy(false);
     }
-  };
+  }, [closeLan, hostName, lang, lanBusy, tr]);
 
-  const startLan = () => {
-    if (!lanHost) return;
-    const next = setup('X');
-    setState(next);
-    setHistory([]);
-    setRecorded(false);
-    setScreen('game');
-    lanHost.start();
-    lanHost.sendView(1, view(next, 1));
-  };
-
-  const joinGuest = async () => {
-    if (!guestRoom || !guestName.trim()) return;
+  const joinGuest = useCallback(async () => {
+    if (guestConnecting || guestRef.current) return;
+    const room = guestRoom || guestCode.trim();
+    const code = guestCode.trim() || room;
+    const name = guestName.trim() || tr('lanGuestTag');
+    if (!/^\d{4}$/.test(room)) {
+      setLanError(tr('wrongCode'));
+      return;
+    }
     setGuestConnecting(true);
     setLanError('');
     try {
       const joined = await LanGuest.join({
         wsUrl: guestWsUrl(),
-        room: guestRoom,
-        code: guestCode,
-        name: guestName.trim(),
+        room,
+        code,
+        name,
       });
+      guestRef.current = joined;
       setGuest(joined);
-      joined.onView((payload) => setGuestView(payload as ReturnType<typeof view>));
-      joined.onStart(() => setGuestStarted(true));
-      joined.onError((reason) => {
-        setLanError(reason === 'room-full' ? tr('lanFull') : tr('lanWrong'));
-      });
+      setGuestView(null);
       setGuestStarted(false);
+      setGuestPlayers([]);
+      joined.onView((payload) => {
+        if (guestRef.current !== joined) return;
+        const next = payload as SeatView;
+        if (!next || !Array.isArray(next.hand) || !Array.isArray(next.melds)) return;
+        setGuestView(next);
+        setGuestStarted(true);
+        setMode('lan-guest');
+        setScreen('game');
+      });
+      joined.onStart((players) => {
+        if (guestRef.current !== joined) return;
+        if (Array.isArray(players)) setGuestPlayers(players);
+        setGuestStarted(true);
+      });
+      joined.onPlayers((players) => {
+        if (guestRef.current !== joined) return;
+        setGuestPlayers(players);
+      });
+      joined.onError((reason) => {
+        setLanError(reason === 'room-full' ? tr('roomFull') : tr('wrongCode'));
+      });
+      joined.onResult((payload) => {
+        if (guestRef.current !== joined) return;
+        const value = payload as { kind?: string } | null;
+        if (value?.kind !== 'closed') return;
+        setLanError(tr('roomClosed'));
+        setScreen('lan');
+        setGuest(null);
+        setGuestView(null);
+        setGuestStarted(false);
+        guestRef.current = null;
+      });
     } catch (error) {
-      setLanError(error instanceof Error && error.message.includes('rejected') ? tr('lanWrong') : tr('lanDisconnected'));
+      const message = error instanceof Error ? error.message : String(error);
+      setLanError(lanMessage(lang, message));
     } finally {
       setGuestConnecting(false);
     }
+  }, [guestCode, guestConnecting, guestName, guestRoom, lang, tr]);
+
+  useEffect(() => {
+    if (!guestRoom || autoJoinRef.current) return;
+    autoJoinRef.current = true;
+    setScreen('lan');
+    setMode('lan-guest');
+    void joinGuest();
+  }, [guestRoom, joinGuest]);
+
+  useEffect(() => {
+    if (!guest) return;
+    const timer = window.setInterval(() => {
+      if (guest.status === 'closed') {
+        setLanError(tr('roomClosed'));
+        setScreen('lan');
+        setGuest(null);
+        setGuestView(null);
+        setGuestStarted(false);
+        guestRef.current = null;
+      }
+    }, 900);
+    return () => window.clearInterval(timer);
+  }, [guest, tr]);
+
+  const startLanGame = useCallback(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    const humans = [
+      0,
+      ...host.players
+        .filter((player) => player.connected && !player.host)
+        .map((player) => player.seat),
+    ];
+    humanSeatsRef.current = humans;
+    setHumanSeats(humans);
+    const next = setup({ rng: Math.random, dealer: 0, matchTarget: 100 });
+    setState(next);
+    setHistory([]);
+    setSelected(null);
+    setHint(null);
+    setKongOpen(false);
+    setMode('lan-host');
+    setScreen('game');
+    finishRecordedRef.current = false;
+    hostStartedRef.current = true;
+    host.start();
+    for (const seat of humans) {
+      if (seat !== 0) host.sendView(seat, view(next, seat));
+    }
+  }, []);
+
+  const seatName = useCallback(
+    (seat: number): string => {
+      if (mode === 'lan-guest') {
+        if (seat === guestView?.seat) return guestName.trim() || tr('you');
+        const player = guestPlayers.find((item) => item.seat === seat);
+        if (player?.name) return player.name;
+        if (seat === 0) return guestPlayers.find((item) => item.host)?.name ?? tr('lanHostTag');
+        return `${tr('aiTag')}`;
+      }
+      if (mode === 'lan-host') {
+        if (seat === 0) return hostName.trim() || tr('you');
+        const player = lanPlayers.find((item) => item.seat === seat);
+        if (player?.name) return player.name;
+        return `${tr('aiTag')}`;
+      }
+      if (mode === 'local') return tr('lanSeat', { seat: seat + 1 });
+      return seat === 0 ? tr('you') : tr('aiTag');
+    },
+    [guestName, guestPlayers, guestView?.seat, hostName, lanPlayers, mode, tr],
+  );
+
+  const patternText = (pattern: WinPattern | null): string => (pattern ? tr(PATTERN_KEY[pattern]) : '');
+  const methodText = (method: WinMethod | null): string => (method ? tr(METHOD_KEY[method]) : '');
+  const shortSeatName = (seat: number): string => (seat === 0 ? tr('you') : tr('lanSeat', { seat: seat + 1 }));
+  const recordWinnerName = (entry: { winner: number | null; mode: RecordMode }): string => {
+    if (entry.winner === null) return tr('noWinner');
+    if (entry.mode === 'lan') return tr('lanSeat', { seat: entry.winner + 1 });
+    return shortSeatName(entry.winner);
   };
 
-  const board = guestView?.board ?? state.board;
-  const line = guestView?.line ?? state.line;
-  const shownStatus = guestView?.status ?? state.status;
-  const shownTurn = guestView?.turn ?? state.turn;
-  const shownWinner = guestView?.winner ?? state.winner;
-  const last = state.moves[state.moves.length - 1] ?? null;
-  const isGuest = mode === 'lan-guest';
-  const guestCanPlay = Boolean(guestView?.canMove) && guestStarted;
-  const hostCanPlay = mode === 'lan-host' ? Boolean(lanPlayers[1]?.connected) : true;
-  const disabled =
-    screen !== 'game' ||
-    shownStatus !== 'playing' ||
-    (isGuest && !guestCanPlay) ||
-    (mode === 'lan-host' && !hostCanPlay) ||
-    (mode === 'ai' && (shownTurn === 'O' || aiThinking));
-
-  const displayStatus = isGuest
-    ? guestStarted
-      ? t(lang, shownStatus === 'won' ? (shownWinner === 'X' ? 'xWins' : 'oWins') : shownStatus === 'draw' ? 'draw' : shownTurn === 'X' ? 'turnX' : 'turnO')
-      : tr('lanWaiting')
-    : statusText(lang, state);
-
-  const winnerText =
-    shownStatus === 'won'
-      ? t(lang, shownWinner === 'X' ? 'xWins' : 'oWins')
-      : shownStatus === 'draw'
-        ? t(lang, 'draw')
-        : '';
-
-  const finalBoardStatus = shownStatus;
-
   const home = (
-    <main className="shell home-shell">
+    <main className={`shell home-shell ${motionOn ? '' : 'reduce-motion'}`} data-testid="home">
       <header className="masthead">
         <div>
-          <p className="eyebrow">FAMILY ARCADE · 01</p>
+          <p className="eyebrow">{tr('eyebrow')}</p>
           <h1>{tr('title')}</h1>
-          <p className="subtitle">{tr('subtitle')}</p>
         </div>
         <div className="mast-actions">
-          <button className="ghost" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
+          <button className="ghost" data-testid="language" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
             {tr('language')}
           </button>
-          <button className="ghost" onClick={() => setSoundOn((value) => !value)}>
+          <button className="ghost" data-testid="sound" onClick={() => setSoundOn((value) => !value)}>
             {soundOn ? tr('soundOn') : tr('soundOff')}
+          </button>
+          <button className="ghost" data-testid="motion" onClick={() => setMotionOn((value) => !value)}>
+            {motionOn ? tr('motionOn') : tr('motionOff')}
           </button>
         </div>
       </header>
 
       <section className="hero">
-        <div className="hero-board" aria-hidden="true">
-          <Board board={['X', 'O', null, null, 'X', 'O', null, null, 'X']} line={[0, 4, 8]} last={8} hint={null} disabled onCell={() => undefined} />
+        <div className="hero-rack" aria-hidden="true">
+          <div className="hero-glow" />
+          <div className="hero-tile-row">
+            <TileButton tile="m1" spirit={homeSpirit} lang={lang} />
+            <TileButton tile="m3" spirit={homeSpirit} lang={lang} />
+            <TileButton tile="m5" spirit={homeSpirit} lang={lang} />
+            <TileButton tile="p2" spirit={homeSpirit} lang={lang} />
+            <TileButton tile="p6" spirit={homeSpirit} lang={lang} />
+            <TileButton tile="z5" spirit={homeSpirit} lang={lang} />
+            <TileButton tile="z7" spirit={homeSpirit} lang={lang} />
+          </div>
+          <div className="hero-caption">{tr('tagline')}</div>
         </div>
         <div className="hero-copy">
-          <p className="kicker">{tr('tagline')}</p>
           <div className="menu">
             {saved && (
-              <button className="primary wide" onClick={resume}>
-                <span>{tr('continue')}</span>
-                <small>{tr('saved')}</small>
+              <button className="primary wide" data-testid="save-continue" onClick={resume}>
+                <span>{tr('continueGame')}</span>
+                <small>{tr('savedOn')}</small>
               </button>
             )}
-            <button className={saved ? 'secondary wide' : 'primary wide'} onClick={startAi}>
-              {tr('playAi')}
+            <button className={saved ? 'secondary wide' : 'primary wide'} data-testid="start-ai" onClick={() => setScreen('setup')}>
+              <span>{tr('playSolo')}</span>
+              <small>{tr('soloNote')}</small>
             </button>
-            <button className="secondary wide" onClick={() => startLocal('local')}>
-              {tr('playLocal')}
+            <button className="secondary wide" data-testid="start-local" onClick={() => startGame('local')}>
+              <span>{tr('playLocal')}</span>
+              <small>{tr('localNote')}</small>
             </button>
-            <button className="secondary wide" onClick={openLanHost}>
-              {tr('playLan')}
+            <button className="secondary wide" data-testid="start-lan" onClick={() => void openLanHost()}>
+              <span>{tr('playLan')}</span>
+              <small>{tr('lanNote')}</small>
             </button>
-            <button className="text-button" onClick={() => setScreen('rules')}>
-              {tr('rules')} →
-            </button>
+            <div className="text-row">
+              <button className="text-button" data-testid="rules" onClick={() => setScreen('rules')}>
+                {tr('rules')} →
+              </button>
+              <button className="text-button" data-testid="record" onClick={() => setScreen('record')}>
+                {tr('record')} →
+              </button>
+            </div>
           </div>
           <div className="record-strip">
-            <span>{tr('stats')}</span>
-            <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{tr('recordHands')}</span>
+            <strong>{record.hands}</strong>
             <span className="dot">·</span>
-            <span>{record.winsX} X</span>
+            <span>{tr('recordWins')}</span>
+            <strong>{record.wins.reduce((sum, wins) => sum + wins, 0)}</strong>
             <span className="dot">·</span>
-            <span>{record.winsO} O</span>
-            <span className="dot">·</span>
-            <span>{record.draws} {tr('draws')}</span>
+            <span>{tr('recordBest')}</span>
+            <strong>{signed(record.bestScore)}</strong>
           </div>
         </div>
       </section>
-      <footer className="foot">{tr('webOnly')}</footer>
+      <footer className="foot">{tr('footer')}</footer>
     </main>
   );
 
   const setupScreen = (
-    <main className="shell narrow-shell">
+    <main className="shell narrow-shell" data-testid="setup">
       <button className="back" onClick={() => setScreen('home')}>← {tr('back')}</button>
-      <h2 className="screen-title">{tr('difficulty')}</h2>
-      <p className="lede">{tr('playAi')}</p>
+      <h2 className="screen-title">{tr('setupTitle')}</h2>
       <div className="level-grid">
-        {AI_LEVELS.map((item) => (
+        {LEVELS.map((item) => (
           <button
             key={item.id}
             className={`level-card ${level === item.id ? 'selected' : ''}`}
+            data-testid={`level-${item.id}`}
             onClick={() => setLevel(item.id)}
           >
             <span className={`level-dot ${item.id}`} />
-            <strong>{tr(item.label as Parameters<typeof t>[1])}</strong>
-            <small>{tr(item.note as Parameters<typeof t>[1])}</small>
+            <strong>{tr(item.label)}</strong>
+            <small>{tr(item.note)}</small>
           </button>
         ))}
       </div>
+      <div className="facts">
+        <div className="fact"><span>{tr('factTiles')}</span></div>
+        <div className="fact"><span>{tr('factDeadWall')}</span></div>
+        <div className="fact"><span>{tr('factSpirits')}</span></div>
+        <div className="fact"><span>{tr('factModes')}</span></div>
+      </div>
       <div className="row-actions">
-        <button className="primary" onClick={() => startLocal('ai')}>{tr('begin')}</button>
+        <button className="primary" data-testid="begin" onClick={() => startGame('ai')}>{tr('beginMatch')}</button>
         <button className="ghost" onClick={() => setScreen('home')}>{tr('back')}</button>
       </div>
     </main>
   );
 
-  const gameScreen = (
-    <main className="shell game-shell">
-      <header className="game-top">
-        <button className="back" onClick={() => { closeLan(); setScreen('home'); }}>← {tr('home')}</button>
-        <div className="game-id">
-          <strong>{tr('title')}</strong>
-          <span>
-            {mode === 'ai' ? tr(level as Parameters<typeof t>[1]) : mode === 'local' ? tr('playLocal') : mode === 'lan-host' ? tr('lanHost') : tr('lanGuestTitle')}
-          </span>
-        </div>
-        <button className="ghost" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>{tr('language')}</button>
-      </header>
-
-      <div className="game-layout">
-        <section className="board-wrap">
-          <div className="turn-bar">
-            <span className={`turn-chip ${(guestView?.turn ?? state.turn).toLowerCase()}`}>
-              <MarkGlyph mark={guestView?.turn ?? state.turn} />
-            </span>
-            <div>
-              <strong>{tr('yourTurn')}</strong>
-              <p>{mode === 'lan-host' ? tr('lanHostSeat') : mode === 'lan-guest' ? tr('lanGuestSeat') : displayStatus}</p>
-            </div>
-            {aiThinking && <span className="thinking">…</span>}
-          </div>
-          <Board
-            board={board}
-            line={line}
-            last={last}
-            hint={hint}
-            disabled={disabled}
-            onCell={playAt}
-          />
-          {finalBoardStatus !== 'playing' && (
-            <div className="result-banner">
-              <strong>{winnerText}</strong>
-              {isGuest ? (
-                <span className="muted">{tr('lanWaiting')}</span>
-              ) : (
-                <button className="primary" onClick={() => {
-                  if (mode === 'lan-host' && lanHost) {
-                    const next = setup('X');
-                    setState(next);
-                    setHistory([]);
-                    setRecorded(false);
-                    lanHost.sendView(1, view(next, 1));
-                  } else {
-                    startLocal(mode === 'ai' ? 'ai' : 'local');
-                  }
-                }}>{tr('restart')}</button>
-              )}
-            </div>
-          )}
+  const rulesScreen = (
+    <main className="shell narrow-shell" data-testid="rules">
+      <button className="back" onClick={() => setScreen('home')}>← {tr('back')}</button>
+      <h2 className="screen-title">{tr('rulesTitle')}</h2>
+      <div className="rules-grid">
+        <section>
+          <h3>{tr('rulesTilesTitle')}</h3>
+          <ul>
+            <li>{tr('rulesTiles1')}</li>
+            <li>{tr('rulesTiles2')}</li>
+            <li>{tr('rulesTiles3')}</li>
+            <li>{tr('rulesTiles4')}</li>
+          </ul>
         </section>
-
-        <aside className="side">
-          <div className="side-card">
-            <h3>{tr('localHint')}</h3>
-            <p>{tr('keyboardHint')}</p>
-            <div className="side-actions">
-              <button className="secondary" onClick={undo} disabled={history.length === 0 || mode === 'lan-guest'}>{tr('undo')}</button>
-              <button className="secondary" onClick={showHint} disabled={state.status !== 'playing' || mode === 'lan-guest'}>{tr('hint')}</button>
-            </div>
-          </div>
-          {mode === 'lan-host' && (
-            <div className="side-card lan-mini">
-              <h3>{tr('lanCode')}</h3>
-              <div className="room-code">{lanCode}</div>
-              <p>{lanPlayers[1]?.connected ? tr('lanReady') : tr('lanWaiting')}</p>
-              {lanPlayers[1] && <p className="peer">{lanPlayers[1].name}{lanPlayers[1].connected ? ' · online' : ''}</p>}
-            </div>
-          )}
-          <div className="side-card record-mini">
-            <h3>{tr('stats')}</h3>
-            <p>{record.games} {tr('games')} · {record.winsX}/{record.winsO}/{record.draws}</p>
-            <button className="text-button" onClick={() => setRecord(clearRecord())}>{tr('resetStats')}</button>
-          </div>
-        </aside>
+        <section>
+          <h3>{tr('rulesSpiritsTitle')}</h3>
+          <ul>
+            <li>{tr('rulesSpirits1')}</li>
+            <li>{tr('rulesSpirits2')}</li>
+            <li>{tr('rulesSpirits3')}</li>
+            <li>{tr('rulesSpirits4')}</li>
+            <li>{tr('rulesSpirits5')}</li>
+          </ul>
+        </section>
+        <section>
+          <h3>{tr('rulesMeldsTitle')}</h3>
+          <ul>
+            <li>{tr('rulesMelds1')}</li>
+            <li>{tr('rulesMelds2')}</li>
+            <li>{tr('rulesMelds3')}</li>
+            <li>{tr('rulesMelds4')}</li>
+          </ul>
+        </section>
+        <section>
+          <h3>{tr('rulesWinsTitle')}</h3>
+          <ul>
+            <li>{tr('rulesWins1')}</li>
+            <li>{tr('rulesWins2')}</li>
+            <li>{tr('rulesWins3')}</li>
+            <li>{tr('rulesWins4')}</li>
+            <li>{tr('rulesWins5')}</li>
+          </ul>
+        </section>
+        <section>
+          <h3>{tr('rulesScoringTitle')}</h3>
+          <ul>
+            <li>{tr('rulesScoring1')}</li>
+            <li>{tr('rulesScoring2')}</li>
+            <li>{tr('rulesScoring3')}</li>
+            <li>{tr('rulesScoring4')}</li>
+            <li>{tr('rulesScoring5')}</li>
+            <li>{tr('rulesScoring6')}</li>
+            <li>{tr('rulesScoring7')}</li>
+            <li>{tr('rulesScoring8')}</li>
+          </ul>
+        </section>
+        <section>
+          <h3>{tr('rulesModesTitle')}</h3>
+          <ul>
+            <li>{tr('rulesModes1')}</li>
+            <li>{tr('rulesModes2')}</li>
+            <li>{tr('rulesModes3')}</li>
+          </ul>
+        </section>
       </div>
-      {toast && <div className="toast">{toast}</div>}
+      <button className="primary" onClick={() => setScreen('home')}>{tr('close')}</button>
+    </main>
+  );
+
+  const recordScreen = (
+    <main className="shell narrow-shell" data-testid="record-screen">
+      <button className="back" onClick={() => setScreen('home')}>← {tr('back')}</button>
+      <h2 className="screen-title">{tr('recordTitle')}</h2>
+      <div className="stats-row">
+        <div className="stat-card">
+          <span>{tr('recordHands')}</span>
+          <strong data-testid="record-hands">{record.hands}</strong>
+        </div>
+        <div className="stat-card">
+          <span>{tr('recordWins')}</span>
+          <strong className="wins-grid">
+            {record.wins.map((wins, seat) => (
+              <span key={seat}>{shortSeatName(seat)} <b>{wins}</b></span>
+            ))}
+          </strong>
+        </div>
+        <div className="stat-card">
+          <span>{tr('recordBest')}</span>
+          <strong>{signed(record.bestScore)}</strong>
+        </div>
+      </div>
+      <div className="mode-strip">
+        <span>{tr('recordByMode')}</span>
+        <span>{tr('modeAi')} {record.byMode.ai}</span>
+        <span>{tr('modeLocal')} {record.byMode.local}</span>
+        <span>{tr('modeLan')} {record.byMode.lan}</span>
+      </div>
+      <h3 className="subhead">{tr('recordRecent')}</h3>
+      {record.recent.length === 0 ? (
+        <p className="muted">{tr('recordEmpty')}</p>
+      ) : (
+        <div className="recent-list">
+          {record.recent.map((entry, index) => (
+            <div className="recent-row" key={`${entry.at}-${index}`}>
+              <span>{tr('handLabel', { n: entry.hand })}</span>
+              <strong>{recordWinnerName(entry)}</strong>
+              <span>{entry.pattern ? patternText(entry.pattern) : '—'}</span>
+              <span>{entry.deltas.map((delta) => signed(delta)).join(' / ')}</span>
+              <em>{entry.mode === 'ai' ? tr('modeAi') : entry.mode === 'local' ? tr('modeLocal') : tr('modeLan')}</em>
+            </div>
+          ))}
+        </div>
+      )}
+      <button
+        className="secondary"
+        data-testid="clear-record"
+        onClick={() => {
+          if (!clearArmed) {
+            setClearArmed(true);
+            return;
+          }
+          setRecord(clearRecord());
+          setClearArmed(false);
+        }}
+      >
+        {clearArmed ? tr('clearRecordConfirm') : tr('clearRecord')}
+      </button>
     </main>
   );
 
   const lanScreen = (
-    <main className="shell narrow-shell">
+    <main className="shell narrow-shell" data-testid="lan-screen">
       <button className="back" onClick={() => { closeLan(); setScreen('home'); }}>← {tr('back')}</button>
       {mode === 'lan-guest' || guestRoom ? (
         <>
-          <h2 className="screen-title">{tr('lanGuestTitle')}</h2>
-          <p className="lede">Room {guestRoom}</p>
+          <h2 className="screen-title">{tr('joinRoomTitle')}</h2>
           {!guestStarted && (
             <div className="lan-form">
               <label>
-                <span>{tr('lanName')}</span>
+                <span>{tr('guestName')}</span>
                 <input value={guestName} onChange={(event) => setGuestName(event.target.value)} maxLength={18} />
               </label>
               <label>
-                <span>{tr('lanCode')}</span>
-                <input value={guestCode} onChange={(event) => setGuestCode(event.target.value)} inputMode="numeric" maxLength={4} />
+                <span>{tr('guestCode')}</span>
+                <input
+                  value={guestCode}
+                  onChange={(event) => setGuestCode(event.target.value.replace(/\D/g, '').slice(0, 4))}
+                  inputMode="numeric"
+                  maxLength={4}
+                />
               </label>
-              <button className="primary wide" onClick={joinGuest} disabled={guestConnecting || !guestName.trim()}>
-                {guestConnecting ? tr('lanConnecting') : tr('lanJoinButton')}
+              <button className="primary wide" data-testid="lan-join" onClick={() => void joinGuest()} disabled={guestConnecting}>
+                {guestConnecting ? tr('connecting') : tr('joinButton')}
               </button>
             </div>
           )}
-          {guestStarted && <p className="lede">{tr('lanGuestSeat')}</p>}
-          {lanError && <p className="error">{lanError}</p>}
           {guestStarted && (
-            <button className="primary" onClick={() => setScreen('game')}>{tr('lanStart')}</button>
+            <button className="primary" onClick={() => setScreen('game')}>{tr('lanGuestStart')}</button>
           )}
+          {lanError && <p className="error">{lanError}</p>}
+          {!guestStarted && <p className="muted">{tr('lanJoinHint')}</p>}
         </>
       ) : (
         <>
-          <h2 className="screen-title">{tr('lanTitle')}</h2>
-          <p className="lede">{tr('lanHost')}</p>
-          {lanBusy && <p className="lede">{tr('lanStarting')}</p>}
-          {lanError && <p className="error">{lanError}</p>}
+          <h2 className="screen-title">{tr('hostRoomTitle')}</h2>
+          <div className="lan-form">
+            <label>
+              <span>{tr('hostName')}</span>
+              <input value={hostName} onChange={(event) => setHostName(event.target.value)} maxLength={18} />
+            </label>
+            <button className="primary wide" data-testid="lan-create" onClick={() => void openLanHost()} disabled={lanBusy}>
+              {lanBusy ? tr('lanStarting') : tr('createRoom')}
+            </button>
+          </div>
           {lanInfo && lanInvite && (
             <div className="lan-layout">
               <div className="lan-card">
-                <span className="label">{tr('lanCode')}</span>
-                <div className="room-code big">{lanCode}</div>
-                <p>{lanPlayers[1]?.connected ? tr('lanReady') : tr('lanWaiting')}</p>
+                <span className="label">{tr('roomCode')}</span>
+                <div className="room-code big" data-testid="room-code">{lanCode}</div>
+                <p>{lanPlayers.filter((player) => player.connected && !player.host).length > 0 ? tr('lanReady') : tr('waitingGuests')}</p>
                 <div className="peer-list">
-                  {lanPlayers.slice(0, 2).map((player) => (
+                  {lanPlayers.map((player) => (
                     <span key={player.seat} className={player.connected ? 'online' : ''}>
-                      {player.name} {player.connected ? '●' : '○'}
+                      {player.name} · {tr('lanSeat', { seat: player.seat + 1 })} {player.connected ? '●' : '○'}
                     </span>
                   ))}
                 </div>
-                <button className="primary wide" onClick={startLan} disabled={!lanPlayers[1]?.connected}>{tr('lanStart')}</button>
-                <button className="secondary wide" onClick={async () => {
-                  try {
-                    await navigator.clipboard.writeText(lanInvite);
-                    setToast(tr('lanCopied'));
-                  } catch {
-                    setToast(lanInvite);
-                  }
-                }}>{tr('lanCopy')}</button>
+                <button className="primary wide" data-testid="lan-start" onClick={startLanGame} disabled={!lanHost}>
+                  {tr('startLan')}
+                </button>
+                <p className="muted">{tr('startWithAi')}</p>
+                <button
+                  className="secondary wide"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(lanInvite);
+                      setToast(tr('copied'));
+                    } catch {
+                      setToast(lanInvite);
+                    }
+                  }}
+                >
+                  {tr('copyInvite')}
+                </button>
               </div>
               <div className="qr-card">
-                {lanQr ? <img src={lanQr} alt={tr('lanScan')} /> : null}
-                <p>{tr('lanScan')}</p>
-                <code>{lanInvite.replace(/^https?:\/\//, '')}</code>
+                {lanQr ? <img src={lanQr} alt={tr('scanJoin')} /> : null}
+                <p>{tr('scanJoin')}</p>
+                <a className="invite-link" data-testid="invite-link" href={lanInvite} target="_blank" rel="noreferrer">
+                  {lanInvite.replace(/^https?:\/\//, '')}
+                </a>
               </div>
             </div>
           )}
+          {lanError && <p className="error">{lanError}</p>}
+          {!lanInfo && !lanBusy && <p className="muted">{tr('lanCreateHint')}</p>}
         </>
       )}
       {toast && <div className="toast">{toast}</div>}
     </main>
   );
 
-  const rulesScreen = (
-    <main className="shell narrow-shell">
-      <button className="back" onClick={() => setScreen('home')}>← {tr('back')}</button>
-      <h2 className="screen-title">{tr('rulesTitle')}</h2>
-      <ol className="rules-list">
-        <li>{tr('rule1')}</li>
-        <li>{tr('rule2')}</li>
-        <li>{tr('rule3')}</li>
-      </ol>
-      <button className="primary" onClick={() => setScreen('home')}>{tr('close')}</button>
+  if (screen === 'setup') return setupScreen;
+  if (screen === 'rules') return rulesScreen;
+  if (screen === 'record') return recordScreen;
+  if (screen === 'lan') return lanScreen;
+  if (screen !== 'game') return home;
+
+  const selectedLabel = selected ? tileLabel(selected, lang) : '';
+  const isClaimSeat = shownPhase === 'claim' && shown.claimSeat === shownSeat;
+  const claimWaitName = shown.claimSeat === null ? '' : seatName(shown.claimSeat);
+  const currentName = shownTurn >= 0 ? seatName(shownTurn) : '';
+  const turnText = shownPhase === 'claim'
+    ? tr('claimTurn', { name: claimWaitName })
+    : shownPhase === 'draw'
+      ? tr('seatTurn', { name: currentName })
+      : shownPhase === 'discard'
+        ? shownTurn === shownSeat
+          ? tr('yourTurn')
+          : tr('seatTurn', { name: currentName })
+        : '';
+  const sheet = shown.scoreSheet;
+
+  const seatPanel = (seat: number, className: string) => {
+    const isSelf = seat === shownSeat;
+    const isTurn = shown.claimSeat === seat || (shownTurn === seat && shownPhase !== 'hand-over' && shownPhase !== 'game-over');
+    return (
+      <section className={`seat ${className} ${isTurn ? 'active' : ''} ${isSelf ? 'self' : ''}`} data-seat={seat}>
+        <div className="seat-head">
+          <span className={`wind-badge wind-${windOfSeat(seat, shown.dealer)}`}>{windBadge(seat, shown.dealer, lang)}</span>
+          <strong>{seatName(seat)}</strong>
+          {seat === shown.dealer && <span className="dealer-badge">{tr('dealerShort')}</span>}
+          <span className="seat-score">{signed(shown.scores[seat])}</span>
+        </div>
+        {isSelf ? (
+          <div className="seat-self-hand">
+            <Melds melds={shown.melds[seat]} spirit={shown.spirit} lang={lang} />
+            <span className="hand-count-label">{tr('tileCount', { n: shown.hand.length })}</span>
+          </div>
+        ) : (
+          <>
+            <HandBacks count={shown.handCounts[seat]} />
+            <Melds melds={shown.melds[seat]} spirit={shown.spirit} lang={lang} />
+          </>
+        )}
+        <Discards
+          tiles={shown.discards[seat]}
+          spirit={shown.spirit}
+          lang={lang}
+          last={shown.lastDiscard?.seat === seat}
+        />
+      </section>
+    );
+  };
+
+  const gameScreen = (
+    <main
+      className={`shell game-shell ${motionOn ? '' : 'reduce-motion'}`}
+      data-testid="game-shell"
+      data-phase={shownPhase}
+      data-turn={shownTurn}
+      data-seat={shownSeat}
+      data-hand={shown.handNumber}
+      data-dealer={shown.dealer}
+    >
+      <header className="game-top">
+        <button className="back" onClick={goHome}>← {tr('home')}</button>
+        <div className="game-id">
+          <strong>{tr('title')}</strong>
+          <span>{tr('handLabel', { n: shown.handNumber })} · {tr('dealer')} {tr(windKey(shown.dealer, shown.dealer))}</span>
+        </div>
+        <div className="game-top-actions">
+          <button className="ghost" data-testid="language" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>{tr('language')}</button>
+          <button className="ghost" data-testid="sound" onClick={() => setSoundOn((value) => !value)}>{soundOn ? tr('soundOn') : tr('soundOff')}</button>
+        </div>
+      </header>
+
+      <div className="game-layout">
+        <section className="table-wrap">
+          <div className="table">
+            {seatPanel(2, 'seat-top')}
+            {seatPanel(3, 'seat-left')}
+            <div className="table-center">
+              <div className="spirit-card">
+                <div className="spirit-head">
+                  <span>{tr('spirits')}</span>
+                  <span className="dice">{tr('dice', { a: shown.spirit.dice[0], b: shown.spirit.dice[1] })}</span>
+                </div>
+                <div className="spirit-tiles">
+                  <div className="spirit-item">
+                    <TileButton tile={shown.spirit.trueTile} spirit={shown.spirit} lang={lang} small />
+                    <span>{tr('trueSpirit')}</span>
+                  </div>
+                  <div className="spirit-item">
+                    <TileButton tile={shown.spirit.secondaryTile} spirit={shown.spirit} lang={lang} small />
+                    <span>{tr('secondarySpirit')}</span>
+                  </div>
+                  <div className="spirit-item indicator">
+                    <TileButton tile={shown.spirit.indicator} spirit={shown.spirit} lang={lang} small markSpirit={false} />
+                    <span>{tr('indicator')}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="table-meta">
+                <div>
+                  <span className="label">{tr('wall')}</span>
+                  <strong>{shown.liveWallCount}</strong>
+                </div>
+                <div>
+                  <span className="label">{tr('deadWall')}</span>
+                  <strong>{shown.deadWallCount}</strong>
+                </div>
+                <div>
+                  <span className="label">{tr('drawnTile')}</span>
+                  {shown.drawn ? <TileButton tile={shown.drawn} spirit={shown.spirit} lang={lang} small /> : <span>—</span>}
+                </div>
+              </div>
+              <div className="turn-panel">
+                <strong>{turnText}</strong>
+                {shownPhase === 'claim' && shown.claimSeat === shownSeat && <span>{tr('claimOptions')}</span>}
+                {aiThinking && <span className="thinking">…</span>}
+              </div>
+              <div className="last-discard">
+                <span className="label">{tr('lastDiscard')}</span>
+                {shown.lastDiscard ? (
+                  <>
+                    <TileButton tile={shown.lastDiscard.tile} spirit={shown.spirit} lang={lang} small />
+                    <span>{seatName(shown.lastDiscard.seat)}</span>
+                  </>
+                ) : (
+                  <span className="muted">{tr('noDiscardYet')}</span>
+                )}
+              </div>
+            </div>
+            {seatPanel(1, 'seat-right')}
+            {seatPanel(0, 'seat-bottom')}
+          </div>
+
+          <div className="hand-area">
+            <div className="hand-head">
+              <span className="label">{tr('hand')}</span>
+              <span className="muted">{selected ? tr('selectedTile', { tile: selectedLabel }) : tr('discardHint')}</span>
+            </div>
+            <div className={`hand-scroll ${hidden ? 'covered' : ''}`}>
+              {hidden ? (
+                <div className="hand-covered">{Array.from({ length: shown.handCounts[shownSeat] }, (_, index) => <TileBack key={index} />)}</div>
+              ) : (
+                <Hand
+                  tiles={sortTiles(shown.hand)}
+                  spirit={shown.spirit}
+                  lang={lang}
+                  selected={selected}
+                  hint={hint?.tile ?? null}
+                  disabled={!shown.canDiscard}
+                  onSelect={(tile) => {
+                    setSelected(tile);
+                    setHint(null);
+                  }}
+                />
+              )}
+            </div>
+            <div className="action-bar">
+              {shown.canDraw && !hidden && (
+                <button className="primary action" data-testid="draw" onClick={doDraw}>{tr('draw')}</button>
+              )}
+              {shown.canWin && !hidden && (
+                <button className="win-button action" data-testid="win" onClick={doWin}>{tr('winButton')}</button>
+              )}
+              {shown.kongOptions.length > 0 && shown.canDiscard && !hidden && (
+                <button className="secondary action" data-testid="kong" onClick={() => setKongOpen((value) => !value)}>{tr('kong')}</button>
+              )}
+              {shown.canDiscard && !hidden && (
+                <button className="secondary action" data-testid="discard" onClick={doDiscard} disabled={!selected}>
+                  {tr('discard')}
+                </button>
+              )}
+              <button className="ghost action" data-testid="hint" onClick={showHint} disabled={!canHintNow}>
+                {tr('hint')}
+              </button>
+              <button className="ghost action" data-testid="undo" onClick={undo} disabled={isGuest || mode === 'lan-host' || hidden || history.length === 0}>
+                {tr('undo')}
+              </button>
+            </div>
+            {shownPhase === 'draw' && shownTurn === shownSeat && !hidden && (
+              <p className="turn-note">{tr('drawFirst')}</p>
+            )}
+            {isGuest && <p className="turn-note">{tr('localOnly')}</p>}
+            {kongOpen && shown.kongOptions.length > 0 && !hidden && (
+              <div className="choice-panel" data-testid="kong-panel">
+                <h3>{tr('chooseKong')}</h3>
+                <div className="choice-list">
+                  {shown.kongOptions.map((option, index) => (
+                    <button
+                      key={`${option.target}-${index}`}
+                      className="choice"
+                      data-testid={`kong-option-${index}`}
+                      onClick={() => doKong(option)}
+                    >
+                      <span>{option.kind === 'concealed' ? tr('concealedKong') : tr('addedKong')}</span>
+                      <span className="choice-tiles">
+                        {option.tiles.map((tile, tileIndex) => (
+                          <TileButton key={`${tile}-${tileIndex}`} tile={tile} spirit={shown.spirit} lang={lang} small />
+                        ))}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                <button className="ghost" onClick={() => setKongOpen(false)}>{tr('cancel')}</button>
+              </div>
+            )}
+            {isClaimSeat && !hidden && (
+              <div className="choice-panel claim-panel" data-testid="claim-panel">
+                <h3>{tr('claimOptions')}</h3>
+                <div className="choice-list">
+                  {shown.claimOptions.map((option, index) => (
+                    <button
+                      key={`${option.kind}-${option.target}-${index}`}
+                      className={`choice claim-${option.kind}`}
+                      data-testid={`claim-option-${index}`}
+                      onClick={() => doClaim(option)}
+                    >
+                      <span>
+                        {option.kind === 'win'
+                          ? tr('claimWin')
+                          : option.kind === 'gang'
+                            ? tr('claimKong')
+                            : option.kind === 'peng'
+                              ? tr('claimPeng')
+                              : tr('claimChi')}
+                      </span>
+                      <span className="choice-tiles">
+                        {option.tiles.map((tile, tileIndex) => (
+                          <TileButton key={`${tile}-${tileIndex}`} tile={tile} spirit={shown.spirit} lang={lang} small />
+                        ))}
+                        {shown.lastDiscard && <TileButton tile={shown.lastDiscard.tile} spirit={shown.spirit} lang={lang} small />}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                <button className="secondary" data-testid="pass" onClick={doPass}>{tr('claimPass')}</button>
+              </div>
+            )}
+            {shownPhase === 'claim' && !isClaimSeat && !hidden && (
+              <p className="turn-note">{tr('waitingForClaim', { name: claimWaitName })}</p>
+            )}
+            {toast && <div className="toast" role="status" aria-live="polite">{toast}</div>}
+          </div>
+        </section>
+
+        <aside className="side">
+          <div className="side-card">
+            <h3>{tr('spirits')}</h3>
+            <div className="side-spirit-row">
+              <TileButton tile={shown.spirit.trueTile} spirit={shown.spirit} lang={lang} small />
+              <SpiritBadge tile={shown.spirit.trueTile} spirit={shown.spirit} lang={lang} />
+            </div>
+            <div className="side-spirit-row">
+              <TileButton tile={shown.spirit.secondaryTile} spirit={shown.spirit} lang={lang} small />
+              <SpiritBadge tile={shown.spirit.secondaryTile} spirit={shown.spirit} lang={lang} />
+            </div>
+            <p className="muted">{tr('dice', { a: shown.spirit.dice[0], b: shown.spirit.dice[1] })}</p>
+          </div>
+          <div className="side-card">
+            <h3>{tr('recordTitle')}</h3>
+            <p>{record.hands} {tr('recordHands')} · {record.wins.reduce((sum, wins) => sum + wins, 0)} {tr('recordWins')}</p>
+            <p className="muted">{tr('keyboardHint')}</p>
+          </div>
+          {mode === 'lan-host' && (
+            <div className="side-card lan-mini">
+              <h3>{tr('lanHostTag')}</h3>
+              <div className="room-code">{lanCode || '—'}</div>
+              <p>{lanPlayers.filter((player) => player.connected && !player.host).length} / 3</p>
+            </div>
+          )}
+          {isGuest && (
+            <div className="side-card lan-mini">
+              <h3>{tr('lanGuestTag')}</h3>
+              <p>{tr('room', { code: guestRoom || guestCode })}</p>
+              <p>{tr('lanGuestSeat', { seat: shownSeat + 1 })}</p>
+            </div>
+          )}
+        </aside>
+      </div>
+
+      {hidden && (
+        <div className="privacy-overlay" data-testid="privacy-panel">
+          <div className="privacy-card">
+            <span className="eyebrow">{tr('handLabel', { n: shown.handNumber })}</span>
+            <h2>{tr('passDevice', { name: seatName(shownSeat) })}</h2>
+            <button className="primary" data-testid="privacy-reveal" onClick={() => setLocalReveal(true)}>
+              {tr('showHand')}
+            </button>
+            <p className="privacy-note">{tr('privacyNote')}</p>
+          </div>
+        </div>
+      )}
+
+      {(shownPhase === 'hand-over' || shownPhase === 'game-over') && sheet && (
+        <section
+          className="score-overlay"
+          data-testid={shownPhase === 'game-over' ? 'match-over' : 'score-sheet'}
+        >
+          <div className="score-card">
+            <div className="score-head">
+              <span className="eyebrow">{shownPhase === 'game-over' ? tr('matchOver') : tr('handOver')}</span>
+              <h2>
+                {shown.win
+                  ? `${seatName(shown.win.seat)} · ${patternText(shown.win.pattern)}`
+                  : tr('noWinner')}
+              </h2>
+              {!shown.win && <p className="muted">{tr('wallExhausted')}</p>}
+            </div>
+            {shown.win && (
+              <div className="score-flags">
+                <span>{methodText(shown.win.method)}</span>
+                {sheet.german && <span>{tr('german')}</span>}
+                {sheet.germanInGerman && <span>{tr('germanInGerman')}</span>}
+                {sheet.spiritSingleWait && <span>{tr('spiritSingleWait')}</span>}
+                {sheet.kongDraw && <span>{tr('kongDraw')}</span>}
+                {sheet.robbingKong && <span>{tr('robbingKong')}</span>}
+                {sheet.heavenly && <span>{tr('heavenly')}</span>}
+                {sheet.human && <span>{tr('human')}</span>}
+                {sheet.overlord && <span>{tr('overlord')}</span>}
+                {sheet.spiritSprint.some((value) => value > 1) && <span>{tr('sprint')}</span>}
+                <span>{tr('dealerDouble')}</span>
+              </div>
+            )}
+            {shown.win && shown.revealedHands && (
+              <div className="score-hand" aria-label={tr('hand')}>
+                {[
+                  ...shown.revealedHands[shown.win.seat],
+                  ...shown.melds[shown.win.seat].flatMap((meld) => meld.tiles),
+                ].map((tile, index) => (
+                  <TileButton key={`${tile}-${index}`} tile={tile} spirit={shown.spirit} lang={lang} small />
+                ))}
+              </div>
+            )}
+            <div className="score-numbers">
+              <div><span>{tr('base')}</span><strong>1</strong></div>
+              <div><span>{tr('multiplier')}</span><strong>×{sheet.patternMultiplier}</strong></div>
+              <div><span>{tr('flatBonus')}</span><strong>+{sheet.flatBonus}</strong></div>
+              <div><span>{tr('total')}</span><strong>{sheet.unitValue}</strong></div>
+            </div>
+            <div className="score-table">
+              <div className="score-row score-header">
+                <span>{tr('seat')}</span>
+                <span>{tr('spiritsShort')}</span>
+                <span>{tr('kongsShort')}</span>
+                <span>{tr('delta')}</span>
+                <span>{tr('totalShort')}</span>
+              </div>
+              {[0, 1, 2, 3].map((seat) => (
+                <div className={`score-row ${shown.win?.seat === seat ? 'winner' : ''}`} key={seat}>
+                  <span>{shortSeatName(seat)}</span>
+                  <span>{sheet.spiritAdjusted[seat]}<small> / {sheet.spiritBase[seat]}</small></span>
+                  <span>{sheet.kongPoints[seat]}</span>
+                  <span className={sheet.deltas[seat] >= 0 ? 'positive' : 'negative'}>{signed(sheet.deltas[seat])}</span>
+                  <span>{signed(sheet.scoresAfter[seat])}</span>
+                </div>
+              ))}
+            </div>
+            {sheet.overlord && <p className="score-note">{tr('overlord')} ×2</p>}
+            {!isGuest && shownPhase === 'hand-over' && (
+              <button className="primary wide" data-testid="next-hand" onClick={doNextHand}>{tr('nextHand')}</button>
+            )}
+            {!isGuest && shownPhase === 'game-over' && (
+              <button className="primary wide" data-testid="play-again" onClick={() => startGame(mode === 'local' ? 'local' : 'ai')}>
+                {tr('playAgain')}
+              </button>
+            )}
+            {isGuest && <p className="muted">{tr('waitingHost')}</p>}
+            <button className="ghost" onClick={goHome}>{tr('home')}</button>
+          </div>
+        </section>
+      )}
     </main>
   );
 
-  if (screen === 'setup') return setupScreen;
-  if (screen === 'game') return gameScreen;
-  if (screen === 'rules') return rulesScreen;
-  if (screen === 'lan') return lanScreen;
-  return home;
+  return gameScreen;
+}
+
+function lanMessage(lang: Lang, message: string): string {
+  if (message.includes('wrong-code') || message.includes('rejected')) return t(lang, 'wrongCode');
+  if (message.includes('room-full')) return t(lang, 'roomFull');
+  if (message.includes('room closed') || message.includes('host connection closed')) return t(lang, 'roomClosed');
+  if (message.includes('timed out') || message.includes('connection failed') || message.includes('did not answer')) {
+    return t(lang, 'relayMissing');
+  }
+  return t(lang, 'lanError');
 }

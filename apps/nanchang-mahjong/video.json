@@ -1,32 +1,44 @@
 {
   "slug": "nanchang-mahjong",
-  "order": 1,
+  "order": 11,
   "title": "Nanchang Mahjong",
   "titleZh": "南昌麻将",
-  "tagline": "4-player Nanchang Mahjong with spirit tiles",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "Four seats. One wall. Seven spirits.",
+  "taglineZh": "四个座位，一座牌墙，七张精。",
+  "players": "4 players",
+  "playersZh": "4 人",
+  "time": "15–25 minutes",
+  "timeZh": "15–25 分钟",
+  "age": "10+",
+  "accent": "#17483d",
+  "paper": "#f4ead8",
+  "ink": "#20322b",
   "screens": {
     "en": ["home.png", "game.png", "game-over.png"],
     "zh": ["home.png", "game.png", "game-over.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "136 tiles · no flowers",
+    "17-stack dead wall",
+    "Seven spirits",
+    "4 AI levels",
+    "Solo · hot-seat · LAN"
+  ],
+  "factsZh": [
+    "136 张牌 · 无花牌",
+    "17 墩海底",
+    "七张精",
+    "四档电脑",
+    "单机 · 同屏 · 局域网"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Nanchang Mahjong. A tiny game for a big table.", "zh": "南昌麻将。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Nanchang Mahjong. Three in a row.", "zh": "南昌麻将。三子连线。" }
+    { "at": 0.4, "en": "Four seats. One wall. Seven spirits.", "zh": "四个座位，一座牌墙，七张精。" },
+    { "at": 5.2, "en": "Nanchang Mahjong. True and secondary spirits change every hand.", "zh": "南昌麻将。正精副精，每手都变。" },
+    { "at": 10.0, "en": "Flip the wall-end tile. Three true spirits, four secondary.", "zh": "翻开牌墙末端。三张正精，四张副精。" },
+    { "at": 16.0, "en": "Chi, peng, kong. Winds and dragons run in threes.", "zh": "吃、碰、杠。风牌箭牌三张成顺。" },
+    { "at": 23.0, "en": "German, spirit sprint, robbing a kong, seven-star thirteen scattered.", "zh": "德国、冲关、抢杠、七星十三烂。" },
+    { "at": 30.0, "en": "Four AI levels with wild-tile efficiency and defence.", "zh": "四档电脑，会算精、会防守。" },
+    { "at": 37.0, "en": "Solo, hot-seat with privacy, or four seats on one network.", "zh": "单机、同屏盖牌，或同一网络四座位。" },
+    { "at": 42.0, "en": "Nanchang Mahjong. Read the spirits.", "zh": "南昌麻将。看懂精牌。" }
   ]
 }
