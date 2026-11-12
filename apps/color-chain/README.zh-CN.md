@@ -13,7 +13,7 @@
 
 *45 秒 · 1920×1080 · 60fps · [English cut](docs/promo/color-chain-promo-en.mp4) · [video.json](video.json)*
 
-*[Family Arcade](../..) 第 13/27 款。网页 v0.1 + Tauri 外壳；截图全部来自真实运行的应用。*
+*[Family Arcade](../..) 第 13/42 款。网页 v0.1 + Tauri 外壳；截图全部来自真实运行的应用。*
 
 ## 一回合，五秒看懂
 

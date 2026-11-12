@@ -1,13 +1,15 @@
-# 家庭游戏馆 · Family Arcade
+[English](README.md) · 简体中文
 
-**一个启动器，27 款游戏，一张桌子。**
+# 家庭游戏馆
 
-Family Arcade 是整个合集的正门：27 款离线家庭游戏，全部支持 AI、同屏热座和局域网。
+**一个启动器，42 款游戏，一张桌子。**
+
+家庭游戏馆是整个合集的正门：42 款离线家庭游戏，全部支持 AI、同屏热座和局域网。
 装这一个程序就能启动所有游戏；也可以只下载想玩的那一款的独立安装包。
 
 ![家庭游戏馆启动器](docs/screenshots/zh/home.jpg)
 
-**????** ???????? WebView2 ?????????????? `WebView2Loader.dll`?? [`RUNTIME.md`](RUNTIME.md)?
+**运行时：** 一体化安装包内含 WebView2 离线运行时，每个便携游戏也都带有 `WebView2Loader.dll`。见 [`RUNTIME.md`](RUNTIME.md)。
 
 ## 它做什么
 
@@ -33,8 +35,8 @@ npx tauri build --bundles nsis
 
 ## 已知限制
 
-- 一体化安装包较大，因为内含 27 款便携游戏。
+- 一体化安装包较大，因为内含 42 款便携游戏。
 - 游戏在独立窗口中打开，启动器本身不内嵌游戏画面。
 - 安装包未签名，Windows SmartScreen 会提示一次。
 
-完整合集与逐游戏安装包见 [根 README](../../README.md)。
+完整合集与逐游戏安装包见 [根 README](../../README.zh-CN.md)。

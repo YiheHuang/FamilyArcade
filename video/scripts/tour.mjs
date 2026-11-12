@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Build the 40-second repository tour from the real English promos. */
+/** Build the repository tour from the real English promos. */
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -19,6 +19,21 @@ const order = [
   ['balloon-rally', 'apps/balloon-rally/docs/promo/balloon-rally-promo-en.mp4'],
   ['blokus', 'apps/blokus/docs/promo/blokus-promo-en.mp4'],
   ['splendor', 'apps/splendor/docs/promo/splendor-promo-en.mp4'],
+  ['gomoku', 'video/out/gomoku-en.mp4'],
+  ['xiangqi', 'video/out/xiangqi-en.mp4'],
+  ['chess', 'video/out/chess-en.mp4'],
+  ['go', 'video/out/go-en.mp4'],
+  ['shogi', 'video/out/shogi-en.mp4'],
+  ['intl-draughts', 'video/out/intl-draughts-en.mp4'],
+  ['jungle-chess', 'video/out/jungle-chess-en.mp4'],
+  ['quarto', 'video/out/quarto-en.mp4'],
+  ['abalone', 'video/out/abalone-en.mp4'],
+  ['hive', 'video/out/hive-en.mp4'],
+  ['hearts', 'video/out/hearts-en.mp4'],
+  ['spades', 'video/out/spades-en.mp4'],
+  ['rummy-500', 'video/out/rummy-500-en.mp4'],
+  ['cribbage', 'video/out/cribbage-en.mp4'],
+  ['president', 'video/out/president-en.mp4'],
   ['triple', 'video/out/triple-en.mp4'],
   ['four', 'video/out/four-en.mp4'],
   ['flip', 'video/out/flip-en.mp4'],

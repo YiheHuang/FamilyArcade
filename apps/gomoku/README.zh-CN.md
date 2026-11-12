@@ -1,4 +1,4 @@
-# 五子棋 · Gomoku
+# 五子棋
 
 [English](README.md) · **简体中文**
 

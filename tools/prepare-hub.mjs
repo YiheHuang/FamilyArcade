@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /** Build the hub's game index and copy thumbnails + portable executables. */
+import { execFileSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
@@ -61,7 +62,12 @@ for (const slug of readdirSync(path.join(root, 'apps'))) {
     console.warn(`no thumb for ${slug}`);
     continue;
   }
-  copyFileSync(thumb, path.join(thumbs, `${slug}.jpg`));
+  const thumbOut = path.join(thumbs, `${slug}.jpg`);
+  if (thumb.toLowerCase().endsWith('.png')) {
+    execFileSync('ffmpeg', ['-y', '-v', 'error', '-i', thumb, '-q:v', '3', thumbOut]);
+  } else {
+    copyFileSync(thumb, thumbOut);
+  }
   games.push({
     slug,
     title,
@@ -78,13 +84,12 @@ for (const slug of readdirSync(path.join(root, 'apps'))) {
   });
 }
 
-const order = ['blokus', 'splendor', 'star-leap', 'sweet-carousel', 'hue-garden', 'field-and-wall', 'balloon-rally'];
-games.sort((a, b) => {
-  const ai = order.indexOf(a.slug);
-  const bi = order.indexOf(b.slug);
-  if (ai >= 0 || bi >= 0) return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
-  return a.title.localeCompare(b.title);
-});
+const categoryRank = { classic: 0, family: 1, arcade: 2 };
+games.sort(
+  (a, b) =>
+    (categoryRank[a.category] ?? 9) - (categoryRank[b.category] ?? 9) ||
+    a.title.localeCompare(b.title),
+);
 
 mkdirSync(path.join(hub, 'src', 'data'), { recursive: true });
 writeFileSync(path.join(hub, 'src', 'data', 'games.json'), `${JSON.stringify(games, null, 2)}\n`);

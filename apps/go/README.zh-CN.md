@@ -1,4 +1,4 @@
-# 围棋 · Go
+# 围棋
 
 [English](README.md) · **简体中文**
 
@@ -11,7 +11,7 @@
 
 ![围棋主页](docs/screenshots/zh/home.png)
 
-*45 秒双语宣传片清单：[video.json](video.json) · 由仓库根目录的家庭街机工作室渲染。*
+*45 秒双语宣传片清单：[video.json](video.json) · 由仓库根目录的家庭游戏馆工作室渲染。*
 
 ## 五秒钟看懂一回合
 
@@ -124,5 +124,5 @@ Windows SmartScreen 提示。本工作区不集中运行 Tauri 构建。
 
 ## 致谢
 
-家庭街机的原创代码、美术和文案。围棋规则属于公有领域。MIT 许可。
+家庭游戏馆的原创代码、美术和文案。围棋规则属于公有领域。MIT 许可。
 见 [`NOTICE.md`](NOTICE.md)。

@@ -1,4 +1,4 @@
-# 国际象棋 · Chess
+# 国际象棋
 
 [English](README.md) · **简体中文**
 

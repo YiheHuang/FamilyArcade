@@ -1,4 +1,4 @@
-# Go · 围棋
+# Go
 
 **English** · [简体中文](README.zh-CN.md)
 

@@ -1,6 +1,8 @@
-# 大力士棋 · Abalone
+[English](README.md) · 简体中文
 
-家庭街机 · 第 12 款 · 双人对弈 · 61 格六角棋盘
+# 大力士棋
+
+家庭游戏馆 · 双人对弈 · 61 格六角棋盘
 
 ![大力士棋对局](docs/screenshots/zh/game.png)
 
@@ -86,7 +88,7 @@ npm run lan
 
 ## Tauri 安装包
 
-`src-tauri` 是家庭街机共享的局域网中继外壳。在本目录执行：
+`src-tauri` 是家庭游戏馆共享的局域网中继外壳。在本目录执行：
 
 ```bash
 npm run build

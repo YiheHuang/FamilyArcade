@@ -1,7 +1,7 @@
 # Family Arcade · shared build brief for game agents
 
 You are building one game inside the Family Arcade monorepo. The repository must end with
-27 polished family games, each playable solo, hot-seat and over LAN, each with a
+42 polished family games, each playable solo, hot-seat and over LAN, each with a
 lightweight Tauri installer and a 45-second bilingual promo.
 
 ## Your workspace

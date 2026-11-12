@@ -1,4 +1,4 @@
-# Hive · 虫虫棋
+# Hive
 
 **English** · [简体中文](README.zh-CN.md)
 

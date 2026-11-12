@@ -1,4 +1,4 @@
-﻿# 国际跳棋 · International Draughts
+﻿# 国际跳棋
 
 [English](README.md) · **简体中文**
 

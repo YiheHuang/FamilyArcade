@@ -14,7 +14,7 @@ account, no ads, no remote assets.
 
 *45 seconds · 1920×1080 · 60 fps · [中文版](docs/promo/color-chain-promo-zh.mp4) · [video.json](video.json)*
 
-*Part of [Family Arcade](../..), game 13/27. Browser v0.1 + a Tauri shell; screenshots come
+*Part of [Family Arcade](../..), game 13/42. Browser v0.1 + a Tauri shell; screenshots come
 from the running app.*
 
 ## A turn, in five seconds

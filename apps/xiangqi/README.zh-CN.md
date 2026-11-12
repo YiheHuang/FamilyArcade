@@ -1,4 +1,4 @@
-# 中国象棋 · Xiangqi
+# 中国象棋
 
 [English](README.md) · **简体中文**
 

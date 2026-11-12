@@ -1,5 +1,233 @@
 [
   {
+    "slug": "gomoku",
+    "order": 1,
+    "title": "Gomoku",
+    "titleZh": "五子棋",
+    "tagline": "Five stones. One line.",
+    "taglineZh": "五子连珠，一线定局。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "10–20 minutes",
+    "timeZh": "10–20 分钟",
+    "age": "6+",
+    "accent": "#b4432c",
+    "paper": "#f1ecdf",
+    "ink": "#20251f",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "15 × 15 freestyle board",
+      "4 computer levels",
+      "Hot-seat + LAN",
+      "Undo + hint + autosave"
+    ],
+    "factsZh": [
+      "15 × 15 自由规则棋盘",
+      "四档电脑对手",
+      "同屏 + 局域网",
+      "悔棋 + 提示 + 自动保存"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Fifteen by fifteen. Five stones in a line.",
+        "zh": "十五乘十五，五子连成一线。",
+        "enFile": "voice/gomoku/en/line-1.mp3",
+        "zhFile": "voice/gomoku/zh/line-1.mp3",
+        "enDuration": 3.912,
+        "zhDuration": 3.552
+      },
+      {
+        "at": 5.2,
+        "en": "Gomoku. The classic table game, at home.",
+        "zh": "五子棋。一桌人都熟悉的经典。",
+        "enFile": "voice/gomoku/en/line-2.mp3",
+        "zhFile": "voice/gomoku/zh/line-2.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 4.152
+      },
+      {
+        "at": 10,
+        "en": "Black starts. Place, block, and build both ends.",
+        "zh": "黑方先手。落子、堵截，两端都留出空间。",
+        "enFile": "voice/gomoku/en/line-3.mp3",
+        "zhFile": "voice/gomoku/zh/line-3.mp3",
+        "enDuration": 4.632,
+        "zhDuration": 5.424
+      },
+      {
+        "at": 16,
+        "en": "Four computer levels, from gentle Companion to six-ply Hard.",
+        "zh": "四档电脑对手，从温和陪玩到六层挑战。",
+        "enFile": "voice/gomoku/en/line-4.mp3",
+        "zhFile": "voice/gomoku/zh/line-4.mp3",
+        "enDuration": 4.632,
+        "zhDuration": 4.728
+      },
+      {
+        "at": 23.5,
+        "en": "Two players on one screen, or a phone joins over Wi-Fi.",
+        "zh": "两人同屏，或者手机连同一网络加入。",
+        "enFile": "voice/gomoku/en/line-5.mp3",
+        "zhFile": "voice/gomoku/zh/line-5.mp3",
+        "enDuration": 4.2,
+        "zhDuration": 4.344
+      },
+      {
+        "at": 31,
+        "en": "Hints explain the threat. Undo and autosave keep the table calm.",
+        "zh": "提示说明威胁，悔棋和自动保存让牌桌更从容。",
+        "enFile": "voice/gomoku/en/line-6.mp3",
+        "zhFile": "voice/gomoku/zh/line-6.mp3",
+        "enDuration": 5.112,
+        "zhDuration": 5.544
+      },
+      {
+        "at": 38,
+        "en": "Free rules. Overlines count. No account, no ads.",
+        "zh": "自由规则，长连也算胜。无账号，无广告。",
+        "enFile": "voice/gomoku/en/line-7.mp3",
+        "zhFile": "voice/gomoku/zh/line-7.mp3",
+        "enDuration": 5.016,
+        "zhDuration": 5.4
+      },
+      {
+        "at": 42,
+        "en": "Gomoku. Five stones. One line.",
+        "zh": "五子棋。五子连珠，一线定局。",
+        "enFile": "voice/gomoku/en/line-8.mp3",
+        "zhFile": "voice/gomoku/zh/line-8.mp3",
+        "enDuration": 3.84,
+        "zhDuration": 4.416
+      }
+    ]
+  },
+  {
+    "slug": "quarto",
+    "order": 1,
+    "title": "Quarto",
+    "titleZh": "四连棋",
+    "tagline": "Sixteen pieces. One rule.",
+    "taglineZh": "十六枚棋子，一条规则。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "10 minutes",
+    "timeZh": "10 分钟",
+    "age": "6+",
+    "accent": "#a9553e",
+    "paper": "#f2eadc",
+    "ink": "#241d17",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "4 × 4 board",
+      "16 unique pieces",
+      "4 AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "4 × 4 棋盘",
+      "16 枚独特棋子",
+      "四档电脑难度",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Sixteen pieces. Four attributes. One rule.",
+        "zh": "十六枚棋子，四种属性，一条规则。",
+        "enFile": "voice/quarto/en/line-1.mp3",
+        "zhFile": "voice/quarto/zh/line-1.mp3",
+        "enDuration": 4.392,
+        "zhDuration": 4.344
+      },
+      {
+        "at": 5.2,
+        "en": "Quarto. Choose a piece and hand it to your opponent.",
+        "zh": "四连棋。选一枚棋子，交给对手。",
+        "enFile": "voice/quarto/en/line-2.mp3",
+        "zhFile": "voice/quarto/zh/line-2.mp3",
+        "enDuration": 4.152,
+        "zhDuration": 4.632
+      },
+      {
+        "at": 10,
+        "en": "They place it, then choose the next piece for you. Every gift shapes the board.",
+        "zh": "对手放好棋子，再为你选下一枚。每一份礼物都在塑造棋盘。",
+        "enFile": "voice/quarto/en/line-3.mp3",
+        "zhFile": "voice/quarto/zh/line-3.mp3",
+        "enDuration": 5.112,
+        "zhDuration": 6.672
+      },
+      {
+        "at": 16,
+        "en": "Four pieces in a line share one attribute — that is a quarto.",
+        "zh": "一条线上四枚棋子共享一种属性，就是四连。",
+        "enFile": "voice/quarto/en/line-4.mp3",
+        "zhFile": "voice/quarto/zh/line-4.mp3",
+        "enDuration": 4.176,
+        "zhDuration": 4.992
+      },
+      {
+        "at": 23.5,
+        "en": "Four computer levels, from a gentle companion to forced-piece search.",
+        "zh": "四档电脑难度，从温和陪玩到强制棋子搜索。",
+        "enFile": "voice/quarto/en/line-5.mp3",
+        "zhFile": "voice/quarto/zh/line-5.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 5.16
+      },
+      {
+        "at": 31,
+        "en": "Two players on one screen, or a phone joins on the same Wi-Fi.",
+        "zh": "两人同屏，或者手机连同一网络加入。",
+        "enFile": "voice/quarto/en/line-6.mp3",
+        "zhFile": "voice/quarto/zh/line-6.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 4.344
+      },
+      {
+        "at": 38,
+        "en": "Hints that explain why, undo, autosave, a family record. Offline, no account, no ads.",
+        "zh": "会解释原因的提示、悔棋、自动保存和家庭战绩。离线、无账号、无广告。",
+        "enFile": "voice/quarto/en/line-7.mp3",
+        "zhFile": "voice/quarto/zh/line-7.mp3",
+        "enDuration": 8.016,
+        "zhDuration": 8.736
+      },
+      {
+        "at": 42,
+        "en": "Quarto. Sixteen pieces. One rule.",
+        "zh": "四连棋。十六枚棋子，一条规则。",
+        "enFile": "voice/quarto/en/line-8.mp3",
+        "zhFile": "voice/quarto/zh/line-8.mp3",
+        "enDuration": 3.984,
+        "zhDuration": 4.68
+      }
+    ]
+  },
+  {
     "slug": "triple",
     "order": 1,
     "title": "Triple",
@@ -15,16 +243,8 @@
     "paper": "#f7f0e2",
     "ink": "#2a241e",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "stats.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "stats.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "3 × 3 board",
@@ -129,16 +349,8 @@
     "paper": "#f5eddd",
     "ink": "#27221b",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "7 × 6 board",
@@ -228,6 +440,234 @@
     ]
   },
   {
+    "slug": "xiangqi",
+    "order": 2,
+    "title": "Xiangqi",
+    "titleZh": "中国象棋",
+    "tagline": "Nine files. Ten ranks. One family table.",
+    "taglineZh": "九路十行，一张家里的棋盘。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "20 minutes",
+    "timeZh": "20 分钟",
+    "age": "8+",
+    "accent": "#a33b2b",
+    "paper": "#f7f0e2",
+    "ink": "#2a241e",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "9 × 10 board",
+      "Flying general + checkmate",
+      "Four computer levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "9 × 10 棋盘",
+      "飞将、将死与困毙",
+      "四档电脑难度",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Ninety points. Two palaces. One river.",
+        "zh": "九十个交叉点，两座九宫，一条楚河。",
+        "enFile": "voice/xiangqi/en/line-1.mp3",
+        "zhFile": "voice/xiangqi/zh/line-1.mp3",
+        "enDuration": 4.176,
+        "zhDuration": 4.344
+      },
+      {
+        "at": 5.2,
+        "en": "Xiangqi. The classic Chinese chess.",
+        "zh": "中国象棋。棋盘上的老经典。",
+        "enFile": "voice/xiangqi/en/line-2.mp3",
+        "zhFile": "voice/xiangqi/zh/line-2.mp3",
+        "enDuration": 3.432,
+        "zhDuration": 3.984
+      },
+      {
+        "at": 10,
+        "en": "Horses jump, elephants guard, cannons need a screen.",
+        "zh": "马走日，象守家，炮吃子要隔一个。",
+        "enFile": "voice/xiangqi/en/line-3.mp3",
+        "zhFile": "voice/xiangqi/zh/line-3.mp3",
+        "enDuration": 4.488,
+        "zhDuration": 4.056
+      },
+      {
+        "at": 16,
+        "en": "Four computer levels, from gentle Companion to a four-ply Hard.",
+        "zh": "四档电脑难度，从温和陪玩到四层搜索的挑战。",
+        "enFile": "voice/xiangqi/en/line-4.mp3",
+        "zhFile": "voice/xiangqi/zh/line-4.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 5.136
+      },
+      {
+        "at": 23.5,
+        "en": "Two players on one screen, or a phone joins on the local network.",
+        "zh": "两人同屏，或者手机连同一网络加入。",
+        "enFile": "voice/xiangqi/en/line-5.mp3",
+        "zhFile": "voice/xiangqi/zh/line-5.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 4.344
+      },
+      {
+        "at": 31,
+        "en": "Check, flying general, checkmate, stalemate: the full rules.",
+        "zh": "将军、飞将、将死、困毙，规则完整。",
+        "enFile": "voice/xiangqi/en/line-6.mp3",
+        "zhFile": "voice/xiangqi/zh/line-6.mp3",
+        "enDuration": 5.016,
+        "zhDuration": 4.824
+      },
+      {
+        "at": 38,
+        "en": "Hints, undo, autosave, and a family record.",
+        "zh": "提示、悔棋、自动保存，还有家庭战绩。",
+        "enFile": "voice/xiangqi/en/line-7.mp3",
+        "zhFile": "voice/xiangqi/zh/line-7.mp3",
+        "enDuration": 4.224,
+        "zhDuration": 4.704
+      },
+      {
+        "at": 42,
+        "en": "Xiangqi. The family table, nine files wide.",
+        "zh": "中国象棋。九路棋盘，一张家里的桌子。",
+        "enFile": "voice/xiangqi/en/line-8.mp3",
+        "zhFile": "voice/xiangqi/zh/line-8.mp3",
+        "enDuration": 4.128,
+        "zhDuration": 4.992
+      }
+    ]
+  },
+  {
+    "slug": "chess",
+    "order": 3,
+    "title": "Chess",
+    "titleZh": "国际象棋",
+    "tagline": "Every rule. One table.",
+    "taglineZh": "所有规则，一桌下完。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "30 minutes",
+    "timeZh": "30 分钟",
+    "age": "6+",
+    "accent": "#2f5d50",
+    "paper": "#f3ecdf",
+    "ink": "#24211b",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "8 × 8 board",
+      "Full FIDE rules",
+      "4 computer levels",
+      "Hot-seat + local network"
+    ],
+    "factsZh": [
+      "8 × 8 棋盘",
+      "完整国际棋联规则",
+      "四档电脑难度",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "The classic board. Every piece in its place.",
+        "zh": "经典棋盘，每一枚棋子各就各位。",
+        "enFile": "voice/chess/en/line-1.mp3",
+        "zhFile": "voice/chess/zh/line-1.mp3",
+        "enDuration": 3.432,
+        "zhDuration": 4.032
+      },
+      {
+        "at": 5.2,
+        "en": "Chess. Full FIDE rules, one warm table.",
+        "zh": "国际象棋。完整规则，一张暖桌。",
+        "enFile": "voice/chess/en/line-2.mp3",
+        "zhFile": "voice/chess/zh/line-2.mp3",
+        "enDuration": 3.888,
+        "zhDuration": 4.584
+      },
+      {
+        "at": 10,
+        "en": "Open with a pawn, castle the king, promote at the far rank.",
+        "zh": "兵开局面，王车易位，底线升变。",
+        "enFile": "voice/chess/en/line-3.mp3",
+        "zhFile": "voice/chess/zh/line-3.mp3",
+        "enDuration": 4.512,
+        "zhDuration": 4.08
+      },
+      {
+        "at": 16,
+        "en": "En passant, check, checkmate and stalemate are all real.",
+        "zh": "吃过路兵、将军、将死和逼和，全都按规则。",
+        "enFile": "voice/chess/en/line-4.mp3",
+        "zhFile": "voice/chess/zh/line-4.mp3",
+        "enDuration": 4.368,
+        "zhDuration": 5.136
+      },
+      {
+        "at": 23.5,
+        "en": "Four computer levels, from a gentle Companion to a searching Hard.",
+        "zh": "四档电脑难度，从温和陪玩到会搜索的挑战。",
+        "enFile": "voice/chess/en/line-5.mp3",
+        "zhFile": "voice/chess/zh/line-5.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 5.064
+      },
+      {
+        "at": 31,
+        "en": "Two players on one screen, or a phone joins over the local network.",
+        "zh": "两人同屏，或者手机连同一局域网加入。",
+        "enFile": "voice/chess/en/line-6.mp3",
+        "zhFile": "voice/chess/zh/line-6.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 38,
+        "en": "Hints, undo, autosave and a family record.",
+        "zh": "提示、悔棋、自动保存和家庭战绩。",
+        "enFile": "voice/chess/en/line-7.mp3",
+        "zhFile": "voice/chess/zh/line-7.mp3",
+        "enDuration": 4.176,
+        "zhDuration": 4.536
+      },
+      {
+        "at": 42,
+        "en": "Chess. Every rule. One table.",
+        "zh": "国际象棋。所有规则，一桌下完。",
+        "enFile": "voice/chess/en/line-8.mp3",
+        "zhFile": "voice/chess/zh/line-8.mp3",
+        "enDuration": 3.552,
+        "zhDuration": 4.56
+      }
+    ]
+  },
+  {
     "slug": "flip",
     "order": 3,
     "title": "Flip",
@@ -243,16 +683,8 @@
     "paper": "#f4ecdd",
     "ink": "#241f19",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "8 × 8 board",
@@ -357,16 +789,8 @@
     "paper": "#f4efe3",
     "ink": "#1f2a26",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "8 × 8 board",
@@ -456,6 +880,120 @@
     ]
   },
   {
+    "slug": "go",
+    "order": 4,
+    "title": "Go",
+    "titleZh": "围棋",
+    "tagline": "The whole board. The whole family.",
+    "taglineZh": "一整张棋盘，一家人慢慢下。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "30 minutes",
+    "timeZh": "30 分钟",
+    "age": "6+",
+    "accent": "#b05c43",
+    "paper": "#f5eddd",
+    "ink": "#27221b",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "19 × 19 with 9 × 9 and 13 × 13",
+      "Four AI levels",
+      "Captures, ko, komi 6.5 / 7.5",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "19 × 19 棋盘，另有 9 × 9 和 13 × 13",
+      "四档电脑难度",
+      "提子、打劫、贴目 6.5 / 7.5",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Three hundred and sixty-one crossings. Black moves first.",
+        "zh": "三百六十一个交叉点，黑棋先行。",
+        "enFile": "voice/go/en/line-1.mp3",
+        "zhFile": "voice/go/zh/line-1.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 3.768
+      },
+      {
+        "at": 5.2,
+        "en": "Go. The whole board, the whole family.",
+        "zh": "围棋。一整张棋盘，一家人慢慢下。",
+        "enFile": "voice/go/en/line-2.mp3",
+        "zhFile": "voice/go/zh/line-2.mp3",
+        "enDuration": 3.456,
+        "zhDuration": 4.68
+      },
+      {
+        "at": 10,
+        "en": "Place stones, surround ground, and capture groups with no liberties.",
+        "zh": "落子、围地，提掉没有气的棋。",
+        "enFile": "voice/go/en/line-3.mp3",
+        "zhFile": "voice/go/zh/line-3.mp3",
+        "enDuration": 5.16,
+        "zhDuration": 3.744
+      },
+      {
+        "at": 16,
+        "en": "Choose 9×9, 13×13 or the full 19×19 board.",
+        "zh": "可选 9×9、13×13，或完整的 19×19 棋盘。",
+        "enFile": "voice/go/en/line-4.mp3",
+        "zhFile": "voice/go/zh/line-4.mp3",
+        "enDuration": 6.12,
+        "zhDuration": 6.504
+      },
+      {
+        "at": 23.5,
+        "en": "Four computer levels, from gentle Companion to a playout-driven Hard.",
+        "zh": "四档电脑难度，从温和陪玩到会做推演的挑战。",
+        "enFile": "voice/go/en/line-5.mp3",
+        "zhFile": "voice/go/zh/line-5.mp3",
+        "enDuration": 5.016,
+        "zhDuration": 5.256
+      },
+      {
+        "at": 31,
+        "en": "Two players on one screen, or a phone joins on the same network.",
+        "zh": "两人同屏，或者手机连同一局域网加入。",
+        "enFile": "voice/go/en/line-6.mp3",
+        "zhFile": "voice/go/zh/line-6.mp3",
+        "enDuration": 4.536,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 38,
+        "en": "Undo, a hint with a reason, autosave and a family record.",
+        "zh": "悔棋、带理由的提示、自动保存和家庭战绩。",
+        "enFile": "voice/go/en/line-7.mp3",
+        "zhFile": "voice/go/zh/line-7.mp3",
+        "enDuration": 5.208,
+        "zhDuration": 5.136
+      },
+      {
+        "at": 42,
+        "en": "Go. Count the stones and the ground.",
+        "zh": "围棋。数子，也数地。",
+        "enFile": "voice/go/en/line-8.mp3",
+        "zhFile": "voice/go/zh/line-8.mp3",
+        "enDuration": 3.216,
+        "zhDuration": 3.6
+      }
+    ]
+  },
+  {
     "slug": "mill",
     "order": 5,
     "title": "Mill",
@@ -471,16 +1009,8 @@
     "paper": "#f3ead9",
     "ink": "#24211c",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "24-point board",
@@ -574,6 +1104,120 @@
     ]
   },
   {
+    "slug": "shogi",
+    "order": 5,
+    "title": "Shogi",
+    "titleZh": "将棋",
+    "tagline": "Drops, promotion, checkmate.",
+    "taglineZh": "吃子、打入、升变、将死。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "20 minutes",
+    "timeZh": "20 分钟",
+    "age": "8+",
+    "accent": "#b04a32",
+    "paper": "#f7f0e2",
+    "ink": "#2a241e",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "9 × 9 board",
+      "Drops + promotion",
+      "4 AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "9 × 9 棋盘",
+      "打入 + 升变",
+      "四档电脑",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "A 9×9 board. Forty pieces. One king to catch.",
+        "zh": "九乘九棋盘，四十枚棋子，一枚王将。",
+        "enFile": "voice/shogi/en/line-1.mp3",
+        "zhFile": "voice/shogi/zh/line-1.mp3",
+        "enDuration": 5.04,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 5.2,
+        "en": "Shogi. Drops, promotion, checkmate.",
+        "zh": "将棋。吃子、打入、升变、将死。",
+        "enFile": "voice/shogi/en/line-2.mp3",
+        "zhFile": "voice/shogi/zh/line-2.mp3",
+        "enDuration": 3.552,
+        "zhDuration": 4.992
+      },
+      {
+        "at": 10,
+        "en": "Move, capture, and return the piece to your hand.",
+        "zh": "走子、吃子，把对方的棋子收入手中。",
+        "enFile": "voice/shogi/en/line-3.mp3",
+        "zhFile": "voice/shogi/zh/line-3.mp3",
+        "enDuration": 3.96,
+        "zhDuration": 4.416
+      },
+      {
+        "at": 16,
+        "en": "Drop it almost anywhere. Promote in the last three ranks.",
+        "zh": "打入几乎任何空格，在最后三行升变。",
+        "enFile": "voice/shogi/en/line-4.mp3",
+        "zhFile": "voice/shogi/zh/line-4.mp3",
+        "enDuration": 4.416,
+        "zhDuration": 4.128
+      },
+      {
+        "at": 23,
+        "en": "Four levels, from gentle Companion to a three-move Hard.",
+        "zh": "四档难度，从温和陪玩到三步挑战。",
+        "enFile": "voice/shogi/en/line-5.mp3",
+        "zhFile": "voice/shogi/zh/line-5.mp3",
+        "enDuration": 4.32,
+        "zhDuration": 4.128
+      },
+      {
+        "at": 30,
+        "en": "Two players on one screen, or a phone on the same Wi-Fi.",
+        "zh": "两人同屏，或手机连同一无线网络。",
+        "enFile": "voice/shogi/en/line-6.mp3",
+        "zhFile": "voice/shogi/zh/line-6.mp3",
+        "enDuration": 4.272,
+        "zhDuration": 4.2
+      },
+      {
+        "at": 37,
+        "en": "Undo, hints, autosave, and a family record.",
+        "zh": "悔棋、提示、自动保存，还有家庭战绩。",
+        "enFile": "voice/shogi/en/line-7.mp3",
+        "zhFile": "voice/shogi/zh/line-7.mp3",
+        "enDuration": 4.344,
+        "zhDuration": 4.728
+      },
+      {
+        "at": 42,
+        "en": "Shogi. Catch the king.",
+        "zh": "将棋。抓住王将。",
+        "enFile": "voice/shogi/en/line-8.mp3",
+        "zhFile": "voice/shogi/zh/line-8.mp3",
+        "enDuration": 2.472,
+        "zhDuration": 2.976
+      }
+    ]
+  },
+  {
     "slug": "blokus",
     "order": 6,
     "title": "Blokus",
@@ -589,16 +1233,8 @@
     "paper": "#f3efe4",
     "ink": "#24332f",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "lobby.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "lobby.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "84 pieces",
@@ -703,16 +1339,8 @@
     "paper": "#f6efe2",
     "ink": "#29231d",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "6×6 dots · 25 boxes",
@@ -802,6 +1430,234 @@
     ]
   },
   {
+    "slug": "intl-draughts",
+    "order": 6,
+    "title": "International Draughts",
+    "titleZh": "国际跳棋",
+    "tagline": "Ten by ten. Kings that fly.",
+    "taglineZh": "十乘十，飞王纵横。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "15–30 minutes",
+    "timeZh": "15–30 分钟",
+    "age": "7+",
+    "accent": "#2f6a5a",
+    "paper": "#f4ecdc",
+    "ink": "#26221c",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "10 × 10 board",
+      "20 men each",
+      "Flying kings + maximum capture",
+      "4 computer levels · hot-seat · LAN"
+    ],
+    "factsZh": [
+      "10 × 10 棋盘",
+      "双方各 20 枚兵",
+      "飞王 + 强制最大吃子",
+      "四档电脑难度 · 同屏 · 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Ten by ten. Twenty men each, and kings that fly.",
+        "zh": "十乘十，双方各二十枚兵，还有纵横飞行的王。",
+        "enFile": "voice/intl-draughts/en/line-1.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-1.mp3",
+        "enDuration": 4.272,
+        "zhDuration": 4.992
+      },
+      {
+        "at": 5.2,
+        "en": "International Draughts. Every capture matters.",
+        "zh": "国际跳棋。每一次吃子都算数。",
+        "enFile": "voice/intl-draughts/en/line-2.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-2.mp3",
+        "enDuration": 3.672,
+        "zhDuration": 4.152
+      },
+      {
+        "at": 10,
+        "en": "Men move forward, but capture in every direction.",
+        "zh": "兵向前走，却可以向四个斜向吃子。",
+        "enFile": "voice/intl-draughts/en/line-3.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-3.mp3",
+        "enDuration": 3.912,
+        "zhDuration": 3.912
+      },
+      {
+        "at": 16,
+        "en": "Captures are mandatory — and the longest chain wins the move.",
+        "zh": "吃子是强制的——必须走吃子最多的一条路线。",
+        "enFile": "voice/intl-draughts/en/line-4.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-4.mp3",
+        "enDuration": 4.344,
+        "zhDuration": 4.68
+      },
+      {
+        "at": 23.5,
+        "en": "A man that reaches the far row becomes a flying king.",
+        "zh": "兵走到最远一行，就升为飞王。",
+        "enFile": "voice/intl-draughts/en/line-5.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-5.mp3",
+        "enDuration": 3.768,
+        "zhDuration": 3.48
+      },
+      {
+        "at": 31,
+        "en": "Four computer levels, from gentle Companion to deep Hard.",
+        "zh": "四档电脑对手，从温和陪玩到深算挑战。",
+        "enFile": "voice/intl-draughts/en/line-6.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-6.mp3",
+        "enDuration": 4.416,
+        "zhDuration": 4.56
+      },
+      {
+        "at": 38,
+        "en": "Two players on one screen, or a phone joins on the local network.",
+        "zh": "两人同屏，或者手机连同一局域网加入。",
+        "enFile": "voice/intl-draughts/en/line-7.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-7.mp3",
+        "enDuration": 4.656,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 42,
+        "en": "Hints, undo, autosave and a family record. International Draughts.",
+        "zh": "提示、悔棋、自动保存和家庭战绩。国际跳棋。",
+        "enFile": "voice/intl-draughts/en/line-8.mp3",
+        "zhFile": "voice/intl-draughts/zh/line-8.mp3",
+        "enDuration": 5.952,
+        "zhDuration": 6.168
+      }
+    ]
+  },
+  {
+    "slug": "jungle-chess",
+    "order": 7,
+    "title": "Jungle Chess",
+    "titleZh": "斗兽棋",
+    "tagline": "Seven columns. Nine rows. One den.",
+    "taglineZh": "七列九行，一个兽穴。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "6+",
+    "accent": "#b4553b",
+    "paper": "#f2ead8",
+    "ink": "#22281f",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "7 × 9 board",
+      "16 animals · 8 ranks",
+      "4 AI levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "七乘九棋盘",
+      "十六只动物 · 八级",
+      "四档电脑难度",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Seven columns. Nine rows. Two rivers.",
+        "zh": "七列九行，两条河流。",
+        "enFile": "voice/jungle-chess/en/line-1.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-1.mp3",
+        "enDuration": 4.296,
+        "zhDuration": 2.928
+      },
+      {
+        "at": 5.2,
+        "en": "Jungle Chess. The classic Dou Shou Qi.",
+        "zh": "斗兽棋，经典动物棋。",
+        "enFile": "voice/jungle-chess/en/line-2.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-2.mp3",
+        "enDuration": 3.528,
+        "zhDuration": 2.832
+      },
+      {
+        "at": 10,
+        "en": "Elephant, lion, tiger, rat. Rank decides who eats whom.",
+        "zh": "大象、狮子、老虎、老鼠，等级决定谁能吃谁。",
+        "enFile": "voice/jungle-chess/en/line-3.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-3.mp3",
+        "enDuration": 5.112,
+        "zhDuration": 5.904
+      },
+      {
+        "at": 16,
+        "en": "Rats swim. Lions and tigers leap the river. Traps bring any animal down.",
+        "zh": "老鼠会游泳，狮子老虎会跳河，陷阱能让任何动物降级。",
+        "enFile": "voice/jungle-chess/en/line-4.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-4.mp3",
+        "enDuration": 6.312,
+        "zhDuration": 6.168
+      },
+      {
+        "at": 23.5,
+        "en": "Four computer levels, from gentle Companion to a three-move Hard.",
+        "zh": "四档电脑难度，从温和陪玩到向前算三步的挑战。",
+        "enFile": "voice/jungle-chess/en/line-5.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-5.mp3",
+        "enDuration": 4.872,
+        "zhDuration": 5.52
+      },
+      {
+        "at": 31,
+        "en": "Two players on one screen, or a phone joins over Wi-Fi.",
+        "zh": "两人同屏，或者手机连同一局域网加入。",
+        "enFile": "voice/jungle-chess/en/line-6.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-6.mp3",
+        "enDuration": 4.2,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 38,
+        "en": "Hints, undo, autosave and a family record.",
+        "zh": "提示、悔棋、自动保存和家庭战绩。",
+        "enFile": "voice/jungle-chess/en/line-7.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-7.mp3",
+        "enDuration": 4.176,
+        "zhDuration": 4.536
+      },
+      {
+        "at": 42,
+        "en": "Jungle Chess. Enter the den, or capture them all.",
+        "zh": "斗兽棋。进入兽穴，或吃光对方。",
+        "enFile": "voice/jungle-chess/en/line-8.mp3",
+        "zhFile": "voice/jungle-chess/zh/line-8.mp3",
+        "enDuration": 4.272,
+        "zhDuration": 4.464
+      }
+    ]
+  },
+  {
     "slug": "sowing",
     "order": 7,
     "title": "Sowing",
@@ -817,16 +1673,8 @@
     "paper": "#f7f0e2",
     "ink": "#2a241e",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "12 pits + 2 stores",
@@ -916,6 +1764,120 @@
     ]
   },
   {
+    "slug": "hearts",
+    "order": 8,
+    "title": "Hearts",
+    "titleZh": "红心大战",
+    "tagline": "Four seats. Mind the queen.",
+    "taglineZh": "四家一桌，小心皇后。",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "25 minutes",
+    "timeZh": "25 分钟",
+    "age": "8+",
+    "accent": "#bf4c3d",
+    "paper": "#f3ead9",
+    "ink": "#1e2b25",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "52-card deck",
+      "Pass three, shoot the moon",
+      "4 computer levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "52 张牌",
+      "传三张，可射月",
+      "四档电脑难度",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "A 52-card deck. Four seats. One queen to avoid.",
+        "zh": "一副 52 张牌，四个座位，一张要躲开的皇后。",
+        "enFile": "voice/hearts/en/line-1.mp3",
+        "zhFile": "voice/hearts/zh/line-1.mp3",
+        "enDuration": 5.232,
+        "zhDuration": 5.112
+      },
+      {
+        "at": 5.2,
+        "en": "Hearts. Pass three cards and take the trick.",
+        "zh": "红心大战。传三张牌，收下每一墩。",
+        "enFile": "voice/hearts/en/line-2.mp3",
+        "zhFile": "voice/hearts/zh/line-2.mp3",
+        "enDuration": 3.912,
+        "zhDuration": 4.704
+      },
+      {
+        "at": 10,
+        "en": "Left, right, across. Keep the dangerous cards moving.",
+        "zh": "向左、向右、对家，把危险牌传出去。",
+        "enFile": "voice/hearts/en/line-3.mp3",
+        "zhFile": "voice/hearts/zh/line-3.mp3",
+        "enDuration": 4.56,
+        "zhDuration": 4.584
+      },
+      {
+        "at": 16,
+        "en": "Follow suit. Every heart is a point, and so is the queen of spades.",
+        "zh": "能跟就必须跟。每张红心一分，黑桃皇后十三分。",
+        "enFile": "voice/hearts/en/line-4.mp3",
+        "zhFile": "voice/hearts/zh/line-4.mp3",
+        "enDuration": 5.472,
+        "zhDuration": 5.688
+      },
+      {
+        "at": 23.5,
+        "en": "Take all 26 points to shoot the moon and turn the table around.",
+        "zh": "收下全部 26 分就是射月，整张牌桌都会翻转。",
+        "enFile": "voice/hearts/en/line-5.mp3",
+        "zhFile": "voice/hearts/zh/line-5.mp3",
+        "enDuration": 4.536,
+        "zhDuration": 5.64
+      },
+      {
+        "at": 31,
+        "en": "Four computer levels, from a gentle companion to a counting challenge.",
+        "zh": "四档电脑难度，从温和陪玩到会算牌的挑战。",
+        "enFile": "voice/hearts/en/line-6.mp3",
+        "zhFile": "voice/hearts/zh/line-6.mp3",
+        "enDuration": 5.04,
+        "zhDuration": 4.872
+      },
+      {
+        "at": 38,
+        "en": "Four on one screen with a private curtain, or a phone joins over the local network.",
+        "zh": "四人同屏有隐私幕帘，手机也能连局域网加入。",
+        "enFile": "voice/hearts/en/line-7.mp3",
+        "zhFile": "voice/hearts/zh/line-7.mp3",
+        "enDuration": 5.64,
+        "zhDuration": 5.112
+      },
+      {
+        "at": 42,
+        "en": "Hints, undo, autosave, a family record, and no accounts.",
+        "zh": "提示、悔棋、自动保存、家庭战绩，不用账号。",
+        "enFile": "voice/hearts/en/line-8.mp3",
+        "zhFile": "voice/hearts/zh/line-8.mp3",
+        "enDuration": 5.52,
+        "zhDuration": 5.52
+      }
+    ]
+  },
+  {
     "slug": "tables",
     "order": 8,
     "title": "Tables",
@@ -931,16 +1893,8 @@
     "paper": "#f4ecdc",
     "ink": "#241f1a",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "24-point board",
@@ -1045,16 +1999,8 @@
     "paper": "#f6efe2",
     "ink": "#2c251d",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "2–4 players",
@@ -1144,6 +2090,122 @@
     ]
   },
   {
+    "slug": "spades",
+    "order": 9,
+    "title": "Spades",
+    "titleZh": "黑桃皇后",
+    "tagline": "Four seats. Two partnerships. One deck.",
+    "taglineZh": "四个座位，两对搭档，一副牌。",
+    "players": "4 players",
+    "playersZh": "4 人",
+    "time": "20–30 minutes",
+    "timeZh": "20–30 分钟",
+    "age": "8+",
+    "accent": "#1f4d3d",
+    "paper": "#efe7d5",
+    "ink": "#1e2a23",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "stats.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "stats.png"
+      ]
+    },
+    "facts": [
+      "52 cards · 4 seats",
+      "Nil + blind nil",
+      "4 AI levels",
+      "Hot-seat + LAN",
+      "Race to 500"
+    ],
+    "factsZh": [
+      "52 张牌 · 4 个座位",
+      "零墩 + 盲零墩",
+      "四档电脑",
+      "同屏 + 局域网",
+      "先到 500 分"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Four seats. Two partnerships. One deck.",
+        "zh": "四个座位，两对搭档，一副牌。",
+        "enFile": "voice/spades/en/line-1.mp3",
+        "zhFile": "voice/spades/zh/line-1.mp3",
+        "enDuration": 4.056,
+        "zhDuration": 3.696
+      },
+      {
+        "at": 5.2,
+        "en": "Spades. The partnership card table.",
+        "zh": "黑桃皇后。搭档的牌桌。",
+        "enFile": "voice/spades/en/line-2.mp3",
+        "zhFile": "voice/spades/zh/line-2.mp3",
+        "enDuration": 3.168,
+        "zhDuration": 3.552
+      },
+      {
+        "at": 10,
+        "en": "Bid your tricks. Spades are always trump.",
+        "zh": "先叫墩数。黑桃永远是王牌。",
+        "enFile": "voice/spades/en/line-3.mp3",
+        "zhFile": "voice/spades/zh/line-3.mp3",
+        "enDuration": 3.48,
+        "zhDuration": 4.08
+      },
+      {
+        "at": 16,
+        "en": "Follow suit, break spades, and cover your partner.",
+        "zh": "跟花色、破黑桃，替搭档兜底。",
+        "enFile": "voice/spades/en/line-4.mp3",
+        "zhFile": "voice/spades/zh/line-4.mp3",
+        "enDuration": 4.008,
+        "zhDuration": 3.816
+      },
+      {
+        "at": 23,
+        "en": "Go nil for a hundred, or blind nil for two.",
+        "zh": "零墩奖一百，盲零墩奖两百。",
+        "enFile": "voice/spades/en/line-5.mp3",
+        "zhFile": "voice/spades/zh/line-5.mp3",
+        "enDuration": 3.552,
+        "zhDuration": 3.384
+      },
+      {
+        "at": 30,
+        "en": "Four AI levels, hot-seat, or four phones on one network.",
+        "zh": "四档电脑、四人同屏，或同一网络的四部手机。",
+        "enFile": "voice/spades/en/line-6.mp3",
+        "zhFile": "voice/spades/zh/line-6.mp3",
+        "enDuration": 4.608,
+        "zhDuration": 5.16
+      },
+      {
+        "at": 37,
+        "en": "Bags, bag penalties, and a race to five hundred.",
+        "zh": "袋分、罚分，一路打到五百分。",
+        "enFile": "voice/spades/en/line-7.mp3",
+        "zhFile": "voice/spades/zh/line-7.mp3",
+        "enDuration": 4.392,
+        "zhDuration": 3.696
+      },
+      {
+        "at": 42,
+        "en": "Spades. Deal the next hand.",
+        "zh": "黑桃皇后。发下一手牌。",
+        "enFile": "voice/spades/en/line-8.mp3",
+        "zhFile": "voice/spades/zh/line-8.mp3",
+        "enDuration": 2.904,
+        "zhDuration": 3.576
+      }
+    ]
+  },
+  {
     "slug": "ladder-run",
     "order": 10,
     "title": "Ladder Run",
@@ -1159,16 +2221,8 @@
     "paper": "#faf3e6",
     "ink": "#2c2822",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "10 × 10 board",
@@ -1262,6 +2316,236 @@
     ]
   },
   {
+    "slug": "rummy-500",
+    "order": 10,
+    "title": "Rummy 500",
+    "titleZh": "五百分拉米",
+    "tagline": "Draw. Meld. Lay off. Reach 500.",
+    "taglineZh": "摸牌。组牌。接牌。先到五百分。",
+    "players": "2–4 players",
+    "playersZh": "2–4 人",
+    "time": "20–30 minutes",
+    "timeZh": "20–30 分钟",
+    "age": "8+",
+    "accent": "#b05c43",
+    "paper": "#f7f0e2",
+    "ink": "#2a241e",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "Full Rummy 500 rules",
+      "2–4 players",
+      "Four AI levels",
+      "Hot-seat + LAN",
+      "Undo + hint + autosave"
+    ],
+    "factsZh": [
+      "完整五百分规则",
+      "2–4 人",
+      "四档电脑",
+      "同屏 + 局域网",
+      "悔棋 + 提示 + 自动保存"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "A deck, a table, and a race to five hundred.",
+        "zh": "一副牌，一张桌，先到五百分。",
+        "enFile": "voice/rummy-500/en/line-1.mp3",
+        "zhFile": "voice/rummy-500/zh/line-1.mp3",
+        "enDuration": 3.912,
+        "zhDuration": 3.624
+      },
+      {
+        "at": 5.2,
+        "en": "Rummy 500. Draw, meld, lay off.",
+        "zh": "五百分拉米。摸牌、组牌、接牌。",
+        "enFile": "voice/rummy-500/en/line-2.mp3",
+        "zhFile": "voice/rummy-500/zh/line-2.mp3",
+        "enDuration": 4.104,
+        "zhDuration": 4.656
+      },
+      {
+        "at": 10,
+        "en": "Take the stock, or dig into the discard pile.",
+        "zh": "摸牌堆，或从弃牌堆里取牌。",
+        "enFile": "voice/rummy-500/en/line-3.mp3",
+        "zhFile": "voice/rummy-500/zh/line-3.mp3",
+        "enDuration": 3.36,
+        "zhDuration": 3.48
+      },
+      {
+        "at": 15.5,
+        "en": "Sets, runs, and lay-offs on anyone's meld.",
+        "zh": "套牌、顺子，还能接任何人的牌组。",
+        "enFile": "voice/rummy-500/en/line-4.mp3",
+        "zhFile": "voice/rummy-500/zh/line-4.mp3",
+        "enDuration": 4.08,
+        "zhDuration": 4.08
+      },
+      {
+        "at": 21,
+        "en": "Aces play high or low. Table cards score; hand cards cost.",
+        "zh": "A 可大可小。桌上的牌加分，手里的牌减分。",
+        "enFile": "voice/rummy-500/en/line-5.mp3",
+        "zhFile": "voice/rummy-500/zh/line-5.mp3",
+        "enDuration": 5.16,
+        "zhDuration": 5.328
+      },
+      {
+        "at": 27,
+        "en": "Four AI levels, from a gentle Companion to a careful Hard.",
+        "zh": "四档电脑对手，从温和陪玩到谨慎挑战。",
+        "enFile": "voice/rummy-500/en/line-6.mp3",
+        "zhFile": "voice/rummy-500/zh/line-6.mp3",
+        "enDuration": 4.44,
+        "zhDuration": 4.56
+      },
+      {
+        "at": 33,
+        "en": "Pass one device, or join from a phone over the local network.",
+        "zh": "一台设备传着玩，或手机连同一网络加入。",
+        "enFile": "voice/rummy-500/en/line-7.mp3",
+        "zhFile": "voice/rummy-500/zh/line-7.mp3",
+        "enDuration": 4.32,
+        "zhDuration": 4.68
+      },
+      {
+        "at": 39,
+        "en": "First to 500 wins. Offline, no account, no ads.",
+        "zh": "先到 500 分获胜。离线、无账号、无广告。",
+        "enFile": "voice/rummy-500/en/line-8.mp3",
+        "zhFile": "voice/rummy-500/zh/line-8.mp3",
+        "enDuration": 5.256,
+        "zhDuration": 5.376
+      }
+    ]
+  },
+  {
+    "slug": "cribbage",
+    "order": 11,
+    "title": "Cribbage",
+    "titleZh": "克里比奇",
+    "tagline": "Thirty-one, and a little luck.",
+    "taglineZh": "凑到三十一，也碰一点运气。",
+    "players": "2–4 players",
+    "playersZh": "2–4 人",
+    "time": "20 minutes",
+    "timeZh": "20 分钟",
+    "age": "8+",
+    "accent": "#b55438",
+    "paper": "#f4ecdd",
+    "ink": "#1f2a24",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "2–4 players",
+      "First to 121",
+      "Four computer levels",
+      "Hot-seat + LAN"
+    ],
+    "factsZh": [
+      "2–4 人",
+      "先到 121 分",
+      "四档电脑",
+      "同屏 + 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Six cards each. Discard two. Cut for the starter.",
+        "zh": "每人六张，弃两张，再切起始牌。",
+        "enFile": "voice/cribbage/en/line-1.mp3",
+        "zhFile": "voice/cribbage/zh/line-1.mp3",
+        "enDuration": 4.632,
+        "zhDuration": 3.96
+      },
+      {
+        "at": 5.2,
+        "en": "Cribbage. Thirty-one, and a little luck.",
+        "zh": "克里比奇。凑到三十一，也碰一点运气。",
+        "enFile": "voice/cribbage/en/line-2.mp3",
+        "zhFile": "voice/cribbage/zh/line-2.mp3",
+        "enDuration": 3.648,
+        "zhDuration": 4.92
+      },
+      {
+        "at": 10,
+        "en": "Peg to fifteen and thirty-one. Pairs and runs score too.",
+        "zh": "出牌凑十五和三十一，对子与顺子也能得分。",
+        "enFile": "voice/cribbage/en/line-3.mp3",
+        "zhFile": "voice/cribbage/zh/line-3.mp3",
+        "enDuration": 4.728,
+        "zhDuration": 4.896
+      },
+      {
+        "at": 16,
+        "en": "Count your hand with the starter, then the dealer counts the crib.",
+        "zh": "手牌加起始牌计数，庄家最后数弃牌堆。",
+        "enFile": "voice/cribbage/en/line-4.mp3",
+        "zhFile": "voice/cribbage/zh/line-4.mp3",
+        "enDuration": 3.864,
+        "zhDuration": 4.776
+      },
+      {
+        "at": 23.5,
+        "en": "First to 121 wins. Four computer levels, from gentle to sharp.",
+        "zh": "先到 121 分获胜；四档电脑，从温和到犀利。",
+        "enFile": "voice/cribbage/en/line-5.mp3",
+        "zhFile": "voice/cribbage/zh/line-5.mp3",
+        "enDuration": 6.264,
+        "zhDuration": 5.496
+      },
+      {
+        "at": 31,
+        "en": "Two to four players on one screen, or a phone joins over the network.",
+        "zh": "两到四人同屏，手机也能连同一网络加入。",
+        "enFile": "voice/cribbage/en/line-6.mp3",
+        "zhFile": "voice/cribbage/zh/line-6.mp3",
+        "enDuration": 4.872,
+        "zhDuration": 4.68
+      },
+      {
+        "at": 38,
+        "en": "Hints, undo, autosave, and a family record.",
+        "zh": "提示、悔牌、自动保存和家庭战绩。",
+        "enFile": "voice/cribbage/en/line-7.mp3",
+        "zhFile": "voice/cribbage/zh/line-7.mp3",
+        "enDuration": 4.224,
+        "zhDuration": 4.488
+      },
+      {
+        "at": 42,
+        "en": "Cribbage. Deal the first hand.",
+        "zh": "克里比奇。发第一手牌吧。",
+        "enFile": "voice/cribbage/en/line-8.mp3",
+        "zhFile": "voice/cribbage/zh/line-8.mp3",
+        "enDuration": 2.832,
+        "zhDuration": 3.696
+      }
+    ]
+  },
+  {
     "slug": "pair-up",
     "order": 11,
     "title": "Pair Up",
@@ -1277,16 +2561,8 @@
     "paper": "#fbf1e1",
     "ink": "#34241b",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "4 × 4 or 6 × 6 dessert deck",
@@ -1376,6 +2652,120 @@
     ]
   },
   {
+    "slug": "abalone",
+    "order": 12,
+    "title": "Abalone",
+    "titleZh": "大力士棋",
+    "tagline": "Push six out. Hold the centre.",
+    "taglineZh": "推出六颗，守住中路。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "15 minutes",
+    "timeZh": "15 分钟",
+    "age": "7+",
+    "accent": "#b4552f",
+    "paper": "#f3ecdf",
+    "ink": "#20241f",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "61-point hexagon",
+      "14 marbles each",
+      "4 AI levels",
+      "Solo · hot-seat · LAN"
+    ],
+    "factsZh": [
+      "61 格六角棋盘",
+      "双方各 14 颗棋子",
+      "四档电脑对手",
+      "单人 · 同屏 · 局域网"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Sixty-one points. Fourteen marbles each.",
+        "zh": "六十一个点位，双方各十四颗棋子。",
+        "enFile": "voice/abalone/en/line-1.mp3",
+        "zhFile": "voice/abalone/zh/line-1.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 3.912
+      },
+      {
+        "at": 5.2,
+        "en": "Abalone. Push six out. Hold the centre.",
+        "zh": "大力士棋。推出六颗，守住中路。",
+        "enFile": "voice/abalone/en/line-2.mp3",
+        "zhFile": "voice/abalone/zh/line-2.mp3",
+        "enDuration": 4.128,
+        "zhDuration": 4.512
+      },
+      {
+        "at": 10,
+        "en": "Move one, two or three marbles in a line.",
+        "zh": "每次沿直线移动一到三颗棋子。",
+        "enFile": "voice/abalone/en/line-3.mp3",
+        "zhFile": "voice/abalone/zh/line-3.mp3",
+        "enDuration": 3.528,
+        "zhDuration": 3.528
+      },
+      {
+        "at": 16,
+        "en": "Slide, push, and send the enemy off the rim.",
+        "zh": "横移、前推，把对方棋子送出场外。",
+        "enFile": "voice/abalone/en/line-4.mp3",
+        "zhFile": "voice/abalone/zh/line-4.mp3",
+        "enDuration": 3.624,
+        "zhDuration": 4.368
+      },
+      {
+        "at": 23.5,
+        "en": "Four computer levels, from gentle Companion to Hard.",
+        "zh": "四档电脑对手，从温和陪玩到挑战。",
+        "enFile": "voice/abalone/en/line-5.mp3",
+        "zhFile": "voice/abalone/zh/line-5.mp3",
+        "enDuration": 4.104,
+        "zhDuration": 4.08
+      },
+      {
+        "at": 31,
+        "en": "Two players on one screen, or a phone joins over Wi-Fi.",
+        "zh": "两人同屏，或者手机连同一无线网络加入。",
+        "enFile": "voice/abalone/en/line-6.mp3",
+        "zhFile": "voice/abalone/zh/line-6.mp3",
+        "enDuration": 4.2,
+        "zhDuration": 4.824
+      },
+      {
+        "at": 38,
+        "en": "Hints, undo, autosave and a family record.",
+        "zh": "提示、悔棋、自动保存和家庭战绩。",
+        "enFile": "voice/abalone/en/line-7.mp3",
+        "zhFile": "voice/abalone/zh/line-7.mp3",
+        "enDuration": 4.176,
+        "zhDuration": 4.536
+      },
+      {
+        "at": 42,
+        "en": "Offline, no account, no ads. Abalone.",
+        "zh": "离线、无账号、无广告。大力士棋。",
+        "enFile": "voice/abalone/en/line-8.mp3",
+        "zhFile": "voice/abalone/zh/line-8.mp3",
+        "enDuration": 4.08,
+        "zhDuration": 4.848
+      }
+    ]
+  },
+  {
     "slug": "domino-line",
     "order": 12,
     "title": "Domino Line",
@@ -1391,16 +2781,8 @@
     "paper": "#f3ecdd",
     "ink": "#241f1a",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "28 tiles · first to 100",
@@ -1505,16 +2887,8 @@
     "paper": "#f6efe3",
     "ink": "#241f1a",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "108 cards",
@@ -1604,6 +2978,120 @@
     ]
   },
   {
+    "slug": "hive",
+    "order": 13,
+    "title": "Hive",
+    "titleZh": "虫虫棋",
+    "tagline": "One hive. Six sides. One queen.",
+    "taglineZh": "一个蜂巢，六面围杀，一位蜂后。",
+    "players": "2 players",
+    "playersZh": "2 人",
+    "time": "25 minutes",
+    "timeZh": "25 分钟",
+    "age": "8+",
+    "accent": "#b0652c",
+    "paper": "#f5eddd",
+    "ink": "#2b2620",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "22 pieces · one hive",
+      "4 AI levels",
+      "Hot-seat + LAN",
+      "Hints + autosave"
+    ],
+    "factsZh": [
+      "22 枚棋子 · 一个蜂巢",
+      "四档电脑对手",
+      "同屏 + 局域网",
+      "提示 + 自动保存"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "One hive. Six sides. One queen.",
+        "zh": "一个蜂巢，六个面，一位蜂后。",
+        "enFile": "voice/hive/en/line-1.mp3",
+        "zhFile": "voice/hive/zh/line-1.mp3",
+        "enDuration": 4.104,
+        "zhDuration": 3.6
+      },
+      {
+        "at": 5.2,
+        "en": "Hive. A full base-set duel for the family table.",
+        "zh": "虫虫棋。给全家人的完整基础对局。",
+        "enFile": "voice/hive/en/line-2.mp3",
+        "zhFile": "voice/hive/zh/line-2.mp3",
+        "enDuration": 3.912,
+        "zhDuration": 4.464
+      },
+      {
+        "at": 10,
+        "en": "Place, slide, climb and jump. Keep the hive in one piece.",
+        "zh": "放子、滑行、攀爬、跳跃。蜂巢始终连成一体。",
+        "enFile": "voice/hive/en/line-3.mp3",
+        "zhFile": "voice/hive/zh/line-3.mp3",
+        "enDuration": 4.992,
+        "zhDuration": 6.216
+      },
+      {
+        "at": 16,
+        "en": "Four computer levels, from gentle Companion to a three-ply Hard.",
+        "zh": "四档电脑对手，从温和陪玩到三层搜索的挑战。",
+        "enFile": "voice/hive/en/line-4.mp3",
+        "zhFile": "voice/hive/zh/line-4.mp3",
+        "enDuration": 4.824,
+        "zhDuration": 5.28
+      },
+      {
+        "at": 23.5,
+        "en": "Two players on one screen, or a phone joins over the local network.",
+        "zh": "两人同屏，或者手机在同一网络中扫码加入。",
+        "enFile": "voice/hive/en/line-5.mp3",
+        "zhFile": "voice/hive/zh/line-5.mp3",
+        "enDuration": 4.752,
+        "zhDuration": 5.112
+      },
+      {
+        "at": 31,
+        "en": "Hints, undo, autosave and a family record.",
+        "zh": "提示、悔棋、自动保存和家庭战绩。",
+        "enFile": "voice/hive/en/line-6.mp3",
+        "zhFile": "voice/hive/zh/line-6.mp3",
+        "enDuration": 4.176,
+        "zhDuration": 4.536
+      },
+      {
+        "at": 38,
+        "en": "Offline, no account, no ads.",
+        "zh": "离线、无账号、无广告。",
+        "enFile": "voice/hive/en/line-7.mp3",
+        "zhFile": "voice/hive/zh/line-7.mp3",
+        "enDuration": 2.928,
+        "zhDuration": 3.192
+      },
+      {
+        "at": 42,
+        "en": "Hive. Surround the queen.",
+        "zh": "虫虫棋。围住蜂后。",
+        "enFile": "voice/hive/en/line-8.mp3",
+        "zhFile": "voice/hive/zh/line-8.mp3",
+        "enDuration": 2.712,
+        "zhDuration": 3.216
+      }
+    ]
+  },
+  {
     "slug": "five-dice",
     "order": 14,
     "title": "Five Dice",
@@ -1619,16 +3107,8 @@
     "paper": "#f3ecdb",
     "ink": "#1f2a26",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "5 dice · 3 rolls",
@@ -1733,16 +3213,8 @@
     "paper": "#f2ecdf",
     "ink": "#1c2b30",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "10 × 10 chart",
@@ -1832,6 +3304,123 @@
     ]
   },
   {
+    "slug": "president",
+    "order": 15,
+    "title": "President",
+    "titleZh": "排位赛",
+    "tagline": "Climb the table. Do not finish last.",
+    "taglineZh": "一级一级往上打，别做最后一名。",
+    "players": "3–6 players",
+    "playersZh": "3–6 人",
+    "time": "20 minutes",
+    "timeZh": "20 分钟",
+    "age": "8+",
+    "ageZh": "8 岁以上",
+    "accent": "#2f6b52",
+    "paper": "#f3ecdc",
+    "ink": "#241f19",
+    "screens": {
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
+    },
+    "facts": [
+      "3–6 players",
+      "52-card deck",
+      "4 AI levels",
+      "Hot-seat + LAN",
+      "Card exchange + record"
+    ],
+    "factsZh": [
+      "3–6 人",
+      "52 张牌",
+      "四档电脑",
+      "同屏 + 局域网",
+      "换牌 + 战绩"
+    ],
+    "lines": [
+      {
+        "at": 0.4,
+        "en": "Fifty-two cards. Three to six players.",
+        "zh": "五十二张牌，三到六个人。",
+        "enFile": "voice/president/en/line-1.mp3",
+        "zhFile": "voice/president/zh/line-1.mp3",
+        "enDuration": 3.648,
+        "zhDuration": 3.096
+      },
+      {
+        "at": 5.2,
+        "en": "President. Climb the table.",
+        "zh": "排位赛。一级一级往上打。",
+        "enFile": "voice/president/en/line-2.mp3",
+        "zhFile": "voice/president/zh/line-2.mp3",
+        "enDuration": 2.592,
+        "zhDuration": 3.696
+      },
+      {
+        "at": 10,
+        "en": "Play singles, pairs and triples. Equal or higher takes the trick.",
+        "zh": "出单张、对子或三张，点数不小于桌面就能压住。",
+        "enFile": "voice/president/en/line-3.mp3",
+        "zhFile": "voice/president/zh/line-3.mp3",
+        "enDuration": 5.328,
+        "zhDuration": 5.352
+      },
+      {
+        "at": 16,
+        "en": "Pass to save your twos, or take control.",
+        "zh": "过牌留住 2，或者拿下这一墩。",
+        "enFile": "voice/president/en/line-4.mp3",
+        "zhFile": "voice/president/zh/line-4.mp3",
+        "enDuration": 3.336,
+        "zhDuration": 3.36
+      },
+      {
+        "at": 23.5,
+        "en": "Finish first to become President. Finish last and you are Scum.",
+        "zh": "第一个出完当总统，最后一名是末位。",
+        "enFile": "voice/president/en/line-5.mp3",
+        "zhFile": "voice/president/zh/line-5.mp3",
+        "enDuration": 5.04,
+        "zhDuration": 3.816
+      },
+      {
+        "at": 31,
+        "en": "Next round, the President takes the Scum's best cards.",
+        "zh": "下一局，总统收下末位最好的牌。",
+        "enFile": "voice/president/en/line-6.mp3",
+        "zhFile": "voice/president/zh/line-6.mp3",
+        "enDuration": 4.128,
+        "zhDuration": 3.84
+      },
+      {
+        "at": 38,
+        "en": "Four computer levels, hot-seat, and play on your own network.",
+        "zh": "四档电脑对手、同屏热座，还有局域网。",
+        "enFile": "voice/president/en/line-7.mp3",
+        "zhFile": "voice/president/zh/line-7.mp3",
+        "enDuration": 4.2,
+        "zhDuration": 4.512
+      },
+      {
+        "at": 42,
+        "en": "Offline. No account. No ads.",
+        "zh": "离线、无账号、无广告。",
+        "enFile": "voice/president/en/line-8.mp3",
+        "zhFile": "voice/president/zh/line-8.mp3",
+        "enDuration": 3.72,
+        "zhDuration": 3.192
+      }
+    ]
+  },
+  {
     "slug": "codebreak",
     "order": 16,
     "title": "Codebreak",
@@ -1847,16 +3436,8 @@
     "paper": "#f4edde",
     "ink": "#20302c",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "4-peg secret code",
@@ -1961,16 +3542,8 @@
     "paper": "#f4efe3",
     "ink": "#1f2b2a",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "81 cards · 4 clues on every card",
@@ -2075,16 +3648,8 @@
     "paper": "#f4eee1",
     "ink": "#26221c",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "9 × 9 board",
@@ -2189,16 +3754,8 @@
     "paper": "#f5eddf",
     "ink": "#27231d",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "5×6 board · 10 pieces a side",
@@ -2305,16 +3862,8 @@
     "paper": "#0c171e",
     "ink": "#f2ecdf",
     "screens": {
-      "en": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ],
-      "zh": [
-        "home.png",
-        "game.png",
-        "game-over.png"
-      ]
+      "en": [],
+      "zh": []
     },
     "facts": [
       "11 × 11 hex board",

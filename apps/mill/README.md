@@ -4,7 +4,7 @@
 
 > **Nine men. Three in a line. One family table.**
 
-Family Arcade · game 5/27. A complete Nine Men's Morris game for **2 players**:
+Family Arcade · game 5/42. A complete Nine Men's Morris game for **2 players**:
 place nine men, close a mill, slide along the lines, and win by reducing your
 rival to two men or blocking every move. Play solo against four AI levels,
 hot-seat on one screen, or invite a phone over your own Wi-Fi.

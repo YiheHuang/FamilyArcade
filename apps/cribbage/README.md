@@ -1,4 +1,4 @@
-# Cribbage · 克里比奇
+# Cribbage
 
 **English** · [简体中文](README.zh-CN.md)
 

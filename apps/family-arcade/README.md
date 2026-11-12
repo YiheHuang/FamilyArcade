@@ -1,8 +1,10 @@
-# Family Arcade · 家庭游戏馆
+English · [简体中文](README.zh-CN.md)
 
-**One launcher. 27 games. One table.**
+# Family Arcade
 
-Family Arcade is the front door for the collection: 27 offline family games with AI,
+**One launcher. 42 games. One table.**
+
+Family Arcade is the front door for the collection: 42 offline family games with AI,
 hot-seat and LAN play. Install this one app to launch every game, or install only the
 games you want from the per-game releases.
 
@@ -35,7 +37,7 @@ build output.
 
 ## Known limits
 
-- The Windows bundle is large because it contains 27 portable games.
+- The Windows bundle is large because it contains 42 portable games.
 - Games open in their own windows; the hub itself does not embed them.
 - Installers are unsigned; SmartScreen will ask once.
 

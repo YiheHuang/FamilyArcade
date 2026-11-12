@@ -1,6 +1,8 @@
-# Abalone · 大力士棋
+English · [简体中文](README.zh-CN.md)
 
-Family Arcade · game 12 · two players · 61-point hexagon
+# Abalone
+
+Family Arcade · two players · 61-point hexagon
 
 ![Abalone game board](docs/screenshots/en/game.png)
 

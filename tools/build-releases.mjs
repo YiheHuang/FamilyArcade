@@ -87,5 +87,5 @@ for (const slug of apps) {
   results.push({ slug, ok: true, name, size });
 }
 
-writeFileSync(path.join(releases, 'manifest.json'), `${JSON.stringify(results, null, 2)}\n`);
 console.log(`\nbuilt ${results.filter((r) => r.ok).length}/${results.length}`);
+console.log('run node tools/collect-installers.mjs to refresh releases/manifest.json');

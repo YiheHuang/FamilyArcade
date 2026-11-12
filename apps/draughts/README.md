@@ -4,7 +4,7 @@
 
 > **English draughts on an 8×8 board**
 
-Game 4 of 27 at the Family Arcade family table. Twelve men each, diagonal moves,
+Game 4 of 42 at the Family Arcade family table. Twelve men each, diagonal moves,
 mandatory captures, kings that walk backwards, four AI levels, one-screen
 hot-seat and a LAN room that a phone can join from its browser. No account, no
 ads, no remote assets.

@@ -1,4 +1,4 @@
-# Rummy 500 · 五百分拉米
+# Rummy 500
 
 **English** · [简体中文](README.zh-CN.md)
 

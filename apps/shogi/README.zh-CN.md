@@ -1,4 +1,4 @@
-# 将棋 · Shogi
+# 将棋
 
 [English](README.md) · **简体中文**
 

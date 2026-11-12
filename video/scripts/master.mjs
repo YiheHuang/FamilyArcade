@@ -10,7 +10,8 @@ import path from 'node:path';
 const root = process.cwd();
 const repo = path.resolve(root, '..');
 const games = JSON.parse(readFileSync(path.join(root, 'src', 'data', 'games.json'), 'utf8'));
-const only = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
+const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
+const only = onlyArg ? new Set(onlyArg.split(',').map((slug) => slug.trim()).filter(Boolean)) : null;
 
 function measure(file) {
   const out = spawnSync(
@@ -26,7 +27,7 @@ function measure(file) {
 }
 
 for (const game of games) {
-  if (only && !game.slug.includes(only)) continue;
+  if (only && !only.has(game.slug)) continue;
   const promoDir = path.join(repo, 'apps', game.slug, 'docs', 'promo');
   mkdirSync(promoDir, { recursive: true });
   const report = {};

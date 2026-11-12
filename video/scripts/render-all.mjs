@@ -10,7 +10,8 @@ import path from 'node:path';
 const root = process.cwd();
 const games = JSON.parse(readFileSync(path.join(root, 'src', 'data', 'games.json'), 'utf8'));
 const force = process.argv.includes('--force');
-const only = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
+const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
+const only = onlyArg ? new Set(onlyArg.split(',').map((slug) => slug.trim()).filter(Boolean)) : null;
 const chrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 const outDir = path.join(root, 'out');
 const logDir = path.join(root, 'out', 'logs');
@@ -20,7 +21,7 @@ mkdirSync(logDir, { recursive: true });
 const jobs = [];
 let jobIndex = 0;
 for (const game of games) {
-  if (only && !game.slug.includes(only)) continue;
+  if (only && !only.has(game.slug)) continue;
   for (const lang of ['en', 'zh']) {
     const id = `Promo-${game.slug}-${lang}`;
     const output = path.join(outDir, `${game.slug}-${lang}.mp4`);
