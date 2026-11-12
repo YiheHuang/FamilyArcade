@@ -1,0 +1,32 @@
+{
+  "slug": "hearts",
+  "order": 8,
+  "title": "Hearts",
+  "titleZh": "红心大战",
+  "tagline": "Four seats. Mind the queen.",
+  "taglineZh": "四家一桌，小心皇后。",
+  "players": "4 players",
+  "playersZh": "4 人",
+  "time": "25 minutes",
+  "timeZh": "25 分钟",
+  "age": "8+",
+  "accent": "#bf4c3d",
+  "paper": "#f3ead9",
+  "ink": "#1e2b25",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["52-card deck", "Pass three, shoot the moon", "4 computer levels", "Hot-seat + LAN"],
+  "factsZh": ["52 张牌", "传三张，可射月", "四档电脑难度", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "A 52-card deck. Four seats. One queen to avoid.", "zh": "一副 52 张牌，四个座位，一张要躲开的皇后。" },
+    { "at": 5.2, "en": "Hearts. Pass three cards and take the trick.", "zh": "红心大战。传三张牌，收下每一墩。" },
+    { "at": 10.0, "en": "Left, right, across. Keep the dangerous cards moving.", "zh": "向左、向右、对家，把危险牌传出去。" },
+    { "at": 16.0, "en": "Follow suit. Every heart is a point, and so is the queen of spades.", "zh": "能跟就必须跟。每张红心一分，黑桃皇后十三分。" },
+    { "at": 23.5, "en": "Take all 26 points to shoot the moon and turn the table around.", "zh": "收下全部 26 分就是射月，整张牌桌都会翻转。" },
+    { "at": 31.0, "en": "Four computer levels, from a gentle companion to a counting challenge.", "zh": "四档电脑难度，从温和陪玩到会算牌的挑战。" },
+    { "at": 38.0, "en": "Four on one screen with a private curtain, or a phone joins over the local network.", "zh": "四人同屏有隐私幕帘，手机也能连局域网加入。" },
+    { "at": 42.0, "en": "Hints, undo, autosave, a family record, and no accounts.", "zh": "提示、悔棋、自动保存、家庭战绩，不用账号。" }
+  ]
+}
