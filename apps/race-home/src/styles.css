@@ -134,6 +134,8 @@ h1 {
 .primary { background: var(--ink); color: #fff8ec; box-shadow: 0 4px 0 rgba(44, 37, 29, 0.16); }
 .primary:hover:not(:disabled) { transform: translateY(-1px); background: #40362d; }
 .primary:disabled { opacity: 0.55; }
+/* The board, not a grey button, is the action while choosing a pawn. */
+button.roll-button:disabled { display: none; }
 .secondary { background: rgba(255, 250, 240, 0.62); border-color: var(--line); color: var(--ink); }
 .secondary:hover:not(:disabled) { background: var(--card); transform: translateY(-1px); }
 .secondary:disabled { opacity: 0.45; }

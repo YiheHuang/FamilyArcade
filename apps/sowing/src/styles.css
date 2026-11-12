@@ -364,7 +364,7 @@ h1 { font: 600 clamp(54px, 7vw, 94px)/0.92 "Iowan Old Style", "Palatino Linotype
   .pit-count { right: 6px; bottom: 5px; font-size: 9px; }
   .seeds { gap: 1.5px; inset: 24% 12% 26%; }
   .seed { width: 6px; height: 6px; }
-  .store-label { font-size: 7px; letter-spacing: 0.06em; }
+  .store-label { font-size: 9px; letter-spacing: 0; max-width: 100%; overflow: visible; text-overflow: clip; }
   .store-label-long { display: none; }
   .store-label-short { display: inline; }
   .store-number { font-size: 24px; }
@@ -379,7 +379,7 @@ h1 { font: 600 clamp(54px, 7vw, 94px)/0.92 "Iowan Old Style", "Palatino Linotype
   .game-foot { padding-top: 12px; }
 }
 @media (max-width: 420px) {
-  .mancala { grid-template-columns: 0.65fr repeat(6, minmax(0, 1fr)) 0.65fr; }
+  .mancala { grid-template-columns: 0.7fr repeat(6, minmax(0, 1fr)) 0.7fr; }
   .seed { width: 5px; height: 5px; }
   .store-number { font-size: 21px; }
 }

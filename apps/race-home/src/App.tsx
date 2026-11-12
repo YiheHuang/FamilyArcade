@@ -603,9 +603,11 @@ export default function App() {
     ? tr('raceOver')
     : mode === 'lan-guest' && !guestView
       ? tr('lanGuestTitle')
-      : humanControlled
-        ? tr('yourTurn')
-        : tr('turnOf', { name: currentName });
+      : mode === 'local'
+        ? tr('turnOf', { name: currentName })
+        : humanControlled
+          ? tr('yourTurn')
+          : tr('turnOf', { name: currentName });
 
   const statusLine = isOver
     ? tr('winnerSub')
@@ -1121,7 +1123,7 @@ export default function App() {
             <h3>{tr('recordMini')}</h3>
             <p>{tr('recordMiniLine', { games: gameLabel(lang, record.games), wins: record.familyWins })}</p>
             <button className="text-button" onClick={() => openRecord('game')}>
-              {tr('familyRecord')} →
+              {tr('recordLink')} →
             </button>
           </div>
 

@@ -129,6 +129,10 @@ export default function App() {
     return () => window.clearTimeout(timer);
   }, [toast]);
 
+  useEffect(() => {
+    setToast('');
+  }, [screen]);
+
   const seatNames = useMemo<[string, string]>(() => {
     if (mode === 'ai') return [t(lang, 'you'), `${t(lang, level)} ${t(lang, 'aiPlayer')}`];
     if (mode === 'local') return [t(lang, 'player1'), t(lang, 'player2')];
@@ -868,7 +872,7 @@ export default function App() {
             <p>
               {record.games} {gameWord} · {record.wins0}–{record.wins1} · {record.draws} {drawWord}
             </p>
-            <button className="text-button" onClick={() => setScreen('record')}>{tr('record')} →</button>
+            <button className="text-button" onClick={() => setScreen('record')}>{tr('recordLink')} →</button>
           </div>
 
           <div className="side-card tip-mini">

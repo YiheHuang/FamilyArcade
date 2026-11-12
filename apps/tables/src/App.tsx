@@ -609,6 +609,10 @@ export default function App() {
           ? tr('lanHostMode')
           : tr('lanGuestMode');
 
+  const gameWord = lang === 'zh' ? tr('gamesPlayed') : record.games === 1 ? tr('gameSingular') : tr('gamesPlayed');
+  const recordCount =
+    lang === 'zh' ? `${record.games} 局` : `${record.games} ${record.games === 1 ? 'game' : 'games'}`;
+
   const statusText =
     isGuest && !guestStarted
       ? tr('waitingGuest')
@@ -766,7 +770,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('gamesPlayed')}</span>
+            <span>{gameWord}</span>
             <span className="dot">·</span>
             <span>{record.winsW} {tr('whiteWinShort')}</span>
             <span className="dot">·</span>
@@ -1003,9 +1007,9 @@ export default function App() {
 
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
-            <p>{tr('recordLine', { games: record.games, white: record.winsW, black: record.winsB })}</p>
+            <p>{tr('recordLine', { games: recordCount, white: record.winsW, black: record.winsB })}</p>
             <button className="text-button" onClick={() => setScreen('stats')}>
-              {tr('stats')} →
+              {tr('statsLink')} →
             </button>
           </div>
         </aside>

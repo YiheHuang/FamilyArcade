@@ -558,7 +558,7 @@ h1 {
   .bar { border-radius: 6px; padding: 4px 2px; gap: 2px; }
   .bar-label { display: none; }
   .off-tray strong { font-size: 13px; }
-  .off-label { font-size: 6px; }
+  .off-label { font-size: 8px; letter-spacing: 0.08em; }
   .off-mini { max-width: 30px; }
   .off-mini .checker { width: 3px; height: 3px; }
   .checker-more { font-size: 6px; padding: 1px 3px; }

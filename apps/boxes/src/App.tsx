@@ -610,7 +610,7 @@ export default function App() {
           <div className="score-name">{name}</div>
           <div className="score-number">
             {score}
-            <small>{tr('boxes')}</small>
+            <small>{score === 1 ? tr('box') : tr('boxes')}</small>
           </div>
           <div className="score-bar">
             <span className="score-fill" style={{ width: `${(score / 25) * 100}%` }} />
@@ -933,9 +933,6 @@ export default function App() {
               <span>{tr('p2')}</span>
               <b>{record.winsP2}</b>
             </div>
-            <p style={{ marginTop: 9 }}>
-              {name0} {shown.scores[0]} · {shown.scores[1]} {name1}
-            </p>
           </div>
         </aside>
       </div>
