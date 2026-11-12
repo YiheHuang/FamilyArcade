@@ -17,6 +17,8 @@ lightweight Tauri installer and a 45-second bilingual promo.
   - `scripts/e2e.mjs`, `scripts/shots.mjs`
   - `README.md`, `README.zh-CN.md`, `docs/rules.md`, `video.json`
 - `APP_BRIEF.md` contains your game-specific rules and AI notes. Follow it.
+- Keep the Rust crate reference exactly `family_arcade_lan_host` (with underscores).
+  Do not rename it or use `familyarcade_lan_host`; that breaks the Tauri build.
 - Dependencies are already installed. `@family-arcade/lan` is linked from `../../packages/lan`.
 
 ## Non-negotiable
