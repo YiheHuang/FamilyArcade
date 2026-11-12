@@ -1,0 +1,32 @@
+{
+  "slug": "xiangqi",
+  "order": 2,
+  "title": "Xiangqi",
+  "titleZh": "中国象棋",
+  "tagline": "Nine files. Ten ranks. One family table.",
+  "taglineZh": "九路十行，一张家里的棋盘。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "8+",
+  "accent": "#a33b2b",
+  "paper": "#f7f0e2",
+  "ink": "#2a241e",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["9 × 10 board", "Flying general + checkmate", "Four computer levels", "Hot-seat + LAN"],
+  "factsZh": ["9 × 10 棋盘", "飞将、将死与困毙", "四档电脑难度", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "Ninety points. Two palaces. One river.", "zh": "九十个交叉点，两座九宫，一条楚河。" },
+    { "at": 5.2, "en": "Xiangqi. The classic Chinese chess.", "zh": "中国象棋。棋盘上的老经典。" },
+    { "at": 10.0, "en": "Horses jump, elephants guard, cannons need a screen.", "zh": "马走日，象守家，炮吃子要隔一个。" },
+    { "at": 16.0, "en": "Four computer levels, from gentle Companion to a four-ply Hard.", "zh": "四档电脑难度，从温和陪玩到四层搜索的挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins on the local network.", "zh": "两人同屏，或者手机连同一网络加入。" },
+    { "at": 31.0, "en": "Check, flying general, checkmate, stalemate: the full rules.", "zh": "将军、飞将、将死、困毙，规则完整。" },
+    { "at": 38.0, "en": "Hints, undo, autosave, and a family record.", "zh": "提示、悔棋、自动保存，还有家庭战绩。" },
+    { "at": 42.0, "en": "Xiangqi. The family table, nine files wide.", "zh": "中国象棋。九路棋盘，一张家里的桌子。" }
+  ]
+}
