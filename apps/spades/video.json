@@ -1,0 +1,32 @@
+{
+  "slug": "spades",
+  "order": 9,
+  "title": "Spades",
+  "titleZh": "黑桃皇后",
+  "tagline": "Four seats. Two partnerships. One deck.",
+  "taglineZh": "四个座位，两对搭档，一副牌。",
+  "players": "4 players",
+  "playersZh": "4 人",
+  "time": "20–30 minutes",
+  "timeZh": "20–30 分钟",
+  "age": "8+",
+  "accent": "#1f4d3d",
+  "paper": "#efe7d5",
+  "ink": "#1e2a23",
+  "screens": {
+    "en": ["home.png", "game.png", "stats.png"],
+    "zh": ["home.png", "game.png", "stats.png"]
+  },
+  "facts": ["52 cards · 4 seats", "Nil + blind nil", "4 AI levels", "Hot-seat + LAN", "Race to 500"],
+  "factsZh": ["52 张牌 · 4 个座位", "零墩 + 盲零墩", "四档电脑", "同屏 + 局域网", "先到 500 分"],
+  "lines": [
+    { "at": 0.4, "en": "Four seats. Two partnerships. One deck.", "zh": "四个座位，两对搭档，一副牌。" },
+    { "at": 5.2, "en": "Spades. The partnership card table.", "zh": "黑桃皇后。搭档的牌桌。" },
+    { "at": 10.0, "en": "Bid your tricks. Spades are always trump.", "zh": "先叫墩数。黑桃永远是王牌。" },
+    { "at": 16.0, "en": "Follow suit, break spades, and cover your partner.", "zh": "跟花色、破黑桃，替搭档兜底。" },
+    { "at": 23.0, "en": "Go nil for a hundred, or blind nil for two.", "zh": "零墩奖一百，盲零墩奖两百。" },
+    { "at": 30.0, "en": "Four AI levels, hot-seat, or four phones on one network.", "zh": "四档电脑、四人同屏，或同一网络的四部手机。" },
+    { "at": 37.0, "en": "Bags, bag penalties, and a race to five hundred.", "zh": "袋分、罚分，一路打到五百分。" },
+    { "at": 42.0, "en": "Spades. Deal the next hand.", "zh": "黑桃皇后。发下一手牌。" }
+  ]
+}
