@@ -54,6 +54,17 @@ const games = [
   'hive',
   'quarto',
   'president',
+  'doudizhu',
+  'texas-holdem',
+  'zheng-shangyou',
+  'jokers-table',
+  'guandan',
+  'mahjong',
+  'big-two',
+  'sheng-ji',
+  'liars-dice',
+  'idiom-chain',
+  'nanchang-mahjong',
 ];
 
 let failed = 0;

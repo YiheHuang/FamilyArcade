@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const repo = 'https://github.com/YiheHuang/FamilyArcade';
-const hubVersion = '2.0.0';
+const hubVersion = '3.0.0';
 const hubUrl = `${repo}/releases/download/family-arcade-v${hubVersion}/FamilyArcade_${hubVersion}_x64-setup.exe`;
 const webviewUrl = `${repo}/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe`;
 
@@ -24,9 +24,9 @@ for (const [slug, data] of Object.entries(extra)) {
   const [title, zh, players, time, timeZh, age, category, shot, promo, tag, asset, readme] = data;
   games.push({ slug, title, zh, players, time, timeZh, age, category, shot, video: `${promo}-en.mp4`, videoZh: `${promo}-zh.mp4`, installer: `${repo}/releases/download/${tag}/${asset}`, readme });
 }
-const classicSlugs = new Set(['gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','abalone','hive','quarto']);
-const familySlugs = new Set(['hearts','spades','rummy-500','cribbage','president']);
-const order = ['gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','hearts','spades','rummy-500','cribbage','abalone','hive','quarto','president','triple','four','flip','draughts','mill','boxes','sowing','tables','race-home','ladder-run','pair-up','domino-line','color-chain','five-dice','fleet','codebreak','triple-find','little-go','mini-chess','hex'];
+const classicSlugs = new Set(['gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','abalone','hive','quarto','mahjong','nanchang-mahjong']);
+const familySlugs = new Set(['hearts','spades','rummy-500','cribbage','president','doudizhu','texas-holdem','zheng-shangyou','guandan','big-two','sheng-ji','liars-dice','idiom-chain']);
+const order = ['gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','hearts','spades','rummy-500','cribbage','abalone','hive','quarto','president','mahjong','nanchang-mahjong','doudizhu','texas-holdem','zheng-shangyou','guandan','big-two','sheng-ji','liars-dice','idiom-chain','jokers-table','triple','four','flip','draughts','mill','boxes','sowing','tables','race-home','ladder-run','pair-up','domino-line','color-chain','five-dice','fleet','codebreak','triple-find','little-go','mini-chess','hex'];
 for (const slug of order) {
   const manifest = path.join(root, 'apps', slug, 'video.json');
   if (!existsSync(manifest)) continue;
