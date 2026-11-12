@@ -10,7 +10,7 @@ games you want from the per-game releases.
 
 ![Family Arcade launcher](docs/screenshots/en/home.jpg)
 
-**Runtime:** the all-in-one installer embeds the WebView2 offline runtime and every portable game ships `WebView2Loader.dll`. See [`RUNTIME.md`](RUNTIME.md).
+**Runtime:** the **offline** installer embeds the WebView2 runtime; the **slim** installer uses Tauri's small bootstrapper instead. Every portable game ships `WebView2Loader.dll`. See [`RUNTIME.md`](RUNTIME.md).
 
 ## What it does
 

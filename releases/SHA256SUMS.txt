@@ -42,3 +42,4 @@ ebfb36d9470bc95162e028b954e2fa0d83fd5b1cb62dfc77041ecb659e190a47  releases/chess
 ef9752559774fef94675fefbcf1fca44c1d8e75da06d1c298161fd6c8cc62c8b  releases/little-go/little-go_0.1.0_x64-setup.exe
 f3d2e946e47079e03e51017e34b0a49afeb5ac0201c496c0ccb48b4dc44562f7  releases/tables/tables_0.1.0_x64-setup.exe
 fa75df9a13e9700951e084fda935e269d73849227f06168cb43662bba3094b34  releases/flip/flip_0.1.0_x64-setup.exe
+fdc2a582844d16bb92b94ed2825ce52d3b797d46e71f4a9f77fc911850c7c5e4  releases/family-arcade/FamilyArcade_2.0.0_slim_x64-setup.exe

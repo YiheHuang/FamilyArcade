@@ -11,7 +11,9 @@ releases/<slug>/<slug>_<version>_x64-setup.exe
 - WebView2 uses the standard bootstrapper.
 - Unsigned family build: Windows SmartScreen will ask once.
 - `manifest.json` is written by `node tools/collect-installers.mjs` and lists every
-  installer with its size.
+  per-game installer with its size.
+- The launcher has two all-in-one variants: **offline** (embeds the WebView2 runtime)
+  and **slim** (uses the small WebView2 bootstrapper, roughly 200 MB smaller).
 
 The GitHub Actions workflow in `.github/workflows/release.yml` rebuilds the same
 matrix and creates **one GitHub Release per game** when a `v*` tag is pushed.

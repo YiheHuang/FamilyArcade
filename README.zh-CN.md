@@ -8,7 +8,7 @@
 
 [![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v2.0.0/FamilyArcade_2.0.0_x64-setup.exe)
 
-**一体化安装包：** [Family Arcade 2.0.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v2.0.0/FamilyArcade_2.0.0_x64-setup.exe) · **WebView2 运行时（仅在需要时）：** [离线 x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
+**一体化离线版：** [Family Arcade 2.0.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v2.0.0/FamilyArcade_2.0.0_x64-setup.exe) · **精简版（139 MB，不带运行时）：** [Family Arcade Slim](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v2.0.0/FamilyArcade_2.0.0_slim_x64-setup.exe) · **WebView2 运行时（仅在需要时）：** [离线 x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
 ## 经典
 

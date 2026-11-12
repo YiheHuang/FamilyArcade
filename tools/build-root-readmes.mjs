@@ -7,6 +7,7 @@ const root = process.cwd();
 const repo = 'https://github.com/YiheHuang/FamilyArcade';
 const hubVersion = '3.0.0';
 const hubUrl = `${repo}/releases/download/family-arcade-v${hubVersion}/FamilyArcade_${hubVersion}_x64-setup.exe`;
+const hubSlimUrl = `${repo}/releases/download/family-arcade-v${hubVersion}/FamilyArcade_${hubVersion}_slim_x64-setup.exe`;
 const webviewUrl = `${repo}/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe`;
 
 const extra = {
@@ -96,7 +97,7 @@ const en = `English · [简体中文](README.zh-CN.md)
 
 [![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](${hubUrl})
 
-**All-in-one:** [Family Arcade ${hubVersion}](${hubUrl}) · **WebView2 runtime (only if needed):** [offline x64](${webviewUrl})
+**All-in-one offline:** [Family Arcade ${hubVersion}](${hubUrl}) · **Slim (no bundled runtime):** [Family Arcade Slim](${hubSlimUrl}) · **WebView2 runtime (only if needed):** [offline x64](${webviewUrl})
 
 ## Classics
 
@@ -112,8 +113,9 @@ ${grid(arcade, 'en')}
 
 ## Releases
 
-Every game has a separate installer under [Releases](${repo}/releases). The all-in-one
-installer includes the launcher, all ${games.length} games and the WebView2 runtime. Individual
+Every game has a separate installer under [Releases](${repo}/releases). The offline
+all-in-one installer includes the launcher, all ${games.length} games and the WebView2
+runtime; the slim installer omits the runtime and is roughly 200 MB smaller. Individual
 installers are 1–4 MB. See each game README for rules, LAN and limitations.
 
 ## Build
@@ -142,7 +144,7 @@ const zh = `[English](README.md) · 简体中文
 
 [![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](${hubUrl})
 
-**一体化安装包：** [Family Arcade ${hubVersion}](${hubUrl}) · **WebView2 运行时（仅在需要时）：** [离线 x64](${webviewUrl})
+**一体化离线版：** [Family Arcade ${hubVersion}](${hubUrl}) · **精简版（不带运行时）：** [Family Arcade Slim](${hubSlimUrl}) · **WebView2 运行时（仅在需要时）：** [离线 x64](${webviewUrl})
 
 ## 经典
 
@@ -158,7 +160,7 @@ ${grid(arcade, 'zh')}
 
 ## 发布
 
-每款游戏在 [Releases](${repo}/releases) 有独立安装包。一体化安装包包含启动器、${games.length} 款游戏和 WebView2 运行时；单游戏安装包约 1–4 MB。规则、局域网和限制见各游戏 README。
+每款游戏在 [Releases](${repo}/releases) 有独立安装包。一体化离线版包含启动器、${games.length} 款游戏和 WebView2 运行时；精简版不带运行时，体积约小 200 MB；单游戏安装包约 1–4 MB。规则、局域网和限制见各游戏 README。
 
 ## 构建
 
