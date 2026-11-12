@@ -36,7 +36,6 @@ export function SettingsScreen({
           <div className="settings-row">
             <div>
               <strong>{t('settings.language')}</strong>
-              <small>{t('settings.saved')}</small>
             </div>
             <Segmented<Lang>
               value={settings.lang}

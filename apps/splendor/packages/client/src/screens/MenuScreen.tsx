@@ -258,7 +258,7 @@ function NavTile({ icon, title, desc, onClick }: { icon: 'cards' | 'book' | 'his
       </span>
       <span className="min-w-0">
         <span className="block text-[13px] font-bold text-ink-900">{title}</span>
-        <span className="block truncate text-[11px] text-ink-400">{desc}</span>
+        <span className="hidden truncate text-[11px] text-ink-400 sm:block">{desc}</span>
       </span>
     </button>
   );

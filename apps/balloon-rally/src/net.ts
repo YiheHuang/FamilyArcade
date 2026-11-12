@@ -16,9 +16,13 @@ export async function startLanServer(): Promise<LanServerInfo> {
     return (await invoke('lan_start')) as LanServerInfo;
   }
   const host = typeof location !== 'undefined' ? location.hostname : '127.0.0.1';
+  // Vite dev serves the UI on 5177; a separately started relay listens on 8090.
+  // When the built app is served by the relay, reuse that same port.
+  const pagePort = typeof location !== 'undefined' ? Number(location.port) : 0;
+  const port = pagePort && pagePort !== 5177 ? pagePort : 8090;
   return {
-    port: 8090,
-    urls: [`http://${host}:8090`],
+    port,
+    urls: [`http://${host}:${port}`],
     token: 'browser',
   };
 }

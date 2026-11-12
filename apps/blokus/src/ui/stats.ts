@@ -55,7 +55,13 @@ export function renderStats(ctx: AppCtx): Screen {
   function renderSummary(): HTMLElement {
     const stats = loadStats();
     const wrap = el('div', 'stats-summary');
-    wrap.appendChild(el('div', 'stats-total', t('stats.total', { n: totalGames(stats) })));
+    wrap.appendChild(
+      el(
+        'div',
+        'stats-total',
+        totalGames(stats) === 1 ? t('stats.totalOne') : t('stats.total', { n: totalGames(stats) }),
+      ),
+    );
     wrap.appendChild(
       el(
         'div',

@@ -54,7 +54,7 @@ export function BoardView({
         style={{ paddingTop: 'var(--board-pad-y)', paddingBottom: 'var(--board-pad-y)' }}
       >
         {boards.map((tier) => (
-          <div key={tier} className="flex items-center justify-center gap-2.5">
+          <div key={tier} className="board-tier flex items-center justify-center gap-2.5">
             <DeckStack
               tier={tier}
               count={view.deckCounts[tier - 1] ?? 0}

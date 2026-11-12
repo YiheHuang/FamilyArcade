@@ -304,7 +304,7 @@ export function GameScreen() {
       />
 
       {/* 底部：宝石供给区居中；只在拿取时于右侧浮出确认/清空 */}
-      <div className="relative flex items-start justify-center">
+      <div className="take-bar relative flex items-start justify-center">
         <TokenBank
           bank={view.bank}
           selected={selected}
@@ -319,7 +319,7 @@ export function GameScreen() {
               initial={{ opacity: 0, x: 12 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
-              className="absolute top-1/2 right-0 -translate-y-1/2 flex items-center gap-2"
+              className="take-actions absolute top-1/2 right-0 -translate-y-1/2 flex items-center gap-2"
             >
               <button type="button" onClick={clearSelection} className="btn-ghost rounded-xl px-3 py-2 text-[12px] font-semibold hover:border-paper-400">
                 {T.common.clear}

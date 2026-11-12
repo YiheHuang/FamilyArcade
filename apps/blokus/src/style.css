@@ -70,6 +70,10 @@ button {
   display: none !important;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .spacer {
   flex: 1;
 }
@@ -213,7 +217,13 @@ button {
   font-size: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 14px;
+}
+
+.home-footer .btn {
+  white-space: nowrap;
 }
 
 /* resume banner on the home screen */

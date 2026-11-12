@@ -126,9 +126,6 @@ export function Tutorial({
             </Button>
           )}
         </div>
-        <button type="button" className="text-btn tutorial__skip" onClick={onSkip} data-testid="tutorial-skip">
-          {t('tutorial.skip')}
-        </button>
       </div>
     </div>
   );

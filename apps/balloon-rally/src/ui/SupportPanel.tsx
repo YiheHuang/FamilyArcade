@@ -209,7 +209,6 @@ export function SupportPanel({
             {t('game.lockSupport')} →
           </Button>
         </div>
-        {selected === null && <p className="support-card__warn">{t('game.needChoose')}</p>}
       </div>
     </div>
   );

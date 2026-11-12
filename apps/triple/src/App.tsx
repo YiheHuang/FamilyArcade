@@ -824,7 +824,7 @@ export default function App() {
     <main className="shell home-shell">
       <header className="masthead">
         <div>
-          <p className="eyebrow">FAMILY ARCADE · 01</p>
+          <p className="eyebrow">{tr('eyebrowHome')}</p>
           <h1>{tr('title')}</h1>
           <p className="subtitle">{tr('subtitle')}</p>
         </div>
@@ -883,7 +883,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span>{record.winsX} X</span>
             <span className="dot">·</span>
@@ -949,16 +949,18 @@ export default function App() {
 
       <div className="game-layout">
         <section className="board-wrap">
-          <div className={`turn-bar ${shownStatus !== 'playing' ? 'is-over' : ''}`} aria-live="polite">
-            <span className={`turn-chip ${chipMark ? chipMark.toLowerCase() : 'draw'}`}>
-              {chipMark ? <MarkGlyph mark={chipMark} /> : <span className="draw-glyph">=</span>}
-            </span>
-            <div className="turn-copy">
-              <strong>{statusHeadline}</strong>
-              <p>{statusDetail}</p>
+          {shownStatus === 'playing' && (
+            <div className="turn-bar" aria-live="polite">
+              <span className={`turn-chip ${chipMark ? chipMark.toLowerCase() : 'draw'}`}>
+                {chipMark ? <MarkGlyph mark={chipMark} /> : <span className="draw-glyph">=</span>}
+              </span>
+              <div className="turn-copy">
+                <strong>{statusHeadline}</strong>
+                <p>{statusDetail}</p>
+              </div>
+              {aiThinking && <span className="thinking" aria-hidden="true">…</span>}
             </div>
-            {aiThinking && <span className="thinking" aria-hidden="true">…</span>}
-          </div>
+          )}
 
           {isLan && lanError && <p className="error game-error" role="alert">{lanError}</p>}
 
@@ -1064,7 +1066,7 @@ export default function App() {
 
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
-            <p>{record.games} {tr('games')} · {record.winsX}/{record.winsO}/{record.draws}</p>
+            <p>{record.games} {record.games === 1 ? tr('gameOne') : tr('games')} · {record.winsX}/{record.winsO}/{record.draws}</p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
             {!isLan && (
               <button className="text-button" onClick={() => setScreen('stats')}>
@@ -1085,7 +1087,7 @@ export default function App() {
       {lanRole === 'hub' && (
         <>
           <header className="lan-hero">
-            <p className="eyebrow">FAMILY ARCADE · LAN</p>
+            <p className="eyebrow">{tr('eyebrowLan')}</p>
             <h2 className="screen-title">{tr('lanTitle')}</h2>
             <p className="lede">{tr('lanLede')}</p>
           </header>
@@ -1287,7 +1289,7 @@ export default function App() {
     <main className="shell stats-shell">
       <button className="back" onClick={goHome}>← {tr('home')}</button>
       <header className="stats-head">
-        <p className="eyebrow">FAMILY ARCADE · RECORD</p>
+        <p className="eyebrow">{tr('eyebrowRecord')}</p>
         <h2 className="screen-title">{tr('recordTitle')}</h2>
         <p className="lede">{tr('recordLede')}</p>
       </header>
