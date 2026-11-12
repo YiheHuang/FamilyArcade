@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import gamesData from './data/games.json';
 import packagesData from './data/packages.json';
 
@@ -56,6 +56,7 @@ const COPY = {
     install: 'Install',
     downloading: 'Downloading',
     installed: 'Installed',
+    installedCount: 'installed',
     remove: 'Remove',
     players: 'players',
     lan: 'LAN',
@@ -75,8 +76,10 @@ const COPY = {
     used: 'used',
     installedGames: 'Installed games',
     noGames: 'No games installed yet.',
+    noResults: 'No games match your search.',
     packageMissing: 'This game package is not available yet.',
     desktopOnly: 'Installing games needs the Family Arcade Lite desktop app.',
+    browserLaunch: 'Open the game folder in a browser, or install the Family Arcade desktop app.',
   },
   zh: {
     brand: '家庭游戏馆',
@@ -92,6 +95,7 @@ const COPY = {
     install: '安装',
     downloading: '下载中',
     installed: '已安装',
+    installedCount: '款已安装',
     remove: '删除',
     players: '人',
     lan: '局域网',
@@ -111,8 +115,10 @@ const COPY = {
     used: '已用',
     installedGames: '已安装游戏',
     noGames: '还没有安装游戏。',
+    noResults: '没有找到匹配的游戏。',
     packageMissing: '这款游戏包还没有生成。',
     desktopOnly: '安装游戏需要使用家庭游戏馆 Lite 桌面版。',
+    browserLaunch: '请在浏览器中打开游戏文件夹，或安装家庭游戏馆桌面版。',
   },
 } as const;
 
@@ -123,7 +129,7 @@ async function invoke<T>(command: string, args?: Record<string, unknown>): Promi
   return api.invoke<T>(command, args);
 }
 
-async function launch(slug: string): Promise<void> {
+async function launch(slug: string, browserMessage: string): Promise<void> {
   if (isDesktop()) {
     await invoke('launch_game', { slug });
     return;
@@ -133,7 +139,7 @@ async function launch(slug: string): Promise<void> {
     await bridge.launch(slug);
     return;
   }
-  window.alert('Open the game folder in a browser, or install the Family Arcade desktop app.');
+  window.alert(browserMessage);
 }
 
 function formatBytes(bytes: number): string | null {
@@ -159,8 +165,14 @@ export default function App() {
   const [storage, setStorage] = useState('');
   const [installedSize, setInstalledSize] = useState(0);
   const [notice, setNotice] = useState('');
+  const settingsButtonRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLElement>(null);
   const t = COPY[lang];
   const brand = LITE ? t.brandLite : t.brand;
+  const installedSizeLabel = formatBytes(installedSize);
+  const storageLine = lang === 'zh'
+    ? `${t.storage}：${storage || '—'}${installedSizeLabel ? ` · ${t.used} ${installedSizeLabel}` : ''}`
+    : `${t.storage}: ${storage || '—'}${installedSizeLabel ? ` · ${installedSizeLabel} ${t.used}` : ''}`;
 
   useEffect(() => {
     const title = LITE ? (lang === 'zh' ? '家庭游戏馆 Lite' : 'Family Arcade Lite') : t.brand;
@@ -207,6 +219,43 @@ export default function App() {
       .catch(() => undefined);
     return () => unlisten?.();
   }, []);
+
+  useEffect(() => {
+    if (!settingsOpen) return;
+    const modal = modalRef.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    modal?.querySelector<HTMLInputElement>('input')?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setSettingsOpen(false);
+        return;
+      }
+      if (event.key !== 'Tab' || !modal) return;
+      const focusable = Array.from(
+        modal.querySelectorAll<HTMLElement>('button, input, [href]'),
+      ).filter((element) => !element.hasAttribute('disabled'));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      settingsButtonRef.current?.focus();
+    };
+  }, [settingsOpen]);
 
   const games = useMemo(() => {
     const needle = query.trim().toLowerCase();
@@ -264,7 +313,7 @@ export default function App() {
     }
     setBusy(game.slug);
     try {
-      await launch(game.slug);
+      await launch(game.slug, t.browserLaunch);
     } catch (reason) {
       setError(String(reason));
     } finally {
@@ -274,6 +323,7 @@ export default function App() {
 
   const remove = async (game: HubGame) => {
     setError('');
+    setNotice('');
     try {
       await invoke('uninstall_game', { slug: game.slug });
       await refresh();
@@ -284,6 +334,11 @@ export default function App() {
 
   const saveToken = async () => {
     setError('');
+    setNotice('');
+    if (!isDesktop()) {
+      setError(t.desktopOnly);
+      return;
+    }
     try {
       await invoke('set_token', { token });
       setHasToken(token.trim().length > 0);
@@ -296,6 +351,11 @@ export default function App() {
 
   const clearToken = async () => {
     setError('');
+    setNotice('');
+    if (!isDesktop()) {
+      setError(t.desktopOnly);
+      return;
+    }
     try {
       await invoke('clear_token');
       setHasToken(false);
@@ -304,6 +364,18 @@ export default function App() {
     } catch (reason) {
       setError(String(reason));
     }
+  };
+
+  const toggleLanguage = () => {
+    setLang(lang === 'zh' ? 'en' : 'zh');
+    setError('');
+    setNotice('');
+  };
+
+  const openSettings = () => {
+    setError('');
+    setNotice('');
+    setSettingsOpen(true);
   };
 
   return (
@@ -316,14 +388,14 @@ export default function App() {
         <div className="top-actions">
           <span className="count">
             {GAMES.length} {t.games}
-            {LITE && installed.size > 0 ? ` · ${installed.size} ${t.installed}` : ''}
+            {LITE && installed.size > 0 ? ` · ${installed.size} ${t.installedCount}` : ''}
           </span>
           {LITE && (
-            <button className="language" onClick={() => setSettingsOpen(true)}>
+            <button ref={settingsButtonRef} className="language" onClick={openSettings}>
               {t.settings}
             </button>
           )}
-          <button className="language" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
+          <button className="language" onClick={toggleLanguage}>
             {t.language}
           </button>
         </div>
@@ -353,8 +425,8 @@ export default function App() {
         </div>
       </section>
 
-      {error && <p className="error" role="alert">{error}</p>}
-      {notice && <p className="notice" role="status">{notice}</p>}
+      {error && !settingsOpen && <p className="error" role="alert">{error}</p>}
+      {notice && !settingsOpen && <p className="notice" role="status">{notice}</p>}
 
       <section className="grid" aria-label={brand}>
         {games.map((game) => {
@@ -364,12 +436,13 @@ export default function App() {
             ? Math.min(100, Math.round((progress.received / progress.total) * 100))
             : null;
           const action = progress ? `${percent ?? 0}%` : LITE && !isInstalled ? t.install : t.play;
+          const label = progress ? `${t.downloading} ${percent ?? 0}%` : action;
           return (
             <article className="card" key={game.slug}>
               <button
                 className="cover"
                 onClick={() => play(game)}
-                aria-label={`${action}: ${lang === 'zh' ? game.zh : game.title}`}
+                aria-label={`${label}: ${lang === 'zh' ? game.zh : game.title}`}
                 style={{ background: `${game.accent}18` }}
               >
                 <img src={game.thumb} alt="" loading="lazy" />
@@ -394,15 +467,27 @@ export default function App() {
         })}
       </section>
 
+      {games.length === 0 && <p className="empty" role="status">{t.noResults}</p>}
+
       <footer className="foot">{LITE ? t.footerLite : t.footer}</footer>
 
       {LITE && settingsOpen && (
         <div className="modal-backdrop" onClick={() => setSettingsOpen(false)}>
-          <section className="modal" onClick={(event) => event.stopPropagation()}>
+          <section
+            className="modal"
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="settings-title"
+            onClick={(event) => event.stopPropagation()}
+          >
             <header className="modal-head">
-              <h2>{t.settings}</h2>
+              <h2 id="settings-title">{t.settings}</h2>
               <button className="language" onClick={() => setSettingsOpen(false)}>{t.close}</button>
             </header>
+
+            {error && <p className="error" role="alert">{error}</p>}
+            {notice && <p className="notice" role="status">{notice}</p>}
 
             <label className="field">
               <span>{t.downloadKey}</span>
@@ -420,10 +505,7 @@ export default function App() {
             </div>
 
             <h3>{t.installedGames}</h3>
-            <p className="hint">
-              {t.storage}: {storage || '—'}
-              {formatBytes(installedSize) ? ` · ${formatBytes(installedSize)} ${t.used}` : ''}
-            </p>
+            <p className="hint">{storageLine}</p>
             {installed.size === 0 ? (
               <p className="hint">{t.noGames}</p>
             ) : (
