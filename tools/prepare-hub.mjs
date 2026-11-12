@@ -47,11 +47,9 @@ for (const slug of readdirSync(path.join(root, 'apps'))) {
     continue;
   }
   const [title, zh, tagline, taglineZh, players, time, age, rawCategory, accent] = data;
-  const category = ['blokus', 'splendor'].includes(slug)
-    ? 'classic'
-    : ['star-leap', 'sweet-carousel', 'hue-garden', 'field-and-wall', 'balloon-rally'].includes(slug)
-      ? 'family'
-      : rawCategory;
+  const classicSlugs = ['blokus','splendor','gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','abalone','hive','quarto'];
+  const familySlugs = ['star-leap','sweet-carousel','hue-garden','field-and-wall','balloon-rally','hearts','spades','rummy-500','cribbage','president'];
+  const category = classicSlugs.includes(slug) ? 'classic' : familySlugs.includes(slug) ? 'family' : rawCategory;
   const thumbCandidates = [
     path.join(app, 'docs', 'screenshots', 'en', 'game.jpg'),
     path.join(app, 'docs', 'screenshots', 'game.jpg'),

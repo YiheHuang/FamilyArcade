@@ -23,11 +23,14 @@ for (const [slug, data] of Object.entries(extra)) {
   const [title, zh, players, time, timeZh, age, category, shot, promo, tag, asset, readme] = data;
   games.push({ slug, title, zh, players, time, timeZh, age, category, shot, video: `${promo}-en.mp4`, videoZh: `${promo}-zh.mp4`, installer: `${repo}/releases/download/${tag}/${asset}`, readme });
 }
-const order = ['triple','four','flip','draughts','mill','boxes','sowing','tables','race-home','ladder-run','pair-up','domino-line','color-chain','five-dice','fleet','codebreak','triple-find','little-go','mini-chess','hex'];
+const classicSlugs = new Set(['gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','abalone','hive','quarto']);
+const familySlugs = new Set(['hearts','spades','rummy-500','cribbage','president']);
+const order = ['gomoku','xiangqi','chess','go','shogi','intl-draughts','jungle-chess','hearts','spades','rummy-500','cribbage','abalone','hive','quarto','president','triple','four','flip','draughts','mill','boxes','sowing','tables','race-home','ladder-run','pair-up','domino-line','color-chain','five-dice','fleet','codebreak','triple-find','little-go','mini-chess','hex'];
 for (const slug of order) {
   const manifest = path.join(root, 'apps', slug, 'video.json');
   if (!existsSync(manifest)) continue;
   const v = JSON.parse(readFileSync(manifest, 'utf8'));
+  if (!existsSync(path.join(root, 'apps', slug, 'docs', 'promo', `${slug}-promo-en.mp4`))) continue;
   games.push({
     slug,
     title: v.title,
@@ -36,7 +39,7 @@ for (const slug of order) {
     time: v.time.replace(' minutes', ''),
     timeZh: v.timeZh,
     age: v.age,
-    category: 'arcade',
+    category: classicSlugs.has(slug) ? 'classic' : familySlugs.has(slug) ? 'family' : 'arcade',
     shot: `apps/${slug}/docs/screenshots/en/game.jpg`,
     video: `apps/${slug}/docs/promo/${slug}-promo-en.mp4`,
     videoZh: `apps/${slug}/docs/promo/${slug}-promo-zh.mp4`,
