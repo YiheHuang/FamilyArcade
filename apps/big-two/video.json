@@ -1,32 +1,77 @@
 {
   "slug": "big-two",
-  "order": 1,
+  "order": 7,
   "title": "Big Two",
   "titleZh": "大老二",
-  "tagline": "4-player Big Two with poker hand rankings",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "Poker hands. One family table.",
+  "taglineZh": "扑克牌型，一家人一桌。",
+  "players": "4 players",
+  "playersZh": "4 人",
+  "time": "15 minutes",
+  "timeZh": "15 分钟",
+  "age": "8+",
+  "ageZh": "8 岁以上",
+  "accent": "#9c3b2c",
+  "paper": "#f4ecdd",
+  "ink": "#241f19",
   "screens": {
     "en": ["home.png", "game.png", "game-over.png"],
     "zh": ["home.png", "game.png", "game-over.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "4 players",
+    "52-card deck",
+    "4 AI levels",
+    "Hot-seat + LAN",
+    "Reasoned hints + record"
+  ],
+  "factsZh": [
+    "4 人",
+    "52 张牌",
+    "四档电脑",
+    "同屏 + 局域网",
+    "提示 + 战绩"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Big Two. A tiny game for a big table.", "zh": "大老二。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Big Two. Three in a row.", "zh": "大老二。三子连线。" }
+    {
+      "at": 0.4,
+      "en": "Fifty-two cards. Four seats. Thirteen each.",
+      "zh": "五十二张牌，四个座位，每人十三张。"
+    },
+    {
+      "at": 5.2,
+      "en": "Big Two. Diamonds, clubs, hearts, spades.",
+      "zh": "大老二。方块、梅花、红桃、黑桃。"
+    },
+    {
+      "at": 10,
+      "en": "The holder of 3♦ leads, and the first play must include it.",
+      "zh": "持有 ♦3 的玩家先出，首手必须带上它。"
+    },
+    {
+      "at": 16,
+      "en": "Singles, pairs, triples, and five-card poker hands.",
+      "zh": "单张、对子、三张，还有五张牌型。"
+    },
+    {
+      "at": 23.5,
+      "en": "Straights, flushes, full houses, four plus one, straight flushes.",
+      "zh": "顺子、同花、葫芦、四带一、同花顺。"
+    },
+    {
+      "at": 31,
+      "en": "First to empty their hand wins. Every card left scores.",
+      "zh": "最先出完手牌的人获胜，剩下的牌要算分。"
+    },
+    {
+      "at": 38,
+      "en": "Four computer levels, hot-seat, and a private LAN table.",
+      "zh": "四档电脑对手、同屏热座，还有私密局域网牌桌。"
+    },
+    {
+      "at": 42,
+      "en": "Offline. No account. No ads.",
+      "zh": "离线、无账号、无广告。"
+    }
   ]
 }

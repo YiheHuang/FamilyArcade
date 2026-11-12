@@ -2,18 +2,27 @@ let ctx: AudioContext | null = null;
 
 function context(): AudioContext | null {
   if (typeof window === 'undefined') return null;
-  const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  const Ctor =
+    window.AudioContext ??
+    (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   if (!Ctor) return null;
   ctx ??= new Ctor();
   return ctx;
 }
 
-export function chime(kind: 'place' | 'win' | 'draw' = 'place'): void {
+export function chime(kind: 'place' | 'pass' | 'win' | 'deal' = 'place'): void {
   const audio = context();
   if (!audio) return;
   if (audio.state === 'suspended') void audio.resume();
   const now = audio.currentTime;
-  const notes = kind === 'win' ? [523.25, 659.25, 783.99] : kind === 'draw' ? [392, 329.63] : [523.25];
+  const notes =
+    kind === 'win'
+      ? [523.25, 659.25, 783.99]
+      : kind === 'pass'
+        ? [392, 349.23]
+        : kind === 'deal'
+          ? [440, 554.37]
+          : [523.25];
   notes.forEach((frequency, index) => {
     const osc = audio.createOscillator();
     const gain = audio.createGain();
