@@ -1,32 +1,79 @@
 {
   "slug": "guandan",
-  "order": 1,
+  "order": 5,
   "title": "Guandan",
   "titleZh": "掼蛋",
-  "tagline": "4-player partnership climbing with two decks",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "Two decks. Four seats. One partnership climb.",
+  "taglineZh": "两副牌，四个人，搭档一起升级。",
+  "players": "4 players",
+  "playersZh": "4 人",
+  "time": "30 minutes",
+  "timeZh": "30 分钟",
+  "age": "10+",
+  "ageZh": "10 岁以上",
+  "accent": "#b23b2e",
+  "paper": "#f4ecdd",
+  "ink": "#26221b",
   "screens": {
     "en": ["home.png", "game.png", "game-over.png"],
     "zh": ["home.png", "game.png", "game-over.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "108 cards",
+    "Two partnerships",
+    "Level cards + wilds",
+    "Bombs + tribute",
+    "Solo · hot-seat · LAN",
+    "4 computer levels"
+  ],
+  "factsZh": [
+    "108 张牌",
+    "两对搭档",
+    "级牌 + 配牌",
+    "炸弹 + 进贡",
+    "单人 · 同屏 · 局域网",
+    "四档电脑"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Guandan. A tiny game for a big table.", "zh": "掼蛋。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Guandan. Three in a row.", "zh": "掼蛋。三子连线。" }
+    {
+      "at": 0.4,
+      "en": "Two decks. One hundred and eight cards. Four seats.",
+      "zh": "两副牌，一百零八张，四个座位。"
+    },
+    {
+      "at": 5.2,
+      "en": "Guandan. Partners sit opposite.",
+      "zh": "掼蛋。搭档坐对家。"
+    },
+    {
+      "at": 10,
+      "en": "The level card rules the table. The heart level card is wild.",
+      "zh": "级牌压场，红桃级牌是配牌。"
+    },
+    {
+      "at": 16,
+      "en": "Singles, pairs, straights, consecutive pairs and triples, bombs and the joker bomb.",
+      "zh": "单张、对子、顺子、钢板、炸弹，还有天王炸。"
+    },
+    {
+      "at": 23.5,
+      "en": "Three passes reset the trick. First and second gain three levels.",
+      "zh": "三家过牌重置，包揽第一第二升三级。"
+    },
+    {
+      "at": 31,
+      "en": "Tribute, anti-tribute, and a match that ends at A.",
+      "zh": "进贡、抗贡，一路打到 A。"
+    },
+    {
+      "at": 38,
+      "en": "Four computer levels, private hot-seat, and three guests on your network.",
+      "zh": "四档电脑、同屏热座，还能在同一网络里坐满四位。"
+    },
+    {
+      "at": 42,
+      "en": "Offline. No account. No ads.",
+      "zh": "离线、无账号、无广告。"
+    }
   ]
 }

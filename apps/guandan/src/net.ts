@@ -16,9 +16,13 @@ export async function startLanServer(): Promise<LanServerInfo> {
     return (await invoke('lan_start')) as LanServerInfo;
   }
   const host = typeof location !== 'undefined' ? location.hostname : '127.0.0.1';
+  // Vite dev/preview do not proxy the shared relay; it lives on 8080. When the
+  // built app is served by the relay, reuse that same port.
+  const pagePort = typeof location !== 'undefined' ? Number(location.port) : 0;
+  const port = pagePort && pagePort !== 5220 && pagePort !== 4220 ? pagePort : 8080;
   return {
-    port: 8080,
-    urls: [`http://${host}:8080`],
+    port,
+    urls: [`http://${host}:${port}`],
     token: 'browser',
   };
 }
@@ -32,7 +36,12 @@ export function inviteBase(info: LanServerInfo): string {
   return info.urls[0] ?? `http://${location.hostname}:${info.port}`;
 }
 
-export function inviteUrl(info: LanServerInfo, room: string, code: string, name = 'Guest'): string {
+export function inviteUrl(
+  info: LanServerInfo,
+  room: string,
+  code: string,
+  name = 'Guest',
+): string {
   const params = new URLSearchParams({ lan: room, code, name });
   return `${inviteBase(info)}/?${params.toString()}`;
 }

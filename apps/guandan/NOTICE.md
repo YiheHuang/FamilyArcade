@@ -1,12 +1,16 @@
-# NOTICE · Guandan / 掼蛋
+# NOTICE · Guandan
 
-Guandan is an original, non-commercial family game made for Family Arcade. The 3×3
-three-in-a-row mechanic is a public-domain folk game; this implementation, its name,
-copy, visual design and code are original.
+Guandan is an original implementation of the public-domain partnership climbing
+card game played with two decks. The rules are folk rules; this implementation, its
+name, copy, visual design and code are original.
 
-- No third-party art, card text, font files or audio samples are included.
-- All marks, board and icons are drawn in CSS/SVG for this project.
-- Music and sound in the promo are synthesised from scratch; narration is synthetic
-  Edge TTS.
+- No third-party art, card faces, font files or audio samples are included.
+- Every card, table, badge, icon and the level ladder is drawn in CSS/SVG for this
+  project.
+- Sound is synthesised with the Web Audio API from sine tones; there are no sampled
+  recordings.
+- The 45-second promo is rendered by the root studio from `video.json`; this app
+  ships the manifest and the real screenshots.
 - Code and original assets: MIT. See [LICENSE](LICENSE).
-- Trademarks mentioned in general discussion belong to their respective owners.
+- Trademarks and game names mentioned in general discussion belong to their
+  respective owners.
