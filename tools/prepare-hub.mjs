@@ -20,17 +20,29 @@ const extra = {
   splendor: ['Splendor', '宝石商人', 'Build an engine. Reach fifteen.', '搭起宝石引擎，先到十五分。', '2–4', '30 min', '8+', 'classic', '#b4634a'],
 };
 
+const timeZhMap = {
+  'star-leap': '15–25 分钟',
+  'sweet-carousel': '15 分钟',
+  'hue-garden': '20–30 分钟',
+  'field-and-wall': '30–35 分钟',
+  'balloon-rally': '20–25 分钟',
+  blokus: '20–30 分钟',
+  splendor: '30 分钟',
+};
 const games = [];
 for (const slug of readdirSync(path.join(root, 'apps'))) {
   const app = path.join(root, 'apps', slug);
   if (!existsSync(path.join(app, 'package.json')) || slug === 'family-arcade') continue;
   let data;
+  let timeZh = '';
   const manifest = path.join(app, 'video.json');
   if (existsSync(manifest)) {
     const v = JSON.parse(readFileSync(manifest, 'utf8'));
     data = [v.title, v.titleZh, v.tagline, v.taglineZh, v.players.replace(' players', ''), v.time, v.age, 'arcade', v.accent];
+    timeZh = v.timeZh || '';
   } else if (extra[slug]) {
     data = extra[slug];
+    timeZh = timeZhMap[slug] || '';
   } else {
     continue;
   }
@@ -60,6 +72,7 @@ for (const slug of readdirSync(path.join(root, 'apps'))) {
     taglineZh,
     players,
     time,
+    timeZh: timeZh || time,
     age,
     category,
     accent,

@@ -69,3 +69,13 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(176, 92, 6
   input { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+.top-actions { display:flex; align-items:center; gap:18px; }
+.language { border:1px solid var(--line); background:transparent; color:var(--muted); border-radius:999px; padding:8px 14px; font-size:12px; }
+.language:hover { color:var(--ink); background:var(--card); }
+.hero { padding: clamp(42px, 7vw, 88px) 0 26px; }
+.hero h1 { font-size: clamp(54px, 7vw, 88px); }
+.meta h2 { margin:0; font:600 24px/1.1 "Iowan Old Style", Georgia, serif; letter-spacing:-0.02em; }
+.meta { padding: 15px 16px 16px; }
+.meta .facts { margin-top: 8px; }
+@media (max-width: 860px) { .top-actions .count { display:none; } }

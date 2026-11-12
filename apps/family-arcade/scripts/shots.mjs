@@ -8,13 +8,14 @@ for (const lang of ['en', 'zh']) {
   const dir = path.resolve('docs/screenshots', lang);
   await mkdir(dir, { recursive: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  await page.addInitScript((value) => localStorage.setItem('familyarcade.lang', value), lang);
   await page.goto(BASE, { waitUntil: 'networkidle' });
   await page.waitForTimeout(500);
   await page.screenshot({ path: path.join(dir, 'home.jpg'), type: 'jpeg', quality: 86 });
-  await page.getByRole('button', { name: '经典' }).click();
+  await page.locator('.chip').nth(1).click();
   await page.waitForTimeout(300);
   await page.screenshot({ path: path.join(dir, 'classics.jpg'), type: 'jpeg', quality: 86 });
-  await page.getByRole('button', { name: '全部' }).click();
+  await page.locator('.chip').nth(0).click();
   await page.locator('input').fill('go');
   await page.waitForTimeout(300);
   await page.screenshot({ path: path.join(dir, 'search.jpg'), type: 'jpeg', quality: 86 });
@@ -25,6 +26,7 @@ for (const lang of ['en', 'zh']) {
     isMobile: true,
     hasTouch: true,
   });
+  await mobile.addInitScript((value) => localStorage.setItem('familyarcade.lang', value), lang);
   await mobile.goto(BASE, { waitUntil: 'networkidle' });
   await mobile.waitForTimeout(400);
   await mobile.screenshot({ path: path.join(dir, 'home-mobile.jpg'), type: 'jpeg', quality: 86 });

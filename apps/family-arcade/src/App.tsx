@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import gamesData from './data/games.json';
 
 interface HubGame {
@@ -9,37 +9,86 @@ interface HubGame {
   taglineZh: string;
   players: string;
   time: string;
+  timeZh: string;
   age: string;
   category: 'classic' | 'family' | 'arcade';
   accent: string;
   thumb: string;
 }
 
+type Lang = 'en' | 'zh';
 const GAMES = gamesData as HubGame[];
 
-const isTauri = () => typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window;
+const COPY = {
+  en: {
+    brand: 'Family Arcade',
+    search: 'Search games…',
+    all: 'All',
+    classic: 'Classics',
+    family: 'Family table',
+    arcade: 'Arcade',
+    headline: 'Pick a game.',
+    games: 'games',
+    play: 'Play',
+    players: 'players',
+    lan: 'LAN',
+    footer: 'Offline · no account · no ads · LAN in every game',
+    language: '中文',
+  },
+  zh: {
+    brand: '家庭游戏馆',
+    search: '搜索游戏…',
+    all: '全部',
+    classic: '经典',
+    family: '家庭牌桌',
+    arcade: '小游戏',
+    headline: '选一款游戏。',
+    games: '款游戏',
+    play: '开始',
+    players: '人',
+    lan: '局域网',
+    footer: '离线 · 无账号 · 无广告 · 每款都能局域网',
+    language: 'English',
+  },
+} as const;
 
 async function launch(slug: string): Promise<void> {
-  if (!isTauri()) {
-    window.alert('This launcher runs as a Windows app. In the browser, open the individual game folder instead.');
+  if ('__TAURI_INTERNALS__' in window) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    await invoke('launch_game', { slug });
     return;
   }
-  const { invoke } = await import('@tauri-apps/api/core');
-  await invoke('launch_game', { slug });
+  const bridge = (window as unknown as { familyArcade?: { launch(slug: string): Promise<void> } }).familyArcade;
+  if (bridge) {
+    await bridge.launch(slug);
+    return;
+  }
+  window.alert('Open the game folder in a browser, or install the Family Arcade desktop app.');
 }
 
 export default function App() {
+  const [lang, setLang] = useState<Lang>(() => {
+    const saved = localStorage.getItem('familyarcade.lang');
+    if (saved === 'en' || saved === 'zh') return saved;
+    return navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+  });
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<'all' | HubGame['category']>('all');
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState('');
+  const t = COPY[lang];
+
+  useEffect(() => {
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    localStorage.setItem('familyarcade.lang', lang);
+  }, [lang]);
 
   const games = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return GAMES.filter((game) => {
       if (filter !== 'all' && game.category !== filter) return false;
       if (!needle) return true;
-      return `${game.title} ${game.zh} ${game.tagline}`.toLowerCase().includes(needle);
+      return `${game.title} ${game.zh}`.toLowerCase().includes(needle);
     });
   }, [filter, query]);
 
@@ -48,15 +97,10 @@ export default function App() {
     setBusy(game.slug);
     try {
       await launch(game.slug);
-      const recent = JSON.parse(localStorage.getItem('familyarcade.recent') || '[]') as string[];
-      localStorage.setItem(
-        'familyarcade.recent',
-        JSON.stringify([game.slug, ...recent.filter((item) => item !== game.slug)].slice(0, 6)),
-      );
     } catch (reason) {
-      setError(`Could not start ${game.title}: ${String(reason)}`);
+      setError(String(reason));
     } finally {
-      window.setTimeout(() => setBusy(null), 700);
+      window.setTimeout(() => setBusy(null), 600);
     }
   };
 
@@ -65,43 +109,33 @@ export default function App() {
       <header className="top">
         <div className="brand">
           <span className="mark">FA</span>
-          <div>
-            <strong>Family Arcade</strong>
-            <span>家庭游戏馆</span>
-          </div>
+          <strong>{t.brand}</strong>
         </div>
-        <div className="count">
-          <strong>{GAMES.length}</strong>
-          <span>games · 一个游戏中心</span>
+        <div className="top-actions">
+          <span className="count">{GAMES.length} {t.games}</span>
+          <button className="language" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
+            {t.language}
+          </button>
         </div>
       </header>
 
       <section className="hero">
-        <p className="eyebrow">ONE TABLE · 27 GAMES</p>
-        <h1>Pick a game.<br />Call the family.</h1>
-        <p className="lede">
-          二十七款离线家庭游戏：棋类、卡牌、骰子、拼放和派对小游戏。每一款都有 AI、
-          同屏热座和局域网。装这一个程序，或者只装你想玩的那一款。
-        </p>
+        <h1>{t.headline}</h1>
         <div className="search-row">
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search / 搜索游戏…"
-            aria-label="Search games"
+            placeholder={t.search}
+            aria-label={t.search}
           />
           <div className="filters">
             {([
-              ['all', '全部'],
-              ['classic', '经典'],
-              ['family', '家庭牌桌'],
-              ['arcade', '小游戏'],
+              ['all', t.all],
+              ['classic', t.classic],
+              ['family', t.family],
+              ['arcade', t.arcade],
             ] as const).map(([id, label]) => (
-              <button
-                key={id}
-                className={filter === id ? 'chip active' : 'chip'}
-                onClick={() => setFilter(id)}
-              >
+              <button key={id} className={filter === id ? 'chip active' : 'chip'} onClick={() => setFilter(id)}>
                 {label}
               </button>
             ))}
@@ -111,38 +145,31 @@ export default function App() {
 
       {error && <p className="error" role="alert">{error}</p>}
 
-      <section className="grid" aria-label="Games">
+      <section className="grid" aria-label={t.brand}>
         {games.map((game) => (
           <article className="card" key={game.slug}>
             <button
               className="cover"
               onClick={() => play(game)}
-              aria-label={`Play ${game.title}`}
+              aria-label={`${t.play}: ${lang === 'zh' ? game.zh : game.title}`}
               style={{ background: `${game.accent}18` }}
             >
-              <img src={game.thumb} alt={`${game.title} screenshot`} loading="lazy" />
-              <span className="play">{busy === game.slug ? 'Starting…' : 'Play'}</span>
+              <img src={game.thumb} alt="" loading="lazy" />
+              <span className="play">{busy === game.slug ? '…' : t.play}</span>
             </button>
             <div className="meta">
-              <div className="names">
-                <h2>{game.title}</h2>
-                <span>{game.zh}</span>
-              </div>
-              <p>{game.tagline}</p>
+              <h2>{lang === 'zh' ? game.zh : game.title}</h2>
               <div className="facts">
-                <span>{game.players} players</span>
-                <span>{game.time}</span>
-                <span className="lan">LAN</span>
+                <span>{game.players} {t.players}</span>
+                <span>{lang === 'zh' ? game.timeZh : game.time}</span>
+                <span className="lan">{t.lan}</span>
               </div>
             </div>
           </article>
         ))}
       </section>
 
-      <footer className="foot">
-        <span>Offline · no account · no ads · LAN in every game</span>
-        <span>所有游戏均可单独安装，也可以从这里统一启动。</span>
-      </footer>
+      <footer className="foot">{t.footer}</footer>
     </main>
   );
 }
