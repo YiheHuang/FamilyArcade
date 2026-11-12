@@ -128,6 +128,8 @@ async function run(lang) {
   await mobile.getByTestId('bid-3').click();
   await mobile.getByTestId('reveal').click();
   await mobile.waitForTimeout(300);
+  await mobile.mouse.move(2, 2);
+  await mobile.waitForTimeout(150);
   await mobile.screenshot({ path: path.join(dir, 'game-mobile.png') });
 
   await closeBrowser(browser);

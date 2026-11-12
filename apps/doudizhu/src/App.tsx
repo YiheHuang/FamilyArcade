@@ -1064,7 +1064,7 @@ export default function App() {
         </div>
         <div className="seat-card-row">
           <CardBackStack count={count} label={tr('hiddenHand')} />
-          <span className="seat-count">{tr('cardsLeft', { n: count })}</span>
+          <span className="seat-count">{count === 1 ? tr('cardOne') : tr('cardsLeft', { n: count })}</span>
         </div>
         <div className="seat-foot">
           {shownPhase === 'bidding' ? (
@@ -1248,7 +1248,7 @@ export default function App() {
             <div className="privacy-cover" data-testid="privacy-cover">
               <span className="privacy-kicker">{tr('coveredHand')}</span>
               <strong>{tr('passDevice', { name: labelFor(shownTurn) })}</strong>
-              <span className="privacy-note">{tr('localNote')}</span>
+              <span className="privacy-note">{tr('coveredNote')}</span>
               <button className="primary" onClick={revealHand} data-testid="reveal">
                 {tr('showHand')}
               </button>
@@ -1264,7 +1264,7 @@ export default function App() {
                 <div>
                   <span className="panel-kicker">{labelFor(actSeat, actSeat)}</span>
                   <strong>{tr('yourHand')}</strong>
-                  <span className="hand-count">{tr('cardsLeft', { n: ownHand.length })}</span>
+                  <span className="hand-count">{ownHand.length === 1 ? tr('cardOne') : tr('cardsLeft', { n: ownHand.length })}</span>
                 </div>
                 <div className="hand-tools">
                   {shownPhase === 'playing' && (
@@ -1417,7 +1417,7 @@ export default function App() {
                 <span>
                   {entry.mode === 'ai' ? tr('soloMode') : entry.mode === 'local' ? tr('localMode') : tr('lanMode')}
                   {entry.spring ? ` · ${tr('springShort')}` : ''}
-                  {entry.bombs > 0 ? ` · ${tr('bombsShort', { n: entry.bombs })}` : ''}
+                  {entry.bombs > 0 ? ` · ${entry.bombs === 1 ? tr('bombOne') : tr('bombsShort', { n: entry.bombs })}` : ''}
                 </span>
               </div>
               <span className="recent-date">{formatDate(entry.at, lang)}</span>

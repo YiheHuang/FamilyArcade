@@ -796,10 +796,15 @@ h3.section-label {
   .hand-dock { padding: 9px 9px 8px; border-radius: 18px; min-height: 190px; }
   .hand-head strong { font-size: 17px; }
   .hand-tools .secondary { min-height: 32px; padding: 5px 10px; font-size: 11px; }
-  .hand-scroll { padding: 14px 4px 2px 10px; }
+  .hand-scroll { padding: 14px 2px 2px 6px; }
   .hand { min-height: 88px; }
-  .hand .playing-card { --cw: 44px; margin-left: -28px; }
-  .hand .playing-card:first-child { margin-left: 0; }
+  .hand .playing-card { --cw: 44px; }
+  .hand .playing-card + .playing-card {
+    margin-left: min(-9px, max(-31px, calc((100% - 44px) / (var(--cards) - 1) - 44px)));
+  }
+  .hand .pc-corner:not(.pc-bottom) { left: 3px; }
+  .hand .pc-rank { font-size: 10px; }
+  .hand .pc-suit { font-size: 8px; }
   .playing-card.is-small { --cw: 39px; }
   .hand-actions { gap: 8px; }
   .selection-info { min-width: 0; }

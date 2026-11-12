@@ -362,6 +362,10 @@ export default function App() {
   }, [screen]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [screen]);
+
+  useEffect(() => {
     if (screen !== 'stats') setClearArmed(false);
   }, [screen]);
 
@@ -1279,16 +1283,16 @@ export default function App() {
                 {tr('rules')} →
               </button>
               <button className="text-button" onClick={goStats} data-testid="stats">
-                {tr('record')} →
+                {tr('viewRecord')} →
               </button>
             </div>
           </div>
           <div className="record-strip">
             <span>{tr('recordMini')}</span>
             <strong>{record.hands}</strong>
-            <span>{tr('hands')}</span>
+            <span>{record.hands === 1 ? tr('handOne') : tr('hands')}</span>
             <span className="dot">·</span>
-            <span>{record.sessions} {tr('sessions')}</span>
+            <span>{record.sessions} {record.sessions === 1 ? tr('sessionOne') : tr('sessions')}</span>
             <span className="dot">·</span>
             <span>
               {tr('biggestPot')} {formatChips(lang, record.biggestPot)}
@@ -1523,7 +1527,7 @@ export default function App() {
                 {tr('hint')}
               </button>
             </div>
-            <p className="side-note">{isLan ? tr('localOnly') : tr('keyboardHint')}</p>
+            <p className={`side-note ${isLan ? '' : 'keys-note'}`}>{isLan ? tr('localOnly') : tr('keyboardHint')}</p>
           </div>
 
           {!showCurtain && shownView.board.length >= 3 && (
@@ -1567,14 +1571,14 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('recordMini')}</h3>
             <p className="peer">
-              {record.hands} {tr('hands')} · {record.sessions} {tr('sessions')}
+              {record.hands} {record.hands === 1 ? tr('handOne') : tr('hands')} · {record.sessions} {record.sessions === 1 ? tr('sessionOne') : tr('sessions')}
             </p>
             <p className="side-note">
               {tr('biggestPot')} {formatChips(lang, record.biggestPot)}
             </p>
             {!isGuest && (
               <button className="text-button" onClick={goStats}>
-                {tr('record')} →
+                {tr('viewRecord')} →
               </button>
             )}
           </div>

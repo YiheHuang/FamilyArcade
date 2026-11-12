@@ -497,7 +497,7 @@ h1 {
   border-radius: 15px;
 }
 .gate-icon { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-2); color: #f3dfad; font-size: 20px; }
-.privacy-gate strong { font: 600 22px/1.2 "Iowan Old Style", Georgia, serif; }
+.privacy-gate strong { font: 600 22px/1.2 "Iowan Old Style", Georgia, serif; text-wrap: balance; }
 .privacy-gate p { color: var(--muted); font-size: 12px; margin: 0; }
 .privacy-gate .primary { margin-top: 8px; padding: 10px 20px; }
 
@@ -733,7 +733,12 @@ h1 {
   .card-suit { font-size: 17px; }
   .card-rank.foot { font-size: 10px; }
   .hand { min-height: 96px; padding-top: 10px; }
-  .hand .playing-card + .playing-card { margin-left: -21px; }
+  .hand .playing-card { width: 40px; height: 58px; padding: 3px 4px; }
+  .hand .card-rank { font-size: 12px; }
+  .hand .card-suit { font-size: 15px; }
+  .hand .playing-card + .playing-card {
+    margin-left: min(-8px, calc((100% - 40px) / (var(--cards) - 1) - 40px));
+  }
   .hand-controls .primary, .hand-controls .secondary { flex: 1; text-align: center; }
   .hand-tools { margin-left: 0; }
   .hand-controls { gap: 6px; }

@@ -844,6 +844,7 @@ h1 {
   .sheet-card { padding: 20px; border-radius: 20px; }
   .sheet-layer { padding: 10px; }
   .side { grid-template-columns: 1fr; }
+  .keys-note { display: none; }
   .lan-choice-card, .lan-card, .qr-card, .guest-card { padding: 17px; }
   .room-code.big { font-size: 42px; }
   .stats-top { grid-template-columns: 1fr 1fr; }

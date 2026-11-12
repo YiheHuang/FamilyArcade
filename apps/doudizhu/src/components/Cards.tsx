@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import type { Card } from '../game/doudizhu';
 import { cardFace, cardName, rankName, rankText, suitSymbol } from '../format';
 import type { Lang } from '../i18n';
@@ -129,7 +130,7 @@ export function Hand({
 }) {
   return (
     <div className="hand-scroll" data-testid="hand" data-hand-count={cards.length} aria-label={ariaLabel}>
-      <div className="hand">
+      <div className="hand" style={{ '--cards': cards.length } as CSSProperties}>
         {cards.map((card, index) => (
           <PlayingCard
             key={card.id}

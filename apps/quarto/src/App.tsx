@@ -1035,7 +1035,7 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{t(lang, record.games === 1 ? 'gameOne' : 'games')}</span>
             <span className="dot">·</span>
             <span>
               {record.winsP1} {tr('winsP1')}
@@ -1311,7 +1311,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.winsP1}/{record.winsP2}/{record.draws}
+              {record.games} {t(lang, record.games === 1 ? 'gameOne' : 'games')} · {record.winsP1}/{record.winsP2}/{record.draws}
             </p>
             <p className="record-mini-note">{tr('recordMiniNote')}</p>
             {!isLan && (

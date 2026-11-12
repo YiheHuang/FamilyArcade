@@ -1456,7 +1456,12 @@ export default function App() {
 
               {handVisible ? (
                 <>
-                  <div className="hand" role="group" aria-label={tr('handLabel')}>
+                  <div
+                    className="hand"
+                    role="group"
+                    aria-label={tr('handLabel')}
+                    style={{ '--cards': activeView.hand.length } as CSSProperties}
+                  >
                     {activeView.hand.map((card, index) => (
                       <PlayingCard
                         key={card.id}
