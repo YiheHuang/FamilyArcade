@@ -42,6 +42,21 @@ jobs:
           - { slug: little-go, version: 0.1.0, path: apps/little-go, name: Little Go }
           - { slug: mini-chess, version: 0.1.0, path: apps/mini-chess, name: Mini Chess }
           - { slug: hex, version: 0.1.0, path: apps/hex, name: Hex }
+          - { slug: gomoku, version: 0.1.0, path: apps/gomoku, name: Gomoku }
+          - { slug: xiangqi, version: 0.1.0, path: apps/xiangqi, name: Xiangqi }
+          - { slug: chess, version: 0.1.0, path: apps/chess, name: Chess }
+          - { slug: go, version: 0.1.0, path: apps/go, name: Go }
+          - { slug: shogi, version: 0.1.0, path: apps/shogi, name: Shogi }
+          - { slug: intl-draughts, version: 0.1.0, path: apps/intl-draughts, name: International Draughts }
+          - { slug: jungle-chess, version: 0.1.0, path: apps/jungle-chess, name: Jungle Chess }
+          - { slug: hearts, version: 0.1.0, path: apps/hearts, name: Hearts }
+          - { slug: spades, version: 0.1.0, path: apps/spades, name: Spades }
+          - { slug: rummy-500, version: 0.1.0, path: apps/rummy-500, name: Rummy 500 }
+          - { slug: cribbage, version: 0.1.0, path: apps/cribbage, name: Cribbage }
+          - { slug: abalone, version: 0.1.0, path: apps/abalone, name: Abalone }
+          - { slug: hive, version: 0.1.0, path: apps/hive, name: Hive }
+          - { slug: quarto, version: 0.1.0, path: apps/quarto, name: Quarto }
+          - { slug: president, version: 0.1.0, path: apps/president, name: President }
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -69,6 +84,6 @@ jobs:
             Lightweight Windows NSIS installer for **${{ matrix.name }}**.
 
             This release contains only this game. See the repository README for the
-            other 26 games, LAN instructions and the honest limitations.
+            other 41 games, LAN instructions and the honest limitations.
           releaseDraft: false
           prerelease: false

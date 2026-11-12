@@ -65,8 +65,12 @@ for (const slug of selected) {
     failed += 1;
     continue;
   }
+  const env = { ...process.env };
+  if (slug === 'blokus') {
+    env.CARGO_TARGET_DIR = existsSync('T:\\') ? 'T:\\target-blokus' : path.join(root, 'target-blokus');
+  }
   const check = await new Promise((resolve) => {
-    const child = spawn('npm', ['run', 'check'], { cwd, shell: true, stdio: 'ignore' });
+    const child = spawn('npm', ['run', 'check'], { cwd, env, shell: true, stdio: 'ignore' });
     child.on('exit', (code) => resolve(code));
   });
   console.log(`${check === 0 ? 'OK  ' : 'FAIL'} ${slug}`);

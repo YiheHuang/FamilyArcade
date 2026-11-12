@@ -10,6 +10,7 @@
   "scripts": {
     "test": "npm run test -w @splendor/engine && npm run test -w @splendor/client && npm run test -w @splendor/server",
     "typecheck": "npm run typecheck -w @splendor/engine && npm run typecheck -w @splendor/client && npm run typecheck -w @splendor/server",
+    "check": "npm run typecheck && npm test && npm run data:verify && npm run build",
     "data:verify": "node scripts/verify-data.mjs",
     "data:finalize": "node scripts/finalize-data.mjs",
     "reconcile": "node scripts/reconcile.mjs",

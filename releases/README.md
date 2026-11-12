@@ -1,4 +1,4 @@
-# Releases · 42 installers
+# Releases · 42 per-game installers + all-in-one launcher
 
 One folder per game, one lightweight NSIS installer per game:
 
