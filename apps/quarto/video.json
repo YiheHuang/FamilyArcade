@@ -1,0 +1,64 @@
+{
+  "slug": "quarto",
+  "order": 1,
+  "title": "Quarto",
+  "titleZh": "四连棋",
+  "tagline": "Sixteen pieces. One rule.",
+  "taglineZh": "十六枚棋子，一条规则。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10 minutes",
+  "timeZh": "10 分钟",
+  "age": "6+",
+  "accent": "#a9553e",
+  "paper": "#f2eadc",
+  "ink": "#241d17",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["4 × 4 board", "16 unique pieces", "4 AI levels", "Hot-seat + LAN"],
+  "factsZh": ["4 × 4 棋盘", "16 枚独特棋子", "四档电脑难度", "同屏 + 局域网"],
+  "lines": [
+    {
+      "at": 0.4,
+      "en": "Sixteen pieces. Four attributes. One rule.",
+      "zh": "十六枚棋子，四种属性，一条规则。"
+    },
+    {
+      "at": 5.2,
+      "en": "Quarto. Choose a piece and hand it to your opponent.",
+      "zh": "四连棋。选一枚棋子，交给对手。"
+    },
+    {
+      "at": 10.0,
+      "en": "They place it, then choose the next piece for you. Every gift shapes the board.",
+      "zh": "对手放好棋子，再为你选下一枚。每一份礼物都在塑造棋盘。"
+    },
+    {
+      "at": 16.0,
+      "en": "Four pieces in a line share one attribute — that is a quarto.",
+      "zh": "一条线上四枚棋子共享一种属性，就是四连。"
+    },
+    {
+      "at": 23.5,
+      "en": "Four computer levels, from a gentle companion to forced-piece search.",
+      "zh": "四档电脑难度，从温和陪玩到强制棋子搜索。"
+    },
+    {
+      "at": 31.0,
+      "en": "Two players on one screen, or a phone joins on the same Wi-Fi.",
+      "zh": "两人同屏，或者手机连同一网络加入。"
+    },
+    {
+      "at": 38.0,
+      "en": "Hints that explain why, undo, autosave, a family record. Offline, no account, no ads.",
+      "zh": "会解释原因的提示、悔棋、自动保存和家庭战绩。离线、无账号、无广告。"
+    },
+    {
+      "at": 42.0,
+      "en": "Quarto. Sixteen pieces. One rule.",
+      "zh": "四连棋。十六枚棋子，一条规则。"
+    }
+  ]
+}
