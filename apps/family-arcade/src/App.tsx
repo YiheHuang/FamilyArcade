@@ -80,6 +80,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = lang === 'zh' ? '?????' : 'Family Arcade';
     localStorage.setItem('familyarcade.lang', lang);
   }, [lang]);
 
