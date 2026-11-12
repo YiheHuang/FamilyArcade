@@ -65,9 +65,9 @@ export function Home({
           <p className="tagline">{t('app.tagline')}</p>
           <p className="lede">{t('app.subtitle')}</p>
           <div className="home__badges">
-            <span>2–4</span>
-            <span>15–25 min</span>
-            <span>7+</span>
+            <span>{t('home.badgePlayers')}</span>
+            <span>{t('home.badgeMinutes')}</span>
+            <span>{t('home.badgeAge')}</span>
             <span>{t('home.footer')}</span>
           </div>
         </div>

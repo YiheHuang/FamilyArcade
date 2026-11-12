@@ -61,6 +61,9 @@ export default function App() {
   const query = new URLSearchParams(window.location.search);
   const guestQuery = useMemo(() => guestParams(), []);
   const [screen, setScreen] = useState<Screen>(guestQuery ? 'lan' : 'home');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen]);
   const [mode, setMode] = useState<Mode>(guestQuery ? 'lan-guest' : 'solo');
   const [game, setGame] = useState<GameState | null>(null);
   const [saved, setSaved] = useState<SavedGame | null>(() => loadSavedGame());

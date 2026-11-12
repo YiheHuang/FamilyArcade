@@ -144,7 +144,7 @@ export function BloomMark({ count }: { count: number }) {
         ))}
         <circle cx={10} cy={10} r={2.3} className="bloom-mark__centre" />
       </svg>
-      {count > 0 && <span>{count}</span>}
+      <span>{count}</span>
     </span>
   );
 }

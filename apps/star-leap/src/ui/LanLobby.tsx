@@ -274,9 +274,7 @@ export function LanGuestLobby({
             </>
           ) : (
             <>
-              <p className="lede">
-                {t('lan.seatShort', { n: seat + 1 })} · {started ? t('lan.hostStarted') : t('lan.waitingHost')}
-              </p>
+              <p className="lede">{t('lan.seatShort', { n: seat + 1 })}</p>
 
               <LanSeatList t={t} players={players} count={Math.max(count, 2)} youSeat={seat} />
 
@@ -319,11 +317,6 @@ export function LanGuestLobby({
             <span className="lan-guest-art__star">✦</span>
           </div>
           <p className="center muted">{t('lan.browserHint')}</p>
-          {joined && (
-            <p className="center hint-text">
-              {started ? t('lan.hostStarted') : t('lan.waitingHost')}
-            </p>
-          )}
           {!joined && <p className="center hint-text">{t('lan.noAnswer')}</p>}
         </aside>
       </div>

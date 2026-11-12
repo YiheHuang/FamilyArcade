@@ -61,7 +61,7 @@ export function StatsScreen({
         <div className="stat-card">
           <span className="stat-card__label">{t('stats.streak')}</span>
           <strong>{stats.currentStreak ? stats.currentStreak.count : 0}</strong>
-          <small>{stats.currentStreak?.name ?? t('game.none')}</small>
+          {stats.currentStreak && <small>{stats.currentStreak.name}</small>}
         </div>
         <div className="stat-card">
           <span className="stat-card__label">{t('stats.bestStreak')}</span>
@@ -73,7 +73,6 @@ export function StatsScreen({
         <section className="panel empty-state">
           <p>{t('stats.noGames')}</p>
           <p className="muted">{t('stats.notEnough')}</p>
-          <Button variant="primary" onClick={onBack}>{t('stats.back')}</Button>
         </section>
       ) : (
         <div className="stats__grid">

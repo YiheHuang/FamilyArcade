@@ -79,6 +79,9 @@ export default function App() {
   const query = useMemo(() => new URLSearchParams(window.location.search), []);
   const invite = useMemo(() => guestParams(), []);
   const [screen, setScreen] = useState<Screen>('home');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen]);
   const [mode, setMode] = useState<Mode>('solo');
   const [game, setGame] = useState<GameState | null>(null);
   const [localSeat, setLocalSeat] = useState<number | null>(null);

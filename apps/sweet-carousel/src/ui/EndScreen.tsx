@@ -52,7 +52,8 @@ export function EndScreen({
         <div className="eyebrow">{t('game.endTitle')}</div>
         <h1>{title}</h1>
         <p className="tagline">
-          {winner ? `${winner.total} ${t('game.pointsShort')}` : ''} · {t('game.tieBreak')}
+          {winner ? `${winner.total} ${t('game.pointsShort')}` : ''}
+          {final.tieBreak !== 'score' ? ` · ${t('game.tieBreak')}` : ''}
         </p>
         <div className="end-screen__stats">
           <span>

@@ -244,6 +244,7 @@ const zh = {
   'settings.language': '语言',
   'settings.sound': '声音',
   'settings.speed': '动画速度',
+  'settings.speedHint': '默认慢一点，方便看清落砖。',
   'settings.reducedMotion': '减少动效',
   'settings.motionHint': '尊重系统偏好；也可以在这里强制减少。',
   'settings.slow': '更慢',
@@ -254,6 +255,7 @@ const zh = {
   'settings.off': '关',
   'settings.saved': '设置会保存在这台设备上。',
   'settings.resetStats': '清空战绩',
+  'settings.resetHint': '清空这台设备上的对局和战绩。',
   'settings.back': '返回',
 
   'stats.title': '家庭战绩',
@@ -616,6 +618,7 @@ const en: Record<MessageKey, string> = {
   'settings.language': 'Language',
   'settings.sound': 'Sound',
   'settings.speed': 'Animation speed',
+  'settings.speedHint': 'Slow by default so the whole table can follow.',
   'settings.reducedMotion': 'Reduce motion',
   'settings.motionHint': 'Respects your system preference; you can also force it here.',
   'settings.slow': 'Slower',
@@ -626,6 +629,7 @@ const en: Record<MessageKey, string> = {
   'settings.off': 'Off',
   'settings.saved': 'Settings are saved on this device.',
   'settings.resetStats': 'Reset stats',
+  'settings.resetHint': 'Clears games and stats on this device.',
   'settings.back': 'Back',
 
   'stats.title': 'Family stats',

@@ -102,7 +102,7 @@ p {
 }
 
 .screen {
-  animation: screen-in 520ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: screen-in 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @keyframes screen-in {
@@ -1598,6 +1598,11 @@ kbd {
   border-bottom: 1px solid var(--line);
 }
 
+.settings__row .segmented {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+
 .settings__row:last-child {
   border-bottom: 0;
 }
@@ -1688,6 +1693,10 @@ kbd {
   font-family: var(--serif);
   font-size: 20px;
   line-height: 1.45;
+}
+
+.rules__grid .hint-text + .btn {
+  margin-top: 12px;
 }
 
 /* ------------------------------------------------------------------ tutorial */

@@ -65,7 +65,7 @@ export function SettingsScreen({
         <div className="settings__row">
           <div>
             <strong>{t('settings.speed')}</strong>
-            <p className="muted">{t('rules.tip')}</p>
+            <p className="muted">{t('settings.speedHint')}</p>
           </div>
           <Segmented<Speed>
             value={settings.speed}
@@ -82,7 +82,7 @@ export function SettingsScreen({
         <div className="settings__row">
           <div>
             <strong>{t('settings.reducedMotion')}</strong>
-            <p className="muted">{t('rules.tip')}</p>
+            <p className="muted">{t('settings.motionHint')}</p>
           </div>
           <label className="switch">
             <input
@@ -97,7 +97,7 @@ export function SettingsScreen({
         <div className="settings__row">
           <div>
             <strong>{t('settings.resetStats')}</strong>
-            <p className="muted">{t('stats.noGames')}</p>
+            <p className="muted">{t('settings.resetHint')}</p>
           </div>
           <Button
             variant="danger"

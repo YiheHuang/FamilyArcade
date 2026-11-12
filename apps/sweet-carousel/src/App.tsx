@@ -64,6 +64,9 @@ export default function App() {
   const seedQueue = useRef<string | undefined>(querySeed);
 
   const [screen, setScreen] = useState<Screen>('home');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen]);
   const [rulesReturn, setRulesReturn] = useState<Screen>('home');
   const [mode, setMode] = useState<Mode>('solo');
   const [game, setGame] = useState<GameState | null>(null);

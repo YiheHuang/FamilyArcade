@@ -19,6 +19,9 @@ const zh = {
   'home.rules': '怎么玩',
   'home.settings': '设置',
   'home.footer': '离线 · 无账号 · 无广告',
+  'home.badgePlayers': '2–4 人',
+  'home.badgeMinutes': '15–25 分钟',
+  'home.badgeAge': '7 岁+',
   'home.version': 'v0.2',
 
   'setup.title': '新的一局',
@@ -135,6 +138,9 @@ const zh = {
   'settings.resetStats': '清空战绩',
   'settings.back': '返回',
   'settings.saved': '设置会保存在这台设备上。',
+  'settings.speedHint': '默认慢一点，方便全家跟上。',
+  'settings.motionHint': '关闭滑动与淡入动画；结果仍然可见。',
+  'settings.resetHint': '清空这台设备上的对局和战绩。',
 
   'rules.title': '怎么玩',
   'rules.rule1': '每人十颗珠子，从自己的三角出发。',
@@ -269,6 +275,9 @@ const en: Record<keyof typeof zh, string> = {
   'home.rules': 'How to play',
   'home.settings': 'Settings',
   'home.footer': 'Offline · no account · no ads',
+  'home.badgePlayers': '2–4 players',
+  'home.badgeMinutes': '15–25 min',
+  'home.badgeAge': '7+',
   'home.version': 'v0.2',
 
   'setup.title': 'New game',
@@ -385,6 +394,9 @@ const en: Record<keyof typeof zh, string> = {
   'settings.resetStats': 'Reset stats',
   'settings.back': 'Back',
   'settings.saved': 'Settings are saved on this device.',
+  'settings.speedHint': 'Slow by default so everyone can follow.',
+  'settings.motionHint': 'Turns off slide and fade animations; results still show.',
+  'settings.resetHint': 'Clears games and stats on this device.',
 
   'rules.title': 'How to play',
   'rules.rule1': 'Ten marbles each, starting in your own triangle.',

@@ -169,7 +169,7 @@ export function Setup({
             <MiniGarden tiles={preview} compact />
           </div>
           <p className="muted center">
-            {lang === 'zh' ? '釉面瓷砖 · 六种形状也是六种色记' : 'Glazed tiles · six shapes, six colour seals'}
+            {lang === 'zh' ? '釉面瓷砖 · 六种形状，六种色记' : 'Glazed tiles · six shapes, six colour seals'}
           </p>
           <p className="seedline">
             {t('setup.seed')}: <code>{seed.slice(-10)}</code>

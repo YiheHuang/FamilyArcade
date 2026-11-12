@@ -70,6 +70,9 @@ function newSeed(): string {
 export default function App() {
   const query = new URLSearchParams(window.location.search);
   const [screen, setScreen] = useState<Screen>(INITIAL_GUEST ? 'lan' : 'home');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen]);
   const [mode, setMode] = useState<Mode>(INITIAL_GUEST ? 'lan-guest' : 'solo');
   const [game, setGame] = useState<GameState | null>(null);
   const [replayData, setReplayData] = useState<ReplayData | null>(null);

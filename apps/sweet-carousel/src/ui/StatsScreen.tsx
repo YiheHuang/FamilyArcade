@@ -46,11 +46,6 @@ export function StatsScreen({
       {stats.games === 0 ? (
         <div className="empty-state">
           <p>{t('stats.empty')}</p>
-          <div className="row-actions">
-            <Button testId="back-empty" variant="primary" onClick={onBack}>
-              {t('stats.back')}
-            </Button>
-          </div>
         </div>
       ) : (
         <>
