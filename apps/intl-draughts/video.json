@@ -1,0 +1,42 @@
+{
+  "slug": "intl-draughts",
+  "order": 6,
+  "title": "International Draughts",
+  "titleZh": "国际跳棋",
+  "tagline": "Ten by ten. Kings that fly.",
+  "taglineZh": "十乘十，飞王纵横。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "15–30 minutes",
+  "timeZh": "15–30 分钟",
+  "age": "7+",
+  "accent": "#2f6a5a",
+  "paper": "#f4ecdc",
+  "ink": "#26221c",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": [
+    "10 × 10 board",
+    "20 men each",
+    "Flying kings + maximum capture",
+    "4 computer levels · hot-seat · LAN"
+  ],
+  "factsZh": [
+    "10 × 10 棋盘",
+    "双方各 20 枚兵",
+    "飞王 + 强制最大吃子",
+    "四档电脑难度 · 同屏 · 局域网"
+  ],
+  "lines": [
+    { "at": 0.4, "en": "Ten by ten. Twenty men each, and kings that fly.", "zh": "十乘十，双方各二十枚兵，还有纵横飞行的王。" },
+    { "at": 5.2, "en": "International Draughts. Every capture matters.", "zh": "国际跳棋。每一次吃子都算数。" },
+    { "at": 10.0, "en": "Men move forward, but capture in every direction.", "zh": "兵向前走，却可以向四个斜向吃子。" },
+    { "at": 16.0, "en": "Captures are mandatory — and the longest chain wins the move.", "zh": "吃子是强制的——必须走吃子最多的一条路线。" },
+    { "at": 23.5, "en": "A man that reaches the far row becomes a flying king.", "zh": "兵走到最远一行，就升为飞王。" },
+    { "at": 31.0, "en": "Four computer levels, from gentle Companion to deep Hard.", "zh": "四档电脑对手，从温和陪玩到深算挑战。" },
+    { "at": 38.0, "en": "Two players on one screen, or a phone joins on the local network.", "zh": "两人同屏，或者手机连同一局域网加入。" },
+    { "at": 42.0, "en": "Hints, undo, autosave and a family record. International Draughts.", "zh": "提示、悔棋、自动保存和家庭战绩。国际跳棋。" }
+  ]
+}
