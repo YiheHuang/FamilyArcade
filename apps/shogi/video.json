@@ -1,0 +1,32 @@
+{
+  "slug": "shogi",
+  "order": 5,
+  "title": "Shogi",
+  "titleZh": "将棋",
+  "tagline": "Drops, promotion, checkmate.",
+  "taglineZh": "吃子、打入、升变、将死。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "20 minutes",
+  "timeZh": "20 分钟",
+  "age": "8+",
+  "accent": "#b04a32",
+  "paper": "#f7f0e2",
+  "ink": "#2a241e",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["9 × 9 board", "Drops + promotion", "4 AI levels", "Hot-seat + LAN"],
+  "factsZh": ["9 × 9 棋盘", "打入 + 升变", "四档电脑", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "A 9×9 board. Forty pieces. One king to catch.", "zh": "九乘九棋盘，四十枚棋子，一枚王将。" },
+    { "at": 5.2, "en": "Shogi. Drops, promotion, checkmate.", "zh": "将棋。吃子、打入、升变、将死。" },
+    { "at": 10.0, "en": "Move, capture, and return the piece to your hand.", "zh": "走子、吃子，把对方的棋子收入手中。" },
+    { "at": 16.0, "en": "Drop it almost anywhere. Promote in the last three ranks.", "zh": "打入几乎任何空格，在最后三行升变。" },
+    { "at": 23.0, "en": "Four levels, from gentle Companion to a three-move Hard.", "zh": "四档难度，从温和陪玩到三步挑战。" },
+    { "at": 30.0, "en": "Two players on one screen, or a phone on the same Wi-Fi.", "zh": "两人同屏，或手机连同一无线网络。" },
+    { "at": 37.0, "en": "Undo, hints, autosave, and a family record.", "zh": "悔棋、提示、自动保存，还有家庭战绩。" },
+    { "at": 42.0, "en": "Shogi. Catch the king.", "zh": "将棋。抓住王将。" }
+  ]
+}

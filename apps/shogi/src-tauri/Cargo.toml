@@ -1,0 +1,23 @@
+[package]
+name = "familyarcade-shogi"
+version = "0.1.0"
+description = "Shogi — Family Arcade"
+authors = ["Family Arcade"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+family-arcade-lan-host = { path = "../../../crates/lan-host" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

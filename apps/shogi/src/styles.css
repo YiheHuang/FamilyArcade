@@ -1,0 +1,855 @@
+:root {
+  color-scheme: light;
+  --paper: #f7f0e2;
+  --paper-2: #efe3ce;
+  --card: #fffaf0;
+  --card-soft: rgba(255, 250, 240, 0.76);
+  --ink: #2a241e;
+  --ink-2: #443a2f;
+  --muted: #7b6e60;
+  --line: #ddceb6;
+  --line-soft: rgba(221, 206, 182, 0.65);
+  --accent: #b04a32;
+  --accent-2: #7d3022;
+  --accent-soft: #f5e3c8;
+  --gold: #b4883c;
+  --gold-soft: #f1e2c6;
+  --mint: #4f7d6e;
+  --mint-soft: #e2ece6;
+  --shadow: 0 24px 60px rgba(58, 42, 24, 0.13);
+  --shadow-soft: 0 12px 32px rgba(58, 42, 24, 0.08);
+  font-family: "Avenir Next", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+html, body, #root { min-height: 100%; }
+#root { min-height: 100dvh; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 0%, #fffbf2 0, transparent 40%),
+    radial-gradient(circle at 100% 100%, #f2e6d2 0, transparent 45%),
+    var(--paper);
+}
+button, input { font: inherit; }
+button { cursor: pointer; color: inherit; }
+button:disabled { cursor: default; opacity: 0.55; }
+input { color: var(--ink); }
+::selection { background: var(--accent-soft); }
+:focus-visible { outline: 3px solid rgba(176, 74, 50, 0.48); outline-offset: 3px; }
+
+.shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 34px 0 48px; }
+.home-shell { display: flex; flex-direction: column; min-height: 100dvh; padding-top: 28px; }
+.narrow-shell { width: min(820px, calc(100% - 40px)); }
+.lan-shell { width: min(980px, calc(100% - 40px)); }
+.stats-shell { width: min(980px, calc(100% - 40px)); }
+.game-shell { width: min(1180px, calc(100% - 48px)); }
+
+.masthead { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.eyebrow {
+  font: 600 11px/1.2 Consolas, monospace;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+h1 {
+  font: 600 clamp(54px, 7vw, 94px)/0.92 "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", "Songti SC", Georgia, serif;
+  letter-spacing: -0.055em;
+  margin: 0;
+}
+.mast-actions { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.ghost, .back, .text-button {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  padding: 8px;
+  border-radius: 10px;
+  text-align: left;
+}
+.ghost:hover, .back:hover, .text-button:hover { color: var(--accent); }
+.back { padding-left: 0; min-height: 40px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(24px, 5vw, 70px);
+  align-items: center;
+  margin-top: clamp(24px, 5vw, 58px);
+}
+.hero-board {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #fff8e9, #f1dfc2);
+  border: 1px solid var(--line);
+  padding: clamp(16px, 3vw, 34px);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  transform: rotate(-1.2deg);
+}
+.hero-copy { min-width: 0; }
+.kicker {
+  font: 600 12px/1.4 Consolas, monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
+}
+.menu { display: flex; flex-direction: column; gap: 10px; }
+.menu-links { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: 2px; }
+.primary, .secondary, .danger {
+  min-height: 52px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  padding: 13px 20px;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.primary { background: var(--ink); color: #fff8ec; box-shadow: 0 8px 20px rgba(42, 36, 30, 0.16); }
+.primary:hover { transform: translateY(-1px); background: #40362d; }
+.secondary { background: rgba(255, 250, 240, 0.72); border-color: var(--line); color: var(--ink); }
+.secondary:hover { background: var(--card); border-color: #cbb99d; transform: translateY(-1px); }
+.danger { background: var(--accent-2); color: #fff8ec; }
+.danger:hover { background: #6c3224; transform: translateY(-1px); }
+.wide { width: 100%; }
+.menu .wide { flex-direction: column; gap: 3px; align-items: flex-start; text-align: left; }
+.menu .wide small { font-weight: 400; opacity: 0.64; font-size: 12px; line-height: 1.35; }
+.lan-menu-button { gap: 3px; }
+.text-button { padding: 10px 2px; font-size: 14px; }
+.record-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: baseline;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+.record-strip strong { font: 600 28px/1 "Iowan Old Style", Georgia, serif; color: var(--ink); }
+.dot { color: var(--line); }
+.foot { color: var(--muted); font-size: 12px; margin-top: auto; padding-top: 40px; }
+
+/* Board */
+.board-frame {
+  width: 100%;
+  min-width: 0;
+  background: linear-gradient(145deg, #e8c78c, #d3a865);
+  border: 1px solid #a47840;
+  padding: clamp(5px, 0.9vw, 10px);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    0 16px 34px rgba(74, 48, 18, 0.2);
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #745029;
+  background: #f0d49b;
+}
+.cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 2%;
+  border: 0;
+  border-right: 1px solid rgba(102, 68, 28, 0.52);
+  border-bottom: 1px solid rgba(102, 68, 28, 0.52);
+  background: linear-gradient(135deg, rgba(255, 250, 235, 0.15), rgba(151, 103, 41, 0.04));
+  transition: background 0.14s ease;
+}
+.cell:nth-child(9n) { border-right: 0; }
+.cell:nth-child(n + 73) { border-bottom: 0; }
+.cell:hover:not(:disabled) { background: rgba(255, 252, 240, 0.3); }
+.cell:disabled { opacity: 1; }
+.cell.selected { box-shadow: inset 0 0 0 3px rgba(125, 48, 34, 0.78); }
+.cell.hint { outline: 3px solid rgba(180, 136, 60, 0.92); outline-offset: -3px; }
+.cell.last-from { box-shadow: inset 0 0 0 2px rgba(79, 125, 110, 0.55); }
+.cell.last-to { background: rgba(79, 125, 110, 0.14); }
+.cell.in-check {
+  background: radial-gradient(circle, rgba(176, 74, 50, 0.55), rgba(176, 74, 50, 0.12) 62%, transparent 75%);
+  box-shadow: inset 0 0 0 3px rgba(176, 74, 50, 0.82);
+}
+.cell.in-check .piece { filter: drop-shadow(0 0 6px rgba(176, 74, 50, 0.7)); }
+.cell.cursor { outline: 3px solid rgba(42, 36, 30, 0.45); outline-offset: -3px; }
+.cell.target { cursor: pointer; }
+.target-dot {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background: rgba(79, 125, 110, 0.72);
+  box-shadow: 0 0 0 4px rgba(79, 125, 110, 0.12);
+}
+.cell.capture-target::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border: 3px solid rgba(176, 74, 50, 0.72);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.piece {
+  width: 84%;
+  height: 90%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(50% 0, 96% 15%, 90% 100%, 10% 100%, 4% 15%);
+  background: linear-gradient(155deg, #f9e5b8 0%, #e8c681 58%, #d9b36c 100%);
+  color: #2b2118;
+  filter: drop-shadow(0 2px 1px rgba(84, 54, 16, 0.28));
+  font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+}
+.piece-w {
+  clip-path: polygon(50% 100%, 96% 85%, 90% 0, 10% 0, 4% 85%);
+  color: #7d3022;
+  background: linear-gradient(25deg, #f6dfb0 0%, #e3bf78 58%, #d4ab61 100%);
+}
+.piece.is-promoted .piece-glyph { color: #9a2f21; }
+.piece-w.is-promoted .piece-glyph { color: #5e241a; }
+.piece-glyph {
+  display: block;
+  font-size: min(3.55vw, 29px);
+  transform: translateY(-1%);
+  pointer-events: none;
+}
+.promote-mark {
+  position: absolute;
+  top: 7%;
+  right: 9%;
+  font: 700 9px/1 Consolas, monospace;
+  color: rgba(125, 48, 34, 0.8);
+}
+.is-compact .piece-glyph { font-size: min(2.9vw, 25px); }
+
+/* Hands */
+.hand-tray {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 5px 10px;
+  margin: 8px 0;
+  background: rgba(255, 250, 240, 0.66);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+}
+.hand-tray.is-active { border-color: #c9a56b; background: rgba(255, 250, 240, 0.9); }
+.hand-label {
+  font: 600 9px/1.2 Consolas, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 78px;
+}
+.hand-pieces { display: flex; flex-wrap: wrap; gap: 5px; min-height: 26px; align-items: center; }
+.hand-piece {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 8px;
+  min-width: 34px;
+  min-height: 28px;
+  padding: 2px 6px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  font-weight: 650;
+}
+.hand-piece:hover { border-color: #cbb99d; background: #fffdf8; }
+.hand-piece.selected { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(176, 74, 50, 0.15); }
+.hand-piece.hint { outline: 2px solid var(--gold); outline-offset: 1px; }
+.hand-piece.is-static { cursor: default; opacity: 0.78; }
+.hand-glyph {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: 15px;
+  line-height: 1;
+}
+.hand-count { font: 600 9px/1 Consolas, monospace; color: var(--muted); }
+.hand-empty { color: var(--line); font-size: 18px; line-height: 1; }
+
+/* Generic screens */
+.screen-title {
+  font: 600 clamp(38px, 5vw, 62px)/1.02 "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", Georgia, serif;
+  letter-spacing: -0.04em;
+  margin: 26px 0 20px;
+}
+.level-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0 28px; }
+.level-card {
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  display: grid;
+  gap: 5px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.level-card:hover { transform: translateY(-1px); border-color: #cbb99d; }
+.level-card.selected { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(176, 74, 50, 0.14); }
+.level-card strong { font-size: 17px; }
+.level-card small { color: var(--muted); line-height: 1.4; }
+.level-dot { width: 12px; height: 12px; border-radius: 50%; display: block; margin-bottom: 4px; }
+.level-dot.companion { background: var(--mint); }
+.level-dot.easy { background: #8aa36f; }
+.level-dot.normal { background: var(--gold); }
+.level-dot.hard { background: var(--accent); }
+.row-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+/* Game */
+.game-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+.game-id { display: grid; gap: 3px; text-align: center; min-width: 0; }
+.game-id strong { font: 600 22px/1 "Iowan Old Style", Georgia, serif; }
+.game-id span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-actions { display: flex; align-items: center; gap: 2px; }
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card-soft);
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.icon-button:hover { border-color: #cbb99d; }
+.sound-glyph { font-size: 18px; line-height: 1; color: var(--accent); }
+.sound-glyph[data-on="false"] { color: var(--line); text-decoration: line-through; }
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 40px;
+  margin-top: 24px;
+  align-items: start;
+}
+.board-wrap { max-width: 680px; margin: 0 auto; width: 100%; min-width: 0; }
+.board-stack { position: relative; }
+.turn-bar {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 14px;
+  padding: 11px 15px;
+  background: var(--card-soft);
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  box-shadow: var(--shadow-soft);
+}
+.turn-bar.is-over { background: linear-gradient(145deg, var(--card), var(--gold-soft)); border-color: #d8bd8e; }
+.side-chip {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 21px/1 "Iowan Old Style", "Noto Serif SC", Georgia, serif;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+.side-chip.b { background: #2b2118; color: #fff8ec; border-color: #2b2118; }
+.side-chip.w { background: #fffaf0; color: var(--accent); border-color: #d9bf9a; }
+.side-chip.draw { color: var(--gold); }
+.turn-copy { min-width: 0; flex: 1; }
+.turn-copy strong { display: block; font-size: 18px; line-height: 1.2; overflow-wrap: anywhere; }
+.turn-copy p { margin: 3px 0 0; color: var(--muted); font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+.thinking { margin-left: auto; color: var(--muted); font: 26px/1 Consolas, monospace; }
+.check-pill {
+  flex: 0 0 auto;
+  background: #f6dfd5;
+  border: 1px solid #e4b8a7;
+  color: var(--accent-2);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.result-banner {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: linear-gradient(145deg, var(--card), #f6ead5);
+  border: 1px solid #d8bd8e;
+  border-radius: 22px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-soft);
+}
+.result-copy { display: grid; gap: 2px; min-width: 0; }
+.result-kicker { font: 600 10px/1.2 Consolas, monospace; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.result-copy strong { font: 600 26px/1.1 "Iowan Old Style", Georgia, serif; }
+.result-copy small { color: var(--muted); font-size: 12px; }
+.result-actions { display: flex; gap: 8px; flex: 0 0 auto; }
+.result-actions .primary, .result-actions .secondary { min-height: 46px; padding: 10px 16px; border-radius: 13px; }
+.wait-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 310px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.wait-dot { width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--gold); animation: pulse 1.8s ease-in-out infinite; }
+
+.side { display: grid; gap: 12px; align-self: start; position: sticky; top: 18px; }
+.side-card {
+  background: var(--card-soft);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+.side-card h3 { margin: 0 0 7px; font: 600 17px/1.2 "Iowan Old Style", "Noto Serif SC", Georgia, serif; }
+.side-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.side-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.side-actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.side-actions .secondary { padding: 9px 14px; font-size: 13px; min-height: 42px; border-radius: 12px; }
+.side-note { margin-top: 10px !important; font-size: 11px !important; line-height: 1.45 !important; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.status-dot.online { background: var(--mint); box-shadow: 0 0 0 4px rgba(79, 125, 110, 0.12); }
+.room-code { font: 700 28px/1 Consolas, monospace; letter-spacing: 0.2em; color: var(--accent); }
+.room-code.big { font-size: clamp(44px, 7vw, 62px); margin: 4px 0 12px; }
+.peer { color: var(--ink) !important; margin-top: 8px !important; }
+.record-mini .text-button { padding-left: 0; font-size: 12px; }
+.record-mini-note { margin-top: 6px !important; font-size: 11px !important; }
+
+.move-card { min-height: 120px; }
+.move-log {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  max-height: 228px;
+  overflow: auto;
+}
+.move-log li {
+  display: grid;
+  grid-template-columns: 24px 42px minmax(0, 1fr);
+  gap: 5px;
+  align-items: baseline;
+  padding: 4px 0;
+  border-top: 1px solid var(--line-soft);
+  font-size: 11px;
+}
+.move-log li:first-child { border-top: 0; }
+.move-no { color: #b4a58f; font: 10px/1.2 Consolas, monospace; }
+.move-side { color: var(--ink); font-weight: 600; }
+.move-side.w { color: var(--accent); }
+.move-text { color: var(--muted); font: 11px/1.35 Consolas, monospace; overflow-wrap: anywhere; }
+
+.promotion-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  background: rgba(42, 36, 30, 0.34);
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
+}
+.promotion-dialog {
+  width: min(320px, calc(100% - 24px));
+  background: var(--card);
+  border: 1px solid #d8bd8e;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.promotion-dialog h3 {
+  margin: 0 0 14px;
+  text-align: center;
+  font: 600 21px/1.2 "Iowan Old Style", "Noto Serif SC", Georgia, serif;
+}
+.promotion-actions { display: grid; gap: 8px; }
+.promotion-actions .text-button { text-align: center; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: #fff8ec;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  box-shadow: var(--shadow);
+  z-index: 20;
+  max-width: min(560px, calc(100% - 32px));
+  text-align: center;
+}
+.error {
+  color: var(--accent-2);
+  background: #f7e2d9;
+  border: 1px solid #e5c3b4;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.game-error { margin: 0 0 12px; }
+
+/* LAN */
+.lan-hero { max-width: 670px; }
+.lan-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+.lan-choice-card {
+  background: linear-gradient(145deg, var(--card), #f8ecda);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-soft);
+}
+.lan-choice-card.join-card { background: linear-gradient(145deg, var(--card), #eef2ec); }
+.choice-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  font: 600 10px/1 Consolas, monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.choice-icon { font: 600 30px/1 "Iowan Old Style", Georgia, serif; color: var(--accent); opacity: 0.55; }
+.lan-choice-card h3 { margin: 2px 0 0; font: 600 28px/1.1 "Iowan Old Style", "Noto Serif SC", Georgia, serif; }
+.field { display: grid; gap: 5px; font-size: 12px; color: var(--muted); }
+.field input, .lan-form input {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-height: 48px;
+}
+.field input:focus, .lan-form input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(176, 74, 50, 0.12); }
+.field-row { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 10px; }
+.code-field input { font: 700 18px/1 Consolas, monospace; letter-spacing: 0.18em; }
+.lan-choice-card .primary { margin-top: 2px; }
+.lan-footnote { color: var(--muted); font-size: 12px; margin: 16px 0 0; text-align: center; }
+.lan-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 18px; margin-top: 18px; }
+.lan-card, .qr-card, .guest-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+.lan-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.label { font: 600 10px/1 Consolas, monospace; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+.status-pill.ready { background: var(--mint-soft); border-color: #bfd6c9; color: var(--mint); }
+.lan-card .secondary { margin-top: 8px; }
+.lan-help { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 0 0 12px; }
+.peer-list { display: grid; gap: 8px; margin: 14px 0 16px; }
+.peer-chip {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 9px 11px;
+  background: var(--paper);
+  color: var(--muted);
+}
+.peer-chip.online { border-color: #bfd6c9; background: var(--mint-soft); }
+.peer-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  font: 700 12px/1 "Noto Serif SC", Georgia, serif;
+  color: var(--accent);
+}
+.peer-name { color: var(--ink); font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.peer-chip small { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; }
+.lan-card > .primary { margin-top: 4px; }
+.lan-card > .text-button { margin-top: 10px; }
+.qr-card { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.qr-card img { width: min(260px, 100%); border-radius: 12px; border: 1px solid var(--line); background: #fffaf0; }
+.qr-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.invite-link { font: 12px/1.4 Consolas, monospace; color: var(--accent); word-break: break-all; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.qr-address { font-size: 11px !important; }
+.qr-address code { font: 11px/1.4 Consolas, monospace; color: var(--ink-2); word-break: break-all; }
+.lan-form { display: grid; gap: 12px; margin: 18px 0 0; }
+.lan-form label { display: grid; gap: 5px; font-size: 12px; color: var(--muted); }
+.guest-card { width: min(560px, 100%); margin: 8px auto 0; }
+.guest-room-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.guest-room-badge strong { font: 700 32px/1 Consolas, monospace; letter-spacing: 0.18em; color: var(--accent); }
+.hint-copy { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 14px 0 0; text-align: center; }
+.waiting-card { text-align: center; display: grid; justify-items: center; gap: 8px; }
+.wait-orbit {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 35% 30%, #fffdf8, #efe3ce);
+  border: 1px solid var(--line);
+  box-shadow: 0 0 0 8px rgba(180, 136, 60, 0.08);
+  animation: float 2.6s ease-in-out infinite;
+}
+.orbit-piece { font: 700 34px/1 "Iowan Old Style", "Noto Serif SC", Georgia, serif; color: var(--accent); }
+.waiting-card h3 { margin: 10px 0 0; font: 600 28px/1.1 "Iowan Old Style", "Noto Serif SC", Georgia, serif; }
+.waiting-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.guest-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin: 10px 0 14px; }
+.guest-meta span { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; color: var(--muted); font-size: 11px; }
+.waiting-card .secondary { min-width: min(260px, 100%); }
+.loading-card { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 14px; }
+.spinner { width: 22px; height: 22px; flex: 0 0 auto; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--accent); animation: spin 0.9s linear infinite; }
+
+/* Stats */
+.stats-head { margin-bottom: 18px; }
+.stats-top { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.stat-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 6px; box-shadow: var(--shadow-soft); }
+.stat-card span { color: var(--muted); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.stat-card strong { font: 600 46px/0.95 "Iowan Old Style", Georgia, serif; letter-spacing: -0.03em; }
+.stat-card.total { background: linear-gradient(145deg, var(--ink), #40362d); border-color: var(--ink); }
+.stat-card.total span { color: #d8cbb9; }
+.stat-card.total strong { color: #fff8ec; }
+.stat-card.black strong { color: var(--ink); }
+.stat-card.white strong { color: var(--accent); }
+.stat-card.draw strong { color: var(--gold); }
+.record-grid { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 14px; margin-bottom: 14px; }
+.record-card, .recent-card { background: var(--card-soft); border: 1px solid var(--line); border-radius: 20px; padding: 18px; box-shadow: var(--shadow-soft); }
+.record-card h3, .recent-card h3 { margin: 0 0 14px; font: 600 21px/1.2 "Iowan Old Style", "Noto Serif SC", Georgia, serif; }
+.share-bar { display: flex; height: 13px; border-radius: 999px; overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); }
+.share-bar span { display: block; min-width: 0; }
+.share-black { background: var(--ink); }
+.share-white { background: var(--accent); }
+.share-d { background: var(--gold); }
+.share-legend { display: flex; gap: 14px; flex-wrap: wrap; list-style: none; padding: 0; margin: 12px 0 18px; color: var(--muted); font-size: 12px; }
+.share-legend li { display: flex; align-items: center; gap: 6px; }
+.share-legend strong { color: var(--ink); }
+.share-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.legend-black { background: var(--ink); }
+.legend-white { background: var(--accent); }
+.legend-d { background: var(--gold); }
+.streak-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; border-top: 1px solid var(--line); padding-top: 14px; }
+.streak-row div { display: grid; gap: 4px; }
+.streak-row span { color: var(--muted); font-size: 10px; line-height: 1.35; text-transform: uppercase; letter-spacing: 0.06em; }
+.streak-row strong { font: 600 20px/1.1 "Iowan Old Style", "Noto Serif SC", Georgia, serif; }
+.mode-list { display: grid; gap: 12px; }
+.mode-row { display: grid; grid-template-columns: 90px 1fr 32px; gap: 9px; align-items: center; font-size: 12px; color: var(--muted); }
+.mode-bar { height: 8px; border-radius: 999px; background: var(--paper-2); overflow: hidden; }
+.mode-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--gold)); }
+.mode-row strong { color: var(--ink); text-align: right; font: 600 15px/1 Consolas, monospace; }
+.clear-note { color: var(--muted); font-size: 11px; line-height: 1.45; margin: 16px 0 10px; }
+.clear-confirm { color: var(--accent-2); font-size: 12px; line-height: 1.45; margin: 0 0 10px; }
+.clear-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.clear-actions .danger, .clear-actions .secondary { min-height: 40px; padding: 8px 14px; font-size: 12px; border-radius: 11px; }
+.recent-card { padding-bottom: 8px; }
+.recent-card h3 { margin-bottom: 10px; }
+.recent-list { list-style: none; margin: 0; padding: 0; }
+.recent-row { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto auto; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line-soft); font-size: 12px; color: var(--muted); }
+.recent-row:first-child { border-top: 0; }
+.recent-mark { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font: 700 13px/1 "Noto Serif SC", Georgia, serif; background: var(--paper); border: 1px solid var(--line); }
+.recent-mark.b { color: #fff8ec; border-color: var(--ink); background: var(--ink); }
+.recent-mark.w { color: var(--accent); border-color: #e2c1b4; background: #fbeee8; }
+.recent-mark.draw { color: var(--gold); border-color: #e0cba4; background: var(--gold-soft); }
+.recent-main { display: grid; gap: 2px; min-width: 0; }
+.recent-main strong { color: var(--ink); font-size: 13px; }
+.recent-main span { font-size: 11px; color: var(--muted); }
+.recent-moves { white-space: nowrap; }
+.recent-row time { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.recent-empty { color: var(--muted); font-size: 13px; margin: 0; padding: 8px 0 12px; }
+.empty-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  min-height: 300px;
+  padding: 34px;
+  display: grid;
+  place-items: center;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+.empty-mark { font: 600 clamp(32px, 6vw, 58px)/1 "Iowan Old Style", "Noto Serif SC", Georgia, serif; letter-spacing: 0.16em; color: var(--line); }
+.empty-card p { color: var(--muted); max-width: 42ch; line-height: 1.6; margin: 0; }
+
+/* Rules */
+.rules-list { margin: 24px 0 28px; padding-left: 22px; display: grid; gap: 14px; font-size: 18px; line-height: 1.55; color: #4a4035; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.8); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-board { max-width: 470px; }
+  .game-layout { grid-template-columns: 1fr; gap: 20px; }
+  .side { grid-template-columns: 1fr 1fr; position: static; }
+  .lan-choice { grid-template-columns: 1fr; }
+  .lan-layout { grid-template-columns: 1fr; }
+  .stats-top { grid-template-columns: repeat(2, 1fr); }
+  .record-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .shell, .game-shell { width: calc(100% - 24px); padding: 18px 0 max(28px, env(safe-area-inset-bottom)); }
+  .narrow-shell, .lan-shell, .stats-shell { width: calc(100% - 24px); }
+  h1 { font-size: clamp(46px, 15vw, 62px); }
+  .masthead { align-items: flex-start; gap: 12px; }
+  .mast-actions { gap: 0; }
+  .hero { margin-top: 20px; gap: 22px; }
+  .hero-board { padding: 14px; border-radius: 24px; transform: rotate(-0.8deg); }
+  .kicker { font-size: 10px; letter-spacing: 0.14em; margin-bottom: 12px; }
+  .menu { gap: 8px; }
+  .primary, .secondary, .danger { min-height: 50px; border-radius: 14px; }
+  .record-strip { margin-top: 20px; font-size: 12px; gap: 6px; }
+  .record-strip strong { font-size: 24px; }
+  .foot { padding-top: 30px; line-height: 1.5; }
+  .screen-title { margin-top: 18px; margin-bottom: 16px; font-size: clamp(36px, 11vw, 50px); }
+  .level-grid { grid-template-columns: 1fr; gap: 9px; margin: 16px 0 22px; }
+  .level-card { padding: 15px; }
+  .row-actions { display: grid; grid-template-columns: 1fr; }
+  .row-actions .primary, .row-actions .ghost { width: 100%; }
+  .row-actions .ghost { min-height: 44px; }
+  .game-top { flex-wrap: wrap; gap: 8px; padding-bottom: 10px; }
+  .game-id { order: -1; width: 100%; text-align: left; display: flex; align-items: baseline; gap: 10px; }
+  .game-id strong { font-size: 20px; }
+  .game-id span { font-size: 10px; }
+  .game-actions { margin-left: auto; }
+  .game-layout { margin-top: 14px; gap: 16px; }
+  .turn-bar { padding: 9px 11px; gap: 10px; margin-bottom: 10px; border-radius: 16px; }
+  .side-chip { width: 44px; height: 44px; font-size: 18px; }
+  .turn-copy strong { font-size: 16px; }
+  .turn-copy p { font-size: 12px; }
+  .board-frame { padding: 4px; border-radius: 13px; }
+  .piece-glyph { font-size: min(4.15vw, 18px); }
+  .is-compact .piece-glyph { font-size: min(4vw, 18px); }
+  .promote-mark { font-size: 7px; }
+  .cell { border-right-width: 1px; border-bottom-width: 1px; }
+  .cell.selected { box-shadow: inset 0 0 0 2px rgba(125, 48, 34, 0.8); }
+  .cell.last-from { box-shadow: inset 0 0 0 1px rgba(79, 125, 110, 0.6); }
+  .cell.hint { outline-width: 2px; outline-offset: -2px; }
+  .cell.capture-target::after { border-width: 2px; }
+  .hand-tray { margin: 6px 0; padding: 4px 7px; gap: 6px; min-height: 38px; }
+  .hand-label { min-width: 58px; font-size: 8px; letter-spacing: 0.08em; }
+  .hand-pieces { gap: 4px; }
+  .hand-piece { min-width: 30px; min-height: 26px; padding: 2px 5px; border-radius: 7px; }
+  .hand-glyph { font-size: 13px; }
+  .result-banner { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; border-radius: 18px; }
+  .result-copy strong { font-size: 23px; }
+  .result-actions { width: 100%; }
+  .result-actions .primary { flex: 1; }
+  .result-actions .secondary { flex: 0 0 auto; }
+  .wait-pill { max-width: none; border-radius: 14px; }
+  .side { grid-template-columns: 1fr; }
+  .side-card { padding: 14px; }
+  .side-actions { gap: 6px; }
+  .side-actions .secondary { flex: 1; }
+  .game-error { font-size: 12px; }
+  .lan-choice-card { padding: 18px; border-radius: 20px; }
+  .lan-choice-card h3 { font-size: 25px; }
+  .field-row { grid-template-columns: 1fr; }
+  .lan-card, .qr-card, .guest-card { padding: 18px; border-radius: 18px; }
+  .qr-card { order: 0; }
+  .peer-chip { grid-template-columns: 26px 1fr; }
+  .peer-chip small { grid-column: 2; }
+  .guest-room-badge strong { font-size: 27px; }
+  .stats-top { gap: 8px; }
+  .stat-card { padding: 13px; border-radius: 16px; }
+  .stat-card strong { font-size: 38px; }
+  .record-card, .recent-card { padding: 15px; border-radius: 18px; }
+  .streak-row { grid-template-columns: 1fr 1fr; }
+  .streak-row div:last-child { grid-column: 1 / -1; }
+  .recent-row { grid-template-columns: 34px minmax(0, 1fr) auto; }
+  .recent-row time { grid-column: 2 / -1; grid-row: 2; }
+  .recent-moves { grid-column: 3; grid-row: 1; }
+  .recent-mark { width: 30px; height: 30px; }
+  .empty-card { min-height: 240px; padding: 24px; }
+  .rules-list { font-size: 16px; }
+}
+
+@media (max-width: 380px) {
+  .game-id { gap: 6px; }
+  .game-id span { max-width: 55vw; }
+  .record-strip .dot:nth-of-type(3) { display: none; }
+}
+
+@media (hover: none) {
+  .primary:hover, .secondary:hover, .danger:hover, .level-card:hover, .cell:hover:not(:disabled) { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
