@@ -16,9 +16,11 @@ export async function startLanServer(): Promise<LanServerInfo> {
     return (await invoke('lan_start')) as LanServerInfo;
   }
   const host = typeof location !== 'undefined' ? location.hostname : '127.0.0.1';
+  const pagePort = typeof location !== 'undefined' ? Number(location.port) : 0;
+  const port = pagePort && pagePort !== 5223 && pagePort !== 4223 ? pagePort : 8080;
   return {
-    port: 8080,
-    urls: [`http://${host}:8080`],
+    port,
+    urls: [`http://${host}:${port}`],
     token: 'browser',
   };
 }

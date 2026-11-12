@@ -1,32 +1,79 @@
 {
   "slug": "sheng-ji",
-  "order": 1,
+  "order": 8,
   "title": "Sheng Ji",
   "titleZh": "升级",
-  "tagline": "4-player partnership trick-taking with trump and points",
-  "taglineZh": "三子连线，一张小桌。",
-  "players": "2 players",
-  "playersZh": "2 人",
-  "time": "10 minutes",
-  "timeZh": "10 分钟",
-  "age": "6+",
-  "accent": "#b05c43",
-  "paper": "#f7f0e2",
-  "ink": "#2a241e",
+  "tagline": "Two decks. Two partnerships. One level at a time.",
+  "taglineZh": "两副牌，两对搭档，一级一级往上打。",
+  "players": "4 players",
+  "playersZh": "4 人",
+  "time": "30 minutes",
+  "timeZh": "30 分钟",
+  "age": "8+",
+  "ageZh": "8 岁以上",
+  "accent": "#244335",
+  "paper": "#f5efe3",
+  "ink": "#29231d",
   "screens": {
     "en": ["home.png", "game.png", "game-over.png"],
     "zh": ["home.png", "game.png", "game-over.png"]
   },
-  "facts": ["3 × 3 board", "4 AI levels", "Hot-seat + LAN", "Autosave + undo"],
-  "factsZh": ["3 × 3 棋盘", "四档 AI", "同屏 + 局域网", "自动保存 + 悔棋"],
+  "facts": [
+    "4 players · 2 partnerships",
+    "108 cards · 8-card bottom",
+    "Level cards + no-trump",
+    "Tractors, throws, 100 points",
+    "4 AI levels",
+    "Hot-seat + LAN"
+  ],
+  "factsZh": [
+    "4 人 · 两对搭档",
+    "108 张牌 · 8 张底牌",
+    "级牌 + 无主",
+    "拖拉机、甩牌、100 分",
+    "四档电脑",
+    "同屏 + 局域网"
+  ],
   "lines": [
-    { "at": 0.4, "en": "Nine squares. Three in a row.", "zh": "九个格子，三子连线。" },
-    { "at": 5.2, "en": "Sheng Ji. A tiny game for a big table.", "zh": "升级。给一大家子的小游戏。" },
-    { "at": 10.0, "en": "Place X or O. Block, plan, connect three.", "zh": "放 X 或 O。堵、算、连成三个。" },
-    { "at": 16.0, "en": "Four AI levels, from gentle Companion to an unbeatable Hard.", "zh": "四档 AI，从温和陪玩到不会输的挑战。" },
-    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一 Wi-Fi 加入。" },
-    { "at": 31.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
-    { "at": 38.0, "en": "Offline, no account, no ads.", "zh": "离线、无账号、无广告。" },
-    { "at": 42.0, "en": "Sheng Ji. Three in a row.", "zh": "升级。三子连线。" }
+    {
+      "at": 0.4,
+      "en": "One hundred and eight cards. Four players. Two partnerships.",
+      "zh": "一百零八张牌，四个人，两对搭档。"
+    },
+    {
+      "at": 5.2,
+      "en": "Sheng Ji. Two decks. One level at a time.",
+      "zh": "升级。两副牌，一级一级往上打。"
+    },
+    {
+      "at": 10,
+      "en": "Declare with a level card. A pair is stronger. A pair of jokers calls no-trump.",
+      "zh": "用级牌叫主。一对更强，一对王可以叫无主。"
+    },
+    {
+      "at": 16,
+      "en": "The declarer takes the bottom, buries eight, and leads.",
+      "zh": "庄家拿底牌、扣八张，然后领出第一墩。"
+    },
+    {
+      "at": 23.5,
+      "en": "Follow the led group. Pair with pair, tractor with tractor, or ruff with trump.",
+      "zh": "跟着桌面走：对子跟对子，拖拉机跟拖拉机，或者用主牌将吃。"
+    },
+    {
+      "at": 31,
+      "en": "Take 5, 10 and K. Eighty points upgrades one level; a shutout jumps three.",
+      "zh": "拿走 5、10、K。八十分升一级，零分连升三级。"
+    },
+    {
+      "at": 38,
+      "en": "Four computer levels, a private hot-seat, and a LAN table.",
+      "zh": "四档电脑、私密同屏，还有局域网牌桌。"
+    },
+    {
+      "at": 42,
+      "en": "Offline. No account. No ads.",
+      "zh": "离线、无账号、无广告。"
+    }
   ]
 }
