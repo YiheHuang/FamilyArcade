@@ -334,9 +334,10 @@ h1 {
 .hand-count-label { font-size: 10px; color: rgba(255, 248, 232, 0.62); }
 .hand-backs { display: flex; flex-wrap: wrap; gap: 1px; margin: 6px 0 3px; }
 .hand-count { font-size: 10px; color: rgba(255, 248, 232, 0.7); align-self: center; }
+.seat-hand-count { display: none; margin-top: 4px; font-size: 10px; color: rgba(255, 248, 232, 0.62); }
 .melds { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
 .meld-group { display: flex; align-items: center; gap: 3px; }
-.meld-label { font-size: 8px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255, 248, 232, 0.62); writing-mode: horizontal-tb; }
+.meld-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255, 248, 232, 0.62); writing-mode: horizontal-tb; }
 .meld-tiles { display: flex; gap: 1px; }
 .discards { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 6px; padding-top: 5px; border-top: 1px solid rgba(255, 248, 232, 0.1); min-height: 12px; }
 .discards .tile { --tile-w: 25px; --tile-h: 35px; }
@@ -345,7 +346,7 @@ h1 {
 .spirit-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 7px; }
 .dice { font-family: Consolas, monospace; letter-spacing: 0; color: var(--jade); }
 .spirit-tiles { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.spirit-item { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 9px; color: var(--muted); text-align: center; }
+.spirit-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; line-height: 1.25; color: var(--muted); text-align: center; }
 .spirit-item.indicator .tile { opacity: 0.82; }
 .table-meta { display: flex; gap: 13px; justify-content: center; color: rgba(255, 248, 232, 0.8); font-size: 11px; text-align: center; flex-wrap: wrap; }
 .table-meta > div { display: flex; flex-direction: column; align-items: center; gap: 2px; }
@@ -362,7 +363,7 @@ h1 {
 .hand-area { margin-top: 14px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255, 248, 232, 0.72); padding: 12px 14px 14px; box-shadow: 0 14px 36px rgba(42, 33, 20, 0.1); }
 .hand-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 7px; }
 .hand-head .muted { font-size: 12px; text-align: right; }
-.hand-scroll { overflow-x: auto; overflow-y: hidden; padding: 5px 2px 8px; }
+.hand-scroll { overflow-x: auto; overflow-y: hidden; padding: 7px 6px 8px; }
 .hand { display: flex; gap: 4px; align-items: flex-end; min-height: 70px; justify-content: center; }
 .hand .tile { --tile-w: 46px; --tile-h: 64px; }
 .hand-covered { display: flex; gap: 3px; align-items: flex-end; min-height: 64px; }
@@ -382,11 +383,6 @@ h1 {
 .side-card { border: 1px solid var(--line); border-radius: 18px; background: rgba(255, 248, 232, 0.72); padding: 14px; }
 .side-card h3 { margin: 0 0 8px; font: 600 18px/1.2 "Iowan Old Style", "Noto Serif SC", Georgia, serif; }
 .side-card p { margin: 0 0 5px; font-size: 12px; color: var(--muted); line-height: 1.5; }
-.side-spirit-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
-.spirit-badge { font-size: 11px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
-.spirit-badge.true { color: var(--gold-2); border-color: rgba(196, 154, 74, 0.5); background: rgba(196, 154, 74, 0.08); }
-.spirit-badge.secondary { color: #8f5d80; border-color: rgba(143, 93, 128, 0.35); background: rgba(143, 93, 128, 0.06); }
-.spirit-none { color: var(--line); }
 .lan-mini .room-code { font-size: 24px; }
 .toast { margin-top: 10px; padding: 11px 14px; border-radius: 12px; background: var(--jade); color: #fff8e8; font-size: 13px; line-height: 1.45; box-shadow: 0 10px 24px rgba(23, 72, 61, 0.2); }
 
@@ -456,6 +452,7 @@ h1 {
   .seat-head strong { font-size: 11px; }
   .seat-score { font-size: 11px; }
   .seat-top .hand-backs, .seat-bottom .hand-backs { display: none; }
+  .seat-hand-count { display: block; }
   .spirit-card { max-width: 100%; }
   .spirit-tiles { gap: 8px; }
   .hand .tile { --tile-w: 38px; --tile-h: 54px; }
@@ -470,13 +467,14 @@ h1 {
   .score-row { grid-template-columns: 1.3fr 0.9fr 0.9fr 0.9fr 0.9fr; font-size: 12px; padding: 8px; }
   .score-card { padding: 18px; }
   .action { padding: 10px 13px; font-size: 13px; }
+  .keyboard-hint { display: none; }
   .facts, .level-grid { grid-template-columns: 1fr; }
   .lan-layout { grid-template-columns: 1fr; }
 }
 @media (max-width: 460px) {
   h1 { font-size: 43px; }
   .mast-actions { gap: 0; }
-  .ghost { padding: 6px; font-size: 12px; }
+  .mast-actions .ghost { padding: 6px; font-size: 12px; }
   .table {
     grid-template-columns: 1fr;
     grid-template-rows: auto minmax(220px, auto) auto;
@@ -485,6 +483,7 @@ h1 {
   .seat-left, .seat-right { display: none; }
   .game-top { flex-wrap: wrap; }
   .game-id { order: 3; width: 100%; text-align: left; }
+  .hand-area { margin-top: 6px; }
   .hand .tile { --tile-w: 34px; --tile-h: 49px; }
   .hand .tile-num { font-size: 16px; }
   .hand .tile-honour { font-size: 18px; }

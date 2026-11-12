@@ -66,6 +66,23 @@ async function waitForHuman(page) {
   }
 }
 
+async function ensureLive(page) {
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const currentPhase = await page.locator('.game-shell').getAttribute('data-phase');
+    if (currentPhase === 'draw' || currentPhase === 'discard') return currentPhase;
+    if (await page.getByTestId('next-hand').count()) {
+      await page.getByTestId('next-hand').click();
+    } else if (await page.getByTestId('play-again').count()) {
+      await page.getByTestId('play-again').click();
+    } else {
+      return currentPhase;
+    }
+    await page.waitForTimeout(350);
+    await waitForHuman(page);
+  }
+  return page.locator('.game-shell').getAttribute('data-phase');
+}
+
 async function seedRecord(page) {
   await page.evaluate(() => {
     const recent = [
@@ -105,12 +122,14 @@ async function run(lang) {
   await page.locator('.hand .tile').first().click();
   await page.getByTestId('discard').click();
   await waitForHuman(page);
-  if ((await page.locator('.game-shell').getAttribute('data-phase')) === 'draw') {
+  const livePhase = await ensureLive(page);
+  if (livePhase === 'draw') {
     await page.getByTestId('draw').click();
     await page.waitForTimeout(250);
   }
   await page.screenshot({ path: path.join(dir, 'game-live.png') });
 
+  await page.evaluate(() => localStorage.removeItem('familyarcade.nanchang-mahjong.record'));
   await page.goto(`${BASE}/?demo=mid`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(350);
   await page.screenshot({ path: path.join(dir, 'game.png') });

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import QRCode from 'qrcode';
 import { LanGuest, LanHost, guestParams, newRoomCode, type LanPublicPeer } from '@family-arcade/lan';
 import { chooseAiAction, hintFor, type AiLevel, type Hint } from './ai/ai';
-import { Discards, Hand, HandBacks, Melds, SpiritBadge, TileButton, TileBack } from './components/Tiles';
+import { Discards, Hand, HandBacks, Melds, TileButton, TileBack } from './components/Tiles';
 import {
   claim,
   currentClaim,
@@ -187,11 +187,17 @@ export default function App() {
   const finishRecordedRef = useRef(Boolean(demoKind && demoKind !== 'mid'));
   const lastDecisionRef = useRef<number>(-1);
   const aiTimerRef = useRef<number | null>(null);
+  const promptRef = useRef<HTMLDivElement | null>(null);
+  const handScrollRef = useRef<HTMLDivElement | null>(null);
   const commitRef = useRef<(next: GameState, previous: GameState, history: boolean) => void>(() => undefined);
 
   useEffect(() => {
     stateRef.current = state;
   }, [state]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [screen]);
 
   useEffect(() => {
     humanSeatsRef.current = humanSeats;
@@ -312,6 +318,7 @@ export default function App() {
       setScreen('game');
       setSaved(null);
       clearSave();
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     },
     [],
   );
@@ -360,6 +367,7 @@ export default function App() {
     setLocalReveal(saved.mode !== 'local');
     setScreen('game');
     setSaved(null);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [saved]);
 
   const localActor = mode === 'local' && (state.phase === 'draw' || state.phase === 'discard' || state.phase === 'claim')
@@ -395,6 +403,7 @@ export default function App() {
   const isGuest = mode === 'lan-guest';
   const shownPhase = shown.phase;
   const shownTurn = shown.turn;
+  const isClaimSeat = shownPhase === 'claim' && shown.claimSeat === shownSeat;
 
   useEffect(() => {
     if (isGuest || hidden || shownPhase === 'hand-over' || shownPhase === 'game-over') {
@@ -458,6 +467,35 @@ export default function App() {
       }
     };
   }, [commit, hidden, humanSeats, isGuest, level, mode, shown.claimSeat, shownPhase, shownTurn, state.version]);
+
+  useEffect(() => {
+    if (hidden) return;
+    const node = promptRef.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    if (rect.top < 0 || rect.bottom > window.innerHeight + 1) {
+      node.scrollIntoView({ block: 'nearest', behavior: motionOn ? 'smooth' : 'auto' });
+    }
+  }, [hidden, isClaimSeat, kongOpen, motionOn, shown.claimSeat]);
+
+  useEffect(() => {
+    const tile = hint?.tile;
+    if (!tile || hidden) return;
+    const container = handScrollRef.current;
+    if (!container) return;
+    const element = Array.from(container.querySelectorAll<HTMLElement>('[data-tile]')).find(
+      (node) => node.dataset.tile === tile,
+    );
+    if (!element) return;
+    const box = container.getBoundingClientRect();
+    const tileBox = element.getBoundingClientRect();
+    if (tileBox.left < box.left + 4 || tileBox.right > box.right - 4) {
+      container.scrollBy({
+        left: tileBox.left - box.left - 8,
+        behavior: motionOn ? 'smooth' : 'auto',
+      });
+    }
+  }, [hint, hidden, motionOn]);
 
   const canHintNow =
     !isGuest &&
@@ -605,6 +643,7 @@ export default function App() {
     finishRecordedRef.current = false;
     if (mode === 'lan-host') sendViews(result.state);
     if (mode === 'ai' || mode === 'local') saveGame({ state: result.state, mode, level });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [isGuest, level, mode, sendViews, state]);
 
   useEffect(() => {
@@ -924,6 +963,11 @@ export default function App() {
   const patternText = (pattern: WinPattern | null): string => (pattern ? tr(PATTERN_KEY[pattern]) : '');
   const methodText = (method: WinMethod | null): string => (method ? tr(METHOD_KEY[method]) : '');
   const shortSeatName = (seat: number): string => (seat === 0 ? tr('you') : tr('lanSeat', { seat: seat + 1 }));
+  const scoreSeatName = (seat: number): string => {
+    if (mode === 'local') return tr('lanSeat', { seat: seat + 1 });
+    if (mode === 'lan-host' || mode === 'lan-guest') return seatName(seat);
+    return shortSeatName(seat);
+  };
   const recordWinnerName = (entry: { winner: number | null; mode: RecordMode }): string => {
     if (entry.winner === null) return tr('noWinner');
     if (entry.mode === 'lan') return tr('lanSeat', { seat: entry.winner + 1 });
@@ -1269,7 +1313,6 @@ export default function App() {
   if (screen !== 'game') return home;
 
   const selectedLabel = selected ? tileLabel(selected, lang) : '';
-  const isClaimSeat = shownPhase === 'claim' && shown.claimSeat === shownSeat;
   const claimWaitName = shown.claimSeat === null ? '' : seatName(shown.claimSeat);
   const currentName = shownTurn >= 0 ? seatName(shownTurn) : '';
   const turnText = shownPhase === 'claim'
@@ -1302,6 +1345,7 @@ export default function App() {
         ) : (
           <>
             <HandBacks count={shown.handCounts[seat]} />
+            <span className="seat-hand-count">{tr('tileCount', { n: shown.handCounts[seat] })}</span>
             <Melds melds={shown.melds[seat]} spirit={shown.spirit} lang={lang} />
           </>
         )}
@@ -1379,7 +1423,6 @@ export default function App() {
               </div>
               <div className="turn-panel">
                 <strong>{turnText}</strong>
-                {shownPhase === 'claim' && shown.claimSeat === shownSeat && <span>{tr('claimOptions')}</span>}
                 {aiThinking && <span className="thinking">…</span>}
               </div>
               <div className="last-discard">
@@ -1401,9 +1444,73 @@ export default function App() {
           <div className="hand-area">
             <div className="hand-head">
               <span className="label">{tr('hand')}</span>
-              <span className="muted">{selected ? tr('selectedTile', { tile: selectedLabel }) : tr('discardHint')}</span>
+              <span className="muted">
+                {shownPhase === 'claim'
+                  ? isClaimSeat
+                    ? tr('claimHint')
+                    : tr('claimWaiting')
+                  : selected
+                    ? tr('selectedTile', { tile: selectedLabel })
+                    : tr('discardHint')}
+              </span>
             </div>
-            <div className={`hand-scroll ${hidden ? 'covered' : ''}`}>
+            {toast && <div className="toast" role="status" aria-live="polite">{toast}</div>}
+            {kongOpen && shown.kongOptions.length > 0 && !hidden && (
+              <div className="choice-panel" data-testid="kong-panel" ref={promptRef}>
+                <h3>{tr('chooseKong')}</h3>
+                <div className="choice-list">
+                  {shown.kongOptions.map((option, index) => (
+                    <button
+                      key={`${option.target}-${index}`}
+                      className="choice"
+                      data-testid={`kong-option-${index}`}
+                      onClick={() => doKong(option)}
+                    >
+                      <span>{option.kind === 'concealed' ? tr('concealedKong') : tr('addedKong')}</span>
+                      <span className="choice-tiles">
+                        {option.tiles.map((tile, tileIndex) => (
+                          <TileButton key={`${tile}-${tileIndex}`} tile={tile} spirit={shown.spirit} lang={lang} small />
+                        ))}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                <button className="ghost" onClick={() => setKongOpen(false)}>{tr('cancel')}</button>
+              </div>
+            )}
+            {isClaimSeat && !hidden && (
+              <div className="choice-panel claim-panel" data-testid="claim-panel" ref={promptRef}>
+                <h3>{tr('claimOptions')}</h3>
+                <div className="choice-list">
+                  {shown.claimOptions.map((option, index) => (
+                    <button
+                      key={`${option.kind}-${option.target}-${index}`}
+                      className={`choice claim-${option.kind}`}
+                      data-testid={`claim-option-${index}`}
+                      onClick={() => doClaim(option)}
+                    >
+                      <span>
+                        {option.kind === 'win'
+                          ? tr('claimWin')
+                          : option.kind === 'gang'
+                            ? tr('claimKong')
+                            : option.kind === 'peng'
+                              ? tr('claimPeng')
+                              : tr('claimChi')}
+                      </span>
+                      <span className="choice-tiles">
+                        {option.tiles.map((tile, tileIndex) => (
+                          <TileButton key={`${tile}-${tileIndex}`} tile={tile} spirit={shown.spirit} lang={lang} small />
+                        ))}
+                        {shown.lastDiscard && <TileButton tile={shown.lastDiscard.tile} spirit={shown.spirit} lang={lang} small />}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                <button className="secondary" data-testid="pass" onClick={doPass}>{tr('claimPass')}</button>
+              </div>
+            )}
+            <div className={`hand-scroll ${hidden ? 'covered' : ''}`} ref={handScrollRef}>
               {hidden ? (
                 <div className="hand-covered">{Array.from({ length: shown.handCounts[shownSeat] }, (_, index) => <TileBack key={index} />)}</div>
               ) : (
@@ -1447,85 +1554,14 @@ export default function App() {
               <p className="turn-note">{tr('drawFirst')}</p>
             )}
             {isGuest && <p className="turn-note">{tr('localOnly')}</p>}
-            {kongOpen && shown.kongOptions.length > 0 && !hidden && (
-              <div className="choice-panel" data-testid="kong-panel">
-                <h3>{tr('chooseKong')}</h3>
-                <div className="choice-list">
-                  {shown.kongOptions.map((option, index) => (
-                    <button
-                      key={`${option.target}-${index}`}
-                      className="choice"
-                      data-testid={`kong-option-${index}`}
-                      onClick={() => doKong(option)}
-                    >
-                      <span>{option.kind === 'concealed' ? tr('concealedKong') : tr('addedKong')}</span>
-                      <span className="choice-tiles">
-                        {option.tiles.map((tile, tileIndex) => (
-                          <TileButton key={`${tile}-${tileIndex}`} tile={tile} spirit={shown.spirit} lang={lang} small />
-                        ))}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-                <button className="ghost" onClick={() => setKongOpen(false)}>{tr('cancel')}</button>
-              </div>
-            )}
-            {isClaimSeat && !hidden && (
-              <div className="choice-panel claim-panel" data-testid="claim-panel">
-                <h3>{tr('claimOptions')}</h3>
-                <div className="choice-list">
-                  {shown.claimOptions.map((option, index) => (
-                    <button
-                      key={`${option.kind}-${option.target}-${index}`}
-                      className={`choice claim-${option.kind}`}
-                      data-testid={`claim-option-${index}`}
-                      onClick={() => doClaim(option)}
-                    >
-                      <span>
-                        {option.kind === 'win'
-                          ? tr('claimWin')
-                          : option.kind === 'gang'
-                            ? tr('claimKong')
-                            : option.kind === 'peng'
-                              ? tr('claimPeng')
-                              : tr('claimChi')}
-                      </span>
-                      <span className="choice-tiles">
-                        {option.tiles.map((tile, tileIndex) => (
-                          <TileButton key={`${tile}-${tileIndex}`} tile={tile} spirit={shown.spirit} lang={lang} small />
-                        ))}
-                        {shown.lastDiscard && <TileButton tile={shown.lastDiscard.tile} spirit={shown.spirit} lang={lang} small />}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-                <button className="secondary" data-testid="pass" onClick={doPass}>{tr('claimPass')}</button>
-              </div>
-            )}
-            {shownPhase === 'claim' && !isClaimSeat && !hidden && (
-              <p className="turn-note">{tr('waitingForClaim', { name: claimWaitName })}</p>
-            )}
-            {toast && <div className="toast" role="status" aria-live="polite">{toast}</div>}
           </div>
         </section>
 
         <aside className="side">
           <div className="side-card">
-            <h3>{tr('spirits')}</h3>
-            <div className="side-spirit-row">
-              <TileButton tile={shown.spirit.trueTile} spirit={shown.spirit} lang={lang} small />
-              <SpiritBadge tile={shown.spirit.trueTile} spirit={shown.spirit} lang={lang} />
-            </div>
-            <div className="side-spirit-row">
-              <TileButton tile={shown.spirit.secondaryTile} spirit={shown.spirit} lang={lang} small />
-              <SpiritBadge tile={shown.spirit.secondaryTile} spirit={shown.spirit} lang={lang} />
-            </div>
-            <p className="muted">{tr('dice', { a: shown.spirit.dice[0], b: shown.spirit.dice[1] })}</p>
-          </div>
-          <div className="side-card">
             <h3>{tr('recordTitle')}</h3>
             <p>{record.hands} {tr('recordHands')} · {record.wins.reduce((sum, wins) => sum + wins, 0)} {tr('recordWins')}</p>
-            <p className="muted">{tr('keyboardHint')}</p>
+            <p className="muted keyboard-hint">{tr('keyboardHint')}</p>
           </div>
           {mode === 'lan-host' && (
             <div className="side-card lan-mini">
@@ -1567,7 +1603,7 @@ export default function App() {
               <span className="eyebrow">{shownPhase === 'game-over' ? tr('matchOver') : tr('handOver')}</span>
               <h2>
                 {shown.win
-                  ? `${seatName(shown.win.seat)} · ${patternText(shown.win.pattern)}`
+                  ? `${scoreSeatName(shown.win.seat)} · ${patternText(shown.win.pattern)}`
                   : tr('noWinner')}
               </h2>
               {!shown.win && <p className="muted">{tr('wallExhausted')}</p>}
@@ -1575,8 +1611,7 @@ export default function App() {
             {shown.win && (
               <div className="score-flags">
                 <span>{methodText(shown.win.method)}</span>
-                {sheet.german && <span>{tr('german')}</span>}
-                {sheet.germanInGerman && <span>{tr('germanInGerman')}</span>}
+                {sheet.germanInGerman ? <span>{tr('germanInGerman')}</span> : sheet.german && <span>{tr('german')}</span>}
                 {sheet.spiritSingleWait && <span>{tr('spiritSingleWait')}</span>}
                 {sheet.kongDraw && <span>{tr('kongDraw')}</span>}
                 {sheet.robbingKong && <span>{tr('robbingKong')}</span>}
@@ -1584,7 +1619,10 @@ export default function App() {
                 {sheet.human && <span>{tr('human')}</span>}
                 {sheet.overlord && <span>{tr('overlord')}</span>}
                 {sheet.spiritSprint.some((value) => value > 1) && <span>{tr('sprint')}</span>}
-                <span>{tr('dealerDouble')}</span>
+                {(shown.win.seat === shown.dealer ||
+                  shown.win.from === shown.dealer ||
+                  shown.win.method === 'self-draw' ||
+                  shown.win.method === 'heavenly') && <span>{tr('dealerDouble')}</span>}
               </div>
             )}
             {shown.win && shown.revealedHands && (
@@ -1597,12 +1635,14 @@ export default function App() {
                 ))}
               </div>
             )}
-            <div className="score-numbers">
-              <div><span>{tr('base')}</span><strong>1</strong></div>
-              <div><span>{tr('multiplier')}</span><strong>×{sheet.patternMultiplier}</strong></div>
-              <div><span>{tr('flatBonus')}</span><strong>+{sheet.flatBonus}</strong></div>
-              <div><span>{tr('total')}</span><strong>{sheet.unitValue}</strong></div>
-            </div>
+            {shown.win && (
+              <div className="score-numbers">
+                <div><span>{tr('base')}</span><strong>1</strong></div>
+                <div><span>{tr('multiplier')}</span><strong>×{sheet.patternMultiplier}</strong></div>
+                <div><span>{tr('flatBonus')}</span><strong>+{sheet.flatBonus}</strong></div>
+                <div><span>{tr('total')}</span><strong>{sheet.unitValue}</strong></div>
+              </div>
+            )}
             <div className="score-table">
               <div className="score-row score-header">
                 <span>{tr('seat')}</span>
@@ -1613,7 +1653,7 @@ export default function App() {
               </div>
               {[0, 1, 2, 3].map((seat) => (
                 <div className={`score-row ${shown.win?.seat === seat ? 'winner' : ''}`} key={seat}>
-                  <span>{shortSeatName(seat)}</span>
+                  <span>{scoreSeatName(seat)}</span>
                   <span>{sheet.spiritAdjusted[seat]}<small> / {sheet.spiritBase[seat]}</small></span>
                   <span>{sheet.kongPoints[seat]}</span>
                   <span className={sheet.deltas[seat] >= 0 ? 'positive' : 'negative'}>{signed(sheet.deltas[seat])}</span>
