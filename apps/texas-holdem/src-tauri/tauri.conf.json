@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Texas Hold'em · 德州扑克",
+        "title": "Texas Hold'em",
         "width": 1180,
         "height": 820,
         "minWidth": 900,
