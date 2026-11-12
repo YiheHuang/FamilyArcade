@@ -1,0 +1,32 @@
+{
+  "slug": "gomoku",
+  "order": 1,
+  "title": "Gomoku",
+  "titleZh": "五子棋",
+  "tagline": "Five stones. One line.",
+  "taglineZh": "五子连珠，一线定局。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "10–20 minutes",
+  "timeZh": "10–20 分钟",
+  "age": "6+",
+  "accent": "#b4432c",
+  "paper": "#f1ecdf",
+  "ink": "#20251f",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["15 × 15 freestyle board", "4 computer levels", "Hot-seat + LAN", "Undo + hint + autosave"],
+  "factsZh": ["15 × 15 自由规则棋盘", "四档电脑对手", "同屏 + 局域网", "悔棋 + 提示 + 自动保存"],
+  "lines": [
+    { "at": 0.4, "en": "Fifteen by fifteen. Five stones in a line.", "zh": "十五乘十五，五子连成一线。" },
+    { "at": 5.2, "en": "Gomoku. The classic table game, at home.", "zh": "五子棋。一桌人都熟悉的经典。" },
+    { "at": 10.0, "en": "Black starts. Place, block, and build both ends.", "zh": "黑方先手。落子、堵截，两端都留出空间。" },
+    { "at": 16.0, "en": "Four computer levels, from gentle Companion to six-ply Hard.", "zh": "四档电脑对手，从温和陪玩到六层挑战。" },
+    { "at": 23.5, "en": "Two players on one screen, or a phone joins over Wi-Fi.", "zh": "两人同屏，或者手机连同一网络加入。" },
+    { "at": 31.0, "en": "Hints explain the threat. Undo and autosave keep the table calm.", "zh": "提示说明威胁，悔棋和自动保存让牌桌更从容。" },
+    { "at": 38.0, "en": "Free rules. Overlines count. No account, no ads.", "zh": "自由规则，长连也算胜。无账号，无广告。" },
+    { "at": 42.0, "en": "Gomoku. Five stones. One line.", "zh": "五子棋。五子连珠，一线定局。" }
+  ]
+}

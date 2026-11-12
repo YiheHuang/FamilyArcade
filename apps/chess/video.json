@@ -1,0 +1,32 @@
+{
+  "slug": "chess",
+  "order": 3,
+  "title": "Chess",
+  "titleZh": "国际象棋",
+  "tagline": "Every rule. One table.",
+  "taglineZh": "所有规则，一桌下完。",
+  "players": "2 players",
+  "playersZh": "2 人",
+  "time": "30 minutes",
+  "timeZh": "30 分钟",
+  "age": "6+",
+  "accent": "#2f5d50",
+  "paper": "#f3ecdf",
+  "ink": "#24211b",
+  "screens": {
+    "en": ["home.png", "game.png", "game-over.png"],
+    "zh": ["home.png", "game.png", "game-over.png"]
+  },
+  "facts": ["8 × 8 board", "Full FIDE rules", "4 computer levels", "Hot-seat + local network"],
+  "factsZh": ["8 × 8 棋盘", "完整国际棋联规则", "四档电脑难度", "同屏 + 局域网"],
+  "lines": [
+    { "at": 0.4, "en": "The classic board. Every piece in its place.", "zh": "经典棋盘，每一枚棋子各就各位。" },
+    { "at": 5.2, "en": "Chess. Full FIDE rules, one warm table.", "zh": "国际象棋。完整规则，一张暖桌。" },
+    { "at": 10.0, "en": "Open with a pawn, castle the king, promote at the far rank.", "zh": "兵开局面，王车易位，底线升变。" },
+    { "at": 16.0, "en": "En passant, check, checkmate and stalemate are all real.", "zh": "吃过路兵、将军、将死和逼和，全都按规则。" },
+    { "at": 23.5, "en": "Four computer levels, from a gentle Companion to a searching Hard.", "zh": "四档电脑难度，从温和陪玩到会搜索的挑战。" },
+    { "at": 31.0, "en": "Two players on one screen, or a phone joins over the local network.", "zh": "两人同屏，或者手机连同一局域网加入。" },
+    { "at": 38.0, "en": "Hints, undo, autosave and a family record.", "zh": "提示、悔棋、自动保存和家庭战绩。" },
+    { "at": 42.0, "en": "Chess. Every rule. One table.", "zh": "国际象棋。所有规则，一桌下完。" }
+  ]
+}
