@@ -2483,7 +2483,7 @@ export default function App() {
         <header className="game-top">
           <button className="back" onClick={goHome}>← {tr('home')}</button>
           <div className="game-id">
-            <strong>{tr('compareTitle')}</strong>
+            <strong>{tr('title')}</strong>
             <span>{tr('blindShort', { kind: tr(blindKey(shownKind)), n: shownAnte })}</span>
           </div>
           {renderMastActions(true)}

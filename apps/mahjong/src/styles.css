@@ -715,7 +715,7 @@ h1 {
   .game-actions { margin-left: auto; }
   .table-status { margin-top: 0; }
   .mahjong-table {
-    grid-template-columns: 64px minmax(0, 1fr) 64px;
+    grid-template-columns: 76px minmax(0, 1fr) 76px;
     grid-template-rows: auto minmax(230px, auto) auto;
     gap: 5px;
     padding: 8px;
@@ -775,8 +775,8 @@ h1 {
 }
 @media (max-width: 390px) {
   .shell, .game-shell { width: calc(100% - 16px); }
-  .mahjong-table { grid-template-columns: 62px minmax(0, 1fr) 62px; }
-  .hand-tile .tile-face { width: 30px; height: 42px; }
+  .mahjong-table { grid-template-columns: 76px minmax(0, 1fr) 76px; }
+  .hand-tile .tile-face { width: 32px; height: 45px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }

@@ -1254,12 +1254,16 @@ export default function App() {
         <div className="tribute-moves">
           {exchange.moves.map((move, index) => (
             <div className="tribute-move" key={`${move.from}-${index}`}>
-              <span className="tribute-player">{nameAt(move.from)}</span>
-              <span className="tribute-arrow">→</span>
-              <span className="tribute-player">{nameAt(move.to)}</span>
-              <span className="tribute-card">{cardDescription(move.card, lang)}</span>
+              <span>
+                {t(lang, 'tributeLine', {
+                  from: nameAt(move.from),
+                  to: nameAt(move.to),
+                  card: cardDescription(move.card, lang),
+                })}
+              </span>
               {move.back && (
                 <span className="tribute-back">
+                  ·{' '}
                   {t(lang, 'tributeBack', {
                     to: nameAt(move.to),
                     from: nameAt(move.from),

@@ -730,6 +730,11 @@ button.playing-card:hover:not(:disabled) { transform: translateY(-9px); box-shad
   .hero-felt { width: min(410px, 92%); }
 }
 
+@media (max-width: 520px) {
+  .masthead { flex-wrap: wrap; }
+  .mast-actions { width: 100%; justify-content: flex-end; }
+}
+
 @media (max-width: 760px) {
   .shell, .game-shell, .lan-shell { width: calc(100% - 24px); padding-top: 14px; }
   .narrow-shell { width: calc(100% - 24px); }
@@ -788,7 +793,7 @@ button.playing-card:hover:not(:disabled) { transform: translateY(-9px); box-shad
   .selection-combo { font-size: 11px; }
   .play-actions { justify-content: flex-start; gap: 5px; }
   .play-actions .primary, .play-actions .secondary { padding: 8px 12px; border-radius: 9px; }
-  .play-actions .ghost { padding: 7px 5px; font-size: 12px; }
+  .play-actions .ghost { padding: 10px 7px; font-size: 12px; }
   .side { grid-template-columns: 1fr; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
   .record-grid { grid-template-columns: 1fr; }

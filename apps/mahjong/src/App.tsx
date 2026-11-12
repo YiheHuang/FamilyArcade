@@ -298,6 +298,7 @@ export default function App() {
   }, [toast]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
     if (screen !== 'game') {
       setSelected(null);
       setHintTile(null);
@@ -1605,7 +1606,7 @@ export default function App() {
 
         <aside className="side">
           <div className="side-card">
-            <h3>{tr('hint')}</h3>
+            <h3>{tr('assist')}</h3>
             <div className="side-actions">
               <button
                 className="secondary"
@@ -1647,7 +1648,7 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('record')}</h3>
             <p>
-              {record.games} {tr('games')} · {tr('highestFan')} {record.highestFan}
+              {tr('games')} {record.games} · {tr('highestFan')} {record.highestFan}
             </p>
             <button className="text-button" onClick={resetRecord}>
               {clearArmed ? tr('clearArmed') : tr('clearRecord')}

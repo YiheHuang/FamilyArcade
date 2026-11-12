@@ -1561,7 +1561,9 @@ export default function App() {
               ))}
             </div>
 
-            <div className={`table-center ${activeView.phase === 'round-over' ? 'round-over' : ''}`}>{trickPanel}</div>
+            {activeView.phase !== 'round-over' && (
+              <div className="table-center">{trickPanel}</div>
+            )}
 
             {activeView.phase !== 'round-over' && (
               <>
@@ -1634,7 +1636,8 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('record')}</h3>
             <p>
-              {record.rounds} {tr('rounds')} · {record.lastWinner ? displayName(record.lastWinner, lang) : tr('none')}
+              {record.rounds === 1 ? tr('roundOne') : t(lang, 'roundCount', { n: record.rounds })} ·{' '}
+              {record.lastWinner ? displayName(record.lastWinner, lang) : tr('none')}
             </p>
             <button className="text-button" onClick={() => { setClearArmed(false); setScreen('stats'); }}>
               {tr('viewRecord')} →
