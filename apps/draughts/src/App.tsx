@@ -281,7 +281,8 @@ export default function App() {
         : mode === 'lan-host'
           ? shownTurn === 'red'
           : Boolean(guestView?.canMove) && guestStarted);
-  const turnHeadline = myTurn ? tr('yourTurn') : displayStatus;
+  const turnHeadline =
+    mode === 'local' ? statusText(lang, shownStatus, shownTurn, shownWinner) : myTurn ? tr('yourTurn') : displayStatus;
   const deviceHint =
     shownStatus === 'playing'
       ? t(lang, 'passDevice', {
@@ -662,7 +663,10 @@ export default function App() {
               <button className="primary wide" onClick={resume}>
                 <span>{tr('continue')}</span>
                 <small>
-                  {t(lang, 'moveCount', { count: saved.state.plies })} ·{' '}
+                  {saved.state.plies === 1
+                    ? tr('moveOne')
+                    : t(lang, 'moveCount', { count: saved.state.plies })}{' '}
+                  ·{' '}
                   {saved.mode === 'ai'
                     ? t(lang, 'modeAi', { level: t(lang, saved.level as MessageKey) })
                     : tr('modeLocal')}
@@ -690,13 +694,13 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
-            <span>{record.redWins} {tr('redWins')}</span>
+            <span>{record.redWins} {tr('red')}</span>
             <span className="dot">·</span>
-            <span>{record.whiteWins} {tr('whiteWins')}</span>
+            <span>{record.whiteWins} {tr('white')}</span>
             <span className="dot">·</span>
-            <span>{record.draws} {tr('draws')}</span>
+            <span>{record.draws} {record.draws === 1 ? tr('drawOne') : tr('draws')}</span>
           </div>
         </div>
       </section>
@@ -708,7 +712,6 @@ export default function App() {
     <main className="shell narrow-shell setup-shell">
       <button className="back" onClick={() => setScreen('home')}>← {tr('back')}</button>
       <h2 className="screen-title">{tr('difficulty')}</h2>
-      <p className="lede">{tr('playAi')}</p>
       <div className="level-grid">
         {AI_META.map((item) => (
           <button
@@ -870,7 +873,9 @@ export default function App() {
           <div className="side-card">
             <h3>{tr('lastMove')}</h3>
             <p className="move-line">{shownLast ? moveName(shownLast) : tr('noMoves')}</p>
-            <p>{t(lang, 'moveCount', { count: shownPlies })}</p>
+            <p>
+              {shownPlies === 1 ? tr('moveOne') : t(lang, 'moveCount', { count: shownPlies })}
+            </p>
           </div>
 
           {mode === 'lan-host' && (
@@ -889,7 +894,9 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.redWins}/{record.whiteWins}/{record.draws}
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} ·{' '}
+              {record.redWins} {tr('red')} · {record.whiteWins} {tr('white')} ·{' '}
+              {record.draws} {record.draws === 1 ? tr('drawOne') : tr('draws')}
             </p>
             <button className="text-button" onClick={() => setScreen('record')}>
               {tr('openRecord')} →

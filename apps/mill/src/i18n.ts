@@ -22,7 +22,9 @@ const EN = {
   blackShort: 'black',
   draw: 'Draw',
   games: 'games',
+  gameOne: 'game',
   draws: 'draws',
+  drawOne: 'draw',
   whiteWins: 'White wins',
   blackWins: 'Black wins',
 
@@ -120,6 +122,7 @@ const EN = {
   capturedLabel: 'Taken',
   orderLabel: 'Move',
   movesUnit: 'moves',
+  moveOne: 'move',
   lastMove: 'Last move',
   thinkingShort: '…',
 
@@ -226,7 +229,9 @@ const ZH: Record<MessageKey, string> = {
   blackShort: '黑方',
   draw: '平局',
   games: '局',
+  gameOne: '局',
   draws: '平局',
+  drawOne: '平局',
   whiteWins: '白方胜',
   blackWins: '黑方胜',
 
@@ -324,6 +329,7 @@ const ZH: Record<MessageKey, string> = {
   capturedLabel: '被吃',
   orderLabel: '手数',
   movesUnit: '手',
+  moveOne: '手',
   lastMove: '最后一手',
   thinkingShort: '…',
 

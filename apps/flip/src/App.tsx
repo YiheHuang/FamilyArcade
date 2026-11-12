@@ -716,18 +716,18 @@ export default function App() {
             ) : (
               <>
                 <strong>{record.games}</strong>
-                <span>{tr('games')}</span>
+                <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
                 <span className="dot">·</span>
                 <span>
-                  {record.winsBlack} {tr('winsBlack')}
+                  {record.winsBlack} {tr('blackTurnShort')}
                 </span>
                 <span className="dot">·</span>
                 <span>
-                  {record.winsWhite} {tr('winsWhite')}
+                  {record.winsWhite} {tr('whiteTurnShort')}
                 </span>
                 <span className="dot">·</span>
                 <span>
-                  {record.draws} {tr('draws')}
+                  {record.draws} {record.draws === 1 ? tr('drawOne') : tr('draws')}
                 </span>
               </>
             )}
@@ -877,7 +877,9 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {record.games} {tr('games')} · {record.winsBlack}/{record.winsWhite}/{record.draws}
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} ·{' '}
+              {record.winsBlack} {tr('blackTurnShort')} · {record.winsWhite} {tr('whiteTurnShort')} ·{' '}
+              {record.draws} {record.draws === 1 ? tr('drawOne') : tr('draws')}
             </p>
             <div className="mini-actions">
               <button className="text-button" onClick={() => openStats('game')}>

@@ -972,9 +972,11 @@ h1 {
   .lede { font-size: 14px; margin-bottom: 20px; }
   .level-grid, .side-grid { grid-template-columns: 1fr; }
   .level-card { padding: 14px; }
-  .game-top { grid-template-columns: auto 1fr; row-gap: 8px; }
-  .game-id { align-items: flex-end; justify-items: end; }
-  .game-top-actions { grid-column: 1 / -1; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 6px; }
+  .game-top { grid-template-columns: 1fr auto; row-gap: 8px; }
+  .game-top > .back { grid-column: 1; grid-row: 1; justify-self: start; }
+  .game-id { grid-column: 1 / -1; grid-row: 2; align-items: flex-start; justify-items: start; }
+  .game-id .eyebrow { display: none; }
+  .game-top-actions { grid-column: 2; grid-row: 1; justify-content: flex-end; gap: 8px; border-top: 0; padding-top: 0; }
   .game-top-actions .ghost { font-size: 12px; }
   .game-layout { margin-top: 14px; gap: 16px; }
   .match-strip { gap: 4px; margin-bottom: 10px; }

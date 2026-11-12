@@ -334,8 +334,14 @@ h1 { font-size: clamp(56px, 7.4vw, 98px); font-weight: 600; line-height: 0.9; le
   h1 { font-size: 54px; }
   .subtitle { font-size: 15px; }
   .masthead { align-items: flex-start; gap: 8px; }
-  .mast-actions { gap: 0; padding-top: 0; }
-  .mast-actions .ghost { font-size: 11px; padding: 5px 5px; }
+  .mast-actions { flex: 0 0 auto; gap: 4px; padding-top: 0; }
+  .mast-actions .ghost {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    font-size: 10px;
+    padding: 5px 4px;
+  }
   .hero { margin-top: 20px; gap: 18px; }
   .hero-board { max-width: 330px; }
   .kicker { font-size: 10px; margin-bottom: 10px; }

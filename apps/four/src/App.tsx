@@ -535,13 +535,13 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('stats')}</span>
             <strong>{currentRecord.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{currentRecord.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span className="red-text">{currentRecord.redWins} {tr('redShort')}</span>
             <span className="dot">·</span>
             <span className="yellow-text">{currentRecord.yellowWins} {tr('yellowShort')}</span>
             <span className="dot">·</span>
-            <span>{currentRecord.draws} {tr('draws')}</span>
+            <span>{currentRecord.draws} {currentRecord.draws === 1 ? tr('drawOne') : tr('draws')}</span>
           </div>
         </div>
       </section>
@@ -705,10 +705,12 @@ export default function App() {
           <div className="side-card record-mini">
             <h3>{tr('stats')}</h3>
             <p>
-              {currentRecord.games} {tr('games')} · {currentRecord.redWins}/{currentRecord.yellowWins}/{currentRecord.draws}
+              {currentRecord.games} {currentRecord.games === 1 ? tr('gameOne') : tr('games')} ·{' '}
+              {currentRecord.redWins} {tr('redShort')} · {currentRecord.yellowWins} {tr('yellowShort')} ·{' '}
+              {currentRecord.draws} {currentRecord.draws === 1 ? tr('drawOne') : tr('draws')}
             </p>
             <button className="text-button" onClick={() => setScreen('stats')}>
-              {tr('statsLink')} →
+              {tr('openRecord')} →
             </button>
           </div>
 

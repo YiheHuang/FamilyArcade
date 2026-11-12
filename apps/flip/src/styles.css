@@ -509,6 +509,7 @@ h1 {
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; gap: 34px; }
   .hero-art { max-width: 560px; margin: 0 auto; width: 100%; }
+  .hero-caption { display: none; }
   .game-layout { grid-template-columns: 1fr; gap: 22px; }
   .board-wrap { max-width: 660px; }
   .side { grid-template-columns: 1fr 1fr; }

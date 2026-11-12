@@ -908,13 +908,13 @@ export default function App() {
           <div className="record-strip">
             <span>{tr('recordMini')}</span>
             <strong>{record.games}</strong>
-            <span>{tr('games')}</span>
+            <span>{record.games === 1 ? tr('gameOne') : tr('games')}</span>
             <span className="dot">·</span>
             <span>{record.winsW} {tr('white')}</span>
             <span className="dot">·</span>
             <span>{record.winsB} {tr('black')}</span>
             <span className="dot">·</span>
-            <span>{record.draws} {tr('draws')}</span>
+            <span>{record.draws} {record.draws === 1 ? tr('drawOne') : tr('draws')}</span>
           </div>
         </div>
       </section>
@@ -1191,7 +1191,9 @@ export default function App() {
           <div className="side-panel record-mini">
             <span className="label">{tr('recordMini')}</span>
             <p>
-              {record.games} {tr('games')} · {record.winsW}/{record.winsB}/{record.draws}
+              {record.games} {record.games === 1 ? tr('gameOne') : tr('games')} ·{' '}
+              {record.winsW} {tr('white')} · {record.winsB} {tr('black')} ·{' '}
+              {record.draws} {record.draws === 1 ? tr('drawOne') : tr('draws')}
             </p>
             <button className="text-button" onClick={() => setScreen('stats')}>
               {tr('stats')} →
@@ -1363,7 +1365,9 @@ export default function App() {
                           : tr('modeLan'),
                   })}
                 </span>
-                <small>{item.moves} {tr('movesUnit')}</small>
+                <small>
+                  {item.moves} {item.moves === 1 ? tr('moveOne') : tr('movesUnit')}
+                </small>
               </li>
             ))}
           </ol>
