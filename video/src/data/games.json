@@ -359,8 +359,16 @@
     "paper": "#f7f0e2",
     "ink": "#2a241e",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "stats.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "stats.jpg"
+      ]
     },
     "facts": [
       "3 × 3 board",
@@ -465,8 +473,16 @@
     "paper": "#f5eddd",
     "ink": "#27221b",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "7 × 6 board",
@@ -913,8 +929,16 @@
     "paper": "#f4ecdd",
     "ink": "#241f19",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "8 × 8 board",
@@ -1136,8 +1160,16 @@
     "paper": "#f4efe3",
     "ink": "#1f2a26",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "8 × 8 board",
@@ -1591,8 +1623,16 @@
     "paper": "#f3ead9",
     "ink": "#24211c",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "24-point board",
@@ -1815,8 +1855,16 @@
     "paper": "#f3efe4",
     "ink": "#24332f",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "lobby.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "lobby.jpg"
+      ]
     },
     "facts": [
       "84 pieces",
@@ -1921,8 +1969,16 @@
     "paper": "#f6efe2",
     "ink": "#29231d",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "6×6 dots · 25 boxes",
@@ -2372,8 +2428,16 @@
     "paper": "#f7f0e2",
     "ink": "#2a241e",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "12 pits + 2 stores",
@@ -2711,8 +2775,16 @@
     "paper": "#f4ecdc",
     "ink": "#241f1a",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "24-point board",
@@ -2934,8 +3006,16 @@
     "paper": "#f6efe2",
     "ink": "#2c251d",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "2–4 players",
@@ -3272,8 +3352,16 @@
     "paper": "#faf3e6",
     "ink": "#2c2822",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "10 × 10 board",
@@ -3728,8 +3816,16 @@
     "paper": "#fbf1e1",
     "ink": "#34241b",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "4 × 4 or 6 × 6 dessert deck",
@@ -3948,8 +4044,16 @@
     "paper": "#f3ecdd",
     "ink": "#241f1a",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "28 tiles · first to 100",
@@ -4054,8 +4158,16 @@
     "paper": "#f6efe3",
     "ink": "#241f1a",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "108 cards",
@@ -4274,8 +4386,16 @@
     "paper": "#f3ecdb",
     "ink": "#1f2a26",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
     },
     "facts": [
       "5 dice · 3 rolls",
@@ -4380,8 +4500,16 @@
     "paper": "#f2ecdf",
     "ink": "#1c2b30",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
     },
     "facts": [
       "10 × 10 chart",
@@ -4603,8 +4731,16 @@
     "paper": "#f4edde",
     "ink": "#20302c",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
     },
     "facts": [
       "4-peg secret code",
@@ -4709,8 +4845,16 @@
     "paper": "#f4efe3",
     "ink": "#1f2b2a",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ],
+      "zh": [
+        "home.png",
+        "game.png",
+        "game-over.png"
+      ]
     },
     "facts": [
       "81 cards · 4 clues on every card",
@@ -4815,8 +4959,16 @@
     "paper": "#f4eee1",
     "ink": "#26221c",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "9 × 9 board",
@@ -4921,8 +5073,16 @@
     "paper": "#f5eddf",
     "ink": "#27231d",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "5×6 board · 10 pieces a side",
@@ -5029,8 +5189,16 @@
     "paper": "#0c171e",
     "ink": "#f2ecdf",
     "screens": {
-      "en": [],
-      "zh": []
+      "en": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ],
+      "zh": [
+        "home.jpg",
+        "game.jpg",
+        "game-over.jpg"
+      ]
     },
     "facts": [
       "11 × 11 hex board",

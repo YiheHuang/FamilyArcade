@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:04,830
 Four seats. One wall. Seven spirits.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,950
 Nanchang Mahjong. True and secondary spirits change every hand.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:14,934
 Flip the wall-end tile. Three true spirits, four secondary.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:21,006
 Chi, peng, kong. Winds and dragons run in threes.
 
 5
-00:00:23,000 --> 00:00:26,350
+00:00:23,000 --> 00:00:29,110
 German, spirit sprint, robbing a kong, seven-star thirteen scattered.
 
 6
-00:00:30,000 --> 00:00:33,350
+00:00:30,000 --> 00:00:34,454
 Four AI levels with wild-tile efficiency and defence.
 
 7
-00:00:37,000 --> 00:00:40,350
+00:00:37,000 --> 00:00:41,950
 Solo, hot-seat with privacy, or four seats on one network.
 
 8

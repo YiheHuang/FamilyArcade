@@ -1,31 +1,31 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,150
 One corner. Eighty-four pieces. No shared edges.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:08,214
 Blokus. Claim the table.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:13,254
 Start in your corner, then grow outward.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,286
 Touch corners, never edges. Block the others.
 
 5
-00:00:22,500 --> 00:00:25,850
+00:00:22,500 --> 00:00:27,050
 Three AI levels, hot-seat, or LAN from a phone.
 
 6
-00:00:29,000 --> 00:00:32,350
+00:00:29,000 --> 00:00:33,238
 Hints, undo, replay and a family record.
 
 7
-00:00:35,500 --> 00:00:38,850
+00:00:35,500 --> 00:00:39,570
 Offline. No account. No ads.
 
 8
-00:00:40,000 --> 00:00:43,350
+00:00:40,000 --> 00:00:43,014
 Blokus. Claim a corner.

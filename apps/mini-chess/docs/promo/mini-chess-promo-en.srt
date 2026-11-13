@@ -1,31 +1,31 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,150
 Five files. Six ranks. Ten pieces a side.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,462
 Mini Chess — an original chess variant for the family table.
 
 3
-00:00:10,500 --> 00:00:13,850
+00:00:10,500 --> 00:00:16,082
 No queens. Pawns still promote to a rook, bishop or knight.
 
 4
-00:00:16,500 --> 00:00:19,850
+00:00:16,500 --> 00:00:20,474
 Check, checkmate and stalemate use the rules you know.
 
 5
-00:00:22,500 --> 00:00:25,850
+00:00:22,500 --> 00:00:27,410
 Four AI levels, from a gentle Companion to a five-ply Hard.
 
 6
-00:00:29,000 --> 00:00:32,350
+00:00:29,000 --> 00:00:33,814
 Pass one screen, or let a phone join over the same Wi-Fi.
 
 7
-00:00:35,000 --> 00:00:38,350
+00:00:35,000 --> 00:00:39,526
 Hints, undo, autosave and a family record.
 
 8
-00:00:40,500 --> 00:00:43,850
+00:00:40,500 --> 00:00:44,400
 Mini Chess. Small board. Real chess.

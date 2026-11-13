@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,142
 Sixteen pieces. Four attributes. One rule.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,702
 Quarto. Choose a piece and hand it to your opponent.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:15,462
 They place it, then choose the next piece for you. Every gift shapes the board.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,526
 Four pieces in a line share one attribute — that is a quarto.
 
 5
-00:00:23,500 --> 00:00:26,850
+00:00:23,500 --> 00:00:28,602
 Four computer levels, from a gentle companion to forced-piece search.
 
 6
-00:00:31,000 --> 00:00:34,350
+00:00:31,000 --> 00:00:36,102
 Two players on one screen, or a phone joins on the same Wi-Fi.
 
 7
-00:00:38,000 --> 00:00:41,350
+00:00:38,000 --> 00:00:41,950
 Hints that explain why, undo, autosave, a family record. Offline, no account, no ads.
 
 8

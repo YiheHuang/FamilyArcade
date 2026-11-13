@@ -8,7 +8,7 @@ The family library ships **three launchers**:
 | **Slim** | All games, no bundled runtime; WebView2 bootstrapper |
 | **Lite** | Small launcher; downloads only the games you choose; installs WebView2 first if needed |
 
-Lite packages are ZIP archives of the portable games in the `game-packages-v3.0.0`
+Lite packages are ZIP archives of the portable games in the `game-packages-v3.1.0`
 release. There are no separate per-game NSIS installers.
 
 - Windows 10/11 x64.

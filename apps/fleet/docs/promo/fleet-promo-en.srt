@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:04,902
 A hundred squares. Nobody knows where the fleet is.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,102
 Fleet. Hide five ships, then hunt.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:15,270
 Carrier, battleship, cruiser, submarine, destroyer.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,550
 Fire one shot per turn. Miss, hit, sunk.
 
 5
-00:00:23,500 --> 00:00:26,850
+00:00:23,500 --> 00:00:28,626
 Four AI levels, from gentle Companion to probability-counting Hard.
 
 6
-00:00:31,000 --> 00:00:34,350
+00:00:31,000 --> 00:00:35,598
 Two captains on one screen, or a phone across the Wi-Fi.
 
 7
-00:00:38,000 --> 00:00:41,350
+00:00:38,000 --> 00:00:41,950
 Hints with reasons, undo, autosave and a family logbook.
 
 8

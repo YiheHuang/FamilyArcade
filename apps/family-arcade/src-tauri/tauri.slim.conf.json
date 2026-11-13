@@ -1,6 +1,6 @@
 {
   "productName": "Family Arcade Slim",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "bundle": {
     "windows": {
       "webviewInstallMode": {

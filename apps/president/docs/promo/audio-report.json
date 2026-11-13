@@ -2,11 +2,11 @@
   "en": {
     "lufs": -14.2,
     "truePeak": -1.27,
-    "bytes": 4499365
+    "bytes": 4485177
   },
   "zh": {
     "lufs": -14,
     "truePeak": -1.5,
-    "bytes": 4410820
+    "bytes": 4422104
   }
 }

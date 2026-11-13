@@ -1,31 +1,31 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:04,662
 Twelve cards on the table. Four clues on every one.
 
 2
-00:00:05,400 --> 00:00:08,750
+00:00:05,400 --> 00:00:09,662
 Triple Find. Three cards, one sharp eye.
 
 3
-00:00:11,000 --> 00:00:14,350
+00:00:11,000 --> 00:00:16,950
 A set is all-same or all-different in every clue: colour, shape, fill and count.
 
 4
-00:00:17,000 --> 00:00:20,350
+00:00:17,000 --> 00:00:22,078
 Spot it, call it, score it. The first caller takes the point.
 
 5
-00:00:23,000 --> 00:00:26,350
+00:00:23,000 --> 00:00:26,998
 No set on the table? Three more cards are dealt.
 
 6
-00:00:29,000 --> 00:00:32,350
+00:00:29,000 --> 00:00:33,766
 Four AI levels, from a gentle Companion to an instant Hard.
 
 7
-00:00:35,000 --> 00:00:38,350
+00:00:35,000 --> 00:00:39,694
 Two to four on one screen, or phones joining over Wi-Fi.
 
 8
-00:00:41,000 --> 00:00:44,350
+00:00:41,000 --> 00:00:44,400
 Five minutes. Highest score wins. Triple Find.

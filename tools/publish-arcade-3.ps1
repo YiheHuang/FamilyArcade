@@ -3,16 +3,16 @@ $cred = cmd /c "git credential fill < $env:TEMP\cred.txt" 2>&1
 $token = ($cred | Where-Object { $_ -match '^password=' }) -replace '^password=',''
 $headers = @{ Authorization = "Bearer $token"; Accept = "application/vnd.github+json" }
 $root = Split-Path -Parent $PSScriptRoot
-$tag = 'family-arcade-v3.0.0'
-$name = 'Family Arcade 3.0.0 — 53 games'
+$tag = 'family-arcade-v3.1.0'
+$name = 'Family Arcade 3.1.0 — 53 games'
 $body = @'
 Three launchers, one family library.
 
-- **Offline** — `FamilyArcade_3.0.0_x64-setup.exe`: all 53 games plus the WebView2 offline runtime.
-- **Slim** — `FamilyArcade_3.0.0_slim_x64-setup.exe`: all 53 games, no bundled runtime; WebView2 is installed by the small bootstrapper if needed.
-- **Lite** — `FamilyArcade_Lite_3.0.0_x64-setup.exe`: about 8 MB; installs only the games you choose, and checks/installs WebView2 before opening.
+- **Offline** — `FamilyArcade_3.1.0_x64-setup.exe`: all 53 games plus the WebView2 offline runtime.
+- **Slim** — `FamilyArcade_3.1.0_slim_x64-setup.exe`: all 53 games, no bundled runtime; WebView2 is installed by the small bootstrapper if needed.
+- **Lite** — `FamilyArcade_Lite_3.1.0_x64-setup.exe`: about 8 MB; installs only the games you choose, and checks/installs WebView2 before opening.
 
-Lite game packages are in the `game-packages-v3.0.0` release. All games are offline, bilingual, and support AI, hot-seat and LAN.
+Lite game packages are in the `game-packages-v3.1.0` release. All games are offline, bilingual, and support AI, hot-seat and LAN.
 '@
 
 try {
@@ -25,9 +25,9 @@ try {
 }
 
 $assets = @(
-  @{ path = 'releases\family-arcade\FamilyArcade_3.0.0_x64-setup.exe'; name = 'FamilyArcade_3.0.0_x64-setup.exe' },
-  @{ path = 'releases\family-arcade\FamilyArcade_3.0.0_slim_x64-setup.exe'; name = 'FamilyArcade_3.0.0_slim_x64-setup.exe' },
-  @{ path = 'releases\family-arcade\FamilyArcade_Lite_3.0.0_x64-setup.exe'; name = 'FamilyArcade_Lite_3.0.0_x64-setup.exe' }
+  @{ path = 'releases\family-arcade\FamilyArcade_3.1.0_x64-setup.exe'; name = 'FamilyArcade_3.1.0_x64-setup.exe' },
+  @{ path = 'releases\family-arcade\FamilyArcade_3.1.0_slim_x64-setup.exe'; name = 'FamilyArcade_3.1.0_slim_x64-setup.exe' },
+  @{ path = 'releases\family-arcade\FamilyArcade_Lite_3.1.0_x64-setup.exe'; name = 'FamilyArcade_Lite_3.1.0_x64-setup.exe' }
 )
 
 foreach ($asset in $assets) {

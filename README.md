@@ -6,9 +6,9 @@ English · [简体中文](README.zh-CN.md)
 
 [![Watch the 56-second tour](docs/cover.png)](docs/tour.mp4)
 
-[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_3.0.0_x64-setup.exe)
+[![Family Arcade launcher](apps/family-arcade/docs/screenshots/en/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_3.1.0_x64-setup.exe)
 
-**Offline:** [Family Arcade 3.0.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_3.0.0_x64-setup.exe) · **Slim (no bundled runtime):** [Family Arcade Slim](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_3.0.0_slim_x64-setup.exe) · **Lite (download games on demand):** [Family Arcade Lite](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_Lite_3.0.0_x64-setup.exe) · **WebView2 runtime (only if needed):** [offline x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
+**Offline:** [Family Arcade 3.1.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_3.1.0_x64-setup.exe) · **Slim (no bundled runtime):** [Family Arcade Slim](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_3.1.0_slim_x64-setup.exe) · **Lite (download games on demand):** [Family Arcade Lite](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_Lite_3.1.0_x64-setup.exe) · **WebView2 runtime (only if needed):** [offline x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
 ## Classics
 
@@ -438,7 +438,7 @@ English · [简体中文](README.zh-CN.md)
 <sub>[Trailer](apps/color-chain/docs/promo/color-chain-promo-en.mp4)</sub>
 </td>
 <td width="25%" valign="top">
-<a href="apps/five-dice/docs/promo/five-dice-promo-en.mp4"><img src="apps/five-dice/docs/screenshots/en/game.jpg" width="100%" alt="Five Dice"></a>
+<a href="apps/five-dice/docs/promo/five-dice-promo-en.mp4"><img src="apps/five-dice/docs/screenshots/en/game.png" width="100%" alt="Five Dice"></a>
 
 **[Five Dice](apps/five-dice/README.md)**
 
@@ -447,7 +447,7 @@ English · [简体中文](README.zh-CN.md)
 <sub>[Trailer](apps/five-dice/docs/promo/five-dice-promo-en.mp4)</sub>
 </td>
 <td width="25%" valign="top">
-<a href="apps/fleet/docs/promo/fleet-promo-en.mp4"><img src="apps/fleet/docs/screenshots/en/game.jpg" width="100%" alt="Fleet"></a>
+<a href="apps/fleet/docs/promo/fleet-promo-en.mp4"><img src="apps/fleet/docs/screenshots/en/game.png" width="100%" alt="Fleet"></a>
 
 **[Fleet](apps/fleet/README.md)**
 
@@ -456,7 +456,7 @@ English · [简体中文](README.zh-CN.md)
 <sub>[Trailer](apps/fleet/docs/promo/fleet-promo-en.mp4)</sub>
 </td></tr>
 <tr><td width="25%" valign="top">
-<a href="apps/codebreak/docs/promo/codebreak-promo-en.mp4"><img src="apps/codebreak/docs/screenshots/en/game.jpg" width="100%" alt="Codebreak"></a>
+<a href="apps/codebreak/docs/promo/codebreak-promo-en.mp4"><img src="apps/codebreak/docs/screenshots/en/game.png" width="100%" alt="Codebreak"></a>
 
 **[Codebreak](apps/codebreak/README.md)**
 
@@ -465,7 +465,7 @@ English · [简体中文](README.zh-CN.md)
 <sub>[Trailer](apps/codebreak/docs/promo/codebreak-promo-en.mp4)</sub>
 </td>
 <td width="25%" valign="top">
-<a href="apps/triple-find/docs/promo/triple-find-promo-en.mp4"><img src="apps/triple-find/docs/screenshots/en/game.jpg" width="100%" alt="Triple Find"></a>
+<a href="apps/triple-find/docs/promo/triple-find-promo-en.mp4"><img src="apps/triple-find/docs/screenshots/en/game.png" width="100%" alt="Triple Find"></a>
 
 **[Triple Find](apps/triple-find/README.md)**
 

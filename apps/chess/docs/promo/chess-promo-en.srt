@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:04,182
 The classic board. Every piece in its place.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,438
 Chess. Full FIDE rules, one warm table.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:14,862
 Open with a pawn, castle the king, promote at the far rank.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,718
 En passant, check, checkmate and stalemate are all real.
 
 5
-00:00:23,500 --> 00:00:26,850
+00:00:23,500 --> 00:00:28,506
 Four computer levels, from a gentle Companion to a searching Hard.
 
 6
-00:00:31,000 --> 00:00:34,350
+00:00:31,000 --> 00:00:36,102
 Two players on one screen, or a phone joins over the local network.
 
 7
-00:00:38,000 --> 00:00:41,350
+00:00:38,000 --> 00:00:41,950
 Hints, undo, autosave and a family record.
 
 8

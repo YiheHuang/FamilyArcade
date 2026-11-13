@@ -66,13 +66,24 @@ for (const slug of apps) {
     mkdirSync(targetDir, { recursive: true });
     const requested = game.screens?.[sourceLang] ?? game.screens?.en ?? [];
     for (const file of requested) {
-      const sourceDir = candidates.find((dir) => existsSync(path.join(dir, file)));
+      const variants = [file];
+      if (file.endsWith('.png')) variants.push(file.replace(/\.png$/, '.jpg'));
+      if (file.endsWith('.jpg')) variants.push(file.replace(/\.jpg$/, '.png'));
+      let sourceDir;
+      let actual = file;
+      for (const variant of variants) {
+        sourceDir = candidates.find((dir) => existsSync(path.join(dir, variant)));
+        if (sourceDir) {
+          actual = variant;
+          break;
+        }
+      }
       if (!sourceDir) {
         console.warn(`${slug}/${lang}: missing ${file}`);
         continue;
       }
-      copyFileSync(path.join(sourceDir, file), path.join(targetDir, file));
-      screens[lang].push(file);
+      copyFileSync(path.join(sourceDir, actual), path.join(targetDir, actual));
+      screens[lang].push(actual);
     }
     if (screens[lang].length === 0) {
       const flat = candidates[0];

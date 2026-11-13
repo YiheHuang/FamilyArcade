@@ -1,31 +1,31 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,150
 One board. A hundred squares. No decisions.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,102
 Ladder Run — snakes and ladders for the whole family.
 
 3
-00:00:10,400 --> 00:00:13,750
+00:00:10,400 --> 00:00:14,590
 Roll the die. Climb a ladder. Slip down a snake.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,622
 Two to four players pass one device, or join from a phone.
 
 5
-00:00:22,400 --> 00:00:25,750
+00:00:22,400 --> 00:00:28,462
 The AI never decides. It just rolls, and the level changes the company.
 
 6
-00:00:28,800 --> 00:00:32,150
+00:00:28,800 --> 00:00:35,150
 A hint shows all six faces. Undo and autosave keep the table kind.
 
 7
-00:00:35,200 --> 00:00:38,550
+00:00:35,200 --> 00:00:40,158
 Exact roll to land on one hundred. First home wins.
 
 8
-00:00:41,000 --> 00:00:44,350
+00:00:41,000 --> 00:00:44,400
 Ladder Run. Roll, climb, slide, giggle.

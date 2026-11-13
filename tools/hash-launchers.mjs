@@ -6,9 +6,9 @@ import path from 'node:path';
 
 const root = process.cwd();
 const files = [
-  ['offline', 'FamilyArcade_3.0.0_x64-setup.exe', 'Full installer with the WebView2 runtime and all games'],
-  ['slim', 'FamilyArcade_3.0.0_slim_x64-setup.exe', 'All games, no bundled runtime; WebView2 bootstrapper'],
-  ['lite', 'FamilyArcade_Lite_3.0.0_x64-setup.exe', 'Launcher only; downloads games on demand'],
+  ['offline', 'FamilyArcade_3.1.0_x64-setup.exe', 'Full installer with the WebView2 runtime and all games'],
+  ['slim', 'FamilyArcade_3.1.0_slim_x64-setup.exe', 'All games, no bundled runtime; WebView2 bootstrapper'],
+  ['lite', 'FamilyArcade_Lite_3.1.0_x64-setup.exe', 'Launcher only; downloads games on demand'],
 ];
 
 const launchers = [];
@@ -33,7 +33,7 @@ for (const [id, name, description] of files) {
 
 writeFileSync(
   path.join(root, 'releases', 'launchers.json'),
-  `${JSON.stringify({ version: '3.0.0', release: 'family-arcade-v3.0.0', packagesTag: 'game-packages-v3.0.0', launchers }, null, 2)}\n`,
+  `${JSON.stringify({ version: '3.1.0', release: 'family-arcade-v3.1.0', packagesTag: 'game-packages-v3.1.0', launchers }, null, 2)}\n`,
 );
 writeFileSync(
   path.join(root, 'releases', 'launchers-SHA256SUMS.txt'),

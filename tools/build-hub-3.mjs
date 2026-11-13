@@ -17,14 +17,14 @@ const builds = [
   {
     name: 'offline',
     args: ['build', '--bundles', 'nsis'],
-    source: 'Family Arcade_3.0.0_x64-setup.exe',
-    target: 'FamilyArcade_3.0.0_x64-setup.exe',
+    source: 'Family Arcade_3.1.0_x64-setup.exe',
+    target: 'FamilyArcade_3.1.0_x64-setup.exe',
   },
   {
     name: 'slim',
     args: ['build', '--bundles', 'nsis', '--config', 'src-tauri/tauri.slim.conf.json'],
-    source: 'Family Arcade Slim_3.0.0_x64-setup.exe',
-    target: 'FamilyArcade_3.0.0_slim_x64-setup.exe',
+    source: 'Family Arcade Slim_3.1.0_x64-setup.exe',
+    target: 'FamilyArcade_3.1.0_slim_x64-setup.exe',
   },
   {
     name: 'lite',
@@ -37,8 +37,8 @@ const builds = [
       '--config',
       'src-tauri/tauri.lite.conf.json',
     ],
-    source: 'Family Arcade Lite_3.0.0_x64-setup.exe',
-    target: 'FamilyArcade_Lite_3.0.0_x64-setup.exe',
+    source: 'Family Arcade Lite_3.1.0_x64-setup.exe',
+    target: 'FamilyArcade_Lite_3.1.0_x64-setup.exe',
   },
 ];
 

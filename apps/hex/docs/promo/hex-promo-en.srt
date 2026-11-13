@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,150
 A board of hexagons. Two players. No draws.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:10,350
 Hex. Red joins north to south; Blue joins west to east.
 
 3
-00:00:10,400 --> 00:00:13,750
+00:00:10,400 --> 00:00:15,790
 Place one stone. Build an unbroken chain through neighbouring hexes.
 
 4
-00:00:16,200 --> 00:00:19,550
+00:00:16,200 --> 00:00:22,862
 Four AI levels: a gentle Companion, Easy, Normal, and a searching Hard.
 
 5
-00:00:23,000 --> 00:00:26,350
+00:00:23,000 --> 00:00:28,342
 Play solo, pass one screen, or let a phone join over Wi-Fi.
 
 6
-00:00:30,000 --> 00:00:33,350
+00:00:30,000 --> 00:00:35,126
 Ask the coach for a hint and hear the reason, not just the hex.
 
 7
-00:00:36,400 --> 00:00:39,750
+00:00:36,400 --> 00:00:41,350
 Undo, autosave, and a family record that stays on this device.
 
 8

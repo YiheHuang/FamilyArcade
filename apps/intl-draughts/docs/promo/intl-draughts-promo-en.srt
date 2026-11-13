@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,022
 Ten by ten. Twenty men each, and kings that fly.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,222
 International Draughts. Every capture matters.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:14,262
 Men move forward, but capture in every direction.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,694
 Captures are mandatory — and the longest chain wins the move.
 
 5
-00:00:23,500 --> 00:00:26,850
+00:00:23,500 --> 00:00:27,618
 A man that reaches the far row becomes a flying king.
 
 6
-00:00:31,000 --> 00:00:34,350
+00:00:31,000 --> 00:00:35,766
 Four computer levels, from gentle Companion to deep Hard.
 
 7
-00:00:38,000 --> 00:00:41,350
+00:00:38,000 --> 00:00:41,950
 Two players on one screen, or a phone joins on the local network.
 
 8

@@ -17,7 +17,7 @@ const hub = path.join(root, 'apps', 'family-arcade');
 const games = JSON.parse(readFileSync(path.join(hub, 'src', 'data', 'games.json'), 'utf8'));
 const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7);
 const only = onlyArg ? new Set(onlyArg.split(',').map((slug) => slug.trim()).filter(Boolean)) : null;
-const tag = process.env.PACKAGE_TAG || 'game-packages-v3.0.0';
+const tag = process.env.PACKAGE_TAG || 'game-packages-v3.1.0';
 const outDir = path.join(root, 'releases', 'packages');
 mkdirSync(outDir, { recursive: true });
 

@@ -1,272 +1,272 @@
 {
   "repo": "YiheHuang/FamilyArcade",
-  "tag": "game-packages-v3.0.0",
-  "generated": "2026-11-12T16:09:05.882Z",
+  "tag": "game-packages-v3.1.0",
+  "generated": "2026-11-12T22:56:03.394Z",
   "games": {
     "abalone": {
       "asset": "abalone.zip",
-      "bytes": 4801523,
-      "sha256": "a4fd9afc74f03c889d116136595ccc136a214aea15258137de195b1bbf148ac4"
+      "bytes": 4906542,
+      "sha256": "e40b6ef57c15b17f3c8c2c9c87d75c62d4afb03d4451200ddaf88735b584d5cd"
     },
     "blokus": {
       "asset": "blokus.zip",
-      "bytes": 4644531,
-      "sha256": "9d9d64b272a58c5e154e8fbd379b7f7cbd6b42b49661b20fe0e1ee3e06fbe8c4"
+      "bytes": 1829599,
+      "sha256": "9324af628f732c30f95a027cf39fdc2e1cc7b8dcf5602f2c812727b546bd9597"
     },
     "chess": {
       "asset": "chess.zip",
-      "bytes": 4810690,
-      "sha256": "5cb6895d14c66fd3aa3f71c8da332b2df1aa04a245fd7ce83f03dd22a035deb1"
+      "bytes": 4920203,
+      "sha256": "8ec7b3225c973d541118570d17d300a84314442a8ef2e1b057c239bd823d1060"
     },
     "go": {
       "asset": "go.zip",
-      "bytes": 4812853,
-      "sha256": "ef2e7246ddd77991841ef61d45e6723f9596554a7bc2fd4482805576f74a7d7d"
+      "bytes": 4923778,
+      "sha256": "588ca1a9a194ee851f97905a636176c4031674a1d95933db8374e168e9ab7025"
     },
     "gomoku": {
       "asset": "gomoku.zip",
-      "bytes": 4800355,
-      "sha256": "bb130ebb6ac1cbd839f50b39f55572563a67ec31f6104a78e3eb3cdec61c3768"
+      "bytes": 4898837,
+      "sha256": "ec42e70d9155fac6902fba90c92080206b9e6c2563900eab4ed14c5433d15749"
     },
     "hive": {
       "asset": "hive.zip",
-      "bytes": 4812928,
-      "sha256": "30021e285dc5547d2c6827ffe45817267ba4eebc43d69129c34884f0c607cd3e"
+      "bytes": 4923651,
+      "sha256": "5198e904a2f3a171c91dc789a210407095d13f5d8fc1f98f209913e6aea983dc"
     },
     "intl-draughts": {
       "asset": "intl-draughts.zip",
-      "bytes": 4808157,
-      "sha256": "81780087f85f766b7d47ebe16ce4ab1c3cbfe67d34d589ec36aff32d7e7ff89e"
+      "bytes": 4909195,
+      "sha256": "4aad88994e4cdbbaacaafa9ca3d40b83128b9bc1783b327cd56202e835e43d78"
     },
     "jungle-chess": {
       "asset": "jungle-chess.zip",
-      "bytes": 4813239,
-      "sha256": "ab4b00844de87b7807e4f7b9e53d14eac1776380a7b0364262f9ac8644fc8400"
+      "bytes": 4914030,
+      "sha256": "5dedf6317770c417e7533b80d2a7e68fe11329958c1b95063a5d82a46c2253c1"
     },
     "quarto": {
       "asset": "quarto.zip",
-      "bytes": 4803605,
-      "sha256": "4bbdcb7babcd77449277f68e32bff5136d193df5ccd8c447a5a61f751e72dda7"
+      "bytes": 4903738,
+      "sha256": "8b162ac4503aca8a9c78d603d83352b6ee60daa5b0f2ff408d5557f7f76d60f5"
     },
     "shogi": {
       "asset": "shogi.zip",
-      "bytes": 4809724,
-      "sha256": "c06e07082c29ff04935ccd6199d9f65534c6d7193ee12df7bdebe0e77c32bd60"
+      "bytes": 4918523,
+      "sha256": "c20d52f64b8d2c47d52d1ecc5ffc142e2aac8ed4eda6e133a49c09f46246ba02"
     },
     "splendor": {
       "asset": "splendor.zip",
-      "bytes": 7436660,
-      "sha256": "126e84f71067c3c064106438dd1be24ddac5db2664258ed3558f98a5e1085f3c"
+      "bytes": 4107536,
+      "sha256": "0306a051e47e13a23458c4fcc2d6cdb82463a98866520c619b3be4f9df6f005f"
     },
     "xiangqi": {
       "asset": "xiangqi.zip",
-      "bytes": 4806310,
-      "sha256": "06de4b9aff74c8e27cbd4453b14b3e1915f5533e2a18409b3d1c63ac6e712a28"
+      "bytes": 4912685,
+      "sha256": "415dfdc29d28185d325ecf5b32ec7bb1840713f447576f9fabccdf39211c2cf0"
     },
     "balloon-rally": {
       "asset": "balloon-rally.zip",
-      "bytes": 4852930,
-      "sha256": "01daf100245bb939d619d930fa0090e90739d379ac27b46cbd96c4981dcee3fb"
+      "bytes": 4981037,
+      "sha256": "c18726ac449dfb3ae50c9f6378f94c1022e87ca22e5381b5a684e4a38f528a0b"
     },
     "cribbage": {
       "asset": "cribbage.zip",
-      "bytes": 4819627,
-      "sha256": "233aa71188d7e2ba36d8b97b6f324f4b3ce9d5e754be2806328e2bccf6730b4d"
+      "bytes": 4934609,
+      "sha256": "f2d400606763916b3221f8a9a552284c6a65df8eeabec3a12bbf2157716bac35"
     },
     "field-and-wall": {
       "asset": "field-and-wall.zip",
-      "bytes": 4870596,
-      "sha256": "4437ea9b2d263dcb4782c542692c9077b4167896bcbbddf7fe86bfd84ebf0ef5"
+      "bytes": 4997582,
+      "sha256": "d38e4e6f03cee4aae70f713d364eb2f7421826f880d927c46fa3cfceac8a52ee"
     },
     "hearts": {
       "asset": "hearts.zip",
-      "bytes": 4816390,
-      "sha256": "d814adfec6cf16e25629ddbb979ed75111fddd8ca0af8e0ae5cbb4239824cac6"
+      "bytes": 4929777,
+      "sha256": "923627c47268168f75e3c84ad858769417a86166301f35e977509380112c9bb2"
     },
     "hue-garden": {
       "asset": "hue-garden.zip",
-      "bytes": 4856939,
-      "sha256": "8962c47c788a50982a4cede2250ace34f49bf6d0d9fce26381831c25d04a66d2"
+      "bytes": 4985300,
+      "sha256": "7debc5f02d9c2f064e5c38759ea8c1c305ffbe7d944903ca7836a1531bf3be13"
     },
     "president": {
       "asset": "president.zip",
-      "bytes": 4815911,
-      "sha256": "5b65385e248e8a87225aa498a0b13f3f73652cbf4b0d1b434fd2ba48c54da1fe"
+      "bytes": 4927941,
+      "sha256": "e637a1550622913ddccbaea438ab1844bc7189c71f6e85e53d6035209fe4b628"
     },
     "rummy-500": {
       "asset": "rummy-500.zip",
-      "bytes": 4818884,
-      "sha256": "d3a9296f46bb59bddff2d2cc24ad148ea8635616cd8e76b2c646c10b93472048"
+      "bytes": 4925198,
+      "sha256": "adb58e3304dc3effb6f7a18113c33a0b22976e4fdf2e7cf0fbfbeae304060948"
     },
     "spades": {
       "asset": "spades.zip",
-      "bytes": 4826997,
-      "sha256": "1a0c0f64cfeb3ca66a8c79c1788ca3c07245d33df869b68e559040172ac28a96"
+      "bytes": 4942209,
+      "sha256": "281411047e624a526bd1a841b608f17729b9947ad151e97e04291885df4142c3"
     },
     "star-leap": {
       "asset": "star-leap.zip",
-      "bytes": 4938615,
-      "sha256": "b0688884b89fd369084eceff39f8a4986a11ea00bb99ef9b02d3b0ebd5952a4a"
+      "bytes": 5055562,
+      "sha256": "f15edbc9164c2eac7f3aa0777209fc669d1c095d2fe3ebc413e155385e6c94b4"
     },
     "sweet-carousel": {
       "asset": "sweet-carousel.zip",
-      "bytes": 4994136,
-      "sha256": "80f42dc9b07cf37b1336b9a2311e84833795cfe5429f1a12a4a2604154b42cc9"
+      "bytes": 5130111,
+      "sha256": "13cb3f46d86ef29b87e755013cd33b5a4d09d58f89edf549fd74f5055e6c1a95"
     },
     "boxes": {
       "asset": "boxes.zip",
-      "bytes": 4797122,
-      "sha256": "0998000a5e5e547fa33a657b8a2a4804ff010ac0ba808feabde05f6c50fb1a98"
+      "bytes": 4894440,
+      "sha256": "79c58fb0f148e0a9b7437a4968e4bb9219c3311cbbb658605a155095ba7117d8"
     },
     "codebreak": {
       "asset": "codebreak.zip",
-      "bytes": 4804979,
-      "sha256": "6059775b3b2338046526bf4e2a908179abc312dc17a919c3e23dd287266e0ca1"
+      "bytes": 4912417,
+      "sha256": "d42192ccbe14a3aae0f56ef637e0618aa6c65c91d61e97c5a6abd1dc27aa2f15"
     },
     "color-chain": {
       "asset": "color-chain.zip",
-      "bytes": 4811623,
-      "sha256": "ccb12b25cd283c327f58335e1ddf5c1c26b3059112ec3e40a2bf73ea52d2af34"
+      "bytes": 4925816,
+      "sha256": "40eee529d8d92b635e87e81925ff7a515b10bbb6d58272408278cd41f5aa7c1d"
     },
     "domino-line": {
       "asset": "domino-line.zip",
-      "bytes": 4804016,
-      "sha256": "751d131775946cb6a88b16cc31b72f405d1f9b06a7558e575db3ab4ec0d48998"
+      "bytes": 4910094,
+      "sha256": "575f829eff0816ff3d2451496c3f264d57432e8ef07e40ed8978037b69fee167"
     },
     "draughts": {
       "asset": "draughts.zip",
-      "bytes": 4887465,
-      "sha256": "06f8248f033929e0c02a1ec81f88cc60aa19e0aadec502a76e4a49bdd10e9269"
+      "bytes": 4983063,
+      "sha256": "38d6d803cea49a3b4ad943c87c837da0bf58a73702ef630d4f7da8598b0db8da"
     },
     "five-dice": {
       "asset": "five-dice.zip",
-      "bytes": 4808390,
-      "sha256": "106e6818fcc4bddd3962bfeb42cace779613b379213b04741a9292846bbdcabb"
+      "bytes": 4916436,
+      "sha256": "6773fba1a39fbd5ed03e82bdb2713a32a9a75d7fdbc1bec3b77306cb934ddb91"
     },
     "fleet": {
       "asset": "fleet.zip",
-      "bytes": 4808585,
-      "sha256": "039deab7a9932c8ccb0eac8b76ac13a9ef60b66fcb782222400db889c334e7ce"
+      "bytes": 4916589,
+      "sha256": "e452f465a1a413b79abe0fe3bf4484388bdbaca1956b232f75917602c2a65862"
     },
     "flip": {
       "asset": "flip.zip",
-      "bytes": 4794188,
-      "sha256": "1c5f10decd20c2ed8aa6304a3495721c98dc59dbc82cbb8b4455534431d00c6c"
+      "bytes": 4894822,
+      "sha256": "8a02c8da1214cf73d9f7ac7c7cb56613cf964137b5c7ceaf8902563ebe796a71"
     },
     "four": {
       "asset": "four.zip",
-      "bytes": 4788051,
-      "sha256": "1aeecffc0ca1bbac887e0813b1ee77d2c5a59baeb1bbc71dc666a284887d0de8"
+      "bytes": 4886621,
+      "sha256": "f5b14148c9a23825df4269a351446f5050e59d335fcd3d65851b45d4adedd1ad"
     },
     "hex": {
       "asset": "hex.zip",
-      "bytes": 4795306,
-      "sha256": "fe28d02f507eb1eed10f42724aec12afd6ebe07be1328726a4ec0dbe0a3fc7e3"
+      "bytes": 4896632,
+      "sha256": "67060dac8addb3d7cf8b5b797a7120db58bb18716f8614e726eed00d9c14cf3f"
     },
     "ladder-run": {
       "asset": "ladder-run.zip",
-      "bytes": 4809228,
-      "sha256": "54a75a6495e6e0519b5e9838aa2fa2efeb1185bce8cbd9d03e3695219f28ee24"
+      "bytes": 4918186,
+      "sha256": "cfff3f90a8916aec22cdb551888aae0936e4920557edf7222c9c34d3a9ee69f3"
     },
     "little-go": {
       "asset": "little-go.zip",
-      "bytes": 4798404,
-      "sha256": "31d5c2ef2a01b7a6b2acb2b709fee759c9ba2a58ee9d8c1a35efec9b0add39b7"
+      "bytes": 4897137,
+      "sha256": "8675f00b8bf2f6e56cad2ae41c13b50939f157a0f34dc77f1caf58c0da7b47dc"
     },
     "mill": {
       "asset": "mill.zip",
-      "bytes": 4806874,
-      "sha256": "c80adde9ce9fd330c7f194cf4740ee1f47d8cf324f1e2b0da88b17b546c0a412"
+      "bytes": 4913641,
+      "sha256": "f4840fa0605cfe0d622f88848daa63dd97192e86cf8a4f7eed55ecab03afa5dd"
     },
     "mini-chess": {
       "asset": "mini-chess.zip",
-      "bytes": 4800533,
-      "sha256": "8114957aed54acc543a5c68bba29ce9602c0cf21873278859c9e5099d8911b94"
+      "bytes": 4900595,
+      "sha256": "668d678a37cd5e826a3e33bdb1f66435af680fae927563168f17c7b3e2b82de7"
     },
     "pair-up": {
       "asset": "pair-up.zip",
-      "bytes": 4895956,
-      "sha256": "a0cf448628b088d91e6655cef6626738b11b42a749c845ec4cfe4ff206407404"
+      "bytes": 4998452,
+      "sha256": "08b4dca32465a44c1b3cc6dc8f31dbac858c57fa0d3f3eb3ba07dddef3c10de1"
     },
     "race-home": {
       "asset": "race-home.zip",
-      "bytes": 4906231,
-      "sha256": "0749d7e5c8e41177bd4ab801dfc541d507282c3b3e8d771603e2be111317cbb2"
+      "bytes": 5012967,
+      "sha256": "ae78515ef9fffc5c13b155d03da76cb7f49d4f76670eccaf656b53c275a1cac1"
     },
     "sowing": {
       "asset": "sowing.zip",
-      "bytes": 4887243,
-      "sha256": "746a6b79431bcbd5055936513b852889a379477b2276753f0120b8e31e20eec9"
+      "bytes": 4988076,
+      "sha256": "756574eb074a5031dc935ecc7adb09ddf459dbcdc9c8cdeb7a0b5f57d0490fc8"
     },
     "tables": {
       "asset": "tables.zip",
-      "bytes": 4900467,
-      "sha256": "56eab616d27208c68adb5618055ea614d5e5c879f11689b7d36ba5ce8c2f52bf"
+      "bytes": 5005478,
+      "sha256": "f447d5e77ed3f5f5b675464198404c8aa044ecfe06b1ef290c6c3b7347e6da20"
     },
     "triple": {
       "asset": "triple.zip",
-      "bytes": 4797494,
-      "sha256": "94ea8f95fb77d9d9f1e05b058ae1e7bc63847961a5ddd50f426c5fcbfda58c8a"
+      "bytes": 4893638,
+      "sha256": "a6a85445e7ce65870cadbbab1ef44e117517a9a7f6c41f693e66fb7531407e04"
     },
     "triple-find": {
       "asset": "triple-find.zip",
-      "bytes": 4900038,
-      "sha256": "e635dfe1ec2003d26c105713800ddf2046ca59428482e4c29883b69c6cd03db9"
+      "bytes": 5007442,
+      "sha256": "b2d370bdb7b2574cd81cb65abe3ee813f99bac50ab02b838fbbc42440df03461"
     },
     "mahjong": {
       "asset": "mahjong.zip",
-      "bytes": 4820655,
-      "sha256": "8a62d334dc763e9670f2c1afe8fccd6f04e00699f44343ec6c2e22dfee5cf118"
+      "bytes": 4935917,
+      "sha256": "8a22a6c73beff5baba1a223623b6f51e9905be2d49053cd66552e97e6bf73205"
     },
     "nanchang-mahjong": {
       "asset": "nanchang-mahjong.zip",
-      "bytes": 4824140,
-      "sha256": "ea793867f0154e27e221921df1a228965bc550297ec2be6d2f7f5f5e9d1cc009"
+      "bytes": 4941821,
+      "sha256": "2c70f240649e2f01c963a1a6b0fec8acad62129a8d39d35a76272b3b3c6913a7"
     },
     "big-two": {
       "asset": "big-two.zip",
-      "bytes": 4815399,
-      "sha256": "0f606466b498fb5ab7bd777392c9f3950213aef942cbb8b6a4c50c89bfe0c0df"
+      "bytes": 4927564,
+      "sha256": "dcd426be38671d113d0593bfaa42f3a56f07266d6527bfd6b5f73b6b6451d6d4"
     },
     "doudizhu": {
       "asset": "doudizhu.zip",
-      "bytes": 4814855,
-      "sha256": "dc6becc0bbbddc64d38b677170330f61337426d10e5c46b9180fb84b11ee6b64"
+      "bytes": 4927491,
+      "sha256": "1afe12580a19739955d6aff12dbb4cfdc564b65be7b5a49c70db8c3d0424364f"
     },
     "guandan": {
       "asset": "guandan.zip",
-      "bytes": 4826911,
-      "sha256": "2235cf3dc1ce78f22eeb89c98f574c97bb0045d33d536354c7089b5a42b33177"
+      "bytes": 4945371,
+      "sha256": "d7832ea632a9df8c7677da4d39165ba64e953444a865989f8a29d1b08c50cfa8"
     },
     "idiom-chain": {
       "asset": "idiom-chain.zip",
-      "bytes": 4851483,
-      "sha256": "edb77667e4c40cf5565abb441a3cc990e3a8d6a0d30d7c456c1a02156a9ea44c"
+      "bytes": 4981161,
+      "sha256": "345f703635e03ab4412ac76fa7f77a2787438154887fc0953102386b8f104105"
     },
     "liars-dice": {
       "asset": "liars-dice.zip",
-      "bytes": 4819647,
-      "sha256": "4043b9fb16f072eda9838753e009dde96136c747ecfebf132a6000ff3ec99d1c"
+      "bytes": 4933631,
+      "sha256": "404a3838648467e23aff70874d74bcbb4df5207843498f5ba1c7d60380eb8f86"
     },
     "sheng-ji": {
       "asset": "sheng-ji.zip",
-      "bytes": 4840506,
-      "sha256": "4da4a1b5061f063336b6a7fd9f910c888432d945fc68d85d49b25b9f37bbc250"
+      "bytes": 4965691,
+      "sha256": "a1fe4caf0539cccbb91eaa9d0fb1afea9b03433a3b2c8c237e434766fc338b5c"
     },
     "texas-holdem": {
       "asset": "texas-holdem.zip",
-      "bytes": 4829746,
-      "sha256": "67bd78aee80192834edd8041b82ce1bdc2d55f2360bf9d2df20d5b4a9da0da45"
+      "bytes": 4949096,
+      "sha256": "5dcf419af7dde39207fd76ad2aae06b8e9b2d7b91f24eacc1172e8657d6969b8"
     },
     "zheng-shangyou": {
       "asset": "zheng-shangyou.zip",
-      "bytes": 4820509,
-      "sha256": "0e4ef0dca9cc7df48bb4acba955dcfd3e3eb5acf27b444053a8fe3dc49dc95d7"
+      "bytes": 4934681,
+      "sha256": "b9ae1bf7721eecf27b9a06147a41b5142c85b3f41d9ec0495c16514b7f96d953"
     },
     "jokers-table": {
       "asset": "jokers-table.zip",
-      "bytes": 4839392,
-      "sha256": "9af86e77f0ef4fc19023a1c4e6aec9281f32f21be5c1bc47d542e3ca6b0846fa"
+      "bytes": 4954628,
+      "sha256": "054fea6fe2f3644e369afee59d3095f93401af58c4e0796ad86734a265cb142a"
     }
   }
 }

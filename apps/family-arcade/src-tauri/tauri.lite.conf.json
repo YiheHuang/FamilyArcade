@@ -1,6 +1,6 @@
 {
   "productName": "Family Arcade Lite",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "identifier": "com.familyarcade.lite",
   "build": {
     "beforeDevCommand": "npm run dev:lite",

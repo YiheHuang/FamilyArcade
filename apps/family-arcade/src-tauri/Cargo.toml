@@ -1,6 +1,6 @@
 [package]
 name = "family-arcade-hub"
-version = "3.0.0"
+version = "3.1.0"
 description = "Family Arcade — one launcher for 53 family games"
 authors = ["Family Arcade"]
 edition = "2021"

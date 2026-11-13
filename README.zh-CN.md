@@ -6,9 +6,9 @@
 
 [![观看 56 秒总览](docs/cover.png)](docs/tour.mp4)
 
-[![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_3.0.0_x64-setup.exe)
+[![家庭游戏馆启动器](apps/family-arcade/docs/screenshots/zh/home.jpg)](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_3.1.0_x64-setup.exe)
 
-**离线版：** [Family Arcade 3.0.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_3.0.0_x64-setup.exe) · **精简版（不带运行时）：** [Family Arcade Slim](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_3.0.0_slim_x64-setup.exe) · **Lite（按需下载游戏）：** [Family Arcade Lite](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.0.0/FamilyArcade_Lite_3.0.0_x64-setup.exe) · **WebView2 运行时（仅在需要时）：** [离线 x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
+**离线版：** [Family Arcade 3.1.0](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_3.1.0_x64-setup.exe) · **精简版（不带运行时）：** [Family Arcade Slim](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_3.1.0_slim_x64-setup.exe) · **Lite（按需下载游戏）：** [Family Arcade Lite](https://github.com/YiheHuang/FamilyArcade/releases/download/family-arcade-v3.1.0/FamilyArcade_Lite_3.1.0_x64-setup.exe) · **WebView2 运行时（仅在需要时）：** [离线 x64](https://github.com/YiheHuang/FamilyArcade/releases/download/webview2-runtime-v1.0.0/MicrosoftEdgeWebView2RuntimeInstallerX64.exe)
 
 ## 经典
 
@@ -438,7 +438,7 @@
 <sub>[宣传片](apps/color-chain/docs/promo/color-chain-promo-zh.mp4)</sub>
 </td>
 <td width="25%" valign="top">
-<a href="apps/five-dice/docs/promo/five-dice-promo-zh.mp4"><img src="apps/five-dice/docs/screenshots/zh/game.jpg" width="100%" alt="五骰"></a>
+<a href="apps/five-dice/docs/promo/five-dice-promo-zh.mp4"><img src="apps/five-dice/docs/screenshots/zh/game.png" width="100%" alt="五骰"></a>
 
 **[五骰](apps/five-dice/README.zh-CN.md)**
 
@@ -447,7 +447,7 @@
 <sub>[宣传片](apps/five-dice/docs/promo/five-dice-promo-zh.mp4)</sub>
 </td>
 <td width="25%" valign="top">
-<a href="apps/fleet/docs/promo/fleet-promo-zh.mp4"><img src="apps/fleet/docs/screenshots/zh/game.jpg" width="100%" alt="海战棋"></a>
+<a href="apps/fleet/docs/promo/fleet-promo-zh.mp4"><img src="apps/fleet/docs/screenshots/zh/game.png" width="100%" alt="海战棋"></a>
 
 **[海战棋](apps/fleet/README.zh-CN.md)**
 
@@ -456,7 +456,7 @@
 <sub>[宣传片](apps/fleet/docs/promo/fleet-promo-zh.mp4)</sub>
 </td></tr>
 <tr><td width="25%" valign="top">
-<a href="apps/codebreak/docs/promo/codebreak-promo-zh.mp4"><img src="apps/codebreak/docs/screenshots/zh/game.jpg" width="100%" alt="猜色"></a>
+<a href="apps/codebreak/docs/promo/codebreak-promo-zh.mp4"><img src="apps/codebreak/docs/screenshots/zh/game.png" width="100%" alt="猜色"></a>
 
 **[猜色](apps/codebreak/README.zh-CN.md)**
 
@@ -465,7 +465,7 @@
 <sub>[宣传片](apps/codebreak/docs/promo/codebreak-promo-zh.mp4)</sub>
 </td>
 <td width="25%" valign="top">
-<a href="apps/triple-find/docs/promo/triple-find-promo-zh.mp4"><img src="apps/triple-find/docs/screenshots/zh/game.jpg" width="100%" alt="三连找"></a>
+<a href="apps/triple-find/docs/promo/triple-find-promo-zh.mp4"><img src="apps/triple-find/docs/screenshots/zh/game.png" width="100%" alt="三连找"></a>
 
 **[三连找](apps/triple-find/README.zh-CN.md)**
 

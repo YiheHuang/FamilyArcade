@@ -4,14 +4,14 @@ $token = ($cred | Where-Object { $_ -match '^password=' }) -replace '^password='
 $headers = @{ Authorization = "Bearer $token"; Accept = "application/vnd.github+json" }
 $root = Split-Path -Parent $PSScriptRoot
 $packages = Join-Path $root 'releases\packages'
-$tag = 'game-packages-v3.0.0'
-$name = 'Family Arcade game packages 3.0.0'
+$tag = 'game-packages-v3.1.0'
+$name = 'Family Arcade game packages 3.1.0'
 $body = @'
 Portable ZIP packages for **Family Arcade Lite**.
 
 Download the Lite launcher, open Settings, and install only the games you want. Each package contains the portable Tauri game, its web bundle and `WebView2Loader.dll`.
 
-The full offline and slim launchers are available in the `family-arcade-v3.0.0` release.
+The full offline and slim launchers are available in the `family-arcade-v3.1.0` release.
 '@
 
 try {

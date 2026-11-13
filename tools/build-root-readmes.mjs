@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const repo = 'https://github.com/YiheHuang/FamilyArcade';
-const hubVersion = '3.0.0';
+const hubVersion = '3.1.0';
 const hubUrl = `${repo}/releases/download/family-arcade-v${hubVersion}/FamilyArcade_${hubVersion}_x64-setup.exe`;
 const hubSlimUrl = `${repo}/releases/download/family-arcade-v${hubVersion}/FamilyArcade_${hubVersion}_slim_x64-setup.exe`;
 const hubLiteUrl = `${repo}/releases/download/family-arcade-v${hubVersion}/FamilyArcade_Lite_${hubVersion}_x64-setup.exe`;

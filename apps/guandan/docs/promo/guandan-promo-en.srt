@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,150
 Two decks. One hundred and eight cards. Four seats.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:08,646
 Guandan. Partners sit opposite.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:15,270
 The level card rules the table. The heart level card is wild.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:22,998
 Singles, pairs, straights, consecutive pairs and triples, bombs and the joker bomb.
 
 5
-00:00:23,500 --> 00:00:26,850
+00:00:23,500 --> 00:00:29,130
 Three passes reset the trick. First and second gain three levels.
 
 6
-00:00:31,000 --> 00:00:34,350
+00:00:31,000 --> 00:00:35,598
 Tribute, anti-tribute, and a match that ends at A.
 
 7
-00:00:38,000 --> 00:00:41,350
+00:00:38,000 --> 00:00:41,950
 Four computer levels, private hot-seat, and three guests on your network.
 
 8

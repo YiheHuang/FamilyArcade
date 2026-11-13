@@ -1,7 +1,7 @@
 {
   "name": "familyarcade",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.1.0",
   "type": "module",
   "description": "53 offline-first family board and card games with AI, hot-seat and LAN play",
   "license": "MIT",

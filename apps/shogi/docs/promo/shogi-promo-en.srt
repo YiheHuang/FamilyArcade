@@ -1,29 +1,29 @@
 1
-00:00:00,400 --> 00:00:03,750
+00:00:00,400 --> 00:00:05,150
 A 9×9 board. Forty pieces. One king to catch.
 
 2
-00:00:05,200 --> 00:00:08,550
+00:00:05,200 --> 00:00:09,102
 Shogi. Drops, promotion, checkmate.
 
 3
-00:00:10,000 --> 00:00:13,350
+00:00:10,000 --> 00:00:14,310
 Move, capture, and return the piece to your hand.
 
 4
-00:00:16,000 --> 00:00:19,350
+00:00:16,000 --> 00:00:20,766
 Drop it almost anywhere. Promote in the last three ranks.
 
 5
-00:00:23,000 --> 00:00:26,350
+00:00:23,000 --> 00:00:27,670
 Four levels, from gentle Companion to a three-move Hard.
 
 6
-00:00:30,000 --> 00:00:33,350
+00:00:30,000 --> 00:00:34,622
 Two players on one screen, or a phone on the same Wi-Fi.
 
 7
-00:00:37,000 --> 00:00:40,350
+00:00:37,000 --> 00:00:41,694
 Undo, hints, autosave, and a family record.
 
 8
