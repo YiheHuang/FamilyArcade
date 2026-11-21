@@ -95,6 +95,31 @@ Use `gradlew.bat assembleDebug` afterwards; do not require a system Gradle.
 Keep generated SDK/Gradle/emulator files out of git (`.gitignore` already covers
 `tools/android/.toolchain/`, `android/.gradle/` and `android/**/build/`).
 
+## Validated Android baseline (2026-11-21)
+
+These versions were actually built and run on this machine; prefer them over
+experimenting:
+
+- Gradle 8.10.2, AGP 8.7.3, Kotlin 2.0.21, JDK 21, `compileSdk`/`targetSdk` 35,
+  `minSdk` 26, Java/Kotlin target 17.
+- A trivial debug APK built in 2m25s, installed with `adb install -r`, launched,
+  and `topResumedActivity` confirmed.
+- Ktor 3.0.3 (`ktor-server-core-jvm`, `ktor-server-cio-jvm`,
+  `ktor-server-websockets-jvm`) plus `kotlinx-coroutines-android:1.9.0` compiled
+  and ran inside the emulator. `GET /health` returned `ok`; a WebSocket text
+  echo round-trip succeeded through `adb forward tcp:18089 tcp:8089`.
+- AVD `familyarcade-api35` (Pixel 6, API 35, x86_64) is pre-created and
+  boot-verified. Reuse it:
+  `emulator -avd familyarcade-api35 -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect -no-snapshot -accel on`
+- `install(WebSockets)` without options compiles on Ktor 3.0.3. The Ktor 2-style
+  `pingPeriod = 15.seconds` / `timeout = 15.seconds` properties did **not**
+  resolve here; omit them or use the Ktor 3 API.
+- Build-tools 34.0.0 and 35.0.0 are both installed; AGP 8.7.3 selects 34.0.0 by
+  default.
+- Host-side testing pattern: `adb forward tcp:18089 tcp:8089`, then use
+  `Invoke-WebRequest http://127.0.0.1:18089/health` and a Node `ws` client from
+  the repository root.
+
 ## Build the game assets
 
 Write `tools/build-mobile-web.mjs` (or equivalent) that, for every slug in the Hub
