@@ -129,6 +129,8 @@ data:
 
 - runs a production Vite build with `--base ./` (so assets work under a nested path);
 - handles `splendor` through its client workspace;
+- **does not copy the existing `apps/*/dist` folders**: they were built with base
+  `/` and their asset URLs will 404 under a nested path. Rebuild every game;
 - copies the resulting `dist` into `android/app/src/main/assets/games/<slug>/`;
 - verifies `index.html` and at least one JS/CSS asset exist.
 - builds the mobile Hub into `android/app/src/main/assets/www/`.
