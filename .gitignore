@@ -33,4 +33,6 @@ android/.gradle/
 android/.idea/
 android/local.properties
 android/**/build/
+releases/android/*.apk
+releases/android/*.sha256
 

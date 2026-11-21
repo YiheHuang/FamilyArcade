@@ -91,6 +91,29 @@ Write-Summary "Gradle=$gradleBin"
 Write-Summary "Stdout log=$stdoutLog"
 Write-Summary "Stderr log=$stderrLog"
 
+$powerSource = @'
+using System;
+using System.Runtime.InteropServices;
+public static class FamilyArcadePower {
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern uint SetThreadExecutionState(uint esFlags);
+    public const uint ES_CONTINUOUS = 0x80000000;
+    public const uint ES_SYSTEM_REQUIRED = 0x00000001;
+}
+'@
+$keepAwake = $false
+try {
+    Add-Type -TypeDefinition $powerSource -ErrorAction Stop
+    [FamilyArcadePower]::SetThreadExecutionState(
+        [FamilyArcadePower]::ES_CONTINUOUS -bor [FamilyArcadePower]::ES_SYSTEM_REQUIRED
+    ) | Out-Null
+    $keepAwake = $true
+    Write-Summary 'Keep-awake enabled for the build'
+}
+catch {
+    Write-Summary "WARN: keep-awake unavailable: $($_.Exception.Message)"
+}
+
 Push-Location $repo
 try {
     $commit = (& git rev-parse --short HEAD 2>$null)
@@ -121,6 +144,9 @@ try {
 }
 catch {
     Write-Summary "ERROR: failed to start OpenCode: $($_.Exception.Message)"
+    if ($keepAwake) {
+        [FamilyArcadePower]::SetThreadExecutionState([FamilyArcadePower]::ES_CONTINUOUS) | Out-Null
+    }
     exit 4
 }
 
@@ -146,6 +172,11 @@ try {
 }
 finally {
     Pop-Location
+}
+
+if ($keepAwake) {
+    [FamilyArcadePower]::SetThreadExecutionState([FamilyArcadePower]::ES_CONTINUOUS) | Out-Null
+    Write-Summary 'Keep-awake released'
 }
 
 exit $exitCode

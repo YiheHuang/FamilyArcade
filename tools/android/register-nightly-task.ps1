@@ -37,7 +37,7 @@ $settings = New-ScheduledTaskSettingsSet `
     -DontStopIfGoingOnBatteries `
     -WakeToRun `
     -StartWhenAvailable `
-    -ExecutionTimeLimit (New-TimeSpan -Hours 8) `
+    -ExecutionTimeLimit (New-TimeSpan -Hours 10) `
     -MultipleInstances IgnoreNew
 
 $principal = New-ScheduledTaskPrincipal `
@@ -45,7 +45,7 @@ $principal = New-ScheduledTaskPrincipal `
     -LogonType Interactive `
     -RunLevel Limited
 
-$description = 'One-shot overnight OpenCode build and verification of the Family Arcade Android app (53 games, LAN host, responsive phone/tablet UI).'
+$description = 'One-shot overnight OpenCode build, 53-game verification and conditional GitHub release of Family Arcade Mobile (LAN host, responsive phone/tablet UI).'
 
 Register-ScheduledTask `
     -TaskName $taskName `

@@ -7,16 +7,22 @@ The one-shot Windows task **FamilyArcade Android 3.2.0 Build** runs at
 - builds one `com.familyarcade.mobile` app with all 53 games in `assets/`;
 - adds an embedded HTTP + WebSocket LAN host so the phone can host rooms;
 - adapts the Hub to phones and tablets;
-- verifies the Hub, games and LAN play;
-- writes `releases/android/FamilyArcade_3.2.0.apk` and `docs/android-report.md`;
-- commits on a new `android-mobile` branch and does not push.
+- launches and interacts with **all 53 games** on the Android emulator, with
+  post-interaction screenshots and a 53-row evidence matrix;
+- runs the existing per-game e2e suites (52) and LAN e2e suites (31) plus an
+  Android-hosted LAN match;
+- writes `releases/android/FamilyArcade_3.2.0.apk`, `docs/android-report.md`,
+  `docs/android-verification.json` and `docs/android-shots/*.png`;
+- passes `tools/android/verify-release.ps1`, then commits, pushes and publishes
+  `family-arcade-android-v3.2.0`. If the gate fails, nothing is pushed or
+  published.
 
 ## Task settings
 
 - Trigger: once, 2026-11-22 01:00
 - Wake the computer: enabled
 - Start when available: enabled (catches up if the PC was asleep)
-- Execution limit: 8 hours
+- Execution limit: 10 hours
 - Runs as the current user, interactive session (needed for Gradle, browser and
   emulator work)
 - Working directory: repository root
@@ -28,8 +34,23 @@ The one-shot Windows task **FamilyArcade Android 3.2.0 Build** runs at
 - Agent stderr: `tools/android/logs/nightly-<timestamp>.err.log`
 - APK: `releases/android/FamilyArcade_3.2.0.apk`
 - Report: `docs/android-report.md`
+- 53-game evidence: `docs/android-verification.json`
+- Screenshots: `docs/android-shots/<slug>.png`
+- Gate result: `docs/android-release-gate.json`
+- Release: https://github.com/YiheHuang/FamilyArcade/releases/tag/family-arcade-android-v3.2.0
 
 `*.log` is already ignored by git.
+
+## Release gate
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools\android\verify-release.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools\android\publish-android.ps1 -DryRun
+```
+
+The gate checks 53/53 game rows, 53 non-trivial screenshots, the e2e/LAN totals,
+an Android-hosted LAN pass, APK package/version/SDK metadata, and all 53 bundled
+game folders. The publish script refuses to upload if the gate fails.
 
 ## Manage the task
 

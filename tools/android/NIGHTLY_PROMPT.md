@@ -19,7 +19,9 @@ Build **one** Android app named **Family Arcade Mobile** that:
 - lets the Android device **host** a LAN room and lets other phones/desktops join;
 - keeps the existing bilingual English/Chinese UI and the family-library style;
 - produces a debug APK at `releases/android/FamilyArcade_3.2.0.apk`;
-- can be verified, not merely compiled.
+- can be verified, not merely compiled;
+- is published as `family-arcade-android-v3.2.0` **only** after the 53/53
+  verification gate passes.
 
 ## Recommended architecture
 
@@ -161,50 +163,180 @@ Do not hand-edit 53 game apps. A generic build/copy pipeline is required.
 
 ## Verification is mandatory
 
-Run and record exact results:
+The release is allowed **only** if every gate below passes. Do not claim a test that
+did not run, and do not substitute a screenshot of the home screen for actual play.
 
-1. `node tools/check-all.mjs` → all 53 apps green.
-2. `node tools/build-mobile-web.mjs` → 53 asset folders with `index.html`.
-3. Mobile Hub Playwright at **390×844, 768×1024 and 1280×800**:
-   - 53 cards, search, filters, EN/ZH switch, no horizontal overflow;
-   - open a game, iframe loads, Back returns;
-   - all 53 games load in an iframe without console errors (a scripted loop is fine).
-4. LAN host proof:
-   - start the embedded game server for at least **Gomoku or Chess**;
-   - host page at `http://<lan-ip>:<port>/`;
-   - a second browser context joins via the invite URL and plays a real move;
-   - verify both sides update and the host-only result/restart works.
-5. Android build:
-   - install Android command-line tools/SDK if missing;
-   - build `assembleDebug` and copy the APK to
-     `releases/android/FamilyArcade_3.2.0.apk`;
-   - if an emulator can run, create an API 35 x86_64 AVD, boot it, install the APK,
-     launch it, screenshot it, check logcat for crashes and confirm the activity is
-     resumed;
-   - if WebView remote debugging can be attached, open one game and verify the iframe;
-   - if the emulator cannot run on this machine, report the exact blocker and still
-     provide `aapt dump badging` / APK contents proof. Do not claim a device test that
-     did not happen.
-6. Write `docs/android-report.md` with:
-   - architecture;
-   - commands and exact results;
-   - APK path/size;
-   - what was verified on emulator/device vs JVM/browser;
-   - known gaps (for example LAN discovery, background hosting, tablet-only layouts);
-   - any changes to shared files.
+### 1. Source checks
+
+`node tools/check-all.mjs` must report **53/53 apps green**. Save the full output to
+`tools/android/logs/check-all.log` and record `checks.checkAll = "53/53"`.
+
+### 2. Mobile assets
+
+`node tools/build-mobile-web.mjs` must produce **53/53** game folders with
+`index.html` plus at least one JS/CSS asset, and the mobile Hub in `assets/www/`.
+Record `checks.mobileAssets = "53/53"`.
+
+### 3. Mobile Hub browser tests
+
+Run Playwright at **390×844, 768×1024 and 1280×800**:
+
+- 53 cards, search, category filters, EN/ZH switch, no horizontal overflow;
+- open a game, iframe loads, Back returns;
+- all 53 games load in an iframe without console errors or page errors.
+
+Save the script and output under `tools/android/`. Record `checks.hub = "53/53"`.
+
+### 4. Android 53-game matrix (the important one)
+
+Build and install the APK on the pre-created `familyarcade-api35` emulator. Enable
+WebView debugging in debug builds. For **every one of the 53 canonical slugs** in
+`tools/check-all.mjs` / `apps/family-arcade/src/data/games.json`:
+
+1. Open that game in the **actual Android app**, not desktop Chrome. Support a deep
+   link such as `http://127.0.0.1:8088/#/play/<slug>` so automation can open each
+   game directly.
+2. Wait for the game to load and assert that real content is present (board, cards,
+   dice, grid, or game-specific controls), not a blank iframe.
+3. Perform **at least one real interaction**: start solo/hot-seat, place a legal
+   stone/piece, play a card, roll the dice, or press the primary action. Assert the
+   UI changed in response.
+4. Assert zero console errors and zero page errors for that game.
+5. Capture a screenshot **after the interaction** to
+   `docs/android-shots/<slug>.png` (at least 8 KB, not a blank screen).
+6. Append a row to `docs/android-verification.json` immediately, so a later crash
+   does not lose the evidence.
+7. After every batch, check `adb logcat` for `FATAL EXCEPTION`; any crash fails the
+   gate.
+
+WebView automation hint: `WebView.setWebContentsDebuggingEnabled(true)`, find the
+socket with `adb shell cat /proc/net/unix | findstr webview_devtools_remote`, then
+`adb forward tcp:9222 localabstract:<socket>` and
+`chromium.connectOverCDP('http://127.0.0.1:9222')`. If CDP is unreliable, use a
+debug-only JavaScript bridge plus `uiautomator dump` and `adb shell input tap`, but
+still capture the real post-interaction screenshot.
+
+### 5. Existing per-game suites
+
+- Run `npm run e2e` for every game that has `scripts/e2e.mjs` (52 games as of
+  2026-11-21). This exercises real solo, hot-seat, language and mobile flows.
+- Run `npm run lan:e2e` for every game that has `scripts/lan-e2e.mjs` (31 games as of
+  2026-11-21). Use a unique `LAN_PORT` per game and run them sequentially.
+- Record `checks.e2e` and `checks.lanE2e` as `passed/total`. All must pass. Logs go
+  under `tools/android/logs/e2e/` and `tools/android/logs/lan/`.
+- For games without a LAN script, state in the report whether LAN is implemented and
+  how it was covered. Do not invent a pass.
+
+### 6. Android-hosted LAN proof
+
+Use **Gomoku or Chess** and the embedded Ktor server:
+
+- host a room inside the Android app;
+- connect a second real browser context as the guest and play several real moves;
+- verify both sides update, the guest cannot restart locally, and the host can
+  restart;
+- on the emulator, use `adb forward tcp:18089 tcp:8089` and load both host and guest
+  through `http://127.0.0.1:18089/`; note in the report that a physical phone would
+  use its Wi-Fi IP instead;
+- record a `lan` entry with `kind: "android-host"` and `status: "pass"`.
+
+### 7. Android build proof
+
+- `gradlew.bat assembleDebug`, copy to
+  `releases/android/FamilyArcade_3.2.0.apk`;
+- `aapt dump badging` must show package `com.familyarcade.mobile`, versionName
+  `3.2.0`, minSdk 26, targetSdk 35;
+- the APK must contain `assets/www/index.html` and **53** distinct
+  `assets/games/<slug>/index.html` entries;
+- install, launch, confirm `topResumedActivity`, check logcat for crashes, and
+  screenshot the Hub on phone and tablet sizes.
+- If the emulator cannot run, stop: a browser-only result is not enough to publish.
+  Report the exact blocker instead.
+
+### 8. Verification artifact
+
+Write `docs/android-verification.json` with exactly this shape:
+
+```json
+{
+  "version": "3.2.0",
+  "generatedAt": "2026-11-22T03:00:00+08:00",
+  "device": {
+    "kind": "emulator",
+    "avd": "familyarcade-api35",
+    "api": 35,
+    "resolution": "1080x2400"
+  },
+  "summary": { "games": 53, "passed": 53, "failed": 0 },
+  "checks": {
+    "checkAll": "53/53",
+    "mobileAssets": "53/53",
+    "hub": "53/53",
+    "e2e": "52/52",
+    "lanE2e": "31/31"
+  },
+  "games": [
+    {
+      "slug": "gomoku",
+      "status": "pass",
+      "loaded": true,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "interaction": "started hot-seat and placed a black stone at the centre",
+      "screenshot": "docs/android-shots/gomoku.png"
+    }
+  ],
+  "lan": [
+    {
+      "slug": "gomoku",
+      "kind": "android-host",
+      "status": "pass",
+      "guest": "desktop Chrome via adb forward",
+      "moves": 5,
+      "evidence": "tools/android/logs/lan/android-host-gomoku.log"
+    }
+  ]
+}
+```
+
+### 9. Report
+
+Write `docs/android-report.md` with architecture, exact commands and results, APK
+path/size/SHA256, what was verified on Android vs browser/JVM, known gaps
+(background hosting, LAN discovery, tablet layouts), and every shared-file change.
+
+### 10. Release gate and publication
+
+1. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\android\verify-release.ps1`.
+   It must print `RELEASE GATE PASSED`.
+2. If and only if it passes:
+   - commit on `android-mobile`;
+   - fast-forward `main` to the verified commit (`git checkout main`, `git merge --ff-only android-mobile`);
+   - push `main` and `android-mobile`;
+   - publish with
+     `powershell -NoProfile -ExecutionPolicy Bypass -File tools\android\publish-android.ps1`.
+3. Verify the release URL and asset size through the GitHub API, and record the URL
+   in `docs/android-report.md`.
+4. Update `README.md` (English) and `README.zh-CN.md` (Chinese) with a short Android
+   download/install section and the release link. Keep the two languages separate.
+5. If the gate fails, do **not** push and do **not** create a release. Leave the
+   branch and a blocker report.
 
 ## Repository rules
 
-- Work on a new branch `android-mobile`; commit there. Do not push, do not rewrite
-  history, do not delete desktop releases or game assets.
+- Work on a new branch `android-mobile`; commit there.
+- Do not rewrite history, do not delete desktop releases or game assets.
+- Push and publish **only** after the release gate passes. The authorization is
+  conditional on real 53/53 verification.
 - Do not change game rules, scoring, AI or the 53 game source trees except for a
   minimal shared LAN/invite fix if unavoidable; document any such change.
 - Keep English UI English-only and Chinese UI Chinese-only; only the switch, game
   names and technical terms may cross over.
 - Do not add ads, accounts, telemetry or cloud services.
-- Use subagents for parallel game asset builds/tests if useful.
+- Use subagents for parallel game builds/tests, but keep ports, Android assets and
+  the verification JSON conflict-free.
 - If a step fails, fix it and rerun. If a hard blocker remains, leave the repo clean
   enough to continue and write the blocker report.
 
 Start by reading this brief, the root `README.md`, `apps/family-arcade`, `packages/lan`
-and `tools/lan-server.mjs`. Then implement, build and verify.
+and `tools/lan-server.mjs`. Then implement, build, verify, gate and publish.
