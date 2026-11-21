@@ -28,3 +28,9 @@ apps/family-arcade/games/
 target-*/
 apps/*/video/public/
 
+tools/android/.toolchain/
+android/.gradle/
+android/.idea/
+android/local.properties
+android/**/build/
+
