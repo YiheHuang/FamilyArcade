@@ -27,7 +27,7 @@ if (-not (Test-Path $runner)) {
 
 $action = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
-    -Argument ('-NoProfile -ExecutionPolicy Bypass -File "{0}"' -f $runner) `
+    -Argument ('-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "{0}"' -f $runner) `
     -WorkingDirectory $repo
 
 $trigger = New-ScheduledTaskTrigger -Once -At $At

@@ -59,6 +59,11 @@ $env:ANDROID_HOME = $sdkRoot
 $env:ANDROID_SDK_ROOT = $sdkRoot
 $env:PATH = "$sdkRoot\platform-tools;$sdkRoot\cmdline-tools\latest\bin;$env:PATH"
 
+$gradleBin = Join-Path $PSScriptRoot '.toolchain\gradle-8.10.2\bin'
+if (Test-Path $gradleBin) {
+    $env:PATH = "$gradleBin;$env:PATH"
+}
+
 $brief = Join-Path $repo 'tools\android\NIGHTLY_PROMPT.md'
 if (-not (Test-Path $brief)) {
     Write-Summary "BLOCKER: brief missing at $brief"
@@ -82,6 +87,7 @@ Write-Summary "Runner start. Repo=$repo"
 Write-Summary "CLI=$cli"
 Write-Summary "JAVA_HOME=$env:JAVA_HOME"
 Write-Summary "ANDROID_HOME=$env:ANDROID_HOME"
+Write-Summary "Gradle=$gradleBin"
 Write-Summary "Stdout log=$stdoutLog"
 Write-Summary "Stderr log=$stderrLog"
 
