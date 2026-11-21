@@ -44,7 +44,8 @@ $env:PATH = "$javaHome\bin;$env:PATH"
 
 New-Item -ItemType Directory -Force -Path $sdk, $toolchain | Out-Null
 
-$sdkManager = Join-Path $sdk 'cmdline-tools\latest\bin\sdkmanager.bat'
+$cmdlineRoot = Join-Path $sdk 'cmdline-tools\latest'
+$sdkManager = Join-Path $cmdlineRoot 'bin\sdkmanager.bat'
 if (-not (Test-Path $sdkManager)) {
     Write-Step 'Downloading Android command-line tools'
     if (-not (Test-Path $cmdlineZip)) {
@@ -56,9 +57,15 @@ if (-not (Test-Path $sdkManager)) {
     if (-not (Test-Path (Join-Path $source 'bin\sdkmanager.bat'))) {
         throw "Unexpected command-line tools layout under $extract"
     }
-    New-Item -ItemType Directory -Force -Path (Split-Path $sdkManager -Parent) | Out-Null
-    Copy-Item -Path (Join-Path $source '*') -Destination (Split-Path $sdkManager -Parent) -Recurse -Force
+    if (Test-Path $cmdlineRoot) {
+        Remove-Item $cmdlineRoot -Recurse -Force
+    }
+    New-Item -ItemType Directory -Force -Path $cmdlineRoot | Out-Null
+    Copy-Item -Path (Join-Path $source '*') -Destination $cmdlineRoot -Recurse -Force
     Remove-Item $extract -Recurse -Force -ErrorAction SilentlyContinue
+    if (-not (Test-Path $sdkManager)) {
+        throw "sdkmanager still missing after copy: $sdkManager"
+    }
     Write-Step "Installed sdkmanager at $sdkManager"
 }
 else {
