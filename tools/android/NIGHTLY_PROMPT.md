@@ -108,6 +108,32 @@ data:
 
 Do not hand-edit 53 game apps. A generic build/copy pipeline is required.
 
+## Concrete implementation hints
+
+- Reuse the app discovery and build logic already in `tools/build-all-portable.mjs`
+  and `tools/prepare-hub.mjs`. Do not invent a second game registry.
+- Keep the desktop Tauri Hub untouched. Build a separate static mobile Hub (for
+  example under `tools/mobile-hub/`) from
+  `apps/family-arcade/src/data/games.json` and `public/thumbs/`, and copy its
+  `dist` into `assets/www/`. This avoids breaking the Windows launcher.
+- Static server: serve `index.html` for unknown paths (SPA fallback), set correct
+  MIME types, block directory traversal, and disable caching in debug builds.
+- Wi-Fi address: enumerate non-loopback IPv4 `NetworkInterface` addresses instead
+  of `WifiManager`, so no runtime location permission is needed. Bind `0.0.0.0`.
+- Port conflicts: try 8080–8090 and return the chosen port to JavaScript. Show all
+  candidate URLs in the Hub.
+- WebSocket relay: match `tools/lan-server.mjs` exactly, including first-host
+  assignment, room codes, max players, `peer-join`/`peer-leave` broadcasts, and
+  guest-to-host-only intent routing.
+- Android Back: if a game iframe is open, stop the game server and return to the
+  grid; otherwise finish the activity.
+- Storage: rely on WebView DOM storage for the games' existing `localStorage`
+  saves. Do not require Tauri filesystem APIs.
+- If a shared package needs a browser-only guard for Tauri, patch the shared
+  package once and document it. Do not edit all 53 apps.
+- If a game refuses to run in an iframe (frame-busting or top-window logic), fall
+  back to a dedicated full-screen WebView activity for that game and document it.
+
 ## Verification is mandatory
 
 Run and record exact results:

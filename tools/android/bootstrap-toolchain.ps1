@@ -73,8 +73,14 @@ else {
 }
 
 Write-Step 'Accepting Android SDK licenses'
-$yes = 1..200 | ForEach-Object { 'y' }
-$yes | & $sdkManager --sdk_root=$sdk --licenses 2>&1 | Out-Null
+$yesFile = Join-Path $env:TEMP 'android-sdk-yes.txt'
+(1..200 | ForEach-Object { 'y' }) | Set-Content -Path $yesFile -Encoding ASCII
+$licenseCmd = '""{0}" --sdk_root="{1}" --licenses < "{2}""' -f $sdkManager, $sdk, $yesFile
+$licenseProc = Start-Process cmd.exe -ArgumentList '/c', $licenseCmd -Wait -PassThru -NoNewWindow
+Remove-Item $yesFile -Force -ErrorAction SilentlyContinue
+if ($licenseProc.ExitCode -ne 0 -or -not (Test-Path (Join-Path $sdk 'licenses\android-sdk-license'))) {
+    throw "Android SDK license acceptance failed (exit $($licenseProc.ExitCode))"
+}
 
 $packages = @(
     'platform-tools',
@@ -91,6 +97,23 @@ Write-Step ('Installing SDK packages: ' + ($packages -join ', '))
 if ($LASTEXITCODE -ne 0) {
     throw "sdkmanager failed with exit code $LASTEXITCODE"
 }
+
+$required = @(
+    'platform-tools\adb.exe',
+    'platforms\android-35\android.jar',
+    'build-tools\35.0.0\aapt2.exe',
+    'emulator\emulator.exe'
+)
+if (-not $SkipEmulator) {
+    $required += 'system-images\android-35\google_apis\x86_64'
+}
+foreach ($relative in $required) {
+    $full = Join-Path $sdk $relative
+    if (-not (Test-Path $full)) {
+        throw "SDK package missing after install: $relative"
+    }
+}
+Write-Step 'All required SDK packages are present'
 
 if (-not (Test-Path $gradleHome)) {
     Write-Step "Downloading Gradle $gradleVersion"
