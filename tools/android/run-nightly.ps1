@@ -71,7 +71,7 @@ if (-not (Test-Path $brief)) {
 }
 
 $message = @'
-Read tools/android/NIGHTLY_PROMPT.md in this repository and execute it completely and autonomously. Do not stop to ask questions. Build and verify the single Family Arcade Android app, produce releases/android/FamilyArcade_3.2.0.apk and docs/android-report.md, commit on a new android-mobile branch, and do not push. If a hard blocker remains, document the exact blocker and leave the repository clean enough to continue.
+Read tools/android/NIGHTLY_PROMPT.md in this repository and execute it completely and autonomously. Do not stop to ask questions. Build and verify the single Family Arcade Android app against all 53 games. Produce releases/android/FamilyArcade_3.2.0.apk, docs/android-report.md, docs/android-verification.json and docs/android-shots/. Run tools/android/verify-release.ps1. If and only if the gate passes, commit, push main and android-mobile, and publish family-arcade-android-v3.2.0 with tools/android/publish-android.ps1. If a hard blocker remains, do not push or publish; document the exact blocker and leave the repository clean enough to continue.
 '@
 
 $argList = @(
@@ -127,6 +127,9 @@ finally {
 if ($DryRun) {
     Write-Summary 'DryRun: command resolved successfully; OpenCode was not started.'
     Write-Summary "DryRun args: $($argList -join ' ')"
+    if ($keepAwake) {
+        [FamilyArcadePower]::SetThreadExecutionState([FamilyArcadePower]::ES_CONTINUOUS) | Out-Null
+    }
     exit 0
 }
 
