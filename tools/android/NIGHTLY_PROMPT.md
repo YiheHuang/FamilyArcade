@@ -156,6 +156,16 @@ Do not hand-edit 53 game apps. A generic build/copy pipeline is required.
   grid; otherwise finish the activity.
 - Storage: rely on WebView DOM storage for the games' existing `localStorage`
   saves. Do not require Tauri filesystem APIs.
+- Save persistence: `localStorage` is origin-scoped. Use one stable game origin
+  (prefer a fixed port such as 8080 and stop the previous game server before
+  starting the next, or serve games under stable paths on one origin). If a game's
+  port changes between sessions, its saves will look lost. Verify save/reload
+  across a server restart.
+- Language propagation: the Hub (`127.0.0.1:8088`) and the game iframe
+  (`<phone-ip>:<port>`) are different origins, so they do not share
+  `localStorage`. Pass `?lang=en|zh` or a `postMessage`, and make the static server
+  set the game's own `familyarcade.lang` before the app script runs. Verify EN and
+  ZH inside the iframe, not just on the Hub.
 - If a shared package needs a browser-only guard for Tauri, patch the shared
   package once and document it. Do not edit all 53 apps.
 - If a game refuses to run in an iframe (frame-busting or top-window logic), fall
@@ -249,7 +259,11 @@ Use **Gomoku or Chess** and the embedded Ktor server:
 - the APK must contain `assets/www/index.html` and **53** distinct
   `assets/games/<slug>/index.html` entries;
 - install, launch, confirm `topResumedActivity`, check logcat for crashes, and
-  screenshot the Hub on phone and tablet sizes.
+  screenshot the Hub on phone and tablet sizes;
+- save proof: in one game, make a move, close and reopen the game, and confirm the
+  saved game is offered and resumes;
+- language proof: open one game from the Hub in English and one in Chinese and
+  verify the iframe language follows the Hub.
 - If the emulator cannot run, stop: a browser-only result is not enough to publish.
   Report the exact blocker instead.
 
