@@ -351,6 +351,8 @@ path/size/SHA256, what was verified on Android vs browser/JVM, known gaps
 - Do not add ads, accounts, telemetry or cloud services.
 - Use subagents for parallel game builds/tests, but keep ports, Android assets and
   the verification JSON conflict-free.
+- Keep large build/test logs on disk and print one-line summaries. Do not paste 53
+  full logs into the conversation; preserve context for debugging and verification.
 - If a step fails, fix it and rerun. If a hard blocker remains, leave the repo clean
   enough to continue and write the blocker report.
 
