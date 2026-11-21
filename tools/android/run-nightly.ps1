@@ -71,7 +71,7 @@ if (-not (Test-Path $brief)) {
 }
 
 $message = @'
-Read tools/android/NIGHTLY_PROMPT.md in this repository and execute it completely and autonomously. Do not stop to ask questions. Build and verify the single Family Arcade Android app against all 53 games. Produce releases/android/FamilyArcade_3.2.0.apk, docs/android-report.md, docs/android-verification.json and docs/android-shots/. Run tools/android/verify-release.ps1. If and only if the gate passes, commit, push main and android-mobile, and publish family-arcade-android-v3.2.0 with tools/android/publish-android.ps1. If a hard blocker remains, do not push or publish; document the exact blocker and leave the repository clean enough to continue.
+Read tools/android/NIGHTLY_PROMPT.md in this repository and execute it completely and autonomously. Do not stop to ask questions. Build the single Family Arcade Android app. Dispatch at least 10 subagents to actually play all 53 games (AI, hot-seat, LAN where supported, EN/ZH, save, phone/tablet) and collect 53 pass/fail verdicts, not just page loads. Produce releases/android/FamilyArcade_3.2.0.apk, docs/android-report.md, docs/android-verification.json, docs/android-playtest.json and the screenshots. Run tools/android/verify-release.ps1. If and only if 53/53 automated checks AND 53/53 subagent playtests pass with zero P0/P1, commit, push main and android-mobile, and publish family-arcade-android-v3.2.0 with tools/android/publish-android.ps1. If a hard blocker remains, do not push or publish; document the exact blocker and leave the repository clean enough to continue.
 '@
 
 $argList = @(

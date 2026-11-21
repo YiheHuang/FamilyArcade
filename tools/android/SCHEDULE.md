@@ -9,6 +9,9 @@ The one-shot Windows task **FamilyArcade Android 3.2.0 Build** runs at
 - adapts the Hub to phones and tablets;
 - launches and interacts with **all 53 games** on the Android emulator, with
   post-interaction screenshots and a 53-row evidence matrix;
+- dispatches **at least 10 subagents** to actually play every one of the 53 games
+  (AI, hot-seat, LAN where supported, EN/ZH, save, phone/tablet) and collects
+  53 pass/fail verdicts plus screenshots;
 - runs the existing per-game e2e suites (52) and LAN e2e suites (31) plus an
   Android-hosted LAN match;
 - writes `releases/android/FamilyArcade_3.2.0.apk`, `docs/android-report.md`,
@@ -34,8 +37,10 @@ The one-shot Windows task **FamilyArcade Android 3.2.0 Build** runs at
 - Agent stderr: `tools/android/logs/nightly-<timestamp>.err.log`
 - APK: `releases/android/FamilyArcade_3.2.0.apk`
 - Report: `docs/android-report.md`
-- 53-game evidence: `docs/android-verification.json`
-- Screenshots: `docs/android-shots/<slug>.png`
+- 53-game automated evidence: `docs/android-verification.json`
+- 53-game subagent verdicts: `docs/android-playtest.json`
+- Automated screenshots: `docs/android-shots/<slug>.png`
+- Playtest screenshots: `docs/android-playtest-shots/<slug>-*.png`
 - Gate result: `docs/android-release-gate.json`
 - Release: https://github.com/YiheHuang/FamilyArcade/releases/tag/family-arcade-android-v3.2.0
 
@@ -48,9 +53,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\android\verify-release
 powershell -NoProfile -ExecutionPolicy Bypass -File tools\android\publish-android.ps1 -DryRun
 ```
 
-The gate checks 53/53 game rows, 53 non-trivial screenshots, the e2e/LAN totals,
-an Android-hosted LAN pass, APK package/version/SDK metadata, and all 53 bundled
-game folders. The publish script refuses to upload if the gate fails.
+The gate checks 53/53 automated game rows, 53/53 subagent playtest verdicts,
+at least 10 playtest agents, zero unresolved P0/P1, two non-trivial screenshots per
+game, the e2e/LAN totals, an Android-hosted LAN pass, APK package/version/SDK
+metadata, and all 53 bundled game folders. The publish script refuses to upload if
+the gate fails.
 
 ## Manage the task
 

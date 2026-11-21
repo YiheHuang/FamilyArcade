@@ -31,6 +31,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 $gate = Get-Content -Raw -Path (Join-Path $Repo 'docs\android-release-gate.json') | ConvertFrom-Json
+$playtest = Get-Content -Raw -Path (Join-Path $Repo 'docs\android-playtest.json') | ConvertFrom-Json
 $hash = $gate.apkSha256
 $apkBytes = (Get-Item $apkPath).Length
 $shaPath = Join-Path (Split-Path $apkPath -Parent) "FamilyArcade_$Version.sha256"
@@ -48,6 +49,7 @@ Family Arcade Mobile $Version - one Android app with all 53 family games.
 ## Verification
 
 - 53/53 games launched and interacted with on an Android API 35 emulator.
+- $($playtest.agents) subagents played all 53 games: 53 pass, 0 fail, 0 unresolved P0/P1.
 - 52/52 existing game e2e suites passed.
 - 31/31 existing LAN e2e suites passed.
 - An Android-hosted LAN match was played with a second client.

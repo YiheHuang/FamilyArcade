@@ -315,11 +315,66 @@ Write `docs/android-verification.json` with exactly this shape:
 }
 ```
 
+### 8b. Subagent playtest (mandatory, separate from automation)
+
+Automated scripts and screenshots are **not enough**. Dispatch **at least 10**
+subagents (13–15 recommended), each assigned 3–5 games, until every one of the 53
+games has been played by a subagent. This is a release blocker.
+
+Each subagent must:
+
+- read the game's `README.md`, `docs/rules.md` and `docs/limitations.md`;
+- play against the AI for several turns or a short full game;
+- play hot-seat with both seats and the privacy cover;
+- play LAN host + guest for several moves if the game supports LAN;
+- switch EN/ZH and check language purity;
+- use hint/undo, save/reload, result/record where available;
+- check phone 390×844 and tablet 1280×800;
+- capture at least **2 screenshots per game** (solo and hot-seat/LAN or tablet);
+- report concrete issues with severity P0/P1/P2 and a final verdict.
+
+Run the playtests against the **same mobile bundles embedded in the APK**. Preferred:
+serve `android/app/src/main/assets/www` plus the game folders on the host with a
+static server, or drive the Android WebView through `adb forward` and CDP. If
+multiple subagents cannot share one emulator, use desktop Chrome at 390×844 and
+1280×800 and state that in the report; the Android wrapper is still covered by the
+automated 53-game matrix. Do not accept "the page loaded" as a playtest: each
+subagent must make real moves and observe real responses.
+
+Aggregate into `docs/android-playtest.json`:
+
+```json
+{
+  "version": "3.2.0",
+  "agents": 15,
+  "summary": { "games": 53, "passed": 53, "failed": 0, "p0": 0, "p1": 0 },
+  "games": [
+    {
+      "slug": "gomoku",
+      "agent": "qa-3",
+      "verdict": "pass",
+      "modes": ["ai", "hot-seat", "lan"],
+      "issues": [],
+      "screenshots": [
+        "docs/android-playtest-shots/gomoku-solo.png",
+        "docs/android-playtest-shots/gomoku-lan.png"
+      ]
+    }
+  ]
+}
+```
+
+Fix every P0/P1 found and rerun the affected game with a subagent. P2 may be
+documented and deferred. The final JSON must reflect the post-fix retest, not the
+first attempt. The gate requires 53/53 `verdict: "pass"`, at least 10 agents, zero
+P0/P1, and at least two non-trivial screenshots per game.
+
 ### 9. Report
 
 Write `docs/android-report.md` with architecture, exact commands and results, APK
-path/size/SHA256, what was verified on Android vs browser/JVM, known gaps
-(background hosting, LAN discovery, tablet layouts), and every shared-file change.
+path/size/SHA256, what was verified on Android vs browser/JVM, the subagent
+playtest summary (agents, games, issues found/fixed), known gaps (background
+hosting, LAN discovery, tablet layouts), and every shared-file change.
 
 ### 10. Release gate and publication
 

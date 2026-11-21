@@ -99,6 +99,46 @@ $androidLan = @($lan | Where-Object { $_.kind -eq 'android-host' -and $_.status 
 Check ($androidLan.Count -ge 1) 'at least one Android-hosted LAN match passed'
 Check ($lan.Count -ge 1) 'LAN evidence is present'
 
+$playtestPath = Join-Path $Repo 'docs\android-playtest.json'
+Check (Test-Path $playtestPath) 'subagent playtest matrix exists'
+if (Test-Path $playtestPath) {
+    $playtest = Get-Content -Raw -Path $playtestPath | ConvertFrom-Json
+    $playtestGames = @($playtest.games)
+    Check ($playtest.version -eq $Version) "playtest version is $Version"
+    Check ($playtest.agents -ge 10) "at least 10 playtest subagents (got $($playtest.agents))"
+    Check ($playtestGames.Count -eq 53) "playtest covers 53 games (got $($playtestGames.Count))"
+    Check ($playtest.summary.games -eq 53) 'playtest summary.games is 53'
+    Check ($playtest.summary.passed -eq 53) 'playtest summary.passed is 53'
+    Check ($playtest.summary.failed -eq 0) 'playtest summary.failed is 0'
+    Check ($playtest.summary.p0 -eq 0) 'playtest has zero unresolved P0 issues'
+    Check ($playtest.summary.p1 -eq 0) 'playtest has zero unresolved P1 issues'
+
+    $badPlaytest = @($playtestGames | Where-Object { $_.verdict -ne 'pass' })
+    Check ($badPlaytest.Count -eq 0) "all 53 subagent verdicts pass (failed: $($badPlaytest.Count))"
+
+    $missingPlayShots = [System.Collections.Generic.List[string]]::new()
+    foreach ($game in $playtestGames) {
+        $shots = @($game.screenshots)
+        if ($shots.Count -lt 2) {
+            $missingPlayShots.Add("$($game.slug) (fewer than 2 screenshots)")
+            continue
+        }
+        foreach ($shotPath in $shots) {
+            $shot = Join-Path $Repo $shotPath
+            if (-not (Test-Path $shot)) {
+                $missingPlayShots.Add("$($game.slug) (missing $shotPath)")
+            }
+            elseif ((Get-Item $shot).Length -lt 8000) {
+                $missingPlayShots.Add("$($game.slug) (small $shotPath)")
+            }
+        }
+    }
+    Check ($missingPlayShots.Count -eq 0) "53 games have at least 2 non-trivial playtest screenshots (bad: $($missingPlayShots.Count))"
+    if ($missingPlayShots.Count -gt 0) {
+        Write-Host ('     ' + (($missingPlayShots | Select-Object -First 10) -join ', '))
+    }
+}
+
 $apk = Get-Item $apkPath
 Check ($apk.Length -gt 10MB) ("APK is larger than 10 MB ({0:N1} MB)" -f ($apk.Length / 1MB))
 
@@ -139,6 +179,8 @@ $result = [ordered]@{
     apkSha256 = $hash
     games = $games.Count
     lanChecks = $lan.Count
+    playtestAgents = if ($playtest) { $playtest.agents } else { 0 }
+    playtestGames = if ($playtestGames) { $playtestGames.Count } else { 0 }
     failures = @($failures)
 }
 $result | ConvertTo-Json -Depth 6 | Set-Content -Path $gatePath -Encoding UTF8
